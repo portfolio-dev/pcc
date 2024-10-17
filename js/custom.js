@@ -31,15 +31,8 @@
   })(window.jQuery);
 
 
-// script.js hide .html
-// document.addEventListener("DOMContentLoaded", function() {
-//   const currentPath = window.location.pathname;
-//   const currentHash = window.location.hash; 
-
-
-//   if (currentPath.endsWith('.html')) {
-//       const newPath = currentPath.slice(0, -5); 
-//       history.replaceState(null, '', newPath + currentHash); 
-//   }
-// });
+// script.js no right click
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
 
