@@ -43,4 +43,10 @@
 //   }
 // });
 
-
+document.addEventListener("DOMContentLoaded", function() {
+            var link = document.createElement("link");
+            link.rel = "icon";
+            link.type = "image/png"; // Ganti sesuai format favicon
+            link.href = "../images/favicon.png"; // Ganti dengan path yang benar
+            document.head.appendChild(link);
+        });
