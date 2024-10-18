@@ -138,7 +138,7 @@
                                         <img src="images/slide/Flyer HV JHC.png" class="carousel-image img-fluid" alt="...">
                                         
                                         <div class="carousel-caption d-flex flex-column justify-content-end">
-                                            <h1>Hospital Visit<br>& Charity</h1>
+                                            <h1>Hospital<br>Visit & Charity</h1>
                                             
                                             <p>Berkunjung & Berbagi ke RS JHC</p>
                                         </div>
@@ -148,7 +148,7 @@
                                         <img src="images/slide/Flyer HV Soloraya.png" class="carousel-image img-fluid" alt="...">
                                         
                                         <div class="carousel-caption d-flex flex-column justify-content-end">
-                                            <h1>Hospital Visit<br>& Charity</h1>
+                                            <h1>Hospital<br>Visit & Charity</h1>
                                             
                                             <p>Berkunjung & Berbagi ke RS Moewardi Solo</p>
                                         </div>
@@ -353,10 +353,6 @@
                                     Perjalanan ini mungkin dipenuhi dengan tantangan dan ketidakpastian, tetapi ingatlah bahwa setiap usaha yang Anda lakukan untuk kesehatan anak Anda adalah wujud cinta yang luar biasa. Anda adalah orang tua yang kuat, dan kekuatan itu tercermin dalam setiap langkah yang Anda ambil. Di tengah semua kesulitan, selalu ada harapan. Jangan ragu untuk berbagi cerita dan mencari dukungan, karena Anda tidak sendirian. Ada banyak orang yang siap mendukung dan mendoakan agar anak Anda mendapatkan kesembuhan. Teruslah percaya pada kekuatan cinta dan usaha Anda, karena dengan semangat yang tak padam, ada harapan agar buah hati Anda dapat memiliki jantung yang sehat di masa depan.</p>
 
                                 <ul class="social-icon mt-4">
-                                    <!-- <li class="social-icon-item">
-                                        <a href="#" class="social-icon-link bi-twitter"></a>
-                                    </li> -->
-
                                     <li class="social-icon-item">
                                         <a href="https://facebook.com/emapoenya" class="social-icon-link bi-facebook" target="_blank"></a>
                                     </li>
@@ -510,19 +506,19 @@
 
                                 <div class="row">
                                     <div class="col-lg-6 col-12">
-                                        <input type="text" name="volunteer-name" id="volunteer-name" class="form-control" placeholder="Nama Lengkap" required>
+                                        <input type="text" name="parent-name" id="parent-name" class="form-control" placeholder="Nama Orang Tua" required>
                                     </div>
 
                                     <div class="col-lg-6 col-12">    
-                                        <input type="email" name="volunteer-email" id="volunteer-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Alamat Email" required>
+                                        <input type="email" name="parent-email" id="parent-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Alamat Email" required>
                                     </div>
 
                                     <div class="col-lg-6 col-12">
-                                        <input type="text" name="volunteer-subject" id="volunteer-subject" pattern="counter-number" class="form-control" placeholder="Nama Pasaien Anak" required>
+                                        <input type="text" name="patient-name" id="patient-name" pattern="counter-number" class="form-control" placeholder="Nama Pasien Anak" required>
                                     </div>
 
                                     <div class="col-lg-6 col-12">
-                                        <input type="text" name="volunteer-telepon" id="volunteer-subject" class="form-control" placeholder="Nomor Telepon" required>
+                                        <input type="text" name="parent-telepon" id="parent-subject" class="form-control" placeholder="Nomor Telepon" required>
                                     </div>
 
                                     <div class="col-lg-6 col-12">
@@ -878,28 +874,24 @@
                         </div>
 
                         <div class="col-lg-5 col-12 mx-auto">
-                            <form class="custom-form contact-form" action="#" method="post" role="form">
+                            <form class="custom-form contact-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe698lwWkbSaQj67KmcdnntRJM68-3zgXyLPfAhbzjnFgWx0g/formResponse" method="post" target="hidden_iframe" onsubmit="return submitForm();">
                                 <h2>Tinggalkan Pesan</h2>
-
                                 <p class="mb-4">
                                     Silahkan tinggalkan pesan Anda di sini!                                    
                                 </p>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="first-name" id="first-name" class="form-control" placeholder="Nama Depan" required>
+                                        <input type="text" name="entry.906223164" id="name" class="form-control" placeholder="Nama Lengkap" required>
                                     </div>
-
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="last-name" id="last-name" class="form-control" placeholder="Nama Belakang" required>
+                                        <input type="text" name="entry.982910793" id="phone-number" class="form-control" placeholder="Nomor Telepon" required pattern="\d*" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                     </div>
                                 </div>
-
-                                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Alamat Email" required>
-
-                                <textarea name="message" rows="5" class="form-control" id="message" placeholder="Tinggalkan pesan Anda di sini!"></textarea>
-
+                                <input type="email" name="entry.1649574327" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" class="form-control" placeholder="Alamat Email" required>
+                                <textarea name="entry.1926008991" rows="5" class="form-control" id="message" placeholder="Tinggalkan pesan Anda di sini!" required></textarea>
                                 <button type="submit" class="form-control">Kirim Pesan</button>
                             </form>
+                            <iframe name="hidden_iframe" style="display:none;" onload="redirectToSuccessPage();"></iframe>
                         </div>
 
                     </div>

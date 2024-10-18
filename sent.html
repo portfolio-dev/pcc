@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="7;url=index.html">
+    <title>Pesan Terkirim</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        img {
+            max-width: 150px; /* Ukuran standar untuk logo */
+            height: auto;
+            margin: 0 auto 20px auto; /* Memusatkan gambar */
+            display: block; /* Mengubah gambar menjadi blok untuk pemusatan */
+        }
+        #countdown {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/logo.png" alt="Logo">
+    <h1>Terima kasih!</h1>
+    <p><h3>Pesan Anda telah berhasil terkirim. Apabila pesan yang Anda kirim memerlukan respon, kami akan segera menghubungi Anda melalui nomor telepon atau email yang telah Anda cantumkan.</h3></p>
+    <div id="countdown">7 detik lagi akan kembali ke Beranda!</div>
+
+    <script>
+        let countdown = 7;
+        const countdownElement = document.getElementById('countdown');
+
+        const interval = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = `${countdown} detik lagi akan kembali ke Beranda!`;
+            if (countdown <= 0) {
+                clearInterval(interval);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

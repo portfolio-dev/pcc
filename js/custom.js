@@ -31,8 +31,12 @@
   })(window.jQuery);
 
 
-// script.js no right click
+// NO COPPY OR DOWNLOAD
 document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
 });
 
+// FORM TINGGALKAN PESAN
+function redirectToSuccessPage() {
+  window.location.href = 'sent.html';
+}
