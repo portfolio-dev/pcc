@@ -1,5 +1,5 @@
 
-  (function ($) {
+(function ($) {
   
   "use strict";
 
@@ -39,4 +39,9 @@ document.addEventListener('contextmenu', function(e) {
 // FORM TINGGALKAN PESAN
 function redirectToSuccessPage() {
   window.location.href = 'sent.html';
+}
+
+// FORM DAFTAR ANGGOTA
+function redirectToSuccessPage2() {
+  window.location.href = 'index.html';
 }

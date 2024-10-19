@@ -393,7 +393,7 @@
                         <div class="col-lg-12 col-12 text-center mb-4">
                             <h2>Kampanye Kami</h2>
                         </div>
-
+                        
                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                             <div class="custom-block-wrap">
                                 <img src="images/causes/jumat-berkah-pcc.jpg" class="custom-block-image img-fluid" alt="">
@@ -458,37 +458,43 @@
                             </div>
                         </div>
 
-                        <!-- <div class="col-lg-4 col-md-6 col-12">
+                        <div class="col-lg-4 col-md-6 col-12">
                             <div class="custom-block-wrap">
-                                <img src="images/causes/african-woman-pouring-water-recipient-outdoors.jpg" class="custom-block-image img-fluid" alt="">
+                                <img src="images/causes/hospital-visit-soloraya.png" class="custom-block-image img-fluid" alt="">
 
                                 <div class="custom-block">
                                     <div class="custom-block-body">
-                                        <h5 class="mb-3">Supply drinking water</h5>
+                                        <h5 class="mb-3">Hospital Visit & Charity RS Moewardi - Solo</h5>
 
-                                        <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus</p>
+                                        <p> 
+                                            Pejuang Cipto Community, berkolaborasi dengan Social Charity Solo, akan mengadakan Hospital Visit & Charity untuk anak-anak dengan Penyakit Jantung Bawaan. Kegiatan ini bertujuan memberikan sosialisasi, edukasi, hiburan, dan dukungan moral. <br><br>Acara akan dilaksanakan di RSUD Dr. Moewardi
+                                            <br>- Hari/Tanggal: Selasa, 12 Nov 2024 
+                                            <br>- Waktu: 09.00 WIB hingga selesai 
+                                            <br>- Tempat: Aula Sidomukti Poli Anak 
+                                            <br>- Peserta: 50 pasien anak.
+                                        </p>
 
                                         <div class="progress mt-4">
-                                            <div class="progress-bar w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar w-0" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
 
                                         <div class="d-flex align-items-center my-2">
                                             <p class="mb-0">
-                                                <strong>Raised:</strong>
-                                                $84,600
+                                                <strong>Terkumpul:</strong><br>
+                                                Rp 0
                                             </p>
 
                                             <p class="ms-auto mb-0">
-                                                <strong>Goal:</strong>
-                                                $100,000
+                                                <strong>Target:</strong><br>
+                                                Rp 9.000.000
                                             </p>
                                         </div>
                                     </div>
 
-                                    <a href="donate.html" class="custom-btn btn">Donate now</a>
+                                    <a href="donate.html" class="custom-btn btn">Donasi</a>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>                        
 
                     </div>
                 </div>
@@ -500,42 +506,49 @@
 
                         <div class="col-lg-6 col-12">
                             <h2 class="text-white mb-4">Anggota Komunitas</h2>
-
-                            <form class="custom-form volunteer-form mb-5 mb-lg-0" action="#" method="post" role="form">
+                        
+                            <form id="volunteer-form" class="custom-form volunteer-form mb-5 mb-lg-0" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeAm1PulrOQTL6tXr-tUHnnfhRaavB-FGcdT5BWsX4HvkBmJQ/formResponse" method="post" target="hidden_iframe" onsubmit="return submitForm();">
                                 <h3 class="mb-4">Daftar Menjadi Anggota Komunitas</h3>
-
+                        
                                 <div class="row">
                                     <div class="col-lg-6 col-12">
-                                        <input type="text" name="parent-name" id="parent-name" class="form-control" placeholder="Nama Orang Tua" required>
+                                        <input type="text" name="entry.467277967" id="parent-name" class="form-control" placeholder="Nama Orang Tua" required>
+                                    </div>
+                        
+                                    <div class="col-lg-6 col-12">
+                                        <input type="text" name="entry.1340319249" id="patient-name" class="form-control" placeholder="Nama Pasien Anak" required>
                                     </div>
 
+                                    <div class="col-lg-6 col-12">
+                                        <input type="text" name="entry.1302818554" id="pjb-name" class="form-control" placeholder="Jenis PJB" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-12">
+                                        <input type="text" name="entry.1351109984" id="last-action" class="form-control" placeholder="Tahap Pengobatan" required>
+                                    </div>
+                        
                                     <div class="col-lg-6 col-12">    
-                                        <input type="email" name="parent-email" id="parent-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Alamat Email" required>
-                                    </div>
-
+                                        <input type="email" name="entry.214703766" id="parent-email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" class="form-control" placeholder="Alamat Email" required>
+                                    </div>                                    
+                        
                                     <div class="col-lg-6 col-12">
-                                        <input type="text" name="patient-name" id="patient-name" pattern="counter-number" class="form-control" placeholder="Nama Pasien Anak" required>
+                                        <input type="text" name="entry.223919380" id="parent-telepon" class="form-control" placeholder="Nomor Telepon" required pattern="\d*" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                     </div>
-
-                                    <div class="col-lg-6 col-12">
-                                        <input type="text" name="parent-telepon" id="parent-subject" class="form-control" placeholder="Nomor Telepon" required>
-                                    </div>
-
-                                    <div class="col-lg-6 col-12">
+                        
+                                    <!-- <div class="col-lg-6 col-12">
                                         <div class="input-group input-group-file">
                                             <input type="file" class="form-control" id="inputGroupFile02">
-                                            
-                                            <label class="input-group-text" for="inputGroupFile02">Upload Resum Medis</label>
-
+                                            <label class="input-group-text" for="inputGroupFile02">Unggah Resum Medis</label>
                                             <i class="bi-cloud-arrow-up ms-auto"></i>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
 
-                                <textarea name="volunteer-message" rows="3" class="form-control" id="volunteer-message" placeholder="Jenis Penyakit Jantung Bawaan (Optional)"></textarea>
-
+                                <textarea name="entry.225683678" rows="3" class="form-control" id="volunteer-message" placeholder="Alamat Lengkap"></textarea>
+                        
                                 <button type="submit" class="form-control">Daftar</button>
                             </form>
+                            <iframe name="hidden_iframe" style="display:none;" onload="redirectToSuccessPage2();"></iframe>
                         </div>
 
                         <div class="col-lg-6 col-12">
