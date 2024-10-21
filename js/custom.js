@@ -36,12 +36,8 @@ document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
 });
 
-// FORM TINGGALKAN PESAN
+// FORM 
 function redirectToSuccessPage() {
   window.location.href = 'sent.html';
 }
 
-// FORM DAFTAR ANGGOTA
-function redirectToSuccessPage2() {
-  window.location.href = 'index.html';
-}
