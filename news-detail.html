@@ -322,15 +322,16 @@
                                 </a>
                             </div>
 
-                            <form class="custom-form subscribe-form" action="#" method="get" role="form">
+                            <form class="custom-form subscribe-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdkucvMNdba63NHwRSQreUMpiQAPQX0WW2CDDR8FUwQ7UhC5w/formResponse" method="post" target="hidden_iframe" onsubmit="return submitForm();">
                                 <h5 class="mb-4">Menerima Berita Terbaru</h5>
 
-                                <input type="email" name="subscribe-email" id="subscribe-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Alamat Email" required>
+                                <input type="email" name="entry.465733949" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" class="form-control" placeholder="Alamat Email" required>
 
                                 <div class="col-lg-12 col-12">
                                     <button type="submit" class="form-control">Berlangganan</button>
-                                </div>
+                                </div>                                
                             </form>
+                            <iframe name="hidden_iframe" style="display:none;" onload="redirectToSuccessPage();"></iframe>
                         </div>
 
                     </div>

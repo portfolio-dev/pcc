@@ -40,4 +40,3 @@ document.addEventListener('contextmenu', function(e) {
 function redirectToSuccessPage() {
   window.location.href = 'sent.html';
 }
-
