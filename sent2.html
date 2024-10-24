@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+        }
+
+        .loading {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% { content: "loading"; }
+            20% { content: "loading."; }
+            40% { content: "loading.."; }
+            60% { content: "loading..."; }
+            80% { content: "loading.."; }
+            100% { content: "loading."; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">loading</div>
+    <script>
+        let loadingText = document.querySelector('.loading');
+        let dots = 0;
+
+        setInterval(() => {
+            dots = (dots + 1) % 4; // Menghitung jumlah titik
+            loadingText.textContent = 'loading' + '.'.repeat(dots);
+        }, 500);
+    </script>
+</body>
+</html>
