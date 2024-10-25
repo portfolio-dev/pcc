@@ -106,9 +106,7 @@ function submitConfirmation() {
 
 //COPY REKENING
 function copyToClipboard(text) {
-  navigator.clipboard.writeText(text).then(() => {
-      alert("Nomor rekening telah disalin: " + text);
-  }).catch(err => {
+  navigator.clipboard.writeText(text).catch(err => {
       console.error("Gagal menyalin: ", err);
   });
 }
