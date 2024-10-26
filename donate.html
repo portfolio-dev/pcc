@@ -210,12 +210,16 @@
                                         <h5 class="mt-1">Informasi Donatur</h5>
                                     </div>
                         
-                                    <div class="col-lg-6 col-12 mt-2">
+                                    <div class="col-lg-12 col-12">
                                         <input type="text" name="donation-name" id="donation-name" class="form-control" placeholder="Nama" required>
                                     </div>
                         
                                     <div class="col-lg-6 col-12 mt-2">
-                                        <input type="email" name="donation-email" id="donation-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email / No. Whatsapp" required>
+                                        <input type="email" name="donation-email" id="donation-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-12 mt-2">
+                                        <input type="text" name="donation-wa" id="donation-wa" pattern="\d*" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" placeholder="No. Whatsapp" required>
                                     </div>
                         
                                     <div class="col-lg-12 col-12">
@@ -242,8 +246,12 @@
                                             <td style="padding: 8px; border: none;">: <span id="donorName"></span></td>
                                         </tr>
                                         <tr>
-                                            <td style="padding: 8px; border: none;">Email/No Whatsapp</td>
+                                            <td style="padding: 8px; border: none;">Email</td>
                                             <td style="padding: 8px; border: none;">: <span id="donorEmail"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: none;">No. Whatsapp</td>
+                                            <td style="padding: 8px; border: none;">: <span id="donorWA"></span></td>
                                         </tr>
                                         <tr style="border-top: 1px solid rgb(198, 195, 195);">
                                             <td style="padding: 8px; border: none;">Metode Pembayaran </td>
