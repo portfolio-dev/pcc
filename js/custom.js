@@ -74,6 +74,10 @@ function togglePaymentMethod(method) {
 }
 
 function showConfirmation() {
+  // Reset pesan kesalahan sebelumnya
+  const errorMessageContainer = document.getElementById('errorMessages');
+  errorMessageContainer.innerHTML = '';
+
   const donorName = document.getElementById('donation-name').value;
   const donorEmail = document.getElementById('donation-email').value;
   const donorWA = document.getElementById('donation-wa').value;
@@ -81,33 +85,32 @@ function showConfirmation() {
 
   // Validasi nominal
   if (nominalInput === '0' || nominalInput.trim() === '') {
-    alert("Tentukan Nominal tidak boleh 0 atau kosong!");
-    return; // Hentikan eksekusi jika nominal 0
+      errorMessageContainer.innerHTML += "Tentukan Nominal tidak boleh 0 atau kosong!<br>";
   }
 
   // Validasi: cek apakah nama, email, dan nomor WhatsApp diisi
   let message = '';
 
-  if (!donorName) message += "Nama harus diisi!\n";
-  if (!donorEmail) message += "Email harus diisi!\n";
-  if (!donorWA) message += "No. Whatsapp harus diisi!\n";
+  if (!donorName) message += "Nama harus diisi!<br>";
+  if (!donorEmail) message += "Email harus diisi!<br>";
+  if (!donorWA) message += "No. Whatsapp harus diisi!<br>";
 
   // Validasi format email
   const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
   if (donorEmail && !emailPattern.test(donorEmail)) {
-      message += "Format email tidak valid!\n";
+      message += "Format email tidak valid!<br>";
   }
 
   // Tampilkan alert jika ada pesan kesalahan
   if (message) {
-      alert(message);
+      errorMessageContainer.innerHTML += message;
       return; // Hentikan eksekusi jika ada yang kosong atau tidak valid
   }
 
   const donationSection = document.getElementById('donationSection');
   const confirmationSection = document.getElementById('confirmationSection');
   const donationTitle = document.getElementById('donationTitle');
-  
+
   donationSection.style.display = 'none';
   confirmationSection.style.display = 'block';
   donationTitle.style.display = 'none';
@@ -140,6 +143,10 @@ function copyToClipboard(text) {
 }
 
 function submitConfirmation() {
+  // Reset pesan kesalahan sebelumnya
+  const errorMessageContainer = document.getElementById('errorMessages');
+  errorMessageContainer.innerHTML = '';
+
   const donorName = document.getElementById('donation-name').value;
   const donorEmail = document.getElementById('donation-email').value;
   const donorWA = document.getElementById('donation-wa').value;
@@ -147,12 +154,14 @@ function submitConfirmation() {
 
   // Validasi yang sama seperti sebelumnya
   if (nominalInput === '0' || nominalInput.trim() === '') {
-      alert("Tentukan Nominal tidak boleh 0 atau kosong!");
-      return;
+      errorMessageContainer.innerHTML += "Tentukan Nominal tidak boleh 0 atau kosong!<br>";
   }
 
   // Mendapatkan metode pembayaran yang dipilih
   const paymentMethod = document.querySelector('input[name="DonationPayment"]:checked').value;
+  
+  // Menangkap jenis donasi
+  const donationType = document.querySelector('input[name="DonationFrequency"]:checked').value;
 
   // Ganti dengan URL Google Form Anda
   const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdWgAvNnLUIMKSvoK1L735tYoulkOaQwyTU8zKkRtTYIEafNA/formResponse';
@@ -164,6 +173,7 @@ function submitConfirmation() {
   params.append('entry.960053065', donorWA); // ID entry untuk WA
   params.append('entry.544155490', nominalInput); // ID entry untuk nominal
   params.append('entry.263432093', paymentMethod); // ID entry untuk metode pembayaran
+  params.append('entry.1864038115', donationType); // ID entry untuk jenis donasi
 
   // Mengirim data menggunakan fetch
   fetch(googleFormURL, {
@@ -172,11 +182,11 @@ function submitConfirmation() {
       headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
       }
-  })
+  });
 
   setTimeout(() => {
       window.location.href = 'index.html'; // Arahkan ke index.html setelah beberapa detik
-  }, 1000); // Waktu tunggu dalam milidetik (misalnya, 2000 = 2 detik)
+  }, 1000); // Waktu tunggu dalam milidetik (misalnya, 1000 = 1 detik)
 
   return true; // Izinkan pengiriman form
 }
