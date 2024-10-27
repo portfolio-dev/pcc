@@ -217,6 +217,11 @@ function upload() {
   // Simulasikan proses unggah
   setTimeout(() => {
       document.getElementById('loading').style.display = 'none'; // Sembunyikan gambar loading setelah 2 detik
-      alert('Terjadi kesalahan saat mengunggah file!'); // Ganti ini dengan logika unggah Anda
+      alert('Terjadi kesalahan saat mengunggah file! Anda akan dialihkan ke halaman GoogleForms untuk mengunggah Bukti Transfer Anda. Mohon maaf atas ketidaknyamanan ini & terima kasih.'); // Ganti ini dengan logika unggah Anda
   }, 2000);
+
+  setTimeout(() => {
+    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdyxLaJ9MUj3tRiBGPDcS5hR7ldlmXPC-Bnt7TEnTfTsHZD_Q/viewform'; // Arahkan ke index.html setelah beberapa detik
+  }, 10000);
+  
 }
