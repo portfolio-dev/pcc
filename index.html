@@ -13,7 +13,7 @@
         <!-- CSS FILES -->        
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-icons.css" rel="stylesheet">
-        <link href="css/templatemo-kind-heart-charity.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
 
 
     </head>
@@ -44,13 +44,6 @@
 
                     <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
                         <ul class="social-icon">
-                            <!-- <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-twitter"></a>
-                            </li> -->
-
-                            <!-- <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-youtube"></a>
-                            </li> -->
 
                             <li class="social-icon-item">
                                 <a href="https://www.facebook.com/groups/1718067871661514" class="social-icon-link bi-facebook" target="_blank"></a>
@@ -138,7 +131,7 @@
                                         <img src="images/slide/Flyer HV JHC.png" class="carousel-image img-fluid" alt="...">
                                         
                                         <div class="carousel-caption d-flex flex-column justify-content-end">
-                                            <h1>Hospital<br>Visit & Charity</h1>
+                                            <h2>Hospital<br>Visit & Charity</h2>
                                             
                                             <p>Berkunjung & Berbagi ke RS JHC</p>
                                         </div>
@@ -148,7 +141,7 @@
                                         <img src="images/slide/Flyer HV Soloraya.png" class="carousel-image img-fluid" alt="...">
                                         
                                         <div class="carousel-caption d-flex flex-column justify-content-end">
-                                            <h1>Hospital<br>Visit & Charity</h1>
+                                            <h2>Hospital<br>Visit & Charity</h2>
                                             
                                             <p>Berkunjung & Berbagi ke RS Moewardi Solo</p>
                                         </div>
@@ -158,7 +151,7 @@
                                         <img src="images/slide/volunteer-selecting-organizing-clothes-donations-charity.jpg" class="carousel-image img-fluid" alt="...">
                                         
                                         <div class="carousel-caption d-flex flex-column justify-content-end">
-                                            <h1>CHD<br>Awareness<br>Week 2023</h1>
+                                            <h2>CHD<br>Awareness<br>Week 2023</h2>
                                             
                                             <p>Hari penyakit jantung bawaan<br>yang selalu diperingati setiap tanggal 7 - 14 Februari</p>
                                         </div>
@@ -168,7 +161,7 @@
                                         <img src="images/slide/medium-shot-people-collecting-donations.jpg" class="carousel-image img-fluid" alt="...">
                                         
                                         <div class="carousel-caption d-flex flex-column justify-content-end">
-                                            <h1>World<br>Heart Day 2023</h1>
+                                            <h2>World<br>Heart Day 2023</h2>
                                             
                                             <p>Hari jantung sedunia yang selalu diperingati <br>setiap bulan Desember</p>
                                         </div>
@@ -664,13 +657,24 @@
                         </div>
 
                         <div class="col-lg-4 col-12 mx-auto">
-                            <form class="custom-form search-form" action="#" method="get" role="form">
+                            <!-- <form class="custom-form search-form" action="#" method="get" role="form">
                                 <input name="search" type="search" class="form-control" id="search" placeholder="Cari" aria-label="Search">
 
                                 <button type="submit" class="form-control">
                                     <i class="bi-search"></i>
                                 </button>
+                            </form> -->
+
+                            <form class="custom-form subscribe-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdkucvMNdba63NHwRSQreUMpiQAPQX0WW2CDDR8FUwQ7UhC5w/formResponse" method="post" target="hidden_iframe" onsubmit="return submitForm();">
+                                <h5 class="mb-4">Menerima Berita Terbaru</h5>
+
+                                <input type="email" name="entry.465733949" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" class="form-control" placeholder="Alamat Email" required>
+
+                                <div class="col-lg-12 col-12">
+                                    <button type="submit" class="form-control">Berlangganan</button>
+                                </div>                                
                             </form>
+                            <iframe name="hidden_iframe" style="display:none;" onload="redirectToSuccessPage();"></iframe>
 
                             <h5 class="mt-5 mb-3">Berita Sebelumnya</h5>
 
@@ -736,7 +740,7 @@
 
                             </div>
 
-                            <div class="tags-block">
+                            <!-- <div class="tags-block">
                                 <h5 class="mb-3">Tag Pilihan</h5>
 
                                 <a href="#" class="tags-block-link">
@@ -750,18 +754,9 @@
                                 <a href="#" class="tags-block-link">
                                     Donasi
                                 </a>
-                            </div>
+                            </div> -->
 
-                            <form class="custom-form subscribe-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdkucvMNdba63NHwRSQreUMpiQAPQX0WW2CDDR8FUwQ7UhC5w/formResponse" method="post" target="hidden_iframe" onsubmit="return submitForm();">
-                                <h5 class="mb-4">Menerima Berita Terbaru</h5>
-
-                                <input type="email" name="entry.465733949" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" class="form-control" placeholder="Alamat Email" required>
-
-                                <div class="col-lg-12 col-12">
-                                    <button type="submit" class="form-control">Berlangganan</button>
-                                </div>                                
-                            </form>
-                            <iframe name="hidden_iframe" style="display:none;" onload="redirectToSuccessPage();"></iframe>
+                            
                         </div>
 
                     </div>

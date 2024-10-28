@@ -78,6 +78,20 @@ function togglePaymentMethod(method) {
     }
 }
 
+function togglePaymentMethod(paymentType) {
+  // Tampilkan informasi yang sesuai dengan metode pembayaran yang dipilih
+  document.getElementById('transferInfo').style.display = paymentType === 'Transfer' ? 'block' : 'none';
+  document.getElementById('qrisImage').style.display = paymentType === 'QRIS' ? 'block' : 'none';
+  
+  // Ubah teks tombol sesuai dengan metode pembayaran
+  const confirmButton = document.getElementById('confirmButton');
+  if (paymentType === 'Transfer') {
+      confirmButton.textContent = 'Sudah Bayar via Transfer';
+  } else if (paymentType === 'QRIS') {
+      confirmButton.textContent = 'Sudah Bayar via QRIS';
+  }
+}
+
 function showConfirmation() {
   // Reset pesan kesalahan sebelumnya
   const errorMessageContainer = document.getElementById('errorMessages');
