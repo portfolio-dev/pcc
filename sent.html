@@ -25,12 +25,24 @@
             font-size: 20px;
             margin-top: 20px;
         }
+        .loading {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% { content: "loading"; }
+            20% { content: "loading."; }
+            40% { content: "loading.."; }
+            60% { content: "loading..."; }
+            80% { content: "loading.."; }
+            100% { content: "loading."; }
+        }
     </style>
 </head>
 <body>
     <img src="images/logo.png" alt="Logo">
     <h1>Terima kasih!</h1>
-    <p><h3>Kami akan segera memeriksanya.</h3></p>
+    <div class="loading">loading</div>
     <div id="countdown">5 detik lagi akan kembali ke <span style="color: red; font-weight: bold;">Beranda</span>!</div>
 
     <script>
@@ -38,12 +50,21 @@
         const countdownElement = document.getElementById('countdown');
 
         const interval = setInterval(() => {
-    countdown--;
-    countdownElement.innerHTML = `${countdown} detik lagi akan kembali ke <span style="color: red; font-weight: bold;">Beranda</span>!`;
-    if (countdown <= 0) {
-        clearInterval(interval);
-    }
-}, 1000);
+        countdown--;
+        countdownElement.innerHTML = `${countdown} detik lagi akan kembali ke <span style="color: red; font-weight: bold;">Beranda</span>!`;
+        if (countdown <= 0) {
+            clearInterval(interval);
+        }
+        }, 1000);
+
+        //loading
+        let loadingText = document.querySelector('.loading');
+        let dots = 0;
+
+        setInterval(() => {
+            dots = (dots + 1) % 4; // Menghitung jumlah titik
+            loadingText.textContent = 'loading' + '.'.repeat(dots);
+        }, 500);
     </script>
 </body>
 </html>
