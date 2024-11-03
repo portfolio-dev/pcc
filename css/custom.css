@@ -751,7 +751,7 @@ strong {
   DONATE              
 -----------------------------------------*/
 .donate-section {
-  background-image: url('../images/together-ragunan.JPG');
+  background-image: url('../images/logo.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -922,6 +922,18 @@ blockquote::before {
   margin: auto;
   width: 150px;
   height: 150px;
+}
+
+.video-container {
+  width: 100%; /* Mengambil lebar penuh dari elemen parent */
+  padding: 20px; /* Padding di sekitar video */
+  box-sizing: border-box; /* Menghitung padding dalam lebar total */
+}
+
+video {
+  width: 100%; /* Video mengisi lebar kontainer */
+  height: auto; /* Tinggi otomatis menjaga aspek rasio */
+  max-width: 100%; /* Menjaga lebar maksimum */
 }
 
 
@@ -1572,6 +1584,13 @@ blockquote::before {
     margin-bottom: 10px;
   }
 }
+
+@media (max-width: 600px) {
+  .video-container {
+      padding: 10px; /* Padding lebih kecil di perangkat kecil */
+  }
+}
+
 
 @media screen and (max-width: 580px) {
   .hero-section-full-height,
