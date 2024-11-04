@@ -236,6 +236,6 @@ function upload() {
 
   setTimeout(() => {
     window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdyxLaJ9MUj3tRiBGPDcS5hR7ldlmXPC-Bnt7TEnTfTsHZD_Q/viewform'; // Arahkan ke index.html setelah beberapa detik
-  }, 10000);  
+  }, 5000);  
 }
 
