@@ -151,7 +151,7 @@ function showConfirmation() {
 }
 
 function goBack() {
-    window.location.href = 'donate.html';
+    window.location.href = 'index.html#section_program';
 }
 
 //COPY REKENING
@@ -199,16 +199,16 @@ function submitConfirmation() {
   const donationType = document.querySelector('input[name="DonationFrequency"]:checked').value;
 
   // URL Google Form
-  const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSe3cZAkPOF7xsjECb4KlkScB5T8Ol9O2uui-6c2vlc-hupj-A/formResponse';
+  const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSetZq-Q-6W6oAn4yGgYios1RpLhKoigYtV7_Jbv7Zz-tUXijw/formResponse';
 
   // Parameter untuk dikirim
   const params = new URLSearchParams();
-  params.append('entry.791086601', donorName); // ID entry untuk nama
-  params.append('entry.476728515', donorEmail); // ID entry untuk email
-  params.append('entry.960053065', donorWA); // ID entry untuk WA
-  params.append('entry.544155490', nominalInput); // ID entry untuk nominal (tanpa titik)
-  params.append('entry.263432093', paymentMethod); // ID entry untuk metode pembayaran
-  params.append('entry.1864038115', donationType); // ID entry untuk jenis donasi
+  params.append('entry.1274723429', donorName); // ID entry untuk nama
+  params.append('entry.1711964533', donorEmail); // ID entry untuk email
+  params.append('entry.1479109352', donorWA); // ID entry untuk WA
+  params.append('entry.476379432', nominalInput); // ID entry untuk nominal (tanpa titik)
+  params.append('entry.1082800990', paymentMethod); // ID entry untuk metode pembayaran
+  params.append('entry.573797881', donationType); // ID entry untuk jenis donasi
 
   // Mengirim data menggunakan fetch
   fetch(googleFormURL, {
