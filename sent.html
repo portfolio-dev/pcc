@@ -48,6 +48,10 @@
     <div id="countdown">7 detik lagi akan kembali ke <span style="color: red; font-weight: bold;">Beranda</span>!</div>
 
     <script>
+         if (window.location.pathname === '/sent.html') {
+        window.history.replaceState({}, '', '/sent');
+        }
+
         let countdown = 7;
         const countdownElement = document.getElementById('countdown');
         const loadingText = document.querySelector('.loading');

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Pendaftaran Peserta Hospital Visit & Charity Solo 2024" />
+    <meta property="og:description" content="Pejung Cipto Community, Chapter Solo Raya menggundang Anda yang sedang kontrol di rumah sakit RS Moewardi pada tanggal 12 November 2024 untuk mengikuti acara Hospital Visit & Charity bersama komunitas Pejuang Cipto Community." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/portfolio-dev/pcc/refs/heads/main/images/news/flyer-2-hvc-solo-2024.png" />
+    <meta property="og:url" content="https://pejuangcipto.online/registrasi-peserta-hvc-solo" />
+
+
+    <title>Pejuang Cipto Community</title>
+    <script type="text/javascript">
+        
+        if (window.location.pathname === '/registrasi-peserta-hvc-solo') {
+            window.location.href = '/registrasi-peserta-hvc-solo.html';
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

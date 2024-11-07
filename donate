@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Donasi untuk kebaikan"/>
+    <meta property="og:description" content="Mari dukung langkah kebaikan komunitas Pejuang Cipto Community agar dapat terus bermanfaat bagi para orang tua dengan anak yang memiliki jantung spesial." />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="https://pejuangcipto.online/donate" />
+
+
+    <title>Pejuang Cipto Community</title>
+    <script type="text/javascript">
+        
+        if (window.location.pathname === '/donate') {
+            window.location.href = '/donate.html';
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
