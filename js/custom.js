@@ -37,16 +37,6 @@ document.addEventListener('contextmenu', function(e) {
 });
 
 // FORM 
-function submitForm() {
-    // Mengirim form dengan menambahkan logika khusus
-    var iframe = document.getElementsByName('hidden_iframe')[0];
-    iframe.onload = function () {
-        redirectToSuccessPage();
-    };
-    return true; // Biarkan form tetap dikirim
-}
-
-// Fungsi pengalihan setelah form terkirim
 function redirectToSuccessPage() {
     // Redirect ke halaman sukses
     window.location.href = 'sent.html';
