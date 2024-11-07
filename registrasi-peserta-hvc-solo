@@ -9,13 +9,12 @@
     <meta property="og:image" content="https://raw.githubusercontent.com/portfolio-dev/pcc/refs/heads/main/images/news/flyer-2-hvc-solo-2024.png" />
     <meta property="og:url" content="https://pejuangcipto.online/registrasi-peserta-hvc-solo" />
 
+    <meta http-equiv="refresh" content="0; url=registrasi-peserta-hvc-solo.html">
+
 
     <title>Pejuang Cipto Community</title>
     <script type="text/javascript">
-        
-        if (window.location.pathname === '/registrasi-peserta-hvc-solo') {
-            window.location.href = '/registrasi-peserta-hvc-solo.html';
-        }
+        window.location.href = '/registrasi-peserta-hvc-solo.html';
     </script>
 </head>
 <body>
