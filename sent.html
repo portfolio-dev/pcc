@@ -47,26 +47,35 @@
     <div class="loading">sedang mengirim</div>
     <div id="countdown">7 detik lagi akan kembali ke <span style="color: red; font-weight: bold;">Beranda</span>!</div>
 
-
     <script>
         let countdown = 7;
         const countdownElement = document.getElementById('countdown');
-
-        const interval = setInterval(() => {
-        countdown--;
-        countdownElement.innerHTML = `${countdown} detik lagi akan kembali ke <span style="color: red; font-weight: bold;">Beranda</span>!`;
-        if (countdown <= 0) {
-            clearInterval(interval);
-        }
-        }, 1000);
-
-        //loading
-        let loadingText = document.querySelector('.loading');
+        const loadingText = document.querySelector('.loading');
+        const loadingImage = document.getElementById('loading');
         let dots = 0;
 
-        setInterval(() => {
-            dots = (dots + 1) % 4; // Menghitung jumlah titik
-            loadingText.textContent = 'sedang mengirim' + '.'.repeat(dots);
+        const interval = setInterval(() => {
+            countdown--;
+            countdownElement.innerHTML = `${countdown} detik lagi akan kembali ke <span style="color: red; font-weight: bold;">Beranda</span>!`;
+
+            // Mengubah teks dan gambar saat countdown mencapai 3 detik
+            if (countdown === 3) {
+                loadingText.textContent = "Berhasil Terkirim!";
+                loadingImage.src = "https://raw.githubusercontent.com/portfolio-dev/pcc/refs/heads/main/images/sent-done.png"; // Gambar centang
+                clearInterval(loadingInterval);  // Berhentikan animasi titik
+            }
+
+            if (countdown <= 0) {
+                clearInterval(interval);
+            }
+        }, 1000);
+
+        // Animasi titik pada loading
+        let loadingInterval = setInterval(() => {
+            if (countdown > 3) {
+                dots = (dots + 1) % 4; // Menghitung jumlah titik
+                loadingText.textContent = 'sedang mengirim' + '.'.repeat(dots);
+            }
         }, 500);
     </script>
 </body>
