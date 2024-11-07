@@ -43,8 +43,10 @@
     <img src="images/logo.png" alt="Logo">
     <h1>Terima kasih!</h1>
     <h3>Kami akan segera menghunggi Anda.</h3>
+    <img id="loading" src="https://github.com/portfolio-dev/pcc/blob/main/images/loading.gif?raw=true" style="height: 50px; width: 50px;">
     <div class="loading">sedang mengirim</div>
     <div id="countdown">7 detik lagi akan kembali ke <span style="color: red; font-weight: bold;">Beranda</span>!</div>
+
 
     <script>
         let countdown = 7;
@@ -64,7 +66,7 @@
 
         setInterval(() => {
             dots = (dots + 1) % 4; // Menghitung jumlah titik
-            loadingText.textContent = 'loading' + '.'.repeat(dots);
+            loadingText.textContent = 'sedang mengirim' + '.'.repeat(dots);
         }, 500);
     </script>
 </body>
