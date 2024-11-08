@@ -37,6 +37,16 @@ document.addEventListener('contextmenu', function(e) {
 });
 
 // FORM 
+function submitForm() {
+    // Mengirim form dengan menambahkan logika khusus
+    var iframe = document.getElementsByName('hidden_iframe')[0];
+    iframe.onload = function () {
+        redirectToSuccessPage();
+    };
+    return true; // Biarkan form tetap dikirim
+}
+
+// Fungsi pengalihan setelah form terkirim
 function redirectToSuccessPage() {
     // Redirect ke halaman sukses
     window.location.href = 'sent.html';
@@ -239,4 +249,21 @@ function upload() {
     window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdyxLaJ9MUj3tRiBGPDcS5hR7ldlmXPC-Bnt7TEnTfTsHZD_Q/viewform'; // Arahkan ke index.html setelah beberapa detik
   }, 5000);  
 }
+
+//DELETE .html
+// Cek apakah URL mengandung ekstensi .html
+if (window.location.pathname.endsWith('.html')) {
+  // Simpan hash jika ada (misalnya #section1)
+  var hash = window.location.hash;
+  
+  // Menghapus ekstensi .html dari URL
+  var newUrl = window.location.pathname.replace('.html', '');
+  
+  // Gabungkan URL baru dengan hash yang ada (jika ada)
+  newUrl += hash;
+  
+  // Gunakan replaceState untuk mengubah URL tanpa memuat ulang halaman
+  window.history.replaceState(null, '', newUrl);
+}
+
 
