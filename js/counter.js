@@ -87,3 +87,19 @@
 		return value.toFixed(settings.decimals);
 	}
 }(jQuery));
+
+//DELETE .html
+// Cek apakah URL mengandung ekstensi .html
+if (window.location.pathname.endsWith('.html')) {
+	// Simpan hash jika ada (misalnya #section1)
+	var hash = window.location.hash;
+	
+	// Menghapus ekstensi .html dari URL
+	var newUrl = window.location.pathname.replace('.html', '');
+	
+	// Gabungkan URL baru dengan hash yang ada (jika ada)
+	newUrl += hash;
+	
+	// Gunakan replaceState untuk mengubah URL tanpa memuat ulang halaman
+	window.history.replaceState(null, '', newUrl);
+  }
