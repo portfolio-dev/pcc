@@ -103,3 +103,9 @@ if (window.location.pathname.endsWith('.html')) {
 	// Gunakan replaceState untuk mengubah URL tanpa memuat ulang halaman
 	window.history.replaceState(null, '', newUrl);
   }
+
+//PRINT NEWS PAGE
+document.getElementById('printButton').addEventListener('click', function(e) {
+    e.preventDefault();  // Mencegah link default (navigasi)
+    window.print();      // Menjalankan fungsi print
+});
