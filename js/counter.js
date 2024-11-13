@@ -89,23 +89,15 @@
 }(jQuery));
 
 //DELETE .html
-// Cek apakah URL mengandung ekstensi .html
 if (window.location.pathname.endsWith('.html')) {
-	// Simpan hash jika ada (misalnya #section1)
 	var hash = window.location.hash;
-	
-	// Menghapus ekstensi .html dari URL
 	var newUrl = window.location.pathname.replace('.html', '');
-	
-	// Gabungkan URL baru dengan hash yang ada (jika ada)
 	newUrl += hash;
-	
-	// Gunakan replaceState untuk mengubah URL tanpa memuat ulang halaman
 	window.history.replaceState(null, '', newUrl);
   }
 
 //PRINT NEWS PAGE
 document.getElementById('printButton').addEventListener('click', function(e) {
-    e.preventDefault();  // Mencegah link default (navigasi)
-    window.print();      // Menjalankan fungsi print
+    e.preventDefault();  
+    window.print();      
 });

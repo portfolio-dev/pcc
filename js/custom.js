@@ -38,17 +38,14 @@ document.addEventListener('contextmenu', function(e) {
 
 // FORM 
 function submitForm() {
-    // Mengirim form dengan menambahkan logika khusus
     var iframe = document.getElementsByName('hidden_iframe')[0];
     iframe.onload = function () {
         redirectToSuccessPage();
     };
-    return true; // Biarkan form tetap dikirim
+    return true; 
 }
 
-// Fungsi pengalihan setelah form terkirim
 function redirectToSuccessPage() {
-    // Redirect ke halaman sukses
     window.location.href = 'sent.html';
 }
 
@@ -71,7 +68,7 @@ function updateNominal(selectedRadio) {
   }
 }
 
-// Fungsi untuk memformat angka dengan titik sebagai pemisah ribuan
+// TENTUKAN NOMINAL
 function formatNumber(num) {
   return num.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
@@ -90,11 +87,9 @@ function togglePaymentMethod(method) {
 }
 
 function togglePaymentMethod(paymentType) {
-  // Tampilkan informasi yang sesuai dengan metode pembayaran yang dipilih
   document.getElementById('transferInfo').style.display = paymentType === 'Transfer' ? 'block' : 'none';
   document.getElementById('qrisImage').style.display = paymentType === 'QRIS' ? 'block' : 'none';
   
-  // Ubah teks tombol sesuai dengan metode pembayaran
   const confirmButton = document.getElementById('confirmButton');
   if (paymentType === 'Transfer') {
       confirmButton.textContent = 'Sudah Bayar via Transfer';
@@ -104,37 +99,35 @@ function togglePaymentMethod(paymentType) {
 }
 
 function showConfirmation() {
-  // Reset pesan kesalahan sebelumnya
   const errorMessageContainer = document.getElementById('errorMessages');
   errorMessageContainer.innerHTML = '';
 
   const donorName = document.getElementById('donation-name').value;
   const donorEmail = document.getElementById('donation-email').value;
   const donorWA = document.getElementById('donation-wa').value;
-  const nominalInput = document.getElementById('customNominal').value.replace(/\./g, ''); // Menghapus titik untuk validasi
+  const nominalInput = document.getElementById('customNominal').value.replace(/\./g, ''); 
 
-  // Validasi nominal
+  // VALUE VALIDATION
   if (nominalInput === '' || isNaN(nominalInput) || parseInt(nominalInput) <= 0) {
       errorMessageContainer.innerHTML += "<hr>Tentukan Nominal tidak boleh kosong atau 0!<br>";
   }
 
-  // Validasi: cek apakah nama, email, dan nomor WhatsApp diisi
+  // DONATION FORM VALIDATION
   let message = '';
 
   if (!donorName) message += "<hr>Nama harus diisi!<br>";
   if (!donorEmail) message += "<hr>Email harus diisi!<br>";
   if (!donorWA) message += "<hr>Nomor Whatsapp harus diisi!<br>";
 
-  // Validasi format email
+  // EMAIL VALIDATION
   const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
   if (donorEmail && !emailPattern.test(donorEmail)) {
       message += "<hr>Penulisan email salah!<br>";
   }
 
-  // Tampilkan alert jika ada pesan kesalahan
   if (errorMessageContainer.innerHTML || message) {
       errorMessageContainer.innerHTML += message;
-      return; // Hentikan eksekusi jika ada yang kosong atau tidak valid
+      return; 
   }
 
   const donationSection = document.getElementById('donationSection');
@@ -153,7 +146,7 @@ function showConfirmation() {
   };
 
   document.getElementById('donationType').innerText = fields.donationType;
-  document.getElementById('donationAmountDisplay').innerText = formatNumber(fields.donationAmount); // Format angka sebelum ditampilkan
+  document.getElementById('donationAmountDisplay').innerText = formatNumber(fields.donationAmount);
   document.getElementById('donorName').innerText = fields.donorName;
   document.getElementById('donorEmail').innerText = fields.donorEmail;
   document.getElementById('donorWA').innerText = donorWA;
@@ -174,20 +167,17 @@ function copyToClipboard(text) {
 
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('customNominal').addEventListener('input', function(e) {
-      // Ambil nilai dari input, hapus karakter non-digit
-      const rawValue = e.target.value.replace(/\D/g, ''); // Hapus karakter non-digit
-      // Format nilai menjadi format dengan titik
+      const rawValue = e.target.value.replace(/\D/g, ''); 
       e.target.value = formatNumber(rawValue);
   });
 });
 
-// Fungsi untuk memformat angka dengan titik sebagai pemisah ribuan
+// FORMAT NUMBER
 function formatNumber(num) {
   return num.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
 function submitConfirmation() {
-  // Reset pesan kesalahan sebelumnya
   const errorMessageContainer = document.getElementById('errorMessages');
   errorMessageContainer.innerHTML = '';
 
@@ -195,33 +185,29 @@ function submitConfirmation() {
   const donorEmail = document.getElementById('donation-email').value;
   const donorWA = document.getElementById('donation-wa').value;
 
-  // Ambil nilai nominal dan hapus titik sebelum pengiriman
   const nominalInput = document.getElementById('customNominal').value.replace(/\./g, '') || lastSelected?.value || '0';
 
-  // Validasi nominal
+  // VALUE VALIDATION
   if (nominalInput === '0' || nominalInput.trim() === '') {
       errorMessageContainer.innerHTML += "Tentukan Nominal tidak boleh 0 atau kosong!<br>";
   }
 
-  // Mendapatkan metode pembayaran yang dipilih
-  const paymentMethod = document.querySelector('input[name="DonationPayment"]:checked').value;
-
-  // Menangkap jenis donasi
+  const paymentMethod = document.querySelector('input[name="DonationPayment"]:checked').value;  
   const donationType = document.querySelector('input[name="DonationFrequency"]:checked').value;
 
-  // URL Google Form
+  // URL GOOGLE FORM
   const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSetZq-Q-6W6oAn4yGgYios1RpLhKoigYtV7_Jbv7Zz-tUXijw/formResponse';
 
-  // Parameter untuk dikirim
+  // PARAMETER
   const params = new URLSearchParams();
-  params.append('entry.1274723429', donorName); // ID entry untuk nama
-  params.append('entry.1711964533', donorEmail); // ID entry untuk email
-  params.append('entry.1479109352', donorWA); // ID entry untuk WA
-  params.append('entry.1705412345', nominalInput); // ID entry untuk nominal (tanpa titik)
-  params.append('entry.1082800990', paymentMethod); // ID entry untuk metode pembayaran
-  params.append('entry.573797881', donationType); // ID entry untuk jenis donasi
+  params.append('entry.1274723429', donorName); // ID ENTRY FOR NAME
+  params.append('entry.1711964533', donorEmail); // ID ENTRI FOR EMAIL
+  params.append('entry.1479109352', donorWA); // ID ENTRY FOR NUMBER OR WHATSAPP
+  params.append('entry.1705412345', nominalInput); // ID ENTRY FOR VALUE
+  params.append('entry.1082800990', paymentMethod); // ID ENTRY FOR PAYMENT
+  params.append('entry.573797881', donationType); // ID ENTRY FOR KIND OF DONATION
  
-  // Mengirim data menggunakan fetch
+  // FETCH SEND
   fetch(googleFormURL, {
       method: 'POST',
       body: params,
@@ -231,22 +217,20 @@ function submitConfirmation() {
   });
 
   setTimeout(() => {
-      window.location.href = 'donate-upload.html'; // Arahkan ke index.html setelah beberapa detik
-  }, 500); // Waktu tunggu dalam milidetik (misalnya, 1000 = 1 detik)
-
-  return true; // Izinkan pengiriman form
+      window.location.href = 'donate-upload.html';
+  }, 500); 
+  return true; 
 }
 
 function upload() {
-  document.getElementById('loading').style.display = 'inline-block'; // Tampilkan gambar loading
-  // Simulasikan proses unggah
+  document.getElementById('loading').style.display = 'inline-block'; 
   setTimeout(() => {
-      document.getElementById('loading').style.display = 'none'; // Sembunyikan gambar loading setelah 2 detik
-      alert('Terjadi kesalahan saat mengunggah file! Anda akan dialihkan ke halaman GoogleForms untuk mengunggah Bukti Transfer Anda. Mohon maaf atas ketidaknyamanan ini & terima kasih.'); // Ganti ini dengan logika unggah Anda
+      document.getElementById('loading').style.display = 'none'; 
+      alert('Terjadi kesalahan saat mengunggah file! Anda akan dialihkan ke halaman GoogleForms untuk mengunggah Bukti Transfer Anda. Mohon maaf atas ketidaknyamanan ini & terima kasih.'); 
   }, 2000);
 
   setTimeout(() => {
-    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdyxLaJ9MUj3tRiBGPDcS5hR7ldlmXPC-Bnt7TEnTfTsHZD_Q/viewform'; // Arahkan ke index.html setelah beberapa detik
+    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdyxLaJ9MUj3tRiBGPDcS5hR7ldlmXPC-Bnt7TEnTfTsHZD_Q/viewform'; 
   }, 5000);  
 }
 
