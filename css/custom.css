@@ -849,6 +849,11 @@ strong {
   padding: 50px;
 }
 
+.countdown {
+  text-align: center;
+  color: #7c7e80;
+}
+
 
 /*---------------------------------------
   NEWS         
