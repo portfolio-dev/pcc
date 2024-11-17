@@ -1,45 +1,67 @@
-// PROGRAM KURSI RODA UNTUK PASIEN ANAK RSCM
-function setTargetDateFromAPI() {
+// Fungsi untuk mengatur dan memulai countdown berdasarkan target waktu yang diinginkan
+function setTargetDateFromAPI(targetId, daysToAdd) {
     fetch('https://worldtimeapi.org/api/timezone/Etc/UTC')
         .then(response => response.json())
         .then(data => {
-            const serverTime = new Date(data.utc_datetime); 
+            const serverTime = new Date(data.utc_datetime);
 
             let targetDate = new Date(serverTime);
-            targetDate.setDate(targetDate.getDate() + 4); 
-            targetDate.setHours(23);
-            targetDate.setMinutes(59);
-            targetDate.setSeconds(59);
+            targetDate.setDate(targetDate.getDate() + daysToAdd);
+            targetDate.setHours(0);
+            targetDate.setMinutes(0);
+            targetDate.setSeconds(0);
 
-            startCountdown(targetDate);
+            localStorage.setItem(targetId, targetDate.getTime());
+            startCountdown(targetId, targetDate);
         })
         .catch(error => {
             console.error("Error fetching server time:", error);
         });
 }
 
-
-function startCountdown(targetDate) {
+// Fungsi untuk memulai countdown dan memperbarui elemen HTML
+function startCountdown(targetId, targetDate) {
     function updateCountdown() {
         var now = new Date();
-        var distance = targetDate - now; 
+        var distance = targetDate - now;
 
         if (distance < 0) {
-            document.getElementById("countdown-kursi-roda").innerHTML = "<b>Sisa Waktu</b><br>0 hari 0 jam 0 menit 0 detik";
-            clearInterval(interval); 
+            document.getElementById(targetId).innerHTML = "<b>Sisa Waktu</b><br>0 hari 0 jam 0 menit 0 detik";
+            clearInterval(interval);
         } else {
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("countdown-kursi-roda").innerHTML =
+            document.getElementById(targetId).innerHTML =
                 "<b>Sisa Waktu</b><br>" + days + " hari " + hours + " jam " + minutes + " menit " + seconds + " detik";
         }
     }
-   
+
     var interval = setInterval(updateCountdown, 1000);
     updateCountdown();
 }
 
-setTargetDateFromAPI();
+// Fungsi untuk memulai countdown untuk masing-masing target
+function initializeCountdowns() {
+    var countdownElements = [
+        { id: "countdown-kursi-roda", daysToAdd: 5 },
+        { id: "countdown-langkah-kebaikan", daysToAdd: 356 },
+        { id: "countdown-operasional-hoh", daysToAdd: 100 }
+    ];
+
+    countdownElements.forEach(function(element) {
+        var targetDate = localStorage.getItem(element.id);
+
+        if (!targetDate) {
+            setTargetDateFromAPI(element.id, element.daysToAdd);
+        } else {
+            targetDate = new Date(parseInt(targetDate));
+            startCountdown(element.id, targetDate);
+        }
+    });
+}
+
+// Panggil fungsi untuk memulai countdown untuk semua elemen
+initializeCountdowns();
