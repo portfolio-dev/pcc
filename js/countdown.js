@@ -23,7 +23,7 @@ function startCountdown(targetId, targetDate) {
         var distance = targetDate - now;
 
         if (distance < 0) {
-            document.getElementById(targetId).innerHTML = "<b>Kampaye Ini Berakhir</b><br>0 hari 0 jam 0 menit 0 detik";
+            document.getElementById(targetId).innerHTML = "<b>Kampaye Ini Selesai</b><br>0 hari 0 jam 0 menit 0 detik";
             clearInterval(interval);
         } else {
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
