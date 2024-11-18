@@ -1,15 +1,12 @@
-// Fungsi untuk mengatur dan memulai countdown berdasarkan target waktu yang diinginkan
-function setTargetDateFromAPI(targetId, daysToAdd) {
+// Fungsi untuk mengatur dan memulai countdown berdasarkan target tanggal yang diinginkan
+function setTargetDateFromAPI(targetId, targetDateString) {
     fetch('https://worldtimeapi.org/api/timezone/Etc/UTC')
         .then(response => response.json())
         .then(data => {
             const serverTime = new Date(data.utc_datetime);
 
-            let targetDate = new Date(serverTime);
-            targetDate.setDate(targetDate.getDate() + daysToAdd);
-            targetDate.setHours(0);
-            targetDate.setMinutes(0);
-            targetDate.setSeconds(0);
+            // Mengatur target tanggal sesuai dengan yang diinginkan, misalnya 22 November 2024
+            const targetDate = new Date(targetDateString);
 
             localStorage.setItem(targetId, targetDate.getTime());
             startCountdown(targetId, targetDate);
@@ -26,7 +23,7 @@ function startCountdown(targetId, targetDate) {
         var distance = targetDate - now;
 
         if (distance < 0) {
-            document.getElementById(targetId).innerHTML = "<b>Sisa Waktu</b><br>0 hari 0 jam 0 menit 0 detik";
+            document.getElementById(targetId).innerHTML = "<b>Kampaye Ini Berakhir</b><br>0 hari 0 jam 0 menit 0 detik";
             clearInterval(interval);
         } else {
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -46,16 +43,16 @@ function startCountdown(targetId, targetDate) {
 // Fungsi untuk memulai countdown untuk masing-masing target
 function initializeCountdowns() {
     var countdownElements = [
-        { id: "countdown-kursi-roda", daysToAdd: 5 },
-        { id: "countdown-langkah-kebaikan", daysToAdd: 356 },
-        { id: "countdown-operasional-hoh", daysToAdd: 100 }
+        { id: "countdown-kursi-roda", targetDate: "2024-11-22T00:00:00Z" },
+        { id: "countdown-langkah-kebaikan", targetDate: "2025-01-01T00:00:00Z" },
+        { id: "countdown-operasional-hoh", targetDate: "2024-12-30T00:00:00Z" }
     ];
 
     countdownElements.forEach(function(element) {
         var targetDate = localStorage.getItem(element.id);
 
         if (!targetDate) {
-            setTargetDateFromAPI(element.id, element.daysToAdd);
+            setTargetDateFromAPI(element.id, element.targetDate);
         } else {
             targetDate = new Date(parseInt(targetDate));
             startCountdown(element.id, targetDate);
