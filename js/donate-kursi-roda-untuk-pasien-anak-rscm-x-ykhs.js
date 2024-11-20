@@ -183,7 +183,7 @@ function submitConfirmation() {
   params.append('entry.1274723429', donorName); 
   params.append('entry.1711964533', donorEmail); 
   params.append('entry.1479109352', donorWA); 
-  params.append('entry.1187030072', nominalInput); 
+  params.append('entry.476379432', nominalInput); 
   params.append('entry.1082800990', paymentMethod); 
   params.append('entry.573797881', donationType); 
 
