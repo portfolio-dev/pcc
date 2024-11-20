@@ -1624,7 +1624,7 @@ video {
   }
 
   .about-image {
-    width: inherit;
+    width: 100%;
     height: 450px;
   }
 
