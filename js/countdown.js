@@ -1,9 +1,9 @@
 // Fungsi untuk mengatur dan memulai countdown berdasarkan target tanggal yang diinginkan
 function setTargetDateFromAPI(targetId, targetDateString) {
-    fetch('https://worldtimeapi.org/api/timezone/Etc/UTC')
+    fetch('https://worldtimeapi.org/api/timezone/Asia/Jakarta')
         .then(response => response.json())
         .then(data => {
-            const serverTime = new Date(data.utc_datetime);
+            const serverTime = new Date(data.datetime);
 
             // Mengatur target tanggal sesuai dengan yang diinginkan, misalnya 22 November 2024
             const targetDate = new Date(targetDateString);
@@ -23,7 +23,7 @@ function startCountdown(targetId, targetDate) {
         var distance = targetDate - now;
 
         if (distance < 0) {
-            document.getElementById(targetId).innerHTML = "<b>Kampaye Ini Selesai</b><br>0 hari 0 jam 0 menit 0 detik";
+            document.getElementById(targetId).innerHTML = "<b>Kampaye Ini Sudah Berakhir</b><br>0 hari 0 jam 0 menit 0 detik";
             clearInterval(interval);
         } else {
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
