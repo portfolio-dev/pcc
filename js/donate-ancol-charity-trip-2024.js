@@ -175,6 +175,7 @@ function submitConfirmation() {
 
   const paymentMethod = document.querySelector('input[name="DonationPayment"]:checked').value;
   const donationType = document.querySelector('input[name="DonationFrequency"]:checked').value;
+  const donationNote = document.getElementById('donation-note').value;
 
   const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSetZq-Q-6W6oAn4yGgYios1RpLhKoigYtV7_Jbv7Zz-tUXijw/formResponse';
 
@@ -182,9 +183,10 @@ function submitConfirmation() {
   params.append('entry.1274723429', donorName);
   params.append('entry.1711964533', donorEmail); 
   params.append('entry.1479109352', donorWA); 
-  params.append('entry.946572980', nominalInput); 
+  params.append('entry.363889003', nominalInput); 
   params.append('entry.1082800990', paymentMethod); 
   params.append('entry.573797881', donationType); 
+  params.append('entry.1469710524', donationNote);
 
   fetch(googleFormURL, {
       method: 'POST',

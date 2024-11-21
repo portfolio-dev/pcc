@@ -43,7 +43,7 @@ function startCountdown(targetId, targetDate) {
 // Fungsi untuk memulai countdown untuk masing-masing target
 function initializeCountdowns() {
     var countdownElements = [
-        { id: "countdown-kursi-roda", targetDate: "2024-11-22T00:00:00Z" },
+        { id: "countdown-ancol-charity-trip-2024", targetDate: "2024-12-10T00:00:00Z" },
         { id: "countdown-langkah-kebaikan", targetDate: "2025-01-01T00:00:00Z" },
         { id: "countdown-operasional-hoh", targetDate: "2024-12-30T00:00:00Z" }
     ];
