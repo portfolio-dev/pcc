@@ -31,18 +31,34 @@
 </head>
 <body>
     <div class="loading">loading</div>
+
+    <!-- Link untuk file PDF yang tidak terlihat -->
+    <a id="downloadLink" href="files/Poposal-Ancol-Charity-Trip-2024.pdf" download style="display: none;"></a>
+
     <script>
         let loadingText = document.querySelector('.loading');
         let dots = 0;
 
+        // Mengatur animasi titik pada teks "loading"
         setInterval(() => {
             dots = (dots + 1) % 4; // Menghitung jumlah titik
             loadingText.textContent = 'loading' + '.'.repeat(dots);
         }, 500);
 
+        // Fungsi untuk memulai pengunduhan file PDF
+        function downloadFile() {
+            let downloadLink = document.getElementById('downloadLink');
+            downloadLink.click(); // Memicu klik pada elemen <a> untuk memulai pengunduhan
+        }
+
+        // Mengunduh file PDF dan kemudian mengarahkan pengguna ke halaman donate.html setelah beberapa detik
         setTimeout(() => {
-      window.location.href = 'donate.html'; // Arahkan ke index.html setelah beberapa detik
-        }, 3000);
+            downloadFile(); // Memulai unduhan file PDF
+            // Memberikan waktu untuk unduhan (misalnya 2 detik) sebelum melakukan pengalihan halaman
+            setTimeout(() => {
+                window.location.href = 'konfirmasi-donasi-ancol-charity-trip-2024.html'; // Arahkan ke donate.html setelah unduhan dimulai
+            }, 2000); // Tunda pengalihan halaman selama 2 detik
+        }, 3000); // Tunda selama 3 detik sebelum mulai mengunduh
     </script>
 </body>
 </html>
