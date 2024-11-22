@@ -72,6 +72,45 @@ function togglePaymentMethod(paymentType) {
   }
 }
 
+// Fungsi untuk mengubah tampilan berdasarkan pilihan radio
+function toggleDonationType() {
+  const isProduk = document.getElementById('DonationProduk').checked; // Cek apakah Produk dipilih
+  const productInput = document.getElementById('productInput'); // Elemen untuk input produk
+  const amountElements = [
+      document.getElementById('amountSection'),   // Judul Pilih Nominal
+      document.getElementById('amount25k'),    // 25.000
+      document.getElementById('amount50k'),    // 50.000
+      document.getElementById('amount100k'),   // 100.000
+      document.getElementById('amount200k'),   // 200.000
+      document.getElementById('amount500k'),   // 500.000
+      document.getElementById('amount1000k'),  // 1.000.000
+  ]; 
+  
+  // Menyembunyikan atau menampilkan elemen berdasarkan pilihan
+  if (isProduk) {
+      // Menampilkan textarea produk, menyembunyikan pilihan nominal uang
+      productInput.style.display = 'block';
+      amountElements.forEach(function(el) {
+          el.style.display = 'none'; // Menyembunyikan semua elemen nominal uang
+      });
+  } else {
+      // Menampilkan pilihan nominal uang, menyembunyikan textarea produk
+      productInput.style.display = 'none';
+      amountElements.forEach(function(el) {
+          el.style.display = 'block'; // Menampilkan semua elemen nominal uang
+      });
+  }
+}
+
+// Memanggil fungsi untuk memeriksa status radio button saat pertama kali halaman dimuat
+document.addEventListener("DOMContentLoaded", function() {
+  toggleDonationType(); // Memastikan tampilan sesuai dengan pilihan default (Uang)
+});
+
+// Menambahkan event listener untuk memanggil fungsi saat memilih radio button
+document.getElementById('DonationUangTunai').addEventListener('change', toggleDonationType);
+document.getElementById('DonationProduk').addEventListener('change', toggleDonationType);
+
 
 function showConfirmation() {
   const errorMessageContainer = document.getElementById('errorMessages');
@@ -164,7 +203,7 @@ function submitConfirmation() {
   }
 
   const paymentMethod = document.querySelector('input[name="DonationPayment"]:checked').value;
-  const donationType = document.querySelector('input[name="DonationFrequency"]:checked').value;
+  const donationType = document.querySelector('input[name="DonationType"]:checked').value;
   const donationNote = document.getElementById('donation-note').value;
 
   const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSetZq-Q-6W6oAn4yGgYios1RpLhKoigYtV7_Jbv7Zz-tUXijw/formResponse';

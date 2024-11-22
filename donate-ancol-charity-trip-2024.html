@@ -154,83 +154,91 @@
                         <div class="col-lg-6 col-12 mx-auto">
                             <div class="contact-info-wrap"> 
                                 <form class="custom-form donate-form" id="donationForm" action="#" method="get" role="form">
-                                    <h3 class="mb-4" id="donationTitle">Dukung Acara Ini</h3>
+                                    <h3 class="mb-4" id="donationTitle">Donasi untuk acara ini</h3>
                                     
 
                                     <div class="row" id="donationSection">
                                         <div class="col-lg-12 col-12">
-                                            <h5 class="mb-3">Jenis Donasi</h5>
+                                            <h6 class="mb-3">Jenis Donasi</h6>
                                         </div>
                             
-                                        <div class="col-lg-6 col-6 form-check-group form-check-group-donation-frequency">
+                                        <div class="col-lg-6 col-6 form-check-group form-check-group-donation-type">
                                             <div class="form-check form-check-radio">
-                                                <input class="form-check-input" type="radio" name="DonationFrequency" id="DonationFrequencyOne" value="Uang Tunai" checked>
-                                                <label class="form-check-label" for="DonationFrequencyOne">Uang</label>
+                                                <input class="form-check-input" type="radio" name="DonationType" id="DonationUangTunai" value="Uang Tunai" checked>
+                                                <label class="form-check-label" for="DonationUangTunai">Uang</label>
                                             </div>
                                         </div>
                             
-                                        <div class="col-lg-6 col-6 form-check-group form-check-group-donation-frequency">
+                                        <div class="col-lg-6 col-6 form-check-group form-check-group-donation-type">
                                             <div class="form-check form-check-radio">
-                                                <input class="form-check-input" type="radio" name="DonationFrequency" id="DonationFrequencyMonthly" value="Produk">
-                                                <label class="form-check-label" for="DonationFrequencyMonthly">Produk</label>
+                                                <input class="form-check-input" type="radio" name="DonationType" id="DonationProduk" value="Produk">
+                                                <label class="form-check-label" for="DonationProduk">Produk</label>
                                             </div>
                                         </div>
-                            
-                                        <div class="col-lg-12 col-12">
-                                            <h5 class="mt-2 mb-3">Pilih Nominal (Rupiah)</h5>
+
+                                        <div class="col-lg-12 col-12" id="productInput" style="display: none;">
+                                            <h5 class="mt-2 mb-3">Tentukan Produk Donasi</h5>
+                                            <textarea class="form-control" id="productDetails" rows="4" placeholder="Tulis Nama produk, jumlah, dan deskripsi produk..." required></textarea>
+                                            <br>
+                                            <h6 class="mb-3">Estimasi Total Harga Produk</h6>
+                                
+                                        </div>
+                                        
+                                        <div class="col-lg-12 col-12" id="amountSection" style="display: block;">
+                                            <h6 class="mt-2 mb-3">Pilih Nominal (Rupiah)</h6>
                                         </div>
                             
-                                        <div class="col-lg-3 col-md-6 col-6 form-check-group">
+                                        <div class="col-lg-3 col-md-6 col-6 form-check-group" style="display: block;" id="amount25k">
                                             <div class="form-check form-check-radio">
                                                 <input class="form-check-input" type="radio" name="donationAmount" id="amount25000" value="25000" onclick="updateNominal(this)">
                                                 <label class="form-check-label" for="amount25000">25.000</label>
                                             </div>
                                         </div>
                             
-                                        <div class="col-lg-3 col-md-6 col-6 form-check-group">
+                                        <div class="col-lg-3 col-md-6 col-6 form-check-group" style="display: block;" id="amount50k">
                                             <div class="form-check form-check-radio">
                                                 <input class="form-check-input" type="radio" name="donationAmount" id="amount50000" value="50000" onclick="updateNominal(this)">
                                                 <label class="form-check-label" for="amount50000">50.000</label>
                                             </div>
                                         </div>
                             
-                                        <div class="col-lg-3 col-md-6 col-6 form-check-group">
+                                        <div class="col-lg-3 col-md-6 col-6 form-check-group" style="display: block;" id="amount100k">
                                             <div class="form-check form-check-radio">
                                                 <input class="form-check-input" type="radio" name="donationAmount" id="amount100000" value="100000" onclick="updateNominal(this)">
                                                 <label class="form-check-label" for="amount100000">100.000</label>
                                             </div>
                                         </div>
                             
-                                        <div class="col-lg-3 col-md-6 col-6 form-check-group">
+                                        <div class="col-lg-3 col-md-6 col-6 form-check-group" style="display: block;" id="amount200k">
                                             <div class="form-check form-check-radio">
                                                 <input class="form-check-input" type="radio" name="donationAmount" id="amount200000" value="200000" onclick="updateNominal(this)">
                                                 <label class="form-check-label" for="amount200000">200.000</label>
                                             </div>
                                         </div>
                             
-                                        <div class="col-lg-3 col-md-6 col-6 form-check-group">
+                                        <div class="col-lg-3 col-md-6 col-6 form-check-group" style="display: block;" id="amount500k">
                                             <div class="form-check form-check-radio">
                                                 <input class="form-check-input" type="radio" name="donationAmount" id="amount500000" value="500000" onclick="updateNominal(this)">
                                                 <label class="form-check-label" for="amount500000">500.000</label>
                                             </div>
                                         </div>
                             
-                                        <div class="col-lg-3 col-md-6 col-6 form-check-group">
+                                        <div class="col-lg-3 col-md-6 col-6 form-check-group" style="display: block;" id="amount1000k">
                                             <div class="form-check form-check-radio">
                                                 <input class="form-check-input" type="radio" name="donationAmount" id="amount1000000" value="1000000" onclick="updateNominal(this)">
                                                 <label class="form-check-label" for="amount1000000">1.000.000</label>
                                             </div>
                                         </div>
                             
-                                        <div class="col-lg-6 col-12 form-check-group">
+                                        <div class="col-lg-6 col-12 form-check-group" style="display: block;">
                                             <div class="input-group">
                                                 <span class="input-group-text" id="basic-addon1">Rp</span>
                                                 <input type="text" id="customNominal" class="form-control" placeholder="Tentukan Nominal" aria-label="Username" aria-describedby="basic-addon1" required>
                                             </div>                                        
-                                        </div>
+                                        </div>                                        
 
                                         <div class="col-lg-12 col-12">
-                                            <h5 class="mt-1">Informasi Donatur</h5>
+                                            <h6 class="mt-1">Informasi Donatur</h6>
                                         </div>
                             
                                         <div class="col-lg-12 col-12">
@@ -244,6 +252,7 @@
                                         <div class="col-lg-6 col-12 mt-2">
                                             <input type="text" name="donation-wa" id="donation-wa" inputmode="numeric" pattern="\d*" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" placeholder="Telepon" required>
                                         </div>
+
                                         <div class="col-lg-12 col-12" id="errorMessages" style="color: red; margin-bottom: 10px;"></div>
                                         <div class="col-lg-12 col-12">
                                             <button type="button" class="btn btn-primary mt-3" style="width: 100%; height: 50px; background-color: rgb(235, 18, 18); 
@@ -342,8 +351,8 @@
                                             <img src="https://raw.githubusercontent.com/portfolio-dev/pcc/refs/heads/main/images/qris-sample.jpeg" alt="QRIS" style="max-width: 100%; height: auto;">
                                         </div>
                                         <hr>
-                                        <h6 class="mt-1">Catatan / Komentar</h6>
-                                        <textarea name="donation-note" rows="5" class="form-control" id="donation-note" placeholder="Berikan catatan/ komentar tentang donasi Anda di sini" required></textarea>
+                                        <h6 class="mt-1">Catatan / Komentar (optional)</h6>
+                                        <textarea name="donation-note" rows="5" class="form-control" id="donation-note" placeholder="Tulis di sini" required></textarea>
 
                                         <button type="button" id="confirmButton" class="btn btn-primary mt-3" onclick="submitConfirmation()">Sudah Transfer</button>
                                         <button type="button" class="btn btn-secondary mt-3" onclick="goBack()">Batal</button>
