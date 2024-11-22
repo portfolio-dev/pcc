@@ -113,7 +113,7 @@ function showConfirmation() {
   donationDescription.style.display = 'none';
 
   const fields = {
-      donationType: document.querySelector('input[name="DonationFrequency"]:checked').value,
+      donationType: document.querySelector('input[name="DonationType"]:checked').value,
       donationAmount: nominalInput,
       donorName: donorName,
       donorEmail: donorEmail,

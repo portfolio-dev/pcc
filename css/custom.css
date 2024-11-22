@@ -1204,25 +1204,25 @@ video {
   margin-bottom: 20px;
 }
 
-.donate-form .form-check-group-donation-frequency {
+.donate-form .form-check-group-donation-type {
   padding-right: 0;
 }
 
-.form-check-group-donation-frequency + .form-check-group-donation-frequency {
+.form-check-group-donation-type + .form-check-group-donation-type {
   padding-right: 12px;
   padding-left: 0;
 }
 
-.form-check-group-donation-frequency .form-check-label {
+.form-check-group-donation-type .form-check-label {
   font-weight: var(--font-weight-semibold);
 }
 
-#DonationFrequencyOne {
+#DonationUangTunai {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-#DonationFrequencyMonthly {
+#DonationProduk {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
