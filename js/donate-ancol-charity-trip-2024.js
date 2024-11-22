@@ -58,30 +58,20 @@ function formatNumber(num) {
   return num.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-function togglePaymentMethod(method) {
-    const transferInfo = document.getElementById('transferInfo');
-    const qrisImage = document.getElementById('qrisImage');
-
-    if (method === 'QRIS') {
-        transferInfo.style.display = 'none';
-        qrisImage.style.display = 'block';
-    } else {
-        transferInfo.style.display = 'block';
-        qrisImage.style.display = 'none';
-    }
-}
-
 function togglePaymentMethod(paymentType) {
+  // Menampilkan atau menyembunyikan elemen sesuai dengan metode pembayaran
   document.getElementById('transferInfo').style.display = paymentType === 'Transfer' ? 'block' : 'none';
   document.getElementById('qrisImage').style.display = paymentType === 'QRIS' ? 'block' : 'none';
- 
+
+  // Menyesuaikan teks tombol konfirmasi berdasarkan metode pembayaran
   const confirmButton = document.getElementById('confirmButton');
   if (paymentType === 'Transfer') {
-      confirmButton.textContent = 'Sudah Bayar via Transfer';
+      confirmButton.textContent = 'Sudah Transfer';
   } else if (paymentType === 'QRIS') {
-      confirmButton.textContent = 'Sudah Bayar via QRIS';
+      confirmButton.textContent = 'Sudah QRIS';
   }
 }
+
 
 function showConfirmation() {
   const errorMessageContainer = document.getElementById('errorMessages');
