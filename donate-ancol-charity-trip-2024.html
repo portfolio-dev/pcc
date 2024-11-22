@@ -130,10 +130,10 @@
                     <div class="row">
                         <div class="col-lg-6 col-12 mx-auto" id="donation-description">
                             <div class="contact-info-wrap"> 
-                                <div class="custom-text-box">
-                                    <img src="images/slide/ancol-charity-trip-2024.jpg" class="custom-block-image img-fluid" alt="">
+                                <div class="custom-text-box">                                    
+                                    <img src="images/slide/ancol-charity-trip-2024.jpg" class="custom-block-image img-fluid" alt=""> 
                                     <br>
-                                    <h5>Ancol Charity Trip 2024</h5>
+                                    <h5>Ancol Charity Trip 2024</h5>                                    
                                     <p>
                                         Liburan akhir tahun seringkali menjadi momen untuk berlibur bersama keluarga, namun para pejuang jantung kecil justru lebih banyak bersafari di rumah sakit, entah untuk kebutuhan check-up rutin maupun tindakan. Pejuang Cipto Community bermaksud memberikan sedikit hiburan dengan mengajak mereka berwisata dan refreshing sejenak dari segala rutinitas berobat. Kami berharap bisa sedikit mengukir senyum di wajah mereka dengan menggelar agenda kepedulian yang bertajuk : <b>Ancol Charity Trip</b>, dimana kami akan mengundang para pejuang jantung kecil menikmati keindahan ekosistem bawah laut di Sea World Ancol.
                                         <br><br>
@@ -146,7 +146,7 @@
                                         <a href="javascript:void(0)" onclick="window.location.href='hasil-donasi-ancol-charity-trip-2024.html';" id="downloadLink" download style="color: #e54646;">
                                             <i class="bi-door-open-fill"></i> Lihat Hasil Donasi
                                         </a>
-                                        <hr> 
+                                        <hr>                                         
                                     </p>
                                 </div>
                             </div>
@@ -154,7 +154,7 @@
                         <div class="col-lg-6 col-12 mx-auto">
                             <div class="contact-info-wrap"> 
                                 <form class="custom-form donate-form" id="donationForm" action="#" method="get" role="form">
-                                    <h3 class="mb-4" id="donationTitle">Ancol Charity Trip 2024</h3>
+                                    <h3 class="mb-4" id="donationTitle">Dukung Acara Ini</h3>
                                     
 
                                     <div class="row" id="donationSection">
@@ -164,20 +164,34 @@
                             
                                         <div class="col-lg-6 col-6 form-check-group form-check-group-donation-frequency">
                                             <div class="form-check form-check-radio">
-                                                <input class="form-check-input" type="radio" name="DonationFrequency" id="DonationFrequencyOne" value="Saat Ini" checked>
-                                                <label class="form-check-label" for="DonationFrequencyOne">Saat Ini</label>
+                                                <input class="form-check-input" type="radio" name="DonationFrequency" id="DonationFrequencyOne" value="Uang Tunai" checked>
+                                                <label class="form-check-label" for="DonationFrequencyOne">Uang Tunai</label>
                                             </div>
                                         </div>
                             
                                         <div class="col-lg-6 col-6 form-check-group form-check-group-donation-frequency">
                                             <div class="form-check form-check-radio">
-                                                <input class="form-check-input" type="radio" name="DonationFrequency" id="DonationFrequencyMonthly" value="Setiap Bulan">
-                                                <label class="form-check-label" for="DonationFrequencyMonthly">Setiap Bulan</label>
+                                                <input class="form-check-input" type="radio" name="DonationFrequency" id="DonationFrequencyMonthly" value="Produk">
+                                                <label class="form-check-label" for="DonationFrequencyMonthly">Produk</label>
                                             </div>
                                         </div>
                             
                                         <div class="col-lg-12 col-12">
                                             <h5 class="mt-2 mb-3">Pilih Nominal (Rupiah)</h5>
+                                        </div>
+                            
+                                        <div class="col-lg-3 col-md-6 col-6 form-check-group">
+                                            <div class="form-check form-check-radio">
+                                                <input class="form-check-input" type="radio" name="donationAmount" id="amount25000" value="25000" onclick="updateNominal(this)">
+                                                <label class="form-check-label" for="amount25000">25.000</label>
+                                            </div>
+                                        </div>
+                            
+                                        <div class="col-lg-3 col-md-6 col-6 form-check-group">
+                                            <div class="form-check form-check-radio">
+                                                <input class="form-check-input" type="radio" name="donationAmount" id="amount50000" value="50000" onclick="updateNominal(this)">
+                                                <label class="form-check-label" for="amount50000">50.000</label>
+                                            </div>
                                         </div>
                             
                                         <div class="col-lg-3 col-md-6 col-6 form-check-group">
@@ -191,20 +205,6 @@
                                             <div class="form-check form-check-radio">
                                                 <input class="form-check-input" type="radio" name="donationAmount" id="amount200000" value="200000" onclick="updateNominal(this)">
                                                 <label class="form-check-label" for="amount200000">200.000</label>
-                                            </div>
-                                        </div>
-                            
-                                        <div class="col-lg-3 col-md-6 col-6 form-check-group">
-                                            <div class="form-check form-check-radio">
-                                                <input class="form-check-input" type="radio" name="donationAmount" id="amount300000" value="300000" onclick="updateNominal(this)">
-                                                <label class="form-check-label" for="amount300000">300.000</label>
-                                            </div>
-                                        </div>
-                            
-                                        <div class="col-lg-3 col-md-6 col-6 form-check-group">
-                                            <div class="form-check form-check-radio">
-                                                <input class="form-check-input" type="radio" name="donationAmount" id="amount400000" value="400000" onclick="updateNominal(this)">
-                                                <label class="form-check-label" for="amount400000">400.000</label>
                                             </div>
                                         </div>
                             
@@ -283,7 +283,9 @@
                                         </table>
                                         <table style="width: 100%; border-collapse: collapse;">
                                             <tr style="border-top: 1px solid rgb(198, 195, 195);">
-                                                <td style="padding: 8px; border: none;">Metode Pembayaran </td>
+                                                <td style="padding: 8px; border: none;">
+                                                    <h6 class="mt-1">Metode Pembayaran</h6>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -340,7 +342,8 @@
                                             <img src="https://raw.githubusercontent.com/portfolio-dev/pcc/refs/heads/main/images/qris-sample.jpeg" alt="QRIS" style="max-width: 100%; height: auto;">
                                         </div>
                                         <hr>
-                                        <textarea name="donation-note" rows="5" class="form-control" id="donation-note" placeholder="Berikan catatan/ pesan tentang donasi Anda di sini. . ." required></textarea>
+                                        <h6 class="mt-1">Catatan / Komentar</h6>
+                                        <textarea name="donation-note" rows="5" class="form-control" id="donation-note" placeholder="Berikan catatan/ komentar tentang donasi Anda di sini" required></textarea>
 
                                         <button type="button" id="confirmButton" class="btn btn-primary mt-3" onclick="submitConfirmation()">Sudah Transfer</button>
                                         <button type="button" class="btn btn-secondary mt-3" onclick="goBack()">Batal</button>
@@ -373,6 +376,7 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.sticky.js"></script>
         <script src="js/counter.js"></script>
+        <script src="js/countdown.js"></script>
         <script src="js/donate-ancol-charity-trip-2024.js"></script>
 
     </body>
