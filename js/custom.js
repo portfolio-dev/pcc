@@ -49,6 +49,21 @@ function redirectToSuccessPage() {
     window.location.href = 'sent.html';
 }
 
+
+document.querySelectorAll('.donation-radio').forEach(function(radio) {
+  radio.addEventListener('change', function() {
+      // Pastikan hanya satu yang terpilih
+      if (this.checked) {
+          document.querySelectorAll('.donation-radio').forEach(function(otherRadio) {
+              if (otherRadio !== radio) {
+                  otherRadio.checked = false;
+              }
+          });
+      }
+  });
+});
+
+
 // DONATION PAGE
 let lastSelected = null;
 
@@ -130,22 +145,20 @@ function showConfirmation() {
       return; 
   }
 
-  const donationSection = document.getElementById('donationSection');
+  const donationSection = document.getElementById('donation-section');
   const confirmationSection = document.getElementById('confirmationSection');
-  const donationTitle = document.getElementById('donationTitle');
+  const donationTitle = document.getElementById('donation-title');
 
   donationSection.style.display = 'none';
   confirmationSection.style.display = 'block';
   donationTitle.style.display = 'none';
 
-  const fields = {
-      donationType: document.querySelector('input[name="DonationFrequency"]:checked').value,
-      donationAmount: nominalInput,
-      donorName: donorName,
-      donorEmail: donorEmail,
-  };
+const fields = {
+    donationAmount: nominalInput,
+    donorName: donorName,
+    donorEmail: donorEmail,
+};
 
-  document.getElementById('donationType').innerText = fields.donationType;
   document.getElementById('donationAmountDisplay').innerText = formatNumber(fields.donationAmount);
   document.getElementById('donorName').innerText = fields.donorName;
   document.getElementById('donorEmail').innerText = fields.donorEmail;
@@ -193,7 +206,8 @@ function submitConfirmation() {
   }
 
   const paymentMethod = document.querySelector('input[name="DonationPayment"]:checked').value;  
-  const donationType = document.querySelector('input[name="DonationFrequency"]:checked').value;
+  const donationType = document.querySelector('input.donation-radio:checked')?.value;
+
 
   // URL GOOGLE FORM
   const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSetZq-Q-6W6oAn4yGgYios1RpLhKoigYtV7_Jbv7Zz-tUXijw/formResponse';
