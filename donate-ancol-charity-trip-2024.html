@@ -151,189 +151,190 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-12 mx-auto">
-                            <div class="contact-info-wrap"> 
-                                <form class="custom-form donate-form" id="donationForm" action="#" method="get" role="form">
-                                    <h3 class="mb-4" id="donation-title">Donasi untuk acara ini</h3>
-                                    
+                        <div class="col-lg-6 col-12 mx-auto"> 
+                            <form class="custom-form donate-form" id="donation-form" action="#" method="get" role="form">
+                                <h3 class="mb-4" id="donation-title">Donasi untuk Komunitas</h3>
+                                
 
-                                    <div class="row" id="donation-section-1">
-                                        <div class="col-lg-12 col-12">
-                                            <h6 class="mb-3">Jenis Donasi</h6>
-                                        </div>
-                            
-                                        <div class="col-lg-6 col-6 form-check-group form-check-group-donation-type">
-                                            <div class="form-check form-check-radio">
-                                                <input class="form-check-input" type="radio" name="DonationType" id="donation-uang" value="Uang Tunai" checked>
-                                                <label class="form-check-label" for="donation-uang">Uang</label>
-                                            </div>
-                                        </div>
-                            
-                                        <div class="col-lg-6 col-6 form-check-group form-check-group-donation-type">
-                                            <div class="form-check form-check-radio">
-                                                <input class="form-check-input" type="radio" name="DonationType" id="donation-produk" value="Produk">
-                                                <label class="form-check-label" for="donation-produk">Produk</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-12 col-12" id="product-input" style="display: none;">
-                                            <h5 class="mt-2 mb-3">Tentukan Produk Donasi</h5>
-                                            <textarea class="form-control" name="produk-details" id="produk-details" rows="6" placeholder="Tulis Nama produk, jumlah, dan deskripsi produk..."></textarea>
-                                            <br>
-                                            <h6 class="mb-3">Estimasi Total Harga Produk Donasi</h6>
-                                        </div>
-                                        
-                                        <div class="col-lg-12 col-12" id="amount-section" style="display: block;">
-                                            <h6 class="mt-2 mb-3">Pilih Nominal (Rupiah)</h6>
-                                        </div>
-                            
-                                        <div class="col-lg-3 col-md-6 col-6 form-check-group" style="display: block;" id="amount1">
-                                            <div class="form-check form-check-radio">
-                                                <input class="form-check-input" type="radio" name="donationAmount" id="amount25000" value="25000" onclick="updateNominal(this)">
-                                                <label class="form-check-label" for="amount25000">25.000</label>
-                                            </div>
-                                        </div>
-                            
-                                        <div class="col-lg-3 col-md-6 col-6 form-check-group" style="display: block;" id="amount2">
-                                            <div class="form-check form-check-radio">
-                                                <input class="form-check-input" type="radio" name="donationAmount" id="amount50000" value="50000" onclick="updateNominal(this)">
-                                                <label class="form-check-label" for="amount50000">50.000</label>
-                                            </div>
-                                        </div>
-                            
-                                        <div class="col-lg-3 col-md-6 col-6 form-check-group" style="display: block;" id="amount3">
-                                            <div class="form-check form-check-radio">
-                                                <input class="form-check-input" type="radio" name="donationAmount" id="amount100000" value="100000" onclick="updateNominal(this)">
-                                                <label class="form-check-label" for="amount100000">100.000</label>
-                                            </div>
-                                        </div>
-                            
-                                        <div class="col-lg-3 col-md-6 col-6 form-check-group" style="display: block;" id="amount4">
-                                            <div class="form-check form-check-radio">
-                                                <input class="form-check-input" type="radio" name="donationAmount" id="amount200000" value="200000" onclick="updateNominal(this)">
-                                                <label class="form-check-label" for="amount200000">200.000</label>
-                                            </div>
-                                        </div>
-                            
-                                        <div class="col-lg-3 col-md-6 col-6 form-check-group" style="display: block;" id="amount5">
-                                            <div class="form-check form-check-radio">
-                                                <input class="form-check-input" type="radio" name="donationAmount" id="amount500000" value="500000" onclick="updateNominal(this)">
-                                                <label class="form-check-label" for="amount500000">500.000</label>
-                                            </div>
-                                        </div>
-                            
-                                        <div class="col-lg-3 col-md-6 col-6 form-check-group" style="display: block;" id="amount6">
-                                            <div class="form-check form-check-radio">
-                                                <input class="form-check-input" type="radio" name="donationAmount" id="amount1000000" value="1000000" onclick="updateNominal(this)">
-                                                <label class="form-check-label" for="amount1000000">1.000.000</label>
-                                            </div>
-                                        </div>
-                            
-                                        <div class="col-lg-6 col-12 form-check-group" style="display: block;">
-                                            <div class="input-group">
-                                                <span class="input-group-text" id="basic-addon1">Rp</span>
-                                                <input type="text" id="custom-nominal" class="form-control" placeholder="Tentukan Nominal" aria-label="Username" aria-describedby="basic-addon1">
-                                            </div>                                        
-                                        </div>                                        
-
-                                        <div class="col-lg-12 col-12">
-                                            <h6 class="mt-1">Informasi Donatur</h6>
-                                        </div>
-                            
-                                        <div class="col-lg-12 col-12">
-                                            <input type="text" name="donation-name" id="donation-name" class="form-control" placeholder="Nama" required>
-                                        </div>
-                            
-                                        <div class="col-lg-6 col-12 mt-2">
-                                            <input type="email" name="donation-email" id="donation-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email" required>
-                                        </div>
-
-                                        <div class="col-lg-6 col-12 mt-2">
-                                            <input type="text" name="donation-tlp" id="donation-tlp" inputmode="numeric" pattern="\d*" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" placeholder="Telepon" required>
-                                        </div>
-
-                                        <div class="col-lg-12 col-12" id="error-messages" style="color: red; margin-bottom: 10px;"></div>
-                                        <div class="col-lg-12 col-12">
-                                            <button type="button" class="btn btn-primary mt-3" style="width: 100%; height: 50px; background-color: rgb(235, 18, 18); 
-                                            "onmouseover="this.style.backgroundColor= 'rgb(150, 210, 220)';"
-                                            onmouseout="this.style.backgroundColor='rgb(235, 18, 18)';" onclick="showConfirmation()">Donasi Sekarang</button>
+                                <div class="row" id="donation-section">
+                                    <div class="col-lg-12 col-12">
+                                        <h6 class="mb-3">Jenis Donasi</h6>
+                                    </div>
+                        
+                                    <div class="col-lg-6 col-6 form-check-group form-check-group-donation-type">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input donation-radio" type="radio" id="donation-uang" value="Uang" checked>
+                                            <label class="form-check-label" for="donation-uang">Uang</label>
                                         </div>
                                     </div>
-                            
-                                    <div id="confirmation-section" style="display: none;">
-                                        <h3>Konfirmasi Donasi</h3>
-                            
-                                        <table style="width: 100%; border-collapse: collapse;">
-                                            <tr>
-                                                <td style="padding: 8px; border: none;">Nama</td>
-                                                <td style="padding: 8px; border: none;"><b><span id="donor-name"></span></b></td>
-                                            </tr>
-                                            <tr>
-                                                <td style="padding: 8px; border: none;">Email</td>
-                                                <td style="padding: 8px; border: none;"><b><span id="donor-email"></span></b></td>
-                                            </tr>
-                                            <tr>
-                                                <td style="padding: 8px; border: none;">Telepon</td>
-                                                <td style="padding: 8px; border: none;"><b><span id="donor-tlp"></span></b></td>
-                                            </tr>
-                                            <tr>
-                                                <td style="padding: 8px; border: none;">Program</td>
-                                                <td style="padding: 8px; border: none;"><b>Ancol Charity Trip 2024</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td style="padding: 8px; border: none;">Jenis Donasi</td>
-                                                <td style="padding: 8px; border: none;"><b><span id="type-donation"></span></b></td>
-                                            </tr>                                        
-                                            <tr>
-                                                <td style="padding: 8px; border: none;">Nominal Donasi</td>
-                                                <td style="padding: 8px; border: none;"><b>Rp <span id="donation-amount-display"></span></b></td>
-                                            </tr>    
-                                            <tr>
-                                                <td style="padding: 8px; border: none;" id="produk-details-confirm">Produk Donasi</td>
-                                                <td style="padding: 8px; border: none;"><b> <span id="details-produk"></span></b></td>
-                                            </tr>                                     
-                                        </table>
+                                    
+                                    <div class="col-lg-6 col-6 form-check-group form-check-group-donation-type">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input donation-radio" type="radio" id="donation-produk" value="Produk">
+                                            <label class="form-check-label" for="donation-produk">Produk</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- PRODUK -->
+                                    <div id="produk-donasi" style="display: none;">
+                                        <div class="col-lg-12 col-12">
+                                            <h6 class="mt-2 mb-3">Tentukan Produk Donasi</h6>
+                                        </div>
+                                        <div class="col-lg-12 col-12">
+                                            <textarea name="donation-detail" rows="5" class="form-control" id="donation-detail" placeholder="Tulis di sini" required></textarea>                                            
+                                        </div>
+                                        <div class="col-lg-12 col-12">
+                                            <h6 class="mt-2 mb-3">Estimasi Harga</h6>
+                                        </div>
+
+                                        <!-- <div class="col-lg-6 col-12 form-check-group">
+                                            <div class="input-group">
+                                                <span class="input-group-text" id="basic-addon2">Item</span>
+                                                <input type="text" id="produk1" class="form-control" placeholder="Isi nama produk" aria-label="Username" aria-describedby="basic-addon1" required>
+                                            </div>                                        
+                                        </div> 
+
+                                        <div class="col-lg-4 col-12 form-check-group">
+                                            <div class="input-group">
+                                                <span class="input-group-text" id="basic-addon2">Jml</span>
+                                                <input type="text" id="jumlah1" class="form-control" placeholder="Jumlah" aria-label="Username" aria-describedby="basic-addon1" required>
+                                            </div>                                        
+                                        </div>
+
+                                        <div class="col-lg-2 col-12 form-check-group">
+                                            <div class="input-group">
+                                                <button type="button" class="form-control" style="width: 100%; height: 50px; color: white; background-color: rgb(235, 18, 18); 
+                                            "onmouseover="this.style.backgroundColor= 'rgb(150, 210, 220)';"
+                                            onmouseout="this.style.backgroundColor='rgb(235, 18, 18)';" onclick="">+</button>
+                                            </div>                                        
+                                        </div> -->
+                                    </div>
+
+                                    <!-- UANG TUNAI -->
+                                    <div class="col-lg-12 col-12" id="amount-pilihan">
+                                        <h6 class="mt-2 mb-3">Pilih Nominal (Rupiah)</h6>
+                                    </div>
+                        
+                                    <div class="col-lg-3 col-md-6 col-6 form-check-group" id="amount1">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="donationAmount" id="amount100000" value="100000" onclick="updateNominal(this)">
+                                            <label class="form-check-label" for="amount100000">100.000</label>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-lg-3 col-md-6 col-6 form-check-group" id="amount2">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="donationAmount" id="amount200000" value="200000" onclick="updateNominal(this)">
+                                            <label class="form-check-label" for="amount200000">200.000</label>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-lg-3 col-md-6 col-6 form-check-group" id="amount3">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="donationAmount" id="amount300000" value="300000" onclick="updateNominal(this)">
+                                            <label class="form-check-label" for="amount300000">300.000</label>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-lg-3 col-md-6 col-6 form-check-group" id="amount4">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="donationAmount" id="amount400000" value="400000" onclick="updateNominal(this)">
+                                            <label class="form-check-label" for="amount400000">400.000</label>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-lg-3 col-md-6 col-6 form-check-group" id="amount5">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="donationAmount" id="amount500000" value="500000" onclick="updateNominal(this)">
+                                            <label class="form-check-label" for="amount500000">500.000</label>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-lg-3 col-md-6 col-6 form-check-group" id="amount6">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="donationAmount" id="amount1000000" value="1000000" onclick="updateNominal(this)">
+                                            <label class="form-check-label" for="amount1000000">1.000.000</label>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-lg-6 col-12 form-check-group">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">Rp</span>
+                                            <input type="text" id="custom-nominal" class="form-control" placeholder="Tentukan Nominal" aria-label="Username" aria-describedby="basic-addon1" required>
+                                        </div>                                        
+                                    </div> 
+
+
+                                    <div class="col-lg-12 col-12">
+                                        <h6 class="mt-1">Informasi Donatur</h6>
+                                    </div>
+                        
+                                    <div class="col-lg-12 col-12">
+                                        <input type="text" name="donation-name" id="donation-name" class="form-control" placeholder="Nama" required>
+                                    </div>
+                        
+                                    <div class="col-lg-6 col-12 mt-2">
+                                        <input type="email" name="donation-email" id="donation-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-12 mt-2">
+                                        <input type="text" name="donation-tlp" id="donation-tlp" inputmode="numeric" pattern="\d*" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" placeholder="Telepon" required>
+                                    </div>
+                                    <div class="col-lg-12 col-12" id="error-messages" style="color: red; margin-bottom: 10px;"></div>
+                                    <div class="col-lg-12 col-12">
+                                        <button type="button" class="btn btn-primary mt-3" style="width: 100%; height: 50px; background-color: rgb(235, 18, 18); 
+                                        "onmouseover="this.style.backgroundColor= 'rgb(150, 210, 220)';"
+                                        onmouseout="this.style.backgroundColor='rgb(235, 18, 18)';" onclick="showConfirmation()">Donasi Sekarang</button>
+                                    </div>
+                                </div>
+                        
+                                <div id="confirmation-section" style="display: none;">
+                                    <h4>Konfirmasi Donasi</h4>
+                        
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <tr>
+                                            <td style="padding: 8px; border: none;">Nama</td>
+                                            <td style="padding: 8px; border: none;"><b><span id="donor-name"></span></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: none;">Email</td>
+                                            <td style="padding: 8px; border: none;"><b><span id="donor-email"></span></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: none;">Telepon</td>
+                                            <td style="padding: 8px; border: none;"><b><span id="donor-tlp"></span></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: none;">Jenis Donasi</td>
+                                            <td style="padding: 8px; border: none;"><b><span id="donation-tipe"></span></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: none;">Nominal Donasi</td>
+                                            <td style="padding: 8px; border: none;"><b>Rp <span id="donation-amount-display"></span></b></td>
+                                        </tr>                                        
+                                    </table>
+                                    <div id="uang-transfer-qris">
                                         <table style="width: 100%; border-collapse: collapse;">
                                             <tr style="border-top: 1px solid rgb(198, 195, 195);">
-                                                <td style="padding: 8px; border: none;">
-                                                    <h6 class="mt-1">Metode Donasi</h6>
-                                                </td>
+                                                <td style="padding: 8px; border: none;"><h6>Metode Donasi</h6></td>
                                             </tr>
-                                            <tr>   
+                                            <tr>
                                                 <td>
-                                                    <div class="form-check" id="transfer-info">
+                                                    <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="DonationPayment" id="payment-transfer" value="Transfer" onclick="togglePaymentMethod('Transfer')" checked>
                                                         <label class="form-check-label" for="payment-transfer"><i class="bi-credit-card-2-back-fill me-2"></i>Transfer</label>
                                                     </div>                                                
                                                 </td>
-                                                <td> 
-                                                    <div class="form-check" id="qris-image">
+                                                <!-- <td> 
+                                                    <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="DonationPayment" id="payment-qris" value="QRIS" onclick="togglePaymentMethod('QRIS')">
                                                         <label class="form-check-label" for="payment-qris"><i class="bi-qr-code-scan me-2"></i>QRIS</label>
                                                     </div>
-                                                </td>                                                
+                                                </td> -->
                                             </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check" id="kirim-produk" style="display: none;">
-                                                        <input class="form-check-input" type="radio" name="DonationPayment" id="payment-send" value="Kirim" onclick="togglePaymentMethod('Kirim')" checked>
-                                                        <label class="form-check-label" for="payment-send"><i class="bi-truck me-2"></i>Kirim Produk</label>
-                                                    </div>                                                
-                                                </td>
-                                            </tr>
-                                        </table>
+                                        </table>                                    
                                         
-                                        <div id="kirim-produk-donasi" style="display: none;">
-                                            <h6>Silahkan kirimkan Produk Donasi ke:</h6><br>
-                                            <p style="background-color:#e54646; color: white; padding: 5px;">                                                
-                                                <b>Rumah Singgah House of Heart</b><br>
-                                                Jl. Cempaka Putih Barat II J No. 3C, Cempaka Putih Barat,<br>
-                                                Kota Jakarta Pusat, DKI Jakarta<br><br>
-                                                Beri Catatan: Produk Donasi untuk Acara Ancol Charity Trip 2024
-                                            </p>
-                                        </div>
-
-                                        <div id="transfer-information" style="display: none;">
+                                        <div id="transfer-info">
                                             <table style="width: 100%; border-collapse: collapse; margin: 20px auto; table-layout: auto; font-size: auto;">
                                                 <tr>
                                                     <td colspan="2" style="padding: 10px; text-align: center; border: 1px solid black; background-color: #e54646; color: white;">
@@ -365,20 +366,44 @@
                                                     </td>
                                                 </tr>
                                             </table>
+                                            <!-- <div id="qris-image" style="display: none;">
+                                                <img src="https://raw.githubusercontent.com/portfolio-dev/pcc/refs/heads/main/images/qris-sample.jpeg" alt="QRIS" style="max-width: 100%; height: auto;">
+                                            </div> -->
+                                        </div>                                        
+                                    </div>
+                                    
+                                    <div id="produk-kirim" style="display: none;">
+                                        <table style="width: 100%; border-collapse: collapse;">
+                                            <tr style="border-top: 1px solid rgb(198, 195, 195);">
+                                                <td style="padding: 8px; border: none;"><h6>Metode Donasi</h6></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="DonationPayment" id="payment-kirim" value="Kirim" onclick="togglePaymentMethod('Kirim')" checked>
+                                                        <label class="form-check-label" for="payment-kirim"><i class="bi-truck me-2"></i>Kirim Produk</label>
+                                                    </div>                                                
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <div id="kirim-produk">
+                                            <h6>Silahkan kirimkan Produk Donasi ke:</h6><br>
+                                            <p style="background-color:#e54646; color: white; padding: 5px;">                                                
+                                                <b>Rumah Singgah House of Heart</b><br>
+                                                Jl. Cempaka Putih Barat II J No. 3C, Cempaka Putih Barat,<br>
+                                                Kota Jakarta Pusat, DKI Jakarta<br><br>
+                                                Beri Catatan: Produk Donasi untuk Acara Ancol Charity Trip 2024
+                                            </p>
                                         </div>
-                            
-                                        <div id="qris-picture" style="display: none;">
-                                            <img src="https://raw.githubusercontent.com/portfolio-dev/pcc/refs/heads/main/images/qris-sample.jpeg" alt="QRIS" style="max-width: 100%; height: auto;">
-                                        </div>
-                                        <hr>
+                                    </div>
+                                    <hr>
                                         <h6 class="mt-1">Catatan / Komentar (optional)</h6>
                                         <textarea name="donation-note" rows="5" class="form-control" id="donation-note" placeholder="Tulis di sini" required></textarea>
-
-                                        <button type="button" id="confirm-button" class="btn btn-primary mt-3" onclick="submitConfirmation()">Sudah Transfer</button>
-                                        <button type="button" class="btn btn-secondary mt-3" onclick="goBack()">Batal</button>
-                                    </div>
-                                </form>
-                            </div>
+                                    <button type="button" id="confirm-button" class="btn btn-primary mt-3" onclick="submitConfirmation()">Sudah Transfer</button>
+                                    <button type="button" class="btn btn-secondary mt-3" onclick="goBack()">Batal</button>
+                                </div>
+                            </form>
                         </div>
 
                     </div>
