@@ -1217,12 +1217,12 @@ video {
   font-weight: var(--font-weight-semibold);
 }
 
-#DonationUangTunai {
+#donation-uang {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-#DonationProduk {
+#donation-produk {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
