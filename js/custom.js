@@ -50,6 +50,7 @@ function redirectToSuccessPage() {
 }
 
 // RADIO UANG ATAU PRODUK
+var confirmButton = document.getElementById('confirm-button');
 document.querySelectorAll('.donation-radio').forEach(function(radio) {
   radio.addEventListener('change', function() {
       // Pastikan hanya satu yang terpilih
@@ -73,6 +74,7 @@ document.querySelectorAll('.donation-radio').forEach(function(radio) {
               document.getElementById('produk-donasi').style.display = 'block';
               document.getElementById('uang-transfer-qris').style.display = 'none';
               document.getElementById('produk-kirim').style.display = 'block';
+              confirmButton.innerText = 'Kirim';
           } else if (this.value === 'Uang') {
               // Jika Uang dipilih, tampilkan kembali elemen-elemen tersebut
               document.getElementById('amount-pilihan').style.display = 'block';
@@ -85,11 +87,11 @@ document.querySelectorAll('.donation-radio').forEach(function(radio) {
               document.getElementById('produk-donasi').style.display = 'none';
               document.getElementById('uang-transfer-qris').style.display = 'block';
               document.getElementById('produk-kirim').style.display = 'none';
+              confirmButton.innerText = 'Sudah Transfer';
           }
       }
   });
 });
-
 
 
 // DONATION PAGE
@@ -116,34 +118,21 @@ function formatNumber(num) {
   return num.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-function togglePaymentMethod(method) {
-    const transferInfo = document.getElementById('transfer-info');
-    const qrisImage = document.getElementById('qris-image');
+// PAYMENT METHOD
+document.querySelectorAll('.payment-radio').forEach(function(radio) {
+  radio.addEventListener('change', function() {
+      // Pastikan hanya satu yang terpilih
+      if (this.checked) {
+          document.querySelectorAll('.payment-radio').forEach(function(otherRadio) {
+              if (otherRadio !== radio) {
+                  otherRadio.checked = false;
+              }
+          });         
+      }
+  });
+});
 
-    if (method === 'QRIS') {
-        transferInfo.style.display = 'none';
-        qrisImage.style.display = 'block';
-    } else {
-        transferInfo.style.display = 'block';
-        qrisImage.style.display = 'none';
-    }
-}
-
-function togglePaymentMethod(paymentType) {
-  document.getElementById('transfer-info').style.display = paymentType === 'Transfer' ? 'block' : 'none';
-  document.getElementById('qris-image').style.display = paymentType === 'QRIS' ? 'block' : 'none';
-  document.getElementById('produk-kirim').style.display = paymentType === 'Kirim' ? 'block' : 'none';
-  
-  const confirmButton = document.getElementById('confirm-button');
-  if (paymentType === 'Transfer') {
-      confirmButton.textContent = 'Sudah Transfer';
-  } else if (paymentType === 'QRIS') {
-      confirmButton.textContent = 'Sudah QRIS';
-  } else if (paymentType === 'Kirim') {
-      confirmButton.textContent = 'Kirim';
-  }
-}
-
+// CONFIRMATION
 function showConfirmation() {
   const errorMessageContainer = document.getElementById('error-messages');
   errorMessageContainer.innerHTML = '';
@@ -152,10 +141,18 @@ function showConfirmation() {
   const donorEmail = document.getElementById('donation-email').value;
   const donorTlp = document.getElementById('donation-tlp').value;
   const nominalInput = document.getElementById('custom-nominal').value.replace(/\./g, ''); 
+  const donorDetail = document.getElementById('donation-detail').value;
+  const donorType = document.querySelector('input.donation-radio:checked')?.value;
 
   // VALUE VALIDATION
   if (nominalInput === '' || isNaN(nominalInput) || parseInt(nominalInput) <= 0) {
       errorMessageContainer.innerHTML += "<hr>Tentukan Nominal tidak boleh kosong atau 0!<br>";
+  }
+
+  if (donorType === 'Produk' && donorDetail === '') {
+    errorMessageContainer.innerHTML += "<hr>Produk Donasi harus diisi!<br>";
+  } else {
+    errorMessageContainer.innerHTML += "";
   }
 
   // DONATION FORM VALIDATION
@@ -163,7 +160,7 @@ function showConfirmation() {
 
   if (!donorName) message += "<hr>Nama harus diisi!<br>";
   if (!donorEmail) message += "<hr>Email harus diisi!<br>";
-  if (!donorTlp) message += "<hr>Nomor Whatsapp harus diisi!<br>";
+  if (!donorTlp) message += "<hr>Telepon harus diisi!<br>";
 
   // EMAIL VALIDATION
   const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -231,7 +228,7 @@ function submitConfirmation() {
   const donorName = document.getElementById('donation-name').value;
   const donorEmail = document.getElementById('donation-email').value;
   const donorTlp = document.getElementById('donation-tlp').value;
-  const paymentMethod = document.querySelector('input[name="DonationPayment"]:checked').value;
+  const paymentMethod = document.querySelector('input.payment-radio:checked')?.value;
   const donorNote = document.getElementById('donation-note').value;
 
 

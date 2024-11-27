@@ -1,85 +1,101 @@
-function toggleDonationType() {
-  const isProduk = document.getElementById('donation-produk').checked; 
-  const productInput = document.getElementById('product-input'); 
-  const amountElements = [
-      document.getElementById('amount-section'),  
-      document.getElementById('amount1'),    
-      document.getElementById('amount2'),    
-      document.getElementById('amount3'),   
-      document.getElementById('amount4'),   
-      document.getElementById('amount5'), 
-      document.getElementById('amount6'),  
-  ]; 
 
-  if (isProduk) {
-      // Jika Produk dipilih, sembunyikan input nominal uang
-      productInput.style.display = 'block';
-      amountElements.forEach(function(el) {
-        el.style.display = 'none';  // Sembunyikan input nominal
-      });
-  } else {
-      // Jika Uang dipilih, tampilkan input nominal uang
-      productInput.style.display = 'none';
-      amountElements.forEach(function(el) {
-        el.style.display = 'block';  // Tampilkan input nominal
-      });
-  }
-}
+(function ($) {
+  
+  "use strict";
 
-// Memastikan toggleDonationType dijalankan setelah DOM dimuat
-document.addEventListener("DOMContentLoaded", function() {
-  toggleDonationType(); 
+    // COUNTER NUMBERS
+    jQuery('.counter-thumb').appear(function() {
+      jQuery('.counter-number').countTo();
+    });
+    
+    // CUSTOM LINK
+    $('.smoothscroll').click(function(){
+    var el = $(this).attr('href');
+    var elWrapped = $(el);
+    var header_height = $('.navbar').height();
+
+    scrollToDiv(elWrapped,header_height);
+    return false;
+
+    function scrollToDiv(element,navheight){
+      var offset = element.offset();
+      var offsetTop = offset.top;
+      var totalScroll = offsetTop-navheight;
+
+      $('body,html').animate({
+      scrollTop: totalScroll
+      }, 300);
+    }
+});
+    
+  })(window.jQuery);
+
+
+// NO COPPY OR DOWNLOAD
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
 });
 
-// Event listener untuk mendeteksi perubahan pilihan antara "Uang" atau "Produk"
-document.getElementById('donation-uang').addEventListener('change', toggleDonationType);
-document.getElementById('donation-produk').addEventListener('change', toggleDonationType);
-
-
-//
-function togglePaymentMethod(paymentType) {
-  const transferInfo = document.getElementById('transfer-info');
-  const qrisImage = document.getElementById('qris-image');
-  const kirimProduk = document.getElementById('kirim-produk');
-  const confirmButton = document.getElementById('confirm-button');
-  const produkDetailsConfirm = document.getElementById('produk-details-confirm');  
-
-  produkDetailsConfirm.style.display = 'none';  
-  
-  // Ambil nilai dari tipe donasi yang dipilih
-  const donationType = document.querySelector('input[name="DonationType"]:checked').value;
-
-  // Cek jika tipe donasi Produk yang dipilih
-  if (donationType === 'Produk') { 
-      // Jika Produk dipilih, hanya tampilkan kirimProduk
-      transferInfo.style.display = 'none';
-      qrisImage.style.display = 'none';
-      produkDetailsConfirm.style.display = 'block';
-      kirimProduk.style.display = 'block';  // Menampilkan Kirim Produk
-      confirmButton.textContent = 'Kirim';  // Menyesuaikan teks tombol      
-      
-      // Setel pilihan radio button metode pembayaran ke "Kirim"
-      document.getElementById('payment-send').checked = true;
-      document.getElementById('payment-transfer').checked = false;
-      document.getElementById('payment-qris').checked = false;
-      
-  } else if (donationType === 'Uang') {
-      // Jika Uang dipilih, hanya tampilkan transfer dan qris
-      transferInfo.style.display = paymentType === 'Transfer' ? 'block' : 'none';
-      qrisImage.style.display = paymentType === 'QRIS' ? 'block' : 'none';
-      kirimProduk.style.display = 'none';  // Menyembunyikan Kirim Produk
-                    
-  }
-
- 
-  // // Menampilkan atau menyembunyikan elemen sesuai dengan metode pembayaran
-  document.getElementById('transfer-information').style.display = paymentType === 'Transfer' ? 'block' : 'none';
-  document.getElementById('qris-picture').style.display = paymentType === 'QRIS' ? 'block' : 'none';
-  document.getElementById('kirim-produk-donasi').style.display = paymentType === 'Kirim' ? 'block' : 'none';
+// FORM 
+function submitForm() {
+    var iframe = document.getElementsByName('hidden_iframe')[0];
+    iframe.onload = function () {
+        redirectToSuccessPage();
+    };
+    return true; 
 }
 
+function redirectToSuccessPage() {
+    window.location.href = 'sent.html';
+}
 
-//
+// RADIO UANG ATAU PRODUK
+var confirmButton = document.getElementById('confirm-button');
+document.querySelectorAll('.donation-radio').forEach(function(radio) {
+  radio.addEventListener('change', function() {
+      // Pastikan hanya satu yang terpilih
+      if (this.checked) {
+          document.querySelectorAll('.donation-radio').forEach(function(otherRadio) {
+              if (otherRadio !== radio) {
+                  otherRadio.checked = false;
+              }
+          });
+
+          // Cek apakah radio button Produk yang dipilih
+          if (this.value === 'Produk') {
+              // Jika Produk dipilih, sembunyikan elemen-elemen yang terkait dengan Uang
+              document.getElementById('amount-pilihan').style.display = 'none';
+              document.getElementById('amount1').style.display = 'none';
+              document.getElementById('amount2').style.display = 'none';
+              document.getElementById('amount3').style.display = 'none';
+              document.getElementById('amount4').style.display = 'none';
+              document.getElementById('amount5').style.display = 'none';
+              document.getElementById('amount6').style.display = 'none';
+              document.getElementById('produk-donasi').style.display = 'block';
+              document.getElementById('uang-transfer-qris').style.display = 'none';
+              document.getElementById('produk-kirim').style.display = 'block';
+              confirmButton.innerText = 'Kirim';
+          } else if (this.value === 'Uang') {
+              // Jika Uang dipilih, tampilkan kembali elemen-elemen tersebut
+              document.getElementById('amount-pilihan').style.display = 'block';
+              document.getElementById('amount1').style.display = 'block';
+              document.getElementById('amount2').style.display = 'block';
+              document.getElementById('amount3').style.display = 'block';
+              document.getElementById('amount4').style.display = 'block';
+              document.getElementById('amount5').style.display = 'block';
+              document.getElementById('amount6').style.display = 'block';
+              document.getElementById('produk-donasi').style.display = 'none';
+              document.getElementById('uang-transfer-qris').style.display = 'block';
+              document.getElementById('produk-kirim').style.display = 'none';
+              confirmButton.innerText = 'Sudah Transfer';
+          }
+      }
+  });
+});
+
+
+
+// DONATION PAGE
 let lastSelected = null;
 
 function updateNominal(selectedRadio) {
@@ -98,18 +114,26 @@ function updateNominal(selectedRadio) {
   }
 }
 
-
-document.querySelector('#custom-nominal').addEventListener('input', function(e) {
-  const rawValue = e.target.value.replace(/\D/g, '');
-  e.target.value = formatNumber(rawValue);
-});
-
-//
+// TENTUKAN NOMINAL
 function formatNumber(num) {
   return num.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-} 
+}
 
-//
+// PAYMENT METHOD
+document.querySelectorAll('.payment-radio').forEach(function(radio) {
+  radio.addEventListener('change', function() {
+      // Pastikan hanya satu yang terpilih
+      if (this.checked) {
+          document.querySelectorAll('.payment-radio').forEach(function(otherRadio) {
+              if (otherRadio !== radio) {
+                  otherRadio.checked = false;
+              }
+          });         
+      }
+  });
+});
+
+// CONFIRMATION
 function showConfirmation() {
   const errorMessageContainer = document.getElementById('error-messages');
   errorMessageContainer.innerHTML = '';
@@ -118,24 +142,29 @@ function showConfirmation() {
   const donorEmail = document.getElementById('donation-email').value;
   const donorTlp = document.getElementById('donation-tlp').value;
   const nominalInput = document.getElementById('custom-nominal').value.replace(/\./g, ''); 
-  const produkDetails = document.getElementById('produk-details').value.trim();
-  const paymentMethod = document.querySelector('input[name="DonationPayment"]:checked').value;
-  const donationType = document.querySelector('input[name="DonationType"]:checked').value;
-  
+  const donorDetail = document.getElementById('donation-detail').value;
+  const donorType = document.querySelector('input.donation-radio:checked')?.value;
+
+  // VALUE VALIDATION
   if (nominalInput === '' || isNaN(nominalInput) || parseInt(nominalInput) <= 0) {
-      errorMessageContainer.innerHTML += "<hr>Tentukan Nominal, tidak boleh kosong atau bernilai 0 !<br>";
+      errorMessageContainer.innerHTML += "<hr>Tentukan Nominal tidak boleh kosong atau 0!<br>";
   }
   
-  if (donationType === 'Produk' && !produkDetails) {
-    errorMessageContainer.innerHTML += "<hr>Anda belum menentukan donasi produk!<br>";
+  if (donorType === 'Produk' && donorDetail === '') {
+    errorMessageContainer.innerHTML += "<hr>Produk Donasi harus diisi!<br>";
+  } else {
+    errorMessageContainer.innerHTML += "";
   }
 
+  // DONATION FORM VALIDATION
   let message = '';
 
   if (!donorName) message += "<hr>Nama harus diisi!<br>";
   if (!donorEmail) message += "<hr>Email harus diisi!<br>";
   if (!donorTlp) message += "<hr>Telepon harus diisi!<br>";
+ 
 
+  // EMAIL VALIDATION
   const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
   if (donorEmail && !emailPattern.test(donorEmail)) {
       message += "<hr>Penulisan email salah!<br>";
@@ -146,69 +175,80 @@ function showConfirmation() {
       return; 
   }
 
-   // Show confirmation section
-   const donationSection = document.getElementById('donation-section-1');
-   const confirmationSection = document.getElementById('confirmation-section');
-   const donationTitle = document.getElementById('donation-title');
-   const donationDescription = document.getElementById('donation-description');
- 
-   donationSection.style.display = 'none';
-   confirmationSection.style.display = 'block';
-   donationTitle.style.display = 'none';
-   donationDescription.style.display = 'none';
- 
-   const fields = {
-       donationType: donationType,
-       donationAmount: nominalInput,
-       donorName: donorName,
-       donorEmail: donorEmail,
-       produkDetails: produkDetails,
-   };
- 
-   document.getElementById('type-donation').innerText = fields.donationType;
-   document.getElementById('donation-amount-display').innerText = formatNumber(fields.donationAmount);
-   document.getElementById('details-produk').innerText = fields.produkDetails;
-   document.getElementById('donor-name').innerText = fields.donorName;
-   document.getElementById('donor-email').innerText = fields.donorEmail;
-   document.getElementById('donor-tlp').innerText = donorTlp;
-    
-   togglePaymentMethod(paymentMethod);
- 
-   if (paymentMethod === 'Kirim') {
-       document.getElementById('transfer-information').style.display = 'none';
-       document.getElementById('qris-picture').style.display = 'none';
-   }
+  const donationSection = document.getElementById('donation-section');
+  const confirmationSection = document.getElementById('confirmation-section');
+  const donationTitle = document.getElementById('donation-title');
+
+  donationSection.style.display = 'none';
+  confirmationSection.style.display = 'block';
+  donationTitle.style.display = 'none';
+
+const fields = {
+    donationTipe : document.querySelector('input.donation-radio:checked')?.value,
+    donationAmount: nominalInput,
+    donorName: donorName,
+    donorEmail: donorEmail,
+};
+
+  document.getElementById('donation-tipe').innerText = fields.donationTipe;
+  document.getElementById('donation-amount-display').innerText = formatNumber(fields.donationAmount);
+  document.getElementById('donor-name').innerText = fields.donorName;
+  document.getElementById('donor-email').innerText = fields.donorEmail;
+  document.getElementById('donor-tlp').innerText = donorTlp;
+
+  togglePaymentMethod(document.querySelector('input[name="DonationPayment"]:checked').value);
+}
+
+function goBack() {
+    window.location.href = 'donate.html';
+}
+
+//COPY REKENING
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).catch(err => {
+      console.error("Gagal menyalin: ", err);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('custom-nominal').addEventListener('input', function(e) {
+      const rawValue = e.target.value.replace(/\D/g, ''); 
+      e.target.value = formatNumber(rawValue);
+  });
+});
+
+// FORMAT NUMBER
+function formatNumber(num) {
+  return num.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
 function submitConfirmation() {
-  const errorMessageContainer = document.getElementById('error-messages');
-  errorMessageContainer.innerHTML = ''; // Menghapus pesan kesalahan sebelumnya
-  
-  const donationType = document.querySelector('input[name="DonationType"]:checked').value;
+    
+  const donationType = document.querySelector('input.donation-radio:checked')?.value;
   const nominalInput = document.getElementById('custom-nominal').value.replace(/\./g, '') || lastSelected?.value || '0';
-  
-  const produkDetails = document.getElementById('produk-details').value.trim() || '';
-
+  const donorDetail = document.getElementById('donation-detail').value;
   const donorName = document.getElementById('donation-name').value;
   const donorEmail = document.getElementById('donation-email').value;
   const donorTlp = document.getElementById('donation-tlp').value;
+  const paymentMethod = document.querySelector('input.payment-radio:checked')?.value;
+  const donorNote = document.getElementById('donation-note').value;
 
-  const paymentMethod = document.querySelector('input[name="DonationPayment"]:checked').value;
-  const donationNote = document.getElementById('donation-note').value;
 
-
+  // URL GOOGLE FORM
   const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSetZq-Q-6W6oAn4yGgYios1RpLhKoigYtV7_Jbv7Zz-tUXijw/formResponse';
 
+  // PARAMETER
   const params = new URLSearchParams();
-  params.append('entry.1274723429', donorName);
-  params.append('entry.1711964533', donorEmail); 
-  params.append('entry.1479109352', donorTlp); 
-  params.append('entry.363889003', nominalInput); 
-  params.append('entry.1082800990', paymentMethod); 
-  params.append('entry.573797881', donationType); 
-  params.append('entry.1469710524', donationNote);
-  params.append('entry.1526120968', produkDetails);
-
+  params.append('entry.1274723429', donorName); // ID ENTRY FOR NAME
+  params.append('entry.1711964533', donorEmail); // ID ENTRI FOR EMAIL
+  params.append('entry.1479109352', donorTlp); // ID ENTRY FOR NUMBER OR WHATSAPP
+  params.append('entry.363889003', nominalInput); // ID ENTRY FOR VALUE
+  params.append('entry.1526120968', donorDetail); // ID ENTRY FOR PRODUK
+  params.append('entry.1082800990', paymentMethod); // ID ENTRY FOR PAYMENT
+  params.append('entry.573797881', donationType); // ID ENTRY FOR KIND OF DONATION
+  params.append('entry.1469710524', donorNote); // ID ENTRY FOR NOTE
+ 
+  // FETCH SEND
   fetch(googleFormURL, {
       method: 'POST',
       body: params,
@@ -218,20 +258,9 @@ function submitConfirmation() {
   });
 
   setTimeout(() => {
-      window.location.href = 'donate-upload.html'; 
+      window.location.href = 'donate-upload.html';
   }, 500); 
-  return true;
-  
-}
-
-function goBack() {
-  window.location.href = 'index.html#section_program';
-}
-
-function copyToClipboard(text) {
-navigator.clipboard.writeText(text).catch(err => {
-    console.error("Gagal menyalin: ", err);
-});
+  return true; 
 }
 
 function upload() {
@@ -243,7 +272,9 @@ function upload() {
 
   setTimeout(() => {
     window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdyxLaJ9MUj3tRiBGPDcS5hR7ldlmXPC-Bnt7TEnTfTsHZD_Q/viewform'; 
-  }, 10000);
-  
+  }, 5000);  
 }
+
+
+
 
