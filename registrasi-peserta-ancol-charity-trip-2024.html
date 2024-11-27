@@ -158,16 +158,14 @@
                                         <input type="text" name="entry.1361325621" id="patient-born" class="form-control" placeholder="Tanggal Lahir" required>
                                     </div>
                                     
-                                    <label>Jenis Kelamin:</label><br>
-                                    <div class="col-lg-6 col-6 form-check-group">
-                                        
+                                    <div class="col-lg-3 col-6 form-check-group">
                                         <div class="form-check form-check-radio">
                                             <input class="form-check-input" type="radio" name="entry.1725039189" id="gender-male" value="Laki-laki" checked>
                                             <label class="form-check-label" for="gender-male">Laki-laki</label>
                                         </div>
                                     </div>
                         
-                                    <div class="col-lg-6 col-6 form-check-group">
+                                    <div class="col-lg-3 col-6 form-check-group">
                                         <div class="form-check form-check-radio">
                                             <input class="form-check-input" type="radio" name="entry.1725039189" id="gender-female" value="Perempuan">
                                             <label class="form-check-label" for="gender-female">Perempuan</label>
@@ -230,9 +228,9 @@
         
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script>
-            // Inisialisasi flatpickr dengan format yang diinginkan
             flatpickr("#patient-born", {
-              dateFormat: "m/d/Y",  // Format mm/dd/yyyy
+            dateFormat: "m/d/Y",  // Format mm/dd/yyyy
+            disableMobile: true   // Menonaktifkan tampilan kalender mobile dari Flatpickr
             });
         </script>
 

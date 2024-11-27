@@ -1676,7 +1676,7 @@ video {
   }
 
   #patient-born::placeholder {
-    color: #999;
+    color: #717275;
     opacity: 1;
   }
 }
