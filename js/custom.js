@@ -30,32 +30,7 @@
     
   })(window.jQuery);
 
-// TANGGAL
-flatpickr("#patient-born", {
-  dateFormat: "m/d/Y" // Format MM/DD/YYYY
-});
-
-
-// NO COPPY OR DOWNLOAD
-document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-});
-
-// FORM 
-function submitForm() {
-    var iframe = document.getElementsByName('hidden_iframe')[0];
-    iframe.onload = function () {
-        redirectToSuccessPage();
-    };
-    return true; 
-}
-
-function redirectToSuccessPage() {
-    window.location.href = 'sent.html';
-}
-
 // RADIO UANG ATAU PRODUK
-var confirmButton = document.getElementById('confirm-button');
 document.querySelectorAll('.donation-radio').forEach(function(radio) {
   radio.addEventListener('change', function() {
       // Pastikan hanya satu yang terpilih
@@ -76,13 +51,11 @@ document.querySelectorAll('.donation-radio').forEach(function(radio) {
               document.getElementById('amount4').style.display = 'none';
               document.getElementById('amount5').style.display = 'none';
               document.getElementById('amount6').style.display = 'none';
-              document.getElementById('produk-donasi').style.display = 'block';
               document.getElementById('uang-transfer-qris').style.display = 'none';
+
+              document.getElementById('produk-donasi').style.display = 'block';              
               document.getElementById('produk-kirim').style.display = 'block';
-
-              document.getElementById('keterangan-produk').style.display = 'block';
-
-              confirmButton.innerText = 'Kirim';
+              
           } else if (this.value === 'Uang') {
               // Jika Uang dipilih, tampilkan kembali elemen-elemen tersebut
               document.getElementById('amount-pilihan').style.display = 'block';
@@ -92,18 +65,33 @@ document.querySelectorAll('.donation-radio').forEach(function(radio) {
               document.getElementById('amount4').style.display = 'block';
               document.getElementById('amount5').style.display = 'block';
               document.getElementById('amount6').style.display = 'block';
-              document.getElementById('produk-donasi').style.display = 'none';
               document.getElementById('uang-transfer-qris').style.display = 'block';
+
+              document.getElementById('produk-donasi').style.display = 'none';              
               document.getElementById('produk-kirim').style.display = 'none';
-
-              document.getElementById('keterangan-produk').style.display = 'none';
-
-              confirmButton.innerText = 'Sudah Transfer';
           }
       }
   });
 });
 
+
+// NO COPPY OR DOWNLOAD
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+// FORM 
+function submitForm() {
+    var iframe = document.getElementsByName('hidden_iframe')[0];
+    iframe.onload = function () {
+        redirectToSuccessPage();
+    };
+    return true; 
+}
+
+function redirectToSuccessPage() {
+    window.location.href = 'sent.html';
+}
 
 // DONATION PAGE
 let lastSelected = null;

@@ -1,4 +1,3 @@
-
 (function ($) {
   
   "use strict";
@@ -29,25 +28,6 @@
 });
     
   })(window.jQuery);
-
-
-// NO COPPY OR DOWNLOAD
-document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-});
-
-// FORM 
-function submitForm() {
-    var iframe = document.getElementsByName('hidden_iframe')[0];
-    iframe.onload = function () {
-        redirectToSuccessPage();
-    };
-    return true; 
-}
-
-function redirectToSuccessPage() {
-    window.location.href = 'sent.html';
-}
 
 // RADIO UANG ATAU PRODUK
 var confirmButton = document.getElementById('confirm-button');
@@ -99,6 +79,11 @@ document.querySelectorAll('.donation-radio').forEach(function(radio) {
   });
 });
 
+
+// NO COPPY OR DOWNLOAD
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
 
 
 // DONATION PAGE
@@ -155,7 +140,7 @@ function showConfirmation() {
   if (nominalInput === '' || isNaN(nominalInput) || parseInt(nominalInput) <= 0) {
       errorMessageContainer.innerHTML += "<hr>Tentukan Nominal tidak boleh kosong atau 0!<br>";
   }
-  
+
   if (donorType === 'Produk' && donorDetail === '') {
     errorMessageContainer.innerHTML += "<hr>Produk Donasi harus diisi!<br>";
   } else {
@@ -168,7 +153,6 @@ function showConfirmation() {
   if (!donorName) message += "<hr>Nama harus diisi!<br>";
   if (!donorEmail) message += "<hr>Email harus diisi!<br>";
   if (!donorTlp) message += "<hr>Telepon harus diisi!<br>";
- 
 
   // EMAIL VALIDATION
   const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -192,12 +176,14 @@ function showConfirmation() {
 const fields = {
     donationTipe : document.querySelector('input.donation-radio:checked')?.value,
     donationAmount: nominalInput,
+    donorDetail: donorDetail,
     donorName: donorName,
     donorEmail: donorEmail,
 };
 
   document.getElementById('donation-tipe').innerText = fields.donationTipe;
   document.getElementById('donation-amount-display').innerText = formatNumber(fields.donationAmount);
+  document.getElementById('donation-detail-display').innerText = fields.donorDetail;
   document.getElementById('donor-name').innerText = fields.donorName;
   document.getElementById('donor-email').innerText = fields.donorEmail;
   document.getElementById('donor-tlp').innerText = donorTlp;
@@ -206,7 +192,7 @@ const fields = {
 }
 
 function goBack() {
-    window.location.href = 'donate-ancol-charity-trip-2024.html';
+    window.location.href = 'donate.html';
 }
 
 //COPY REKENING

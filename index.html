@@ -19,6 +19,8 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-icons.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet"> 
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         
     </head>
     
@@ -657,7 +659,7 @@
                                     </div>
 
                                     <div class="col-lg-6 col-12">
-                                        <input type="date" name="entry.1735810210" id="patient-born" class="form-control" placeholder="Usia" required>
+                                        <input type="text" id="patient-born" class="form-control" placeholder="Tanggal Lahir">
                                     </div> 
 
                                     <div class="col-lg-3 col-6 form-check-group">
@@ -1391,5 +1393,12 @@
         <script src="js/custom.js"></script>
         <script src="js/countdown.js"></script>
 
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script>
+            // Inisialisasi flatpickr dengan format yang diinginkan
+            flatpickr("#patient-born", {
+              dateFormat: "m/d/Y",  // Format mm/dd/yyyy
+            });
+          </script>
     </body>
 </html>
