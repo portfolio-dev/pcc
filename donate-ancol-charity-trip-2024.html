@@ -129,7 +129,6 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-12 mx-auto" id="donation-description">
-                            <div class="contact-info-wrap"> 
                                 <div class="custom-text-box">                                    
                                     <img src="images/slide/ancol-charity-trip-2024.jpg" class="custom-block-image img-fluid" alt=""> 
                                     <br>
@@ -148,8 +147,7 @@
                                         </a>
                                         <hr>                                         
                                     </p>
-                                </div>
-                            </div>
+                                </div>                            
                         </div>
                         <div class="col-lg-6 col-12 mx-auto"> 
                             <form class="custom-form donate-form" id="donation-form" action="#" method="get" role="form">
@@ -181,10 +179,10 @@
                                             <h6 class="mt-2 mb-3">Tentukan Produk Donasi</h6>
                                         </div>
                                         <div class="col-lg-12 col-12">
-                                            <textarea name="donation-detail" rows="5" class="form-control" id="donation-detail" placeholder="Tulis di sini" required></textarea>                                            
+                                            <textarea name="donation-detail" rows="5" class="form-control" id="donation-detail" placeholder="Nama produk dan jumlah" required></textarea>                                            
                                         </div>
                                         <div class="col-lg-12 col-12">
-                                            <h6 class="mt-2 mb-3">Estimasi Harga</h6>
+                                            <h6 class="mt-2 mb-3">Estimasi Harga Produk</h6>
                                         </div>
 
                                         <!-- <div class="col-lg-6 col-12 form-check-group">
@@ -320,17 +318,23 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="DonationPayment" id="payment-transfer" value="Transfer" onclick="togglePaymentMethod('Transfer')" checked>
-                                                        <label class="form-check-label" for="payment-transfer"><i class="bi-credit-card-2-back-fill me-2"></i>Transfer</label>
+                                                    <div class="form-check-group-payment-type">
+                                                        <input class="form-check-input payment-radio" type="radio" name="DonationPayment" id="payment-bca" value="BCA">
+                                                        <label class="form-check-label" for="payment-bca"><i class="bi-credit-card-2-back-fill me-2"></i>BCA</label>
                                                     </div>                                                
                                                 </td>
-                                                <!-- <td> 
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="DonationPayment" id="payment-qris" value="QRIS" onclick="togglePaymentMethod('QRIS')">
-                                                        <label class="form-check-label" for="payment-qris"><i class="bi-qr-code-scan me-2"></i>QRIS</label>
-                                                    </div>
-                                                </td> -->
+                                                <td>
+                                                    <div class="form-check-group-payment-type">
+                                                        <input class="form-check-input payment-radio" type="radio"  id="payment-bni" value="BNI">
+                                                        <label class="form-check-label" for="payment-bni"><i class="bi-credit-card-2-back-fill me-2"></i>BNI</label>
+                                                    </div>                                                
+                                                </td>
+                                                <td>
+                                                    <div class="form-check-group-payment-type">
+                                                        <input class="form-check-input payment-radio" type="radio"  id="payment-bri" value="BRI">
+                                                        <label class="form-check-label" for="payment-bri"><i class="bi-credit-card-2-back-fill me-2"></i>BRI</label>
+                                                    </div>                                                
+                                                </td>
                                             </tr>
                                         </table>                                    
                                         
@@ -366,9 +370,6 @@
                                                     </td>
                                                 </tr>
                                             </table>
-                                            <!-- <div id="qris-image" style="display: none;">
-                                                <img src="https://raw.githubusercontent.com/portfolio-dev/pcc/refs/heads/main/images/qris-sample.jpeg" alt="QRIS" style="max-width: 100%; height: auto;">
-                                            </div> -->
                                         </div>                                        
                                     </div>
                                     
@@ -379,8 +380,8 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="DonationPayment" id="payment-kirim" value="Kirim" onclick="togglePaymentMethod('Kirim')" checked>
+                                                    <div class="form-check-group-payment-type">
+                                                        <input class="form-check-input payment-radio" type="radio" id="payment-kirim" value="Kirim" checked>
                                                         <label class="form-check-label" for="payment-kirim"><i class="bi-truck me-2"></i>Kirim Produk</label>
                                                     </div>                                                
                                                 </td>
@@ -430,7 +431,7 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.sticky.js"></script>
         <script src="js/counter.js"></script>
-        <script src="js/custom.js"></script>
+        <script src="js/donate-ancol-charity-trip-2024.js"></script>
 
     </body>
 </html>
