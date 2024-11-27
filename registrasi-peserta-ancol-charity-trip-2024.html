@@ -146,9 +146,13 @@
 
                         <div class="col-lg-12 col-12">
                         
-                            <form id="volunteer-form" class="custom-form volunteer-form mb-5 mb-lg-0" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfeabe0EGo3cYw8NJKx85OpeuO3k7H8vKkkKoL5zF2bi1oHgQ/formResponse" method="post" target="hidden_iframe" onsubmit="return submitForm();">
+                            <form id="volunteer-form" class="custom-form volunteer-form mb-5 mb-lg-0" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeeTUks5s6Tv8n3Jwgt3zINRVXI4quQCWZ0Z2kv-mbGLxUadg/formResponse" method="post" target="hidden_iframe" onsubmit="return submitForm();">
                                 <h3 class="mb-4">Pendaftaran Peserta Kegiatan Ancol Charity Trip 2024</h3>
-                        
+                                <p>
+                                    Liburan akhir tahun seringkali menjadi momen untuk berlibur bersama keluarga, namun para pejuang jantung kecil justru lebih banyak bersafari di rumah sakit, entah untuk kebutuhan check-up rutin maupun tindakan. Pejuang Cipto Community bermaksud memberikan sedikit hiburan dengan mengajak mereka berwisata dan refreshing sejenak dari segala rutinitas berobat. Kami berharap bisa sedikit mengukir senyum di wajah mereka dengan menggelar agenda kepedulian yang bertajuk : Ancol Charity Trip, dimana kami akan mengundang para pejuang jantung kecil menikmati keindahan ekosistem bawah laut di Sea World Ancol.
+                                </p>
+                                
+                                <h6 class="mb-4">Data Pasien Anak</h6>
                                 <div class="row">
                                     <div class="col-lg-6 col-12">
                                         <input type="text" name="entry.461502395" id="patient-name" class="form-control" placeholder="Nama Pasien Anak" required>
@@ -175,13 +179,46 @@
                                     <div class="col-lg-6 col-12">
                                         <input type="text" name="entry.213275331" id="pjb-name" class="form-control" placeholder="Jenis PJB / Diagnosa" required>
                                     </div>
+
+                                    <div class="col-lg-3 col-3 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="entry.1540741749" id="gender-male" value="RSCM" checked>
+                                            <label class="form-check-label" for="gender-male">RSCM</label>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-lg-3 col-3 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="entry.1540741749" id="gender-female" value="JHC">
+                                            <label class="form-check-label" for="gender-female">JHC</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-3 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="entry.1540741749" id="gender-female" value="Harkit">
+                                            <label class="form-check-label" for="gender-female">Harkit</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-3 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="entry.1540741749" id="gender-female" value="lainnya">
+                                            <label class="form-check-label" for="gender-female">lainnya</label>
+                                        </div>
+                                    </div>
                         
                                     <div class="col-lg-6 col-12">
                                         <input type="text" name="entry.1769708905" id="last-action" class="form-control" placeholder="Tahap Pengobatan" required>
-                                    </div>                                    
+                                    </div>    
+
+                                    <div class="col-lg-6 col-12">
+                                        <input type="text" name="entry.1084520634" id="last-action" class="form-control" placeholder="Butuh Alat Bantu" required>
+                                    </div>                                
                                     
                                     <hr>
-                                    
+
+                                    <h6 class="mb-4">Data Orang Tua</h6>
                                     <div class="col-lg-6 col-12">
                                         <input type="text" name="entry.366229400" id="parent-name" class="form-control" placeholder="Nama Orang Tua" required>
                                     </div>                                   
@@ -191,7 +228,9 @@
                                     </div>
                                 </div>
                         
-                                <textarea name="entry.1901137419" rows="3" class="col-lg-6 col-12 form-control" id="volunteer-message" placeholder="Alamat Lengkap" required></textarea>
+                                <textarea name="entry.1901137419" rows="3" class="col-lg-6 col-12 form-control" id="volunteer-message" placeholder="Alamat Lengkap (sesuai KTP)" required></textarea>
+
+                                <textarea name="entry.160156057" rows="3" class="col-lg-6 col-12 form-control" id="volunteer-message" placeholder="Alamat Lengkap (domisili)" required></textarea>
                         
                                 <button type="submit" class="form-control">Daftar</button>
                             </form>
