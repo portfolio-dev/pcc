@@ -1670,13 +1670,29 @@ video {
     margin-top: 10px;
     margin-bottom: 10px;
   }
+
+  #patient-born {
+    z-index: 10; /* Pastikan input berada di atas elemen lain */
+  }
+
+  #patient-born::placeholder {
+    color: #999;
+    opacity: 1;
+  }
 }
+
+
 
 @media (max-width: 600px) {
   .video-container {
       padding: 10px; /* Padding lebih kecil di perangkat kecil */
   }
+
+  .flatpickr-calendar {
+    z-index: 99999;  /* Menjaga kalender flatpickr tidak menutupi input */
+  }
 }
+
 
 
 @media screen and (max-width: 580px) {
