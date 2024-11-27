@@ -30,6 +30,11 @@
     
   })(window.jQuery);
 
+// TANGGAL
+flatpickr("#patient-born", {
+  dateFormat: "m/d/Y" // Format MM/DD/YYYY
+});
+
 
 // NO COPPY OR DOWNLOAD
 document.addEventListener('contextmenu', function(e) {
