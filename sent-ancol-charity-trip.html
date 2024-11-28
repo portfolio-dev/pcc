@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30;url=index.html">
+
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/portfolio-dev/pcc/3135e841cd4eee9cc6916de205920100908bfe88/images/favicon.png">
+    <title>Pesan Terkirim</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        img {
+            max-width: 150px; /* Ukuran standar untuk logo */
+            height: auto;
+            margin: 0 auto 20px auto; /* Memusatkan gambar */
+            display: block; /* Mengubah gambar menjadi blok untuk pemusatan */
+        }
+        #countdown {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .loading {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% { content: "sedang mengirim"; }
+            20% { content: "sedang mengirim."; }
+            40% { content: "sedang mengirim.."; }
+            60% { content: "sedang mengirim..."; }
+            80% { content: "sedang mengirim.."; }
+            100% { content: "sedang mengirim."; }
+        }
+    </style>
+</head>
+<body>
+    <img src="images/logo.png" alt="Logo">
+    <h3>Penting!</h3>
+    <p style="background-color: #e54646; color: white; padding: 5px; border-radius: 10px;">
+        Terima kasih atas antusiasme Anda untuk mengikuti acara ini. Kami ingin memberitahukan bahwa jumlah peserta sudah memenuhi kuota. Namun, jangan khawatir, Anda tetap terdaftar dalam daftar antrian. Jika ada peserta yang membatalkan atau mengundurkan diri, Anda akan diberi kesempatan untuk bergabung. Kami sangat menghargai minat dan kesediaan Anda untuk ikut serta, dan akan segera menghubungi Anda jika ada perubahan
+        <br><br>Informasi lebih lanjut, <a class="nav-link click-scroll" href="javascript:void(0)" onclick="window.location.href='index.html#section_hubungi';" style="color: white;">Hubungi Kami</a>
+    </p>
+    <img id="loading" src="https://github.com/portfolio-dev/pcc/blob/main/images/loading.gif?raw=true" style="height: 50px; width: 50px;">
+    <div class="loading">sedang mengirim</div>
+    <div id="countdown">30 detik lagi akan kembali ke <span style="color: red; font-weight: bold;">Beranda</span>!</div>
+
+    <script>
+        let countdown = 30;
+        const countdownElement = document.getElementById('countdown');
+        const loadingText = document.querySelector('.loading');
+        const loadingImage = document.getElementById('loading');
+        let dots = 0;
+
+        const interval = setInterval(() => {
+            countdown--;
+            countdownElement.innerHTML = `${countdown} detik lagi akan kembali ke <span style="color: red; font-weight: bold;">Beranda</span>!`;
+
+            // Mengubah teks dan gambar saat countdown mencapai 3 detik
+            if (countdown === 5) {
+                loadingText.textContent = "Berhasil Terkirim!";
+                loadingImage.src = "https://raw.githubusercontent.com/portfolio-dev/pcc/refs/heads/main/images/sent-done.png"; // Gambar centang
+                clearInterval(loadingInterval);  // Berhentikan animasi titik
+            }
+
+            if (countdown <= 0) {
+                clearInterval(interval);
+            }
+        }, 1000);
+
+        // Animasi titik pada loading
+        let loadingInterval = setInterval(() => {
+            if (countdown > 5) {
+                dots = (dots + 1) % 4; // Menghitung jumlah titik
+                loadingText.textContent = 'sedang mengirim' + '.'.repeat(dots);
+            }
+        }, 500);
+    </script>
+</body>
+</html>

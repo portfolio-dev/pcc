@@ -85,12 +85,17 @@ function submitForm() {
     var iframe = document.getElementsByName('hidden_iframe')[0];
     iframe.onload = function () {
         redirectToSuccessPage();
+        registrasiPesertaAncol();
     };
     return true; 
 }
 
 function redirectToSuccessPage() {
     window.location.href = 'sent.html';
+}
+
+function registrasiPesertaAncol() {
+  window.location.href = 'sent-ancol-charity-trip.html';
 }
 
 // DONATION PAGE
