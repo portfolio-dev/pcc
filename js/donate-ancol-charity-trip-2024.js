@@ -29,8 +29,43 @@
     
   })(window.jQuery);
 
-// RADIO UANG ATAU PRODUK
-var confirmButton = document.getElementById('confirm-button');
+// HASIL UANG ATAU PRODUK
+document.querySelectorAll('.donation-result-radio').forEach(function(radio) {
+  radio.addEventListener('change', function() {
+      // Pastikan hanya satu yang terpilih
+      if (this.checked) {
+          document.querySelectorAll('.donation-result-radio').forEach(function(otherRadio) {
+              if (otherRadio !== radio) {
+                  otherRadio.checked = false;
+              }
+          });
+
+          // Cek apakah radio button Produk yang dipilih
+          if (this.value === 'Hasil Produk') {
+              // Jika Produk dipilih, sembunyikan elemen-elemen yang terkait dengan Uang
+              document.getElementById('donatur-uang').style.display = 'none';
+              document.getElementById('donatur-produk').style.display = 'block';
+
+          } else if (this.value === 'Hasil Uang') {
+              // Jika Uang dipilih, tampilkan kembali elemen-elemen tersebut
+              document.getElementById('donatur-uang').style.display = 'block';
+              document.getElementById('donatur-produk').style.display = 'none';
+              
+          }
+      }
+  });
+});
+
+function showResults() {
+  // Mengubah elemen dengan ID 'hasil-donasi' menjadi block
+  document.getElementById('hasil-donasi').style.display = 'block';
+
+  // Mengubah elemen dengan ID 'deskripsi-donasi' menjadi none
+  document.getElementById('deskripsi-donasi').style.display = 'none';
+}
+
+
+// PILIH UANG ATAU PRODUK
 document.querySelectorAll('.donation-radio').forEach(function(radio) {
   radio.addEventListener('change', function() {
       // Pastikan hanya satu yang terpilih
@@ -57,7 +92,6 @@ document.querySelectorAll('.donation-radio').forEach(function(radio) {
 
               document.getElementById('keterangan-produk').style.display = 'block';
 
-              confirmButton.innerText = 'Kirim';
           } else if (this.value === 'Uang') {
               // Jika Uang dipilih, tampilkan kembali elemen-elemen tersebut
               document.getElementById('amount-pilihan').style.display = 'block';
@@ -73,7 +107,6 @@ document.querySelectorAll('.donation-radio').forEach(function(radio) {
 
               document.getElementById('keterangan-produk').style.display = 'none';
 
-              confirmButton.innerText = 'Sudah Transfer';
           }
       }
   });

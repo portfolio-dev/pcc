@@ -129,31 +129,213 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-12 mx-auto" id="donation-description">
-                                <div class="custom-text-box">                                    
-                                    <img src="images/slide/ancol-charity-trip-2024.jpg" class="custom-block-image img-fluid" alt=""> 
-                                    <br>
-                                    <h5>Ancol Charity Trip 2024</h5>                                    
-                                    <p>
-                                        Liburan akhir tahun seringkali menjadi momen untuk berlibur bersama keluarga, namun para pejuang jantung kecil justru lebih banyak bersafari di rumah sakit, entah untuk kebutuhan check-up rutin maupun tindakan. Pejuang Cipto Community bermaksud memberikan sedikit hiburan dengan mengajak mereka berwisata dan refreshing sejenak dari segala rutinitas berobat. Kami berharap bisa sedikit mengukir senyum di wajah mereka dengan menggelar agenda kepedulian yang bertajuk : <b>Ancol Charity Trip</b>, dimana kami akan mengundang para pejuang jantung kecil menikmati keindahan ekosistem bawah laut di Sea World Ancol.
-                                        <br><br>
-                                        Acara Ancol Charity Trip 2024 yang akan diselengarakan pada tanggal 11 Desember 2024, pukul 09.00 s.d selesai, di Sea World Ancol, Jl. Lodam Timur No. 7, Ancol, Pademangan, Kota Jakarta Utara, DKI Jakarta.
-                                        <br><br>
-                                        Besar harapan, agenda hiburan ini bisa menumbuhkan semangat berjuang sembuh dalam diri mereka, serta menunjukkan bahwa masih banyak yang peduli dan mendukung anak-anak hebat tersebut.
-                                        <hr>
-                                        <a href="javascript:void(0)" onclick="window.location.href='files/Poposal-Ancol-Charity-Trip-2024.pdf';" id="downloadLink" download style="color: #e54646;">
-                                            <i class="bi-eye-fill"></i> Baca Proposal (file PDF)
-                                        </a> 
-                                        <hr>
-                                        <a href="javascript:void(0)" onclick="window.location.href='hasil-donasi-ancol-charity-trip-2024.html';" id="downloadLink" download style="color: #e54646;">
-                                            <i class="bi-door-open-fill"></i> Lihat Hasil Donasi
-                                        </a>
-                                        <hr>
-                                        <a href="javascript:void(0)" onclick="window.location.href='registrasi-peserta-ancol-charity-trip-2024.html';" id="downloadLink" download style="color: #e54646;">
-                                            <i class="bi-book-fill"></i> Registrasi Peserta
-                                        </a>
-                                        <hr>                                      
-                                    </p>
-                                </div>                            
+                                <div class="custom-text-box">
+                                    <div id="deskripsi-donasi">
+                                        <img src="images/slide/ancol-charity-trip-2024.jpg" class="custom-block-image img-fluid" alt=""> 
+                                        <br>
+                                        <h5>Ancol Charity Trip 2024</h5>                                    
+                                        <p>
+                                            Liburan akhir tahun seringkali menjadi momen untuk berlibur bersama keluarga, namun para pejuang jantung kecil justru lebih banyak bersafari di rumah sakit, entah untuk kebutuhan check-up rutin maupun tindakan. Pejuang Cipto Community bermaksud memberikan sedikit hiburan dengan mengajak mereka berwisata dan refreshing sejenak dari segala rutinitas berobat. Kami berharap bisa sedikit mengukir senyum di wajah mereka dengan menggelar agenda kepedulian yang bertajuk : <b>Ancol Charity Trip</b>, dimana kami akan mengundang para pejuang jantung kecil menikmati keindahan ekosistem bawah laut di Sea World Ancol.
+                                            <br><br>
+                                            Acara Ancol Charity Trip 2024 yang akan diselengarakan pada tanggal 11 Desember 2024, pukul 09.00 s.d selesai, di Sea World Ancol, Jl. Lodam Timur No. 7, Ancol, Pademangan, Kota Jakarta Utara, DKI Jakarta.
+                                            <br><br>
+                                            Besar harapan, agenda hiburan ini bisa menumbuhkan semangat berjuang sembuh dalam diri mereka, serta menunjukkan bahwa masih banyak yang peduli dan mendukung anak-anak hebat tersebut.
+                                            <hr>
+                                            <a href="javascript:void(0)" onclick="window.location.href='files/Poposal-Ancol-Charity-Trip-2024.pdf';" id="downloadLink" download style="color: #e54646;">
+                                                <i class="bi-eye-fill"></i> Baca Proposal (file PDF)
+                                            </a> 
+                                            <hr>
+                                            <a href="javascript:void(0)" onclick="window.location.href='registrasi-peserta-ancol-charity-trip-2024.html';" id="downloadLink" download style="color: #e54646;">
+                                                <i class="bi-book-fill"></i> Registrasi Peserta
+                                            </a>
+                                            <hr>
+                                            <a href="javascript:void(0)" onclick="showResults();" style="color: #e54646;">
+                                                <i class="bi-door-open-fill"></i> Lihat Hasil Donasi
+                                            </a>
+
+                                            <!-- <a href="javascript:void(0)" onclick="window.location.href='hasil-donasi-ancol-charity-trip-2024.html';" id="downloadLink" download style="color: #e54646;" onclick="showResults();">
+                                                <i class="bi-door-open-fill"></i> Lihat Hasil Donasi
+                                            </a>                                         -->
+                                            <hr>                                      
+                                        </p>
+                                    </div>
+
+                                    <div id="hasil-donasi" style="display: none;">
+                                        <div class="custom-block-wrap">
+                                            <img src="images/program/ancol-charity-trip-2024.png" class="custom-block-image img-fluid" alt="">
+                
+                                            <div class="custom-block">
+                                                <div class="custom-block-body">
+                                                    <h5 class="mb-3">Ancol Charity Trip 2024</h5>
+                                                        <hr>
+                                                        <div id="countdown-ancol-charity-trip-2024" class="countdown">Berakhir: 10 Des 2024</div>
+                                                    </p>                                      
+                                                    
+            
+                                                    <div class="progress mt-4">
+                                                        <div class="progress-bar w-20" role="progressbar" aria-valuenow="0" aria-valuemin=   "0" aria-valuemax="100"></div>
+                                                    </div>
+                
+                                                    <div class="d-flex align-items-center my-2">
+                                                        <p class="mb-0">
+                                                            <strong>Terkumpul</strong><br>
+                                                            Rp 2.600.000
+                                                        </p>
+                
+                                                        <p class="ms-auto mb-0">
+                                                            <strong>Target</strong><br>
+                                                            Rp 10.000.000
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <form class="custom-form donate-form" id="donation-form" action="#" method="get" role="form">
+
+                                            <div class="row">
+                                                <div class="col-lg-6 col-6 form-check-group form-check-group">
+                                                    <div class="form-check form-check-radio">
+                                                        <input class="form-check-input donation-result-radio" type="radio" id="donation-uang-result" value="Hasil Uang" checked>
+                                                        <label class="form-check-label" for="donation-uang-result">Hasil Uang</label>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-lg-6 col-6 form-check-group form-check-group">
+                                                    <div class="form-check form-check-radio">
+                                                        <input class="form-check-input donation-result-radio" type="radio" id="donation-produk-result" value="Hasil Produk">
+                                                        <label class="form-check-label" for="donation-produk-result">Hasil Produk</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </form>
+
+                                        <div id="donatur-uang" style="display: block;">
+                                            
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 27 Nov 2024</i>
+                                                    <i class="bi-clock-history me-2"> 05.41</i>
+                                                    <br>
+                                                    <b>Maesaroh</b>
+                                                    <p>
+                                                        Rp 100.000
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 27 Nov 2024</i>
+                                                    <i class="bi-clock-history me-2"> 05.39</i>
+                                                    <br>
+                                                    <b>Nita</b>
+                                                    <p>
+                                                        Rp 500.000
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 20 Nov 2024</i>
+                                                    <i class="bi-clock-history me-2"> 17.14</i>
+                                                    <br>
+                                                    <b>Hj Raisah</b>
+                                                    <p>
+                                                        Rp 500.000
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 20 Nov 2024</i>
+                                                    <i class="bi-clock-history me-2"> 16.59</i>
+                                                    <br>
+                                                    <b>Rahmawati</b>
+                                                    <p>
+                                                        Rp 100.000
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 20 Nov 2024</i>
+                                                    <i class="bi-clock-history me-2"> 16.58</i>
+                                                    <br>
+                                                    <b>Hj Nuroniah Spd</b>
+                                                    <p>
+                                                        Rp 250.000
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 20 Nov 2024</i>
+                                                    <i class="bi-clock-history me-2"> 16.57</i>
+                                                    <br>
+                                                    <b>Aryati Ningsih</b>
+                                                    <p>
+                                                        Rp 150.000
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 20 Nov 2024</i>
+                                                    <i class="bi-clock-history me-2"> 16.56</i>
+                                                    <br>
+                                                    <b>Khatulistiwa Golf Jurney</b>
+                                                    <p>
+                                                        Rp 1.000.000
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div id="donatur-produk" style="display: none;">
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="images/avatar/shp-toys.png" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 22 Nov 2024</i>
+                                                    <br>
+                                                    <b>SHP Toys</b>
+                                                    <p>
+                                                        1 pcs - SHP708 UMA Unicon SHP Toys Ride On Pre Balance Bike
+                                                        <br> 1 pcs - SHP712 SBS Truck SHP Toys Ride On Truck
+                                                        <br>1 pcs - SHP557 Honda CBR 600RR SHP Toys On Pre Balance Ride
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+                                
                         </div>
                         <div class="col-lg-6 col-12 mx-auto"> 
                             <form class="custom-form donate-form" id="donation-form" action="#" method="get" role="form">
