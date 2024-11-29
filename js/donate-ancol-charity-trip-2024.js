@@ -225,7 +225,7 @@ const fields = {
 }
 
 function goBack() {
-    window.location.href = 'donate.html';
+    window.location.href = 'donate-ancol-charity-trip-2024.html';
 }
 
 //COPY REKENING
