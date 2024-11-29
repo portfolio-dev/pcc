@@ -855,6 +855,11 @@ strong {
   color: #7c7e80;
 }
 
+#donatur-uang {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
 
 /*---------------------------------------
   NEWS         
@@ -1776,6 +1781,3 @@ video {
     font-size: 14px; /* Ukuran font untuk layar kecil */
   }
 }
-
-
-
