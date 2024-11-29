@@ -170,7 +170,7 @@ function tambahItem() {
       var textarea = document.getElementById("donation-detail");
 
       // Format data yang ingin ditambahkan ke textarea
-      var newEntry = jumlah + " " + satuan + " - " + produk +  "\n";
+      var newEntry = jumlah + " " + satuan + " : " + produk +  ", \n";
       
       // Tambahkan data ke dalam textarea
       textarea.value += newEntry;
@@ -345,7 +345,3 @@ function upload() {
     window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdyxLaJ9MUj3tRiBGPDcS5hR7ldlmXPC-Bnt7TEnTfTsHZD_Q/viewform'; 
   }, 5000);  
 }
-
-
-
-
