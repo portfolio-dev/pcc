@@ -157,6 +157,52 @@ document.querySelectorAll('.payment-radio').forEach(function(radio) {
   });
 });
 
+// TEXTAREA PRODUK
+function tambahItem() {
+  // Ambil nilai produk, jumlah, dan satuan dari inputan
+  var produk = document.getElementById("produk1").value;
+  var jumlah = document.getElementById("jumlah1").value;
+  var satuan = document.getElementById("satuan1").value;
+
+  // Periksa apakah produk, jumlah, dan satuan diisi
+  if (produk && jumlah && satuan) {
+      // Ambil textarea
+      var textarea = document.getElementById("donation-detail");
+
+      // Format data yang ingin ditambahkan ke textarea
+      var newEntry = jumlah + " " + satuan + " - " + produk +  "\n";
+      
+      // Tambahkan data ke dalam textarea
+      textarea.value += newEntry;
+
+      // Kosongkan inputan produk, jumlah, dan satuan setelah menambah
+      document.getElementById("produk1").value = '';
+      document.getElementById("jumlah1").value = '';
+      document.getElementById("satuan1").value = 'pcs'; // Reset dropdown ke default
+
+      // Set fokus kembali ke input produk
+      document.getElementById("produk1").focus();
+  } else {
+      alert("Silakan isi nama produk, jumlah, dan pilih satuan.");
+  }
+}
+
+// Fungsi untuk mereset form
+function resetForm() {
+  // Reset inputan produk, jumlah, satuan, dan textarea
+  document.getElementById("produk1").value = '';
+  document.getElementById("jumlah1").value = '';
+  document.getElementById("satuan1").value = 'pcs'; // Reset dropdown ke default
+  document.getElementById("donation-detail").value = ''; // Kosongkan textarea
+}
+
+// Agar textarea bisa menyesuaikan ukurannya sesuai input
+var textarea = document.getElementById("donation-detail");
+textarea.addEventListener("input", function () {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+});
+
 // CONFIRMATION
 function showConfirmation() {
   const errorMessageContainer = document.getElementById('error-messages');
