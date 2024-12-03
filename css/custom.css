@@ -860,6 +860,11 @@ strong {
   overflow-y: auto;
 }
 
+#donatur-produk {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
 
 /*---------------------------------------
   NEWS         
@@ -1781,3 +1786,6 @@ video {
     font-size: 14px; /* Ukuran font untuk layar kecil */
   }
 }
+
+
+
