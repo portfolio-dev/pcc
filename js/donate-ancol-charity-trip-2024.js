@@ -64,6 +64,14 @@ function showResults() {
   document.getElementById('deskripsi-donasi').style.display = 'none';
 }
 
+function showBeforeResults() {
+  // Mengubah elemen dengan ID 'deskripsi-donasi' menjadi none
+  document.getElementById('deskripsi-donasi').style.display = 'block';
+
+  // Mengubah elemen dengan ID 'hasil-donasi' menjadi block
+  document.getElementById('hasil-donasi').style.display = 'none';  
+}
+
 
 // PILIH UANG ATAU PRODUK
 document.querySelectorAll('.donation-radio').forEach(function(radio) {
@@ -345,3 +353,7 @@ function upload() {
     window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdyxLaJ9MUj3tRiBGPDcS5hR7ldlmXPC-Bnt7TEnTfTsHZD_Q/viewform'; 
   }, 5000);  
 }
+
+
+
+
