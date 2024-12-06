@@ -117,24 +117,26 @@
 
         <main>
 
-            <section class="donate-section">                
+            <section class="donate-section">
                 <div class="container">
                     <div class="row">
 
                         <div class="col-lg-6 col-12 mx-auto"> 
-                            <form id="volunteer-form" class="custom-form volunteer-form mb-5 mb-lg-0" action="sent.html" method="post" target="hidden_iframe" onsubmit="">
+                            <form id="login-form" class="custom-form volunteer-form mb-5 mb-lg-0" action="javascript:void(0);" method="post" onsubmit="validateLogin(event)">
                                 <h3 class="mb-4">Portal Anggota</h3>
-            
-                                <div class="row">                                    
+                            
+                                <div class="row">
                                     <div class="col-lg-6 col-12">
-                                        <input type="text" name="" id="parent-telepon" class="form-control" placeholder="Nomor Whatsapp" inputmode="numeric" required pattern="\d*" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        <input type="text" name="whatsapp" id="parent-telepon" class="form-control" placeholder="Nomor Whatsapp" inputmode="numeric" required pattern="\d*" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                     </div>
                                     <div class="col-lg-6 col-12">
-                                        <input type="text" name="" id="member-code" class="form-control" placeholder="Kode Masuk" required>
+                                        <input type="password" name="password" id="member-code" class="form-control" placeholder="Kode Masuk (8 Digit)" required>
                                     </div>
-            
+                                </div>
+                            
                                 <button type="submit" class="form-control">Masuk</button>
                             </form>
+                            
                         </div>
 
                     </div>
@@ -164,6 +166,7 @@
         <script src="js/jquery.sticky.js"></script>
         <script src="js/counter.js"></script>
         <script src="js/custom.js"></script>
+        <script src="js/member.js"></script>
 
     </body>
 </html>
