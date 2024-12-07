@@ -8,12 +8,12 @@ function goOut() {
 const users = [
     {
         whatsapp: '082132936477', // Nomor WhatsApp anggota 1
-        password: 'aBcd1234',      // Password acak 8 digit untuk anggota 1
+        password: 'aBcd12',      // Password acak 8 digit untuk anggota 1
         redirectUrl: 'user/ema-rosyadi.html' // URL halaman setelah login untuk anggota 1
     },
     {
         whatsapp: '082132936433', // Nomor WhatsApp anggota 2
-        password: '12345678',     // Password acak 8 digit untuk anggota 2
+        password: 'Abc123',     // Password acak 8 digit untuk anggota 2
         redirectUrl: 'user/eldi.html' // URL halaman setelah login untuk anggota 2
     }
     // Tambahkan lebih banyak data anggota di sini jika perlu
@@ -41,3 +41,17 @@ function validateLogin(event) {
         alert('Nomor WhatsApp atau password salah. Silakan coba lagi.');
     }
 }
+
+// Menambahkan event listener untuk tombol show/hide password
+const togglePassword = document.getElementById('togglePassword');
+const passwordField = document.getElementById('member-code');
+
+togglePassword.addEventListener('click', function() {
+    // Men-toggle tipe password antara 'text' dan 'password'
+    const type = passwordField.type === 'password' ? 'text' : 'password';
+    passwordField.type = type;
+    
+    // Menambahkan/menghapus ikon eye-fill (open/close)
+    this.classList.toggle('bi-eye');
+    this.classList.toggle('bi-eye-fill');
+});
