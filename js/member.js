@@ -1,1 +1,84 @@
-const _0x3717f6=_0x27b1;function _0x32e4(){const _0x4bd453=['true','classList','type','10864168GgVjlb','082132936433','Abc123','13684290YsBdHw','member-code','parent-telepon','isLoggedIn','location','20065jUjaBj','togglePassword','password','7aoSdUe','1505852txZemV','2551608JstCOd','value','/login-anggota.html','9HQJuoI','95315BKICQW','406056LJphhu','setItem','user/eldi.html','Nomor\x20WhatsApp\x20atau\x20password\x20salah.\x20Silakan\x20coba\x20lagi.','whatsapp','132AKJZJz','aBcd12','getElementById','click','toggle','preventDefault'];_0x32e4=function(){return _0x4bd453;};return _0x32e4();}(function(_0x486bb8,_0x59c375){const _0xa8520d=_0x27b1,_0x275566=_0x486bb8();while(!![]){try{const _0x52be6c=-parseInt(_0xa8520d(0xa6))/0x1+parseInt(_0xa8520d(0xa2))/0x2+-parseInt(_0xa8520d(0xa7))/0x3+-parseInt(_0xa8520d(0xa1))/0x4+-parseInt(_0xa8520d(0x9d))/0x5*(-parseInt(_0xa8520d(0x8c))/0x6)+parseInt(_0xa8520d(0xa0))/0x7*(parseInt(_0xa8520d(0x95))/0x8)+parseInt(_0xa8520d(0xa5))/0x9*(-parseInt(_0xa8520d(0x98))/0xa);if(_0x52be6c===_0x59c375)break;else _0x275566['push'](_0x275566['shift']());}catch(_0x3e7ecd){_0x275566['push'](_0x275566['shift']());}}}(_0x32e4,0xb6438));function _0x27b1(_0x22ec1b,_0x117730){const _0x32e4d3=_0x32e4();return _0x27b1=function(_0x27b1a1,_0x1ebd6c){_0x27b1a1=_0x27b1a1-0x8b;let _0x54e72b=_0x32e4d3[_0x27b1a1];return _0x54e72b;},_0x27b1(_0x22ec1b,_0x117730);}function goOut(){const _0x103702=_0x27b1;sessionStorage['removeItem'](_0x103702(0x9b)),window[_0x103702(0x9c)]['href']=_0x103702(0xa4);}const users=[{'whatsapp':'082132936477','password':_0x3717f6(0x8d),'redirectUrl':'user/ema-rosyadi.html'},{'whatsapp':_0x3717f6(0x96),'password':_0x3717f6(0x97),'redirectUrl':_0x3717f6(0xa9)}];function validateLogin(_0x4e8406){const _0x50c681=_0x3717f6;_0x4e8406[_0x50c681(0x91)]();const _0x549bef=document[_0x50c681(0x8e)](_0x50c681(0x9a))[_0x50c681(0xa3)],_0x714830=document['getElementById']('member-code')['value'],_0x22a434=users['find'](_0x1c019e=>_0x1c019e[_0x50c681(0x8b)]===_0x549bef&&_0x1c019e['password']===_0x714830);_0x22a434?(sessionStorage[_0x50c681(0xa8)]('isLoggedIn',_0x50c681(0x92)),window[_0x50c681(0x9c)]['href']=_0x22a434['redirectUrl']):alert(_0x50c681(0xaa));}const togglePassword=document[_0x3717f6(0x8e)](_0x3717f6(0x9e)),passwordField=document[_0x3717f6(0x8e)](_0x3717f6(0x99));togglePassword['addEventListener'](_0x3717f6(0x8f),function(){const _0x2f782a=_0x3717f6,_0x4aa25d=passwordField[_0x2f782a(0x94)]==='password'?'text':_0x2f782a(0x9f);passwordField[_0x2f782a(0x94)]=_0x4aa25d,this['classList'][_0x2f782a(0x90)]('bi-eye'),this[_0x2f782a(0x93)][_0x2f782a(0x90)]('bi-eye-fill');});
+function goOut() {
+    // Menghapus status login dari sessionStorage
+    sessionStorage.removeItem('isLoggedIn');
+    window.location.href = '/login-anggota.html'; // Arahkan ke halaman login setelah log out
+}
+
+// Array data login yang berisi nomor WhatsApp dan password acak
+const users = [
+    {
+        whatsapp: '082132936477', // Nomor WhatsApp anggota 1
+        password: 'aBcd12',      // Password acak 8 digit untuk anggota 1
+        redirectUrl: 'user/ema-rosyadi.html' // URL halaman setelah login untuk anggota 1
+    },
+    {
+        whatsapp: '082132936433', // Nomor WhatsApp anggota 2
+        password: 'Abc123',     // Password acak 8 digit untuk anggota 2
+        redirectUrl: 'user/eldi.html' // URL halaman setelah login untuk anggota 2
+    }
+    // Tambahkan lebih banyak data anggota di sini jika perlu
+];
+
+// Fungsi untuk memvalidasi login
+function validateLogin(event) {
+    event.preventDefault(); // Mencegah form dari refresh halaman
+
+    // Ambil nilai input dari form
+    const whatsappInput = document.getElementById('parent-telepon').value;
+    const passwordInput = document.getElementById('member-code').value;
+
+    // Periksa apakah data login valid
+    const user = users.find(u => u.whatsapp === whatsappInput && u.password === passwordInput);
+
+    if (user) {
+        // Simpan status login ke sessionStorage
+        sessionStorage.setItem('isLoggedIn', 'true');
+
+        // Jika login berhasil, arahkan ke halaman yang sesuai dengan anggota
+        window.location.href = user.redirectUrl; // Menggunakan URL yang sudah ditentukan pada anggota
+    } else {
+        // Jika login gagal, beri tahu pengguna
+        alert('Nomor WhatsApp atau password salah. Silakan coba lagi.');
+    }
+}
+
+// Menambahkan event listener untuk tombol show/hide password
+const togglePassword = document.getElementById('togglePassword');
+const passwordField = document.getElementById('member-code');
+
+togglePassword.addEventListener('click', function() {
+    // Men-toggle tipe password antara 'text' dan 'password'
+    const type = passwordField.type === 'password' ? 'text' : 'password';
+    passwordField.type = type;
+    
+    // Menambahkan/menghapus ikon eye-fill (open/close)
+    this.classList.toggle('bi-eye');
+    this.classList.toggle('bi-eye-fill');
+});
+
+//tombol navigasi member
+document.addEventListener('DOMContentLoaded', function () {
+    // Menangani klik pada link Beranda
+    document.querySelector('a[href="javascript:void(0)"][onclick="window.location.href=\'\';"]').addEventListener('click', function () {
+        toggleView('beranda-member');
+    });
+
+    // Menangani klik pada link Profil
+    document.querySelector('a[href="javascript:void(0)"][onclick=""]').addEventListener('click', function () {
+        toggleView('profil-member');
+    });
+
+    // Fungsi untuk menampilkan dan menyembunyikan tampilan
+    function toggleView(viewId) {
+        // Menyembunyikan semua div dengan ID tertentu
+        const allViews = ['beranda-member', 'profil-member'];
+        allViews.forEach(function (view) {
+            const viewElement = document.getElementById(view);
+            if (view === viewId) {
+                viewElement.style.display = 'block'; // Menampilkan tampilan yang dipilih
+            } else {
+                viewElement.style.display = 'none'; // Menyembunyikan tampilan lainnya
+            }
+        });
+    }
+});
