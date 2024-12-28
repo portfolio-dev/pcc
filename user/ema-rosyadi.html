@@ -218,6 +218,33 @@
             window.onpopstate = function () {
                 history.pushState(null, null, window.location.href);
             };
+
+            //tombol navigasi member
+            document.addEventListener('DOMContentLoaded', function () {
+                // Menangani klik pada link Beranda
+                document.querySelector('a[href="javascript:void(0)"][onclick="window.location.href=\'\';"]').addEventListener('click', function () {
+                    toggleView('beranda-member');
+                });
+
+                // Menangani klik pada link Profil
+                document.querySelector('a[href="javascript:void(0)"][onclick=""]').addEventListener('click', function () {
+                    toggleView('profil-member');
+                });
+
+                // Fungsi untuk menampilkan dan menyembunyikan tampilan
+                function toggleView(viewId) {
+                    // Menyembunyikan semua div dengan ID tertentu
+                    const allViews = ['beranda-member', 'profil-member'];
+                    allViews.forEach(function (view) {
+                        const viewElement = document.getElementById(view);
+                        if (view === viewId) {
+                            viewElement.style.display = 'block'; // Menampilkan tampilan yang dipilih
+                        } else {
+                            viewElement.style.display = 'none'; // Menyembunyikan tampilan lainnya
+                        }
+                    });
+                }
+            });
         </script>
     </body>
 </html>
