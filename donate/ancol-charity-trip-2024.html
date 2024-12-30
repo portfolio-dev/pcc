@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="">
 
-        <meta property="og:title" content="Donasi Umum" />
-        <meta property="og:description" content="Untuk mendukung Pejuang Cipto Community, yaitu sebuah komunitas yang berfokus pada pendampingan orang tua pasien anak dengan Penyakit Jantung Bawaan (PJB)." />
-        <meta property="og:image" content="https://raw.githubusercontent.com/portfolio-dev/pcc/refs/heads/main/images/logo.png" />
-        <meta property="og:url" content="https://pejuangcipto.online/donate" />
+        <meta property="og:title" content="Ancol Charity Trip 2024" />
+        <meta property="og:description" content="Liburan akhir tahun seringkali menjadi momen untuk berlibur bersama keluarga, namun para pejuang jantung kecil justru lebih banyak bersafari di rumah sakit, entah untuk kebutuhan check-up rutin maupun tindakan. Pejuang Cipto Community bermaksud memberikan sedikit hiburan dengan mengajak mereka berwisata dan refreshing sejenak dari segala rutinitas berobat. Kami berharap bisa sedikit mengukir senyum di wajah mereka dengan menggelar agenda kepedulian yang bertajuk : Ancol Charity Trip, dimana kami akan mengundang para pejuang jantung kecil menikmati keindahan ekosistem bawah laut di Sea World Ancol." />
+        <meta property="og:image" content="https://raw.githubusercontent.com/portfolio-dev/pcc/refs/heads/main/images/program/ancol-charity-trip-2024.png" />
+        <meta property="og:url" content="https://pejuangcipto.online/donate/ancol-charity-trip-2024" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Pejuang Cipto Community" />
 
@@ -16,10 +16,10 @@
         <title>Pejuang Cipto Community</title>
 
         <!-- CSS FILES -->        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
-        <link href="css/custom.css" rel="stylesheet">
-
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+        <link href="../css/custom.css" rel="stylesheet">
+        
     </head>
     
     <body>
@@ -76,8 +76,8 @@
 
         <nav class="navbar navbar-expand-lg bg-light shadow-lg">
             <div class="container">
-                <a class="navbar-brand" href="javascript:void(0)" onclick="window.location.href='index.html';">
-                    <img src="images/logo.png" class="logo img-fluid" alt="Pejuang Cipto Community">
+                <a class="navbar-brand" href="javascript:void(0)" onclick="window.location.href='/index.html';">
+                    <img src="../images/logo.png" class="logo img-fluid" alt="Pejuang Cipto Community">
                     <span>
                         Pejuang Cipto
                         <small>Community</small>
@@ -91,31 +91,31 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="javascript:void(0)" onclick="window.location.href='index.html';">Beranda</a>                            
+                            <a class="nav-link click-scroll" href="javascript:void(0)" onclick="window.location.href='/index.html';">Beranda</a>                            
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="javascript:void(0)" onclick="window.location.href='index.html#section_profil';">Profil</a>
+                            <a class="nav-link click-scroll" href="javascript:void(0)" onclick="window.location.href='/index.html#section_profil';">Profil</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="javascript:void(0)" onclick="window.location.href='index.html#section_program';">Program</a>
+                            <a class="nav-link click-scroll" href="javascript:void(0)" onclick="window.location.href='/index.html#section_program';">Program</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="javascript:void(0)" onclick="window.location.href='index.html#section_anggota';">Anggota</a>
+                            <a class="nav-link click-scroll" href="javascript:void(0)" onclick="window.location.href='/index.html#section_anggota';">Anggota</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="javascript:void(0)" onclick="window.location.href='index.html#section_berita';">Berita</a>
+                            <a class="nav-link click-scroll" href="javascript:void(0)" onclick="window.location.href='/index.html#section_berita';">Berita</a>
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="javascript:void(0)" onclick="window.location.href='index.html#section_hubungi';">Hubungi</a>
+                            <a class="nav-link click-scroll" href="javascript:void(0)" onclick="window.location.href='/index.html#section_hubungi';">Hubungi</a>
                         </li>
 
                         <li class="nav-item ms-3">
-                            <a class="nav-link custom-btn custom-border-btn btn" href="javascript:void(0)" onclick="window.location.href='donate.html';">Donasi</a>
+                            <a class="nav-link custom-btn custom-border-btn btn" href="javascript:void(0)" onclick="window.location.href='/donate.html';">Donasi</a>
                         </li>
                     </ul>
                 </div>
@@ -128,10 +128,283 @@
                 <!-- <div class="section-overlay"></div> -->
                 <div class="container">
                     <div class="row">
+                        <div class="col-lg-6 col-12 mx-auto" id="donation-description">
+                                <div class="custom-text-box">
+                                    <div id="deskripsi-donasi">
+                                        <img src="../images/slide/ancol-charity-trip-2024.jpg" class="custom-block-image img-fluid" alt="" style="border-radius: 7px;"> 
+                                        <br>
+                                        <h5>Ancol Charity Trip 2024</h5>                                    
+                                        <p>
+                                            Liburan akhir tahun seringkali menjadi momen untuk berlibur bersama keluarga, namun para pejuang jantung kecil justru lebih banyak bersafari di rumah sakit, entah untuk kebutuhan check-up rutin maupun tindakan. Pejuang Cipto Community bermaksud memberikan sedikit hiburan dengan mengajak mereka berwisata dan refreshing sejenak dari segala rutinitas berobat. Kami berharap bisa sedikit mengukir senyum di wajah mereka dengan menggelar agenda kepedulian yang bertajuk : <b>Ancol Charity Trip</b>, dimana kami akan mengundang para pejuang jantung kecil menikmati keindahan ekosistem bawah laut di Sea World Ancol.
+                                            <br><br>
+                                            Acara Ancol Charity Trip 2024 yang akan diselengarakan pada tanggal 11 Desember 2024, pukul 08.00 s.d selesai, di Sea World Ancol, Jl. Lodam Timur No. 7, Ancol, Pademangan, Kota Jakarta Utara, DKI Jakarta.
+                                            <br><br>
+                                            Besar harapan, agenda hiburan ini bisa menumbuhkan semangat berjuang sembuh dalam diri mereka, serta menunjukkan bahwa masih banyak yang peduli dan mendukung anak-anak hebat tersebut.
+                                            <hr>
+                                            <a href="javascript:void(0)" onclick="window.location.href='../files/Poposal-Ancol-Charity-Trip-2024.pdf';" id="downloadLink" download style="color: #e54646;">
+                                                <i class="bi-eye-fill"></i> Baca Proposal (file PDF)
+                                            </a> 
+                                            <hr>
+                                            <a href="javascript:void(0)" onclick="window.location.href='/registration/peserta-ancol-charity-trip-2024.html';" id="downloadLink" download style="color: #e54646;">
+                                                <i class="bi-book-fill"></i> Registrasi Peserta
+                                            </a>
+                                            <hr>
+                                            <a href="javascript:void(0)" onclick="showResults();" style="color: #e54646;">
+                                                <i class="bi-door-open-fill"></i> Lihat Hasil Donasi
+                                            </a>
+                                            <hr>                                      
+                                        </p>
+                                    </div>
 
+                                    <div id="hasil-donasi" style="display: none;">
+                                        <img src="../images/slide/ancol-charity-trip-2024.jpg" class="custom-block-image img-fluid" alt="" style="border-radius: 7px;">
+                                            <hr>
+                                            <div id="countdown-ancol-charity-trip-2024" class="countdown">Berakhir: 10 Des 2024</div>
+
+                                        <div class="progress mt-4">
+                                            <div class="progress-bar w-30" role="progressbar" aria-valuenow="0" aria-valuemin=   "0" aria-valuemax="100"></div>
+                                        </div>
+    
+                                        <div class="d-flex align-items-center my-2">
+                                            <p class="mb-0">
+                                                <strong>Terkumpul</strong><br>
+                                                Rp 3.100.000
+                                            </p>
+    
+                                            <p class="ms-auto mb-0">
+                                                <strong>Target</strong><br>
+                                                Rp 10.000.000
+                                            </p>
+                                        </div>
+                                        <hr>
+                                        <form class="custom-form donate-form" id="donation-form" action="#" method="get" role="form">
+
+                                            <div class="row">
+                                                <div class="col-lg-6 col-6 form-check-group form-check-group">
+                                                    <div class="form-check form-check-radio">
+                                                        <input class="form-check-input donation-result-radio" type="radio" id="donation-uang-result" value="Hasil Uang" checked>
+                                                        <label class="form-check-label" for="donation-uang-result">Hasil Uang</label>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-lg-6 col-6 form-check-group form-check-group">
+                                                    <div class="form-check form-check-radio">
+                                                        <input class="form-check-input donation-result-radio" type="radio" id="donation-produk-result" value="Hasil Produk">
+                                                        <label class="form-check-label" for="donation-produk-result">Hasil Produk</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </form>
+
+                                        <div id="donatur-uang" style="display: block;">                                            
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="../images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 06 Des 2024</i>
+                                                    <br>
+                                                    <b>Ahmad Zamzami</b>
+                                                    <p>
+                                                        Rp 500.000
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="../images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 27 Nov 2024</i>
+                                                    <br>
+                                                    <b>Maesaroh</b>
+                                                    <p>
+                                                        Rp 100.000
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="../images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 27 Nov 2024</i>
+                                                    <br>
+                                                    <b>Nita</b>
+                                                    <p>
+                                                        Rp 500.000
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="../images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 20 Nov 2024</i>
+                                                    <br>
+                                                    <b>Hj Raisah</b>
+                                                    <p>
+                                                        Rp 500.000
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="../images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 20 Nov 2024</i>
+                                                    <br>
+                                                    <b>Rahmawati</b>
+                                                    <p>
+                                                        Rp 100.000
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="../images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 20 Nov 2024</i>
+                                                    <br>
+                                                    <b>Hj Nuroniah Spd</b>
+                                                    <p>
+                                                        Rp 250.000
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="../images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 20 Nov 2024</i>
+                                                    <br>
+                                                    <b>Aryati Ningsih</b>
+                                                    <p>
+                                                        Rp 150.000
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="../images/avatar/komentar.jpg" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 20 Nov 2024</i>
+                                                    <br>
+                                                    <b>Khatulistiwa Golf Journey</b>
+                                                    <p>
+                                                        Rp 1.000.000
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div id="donatur-produk" style="display: none;">
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="../images/avatar/agatis.png" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 09 Des 2024</i>
+                                                    <br>
+                                                    <b>PT. Asaba (Agatis)</b>
+                                                    <p>
+                                                        25 set - Pensil Warna Merk Staedler 12 Warna, 
+                                                        <br>25 pcs - Buku Gambar A4
+                                                    </p>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="../images/avatar/kokola-group.png" class="img-fluid avatar-image" alt="">
+                                                
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 06 Des 2024</i>
+                                                    <br>
+                                                    <b>PT. Mega Global Food Industri</b>
+                                                    <p>
+                                                        50 Pcs - Goodie Bag Kokola dengan isi (1 pcs Kue Kuki, 1 pcs Crackers, 1 pcs Kukis & 3 pcs Waferblack)
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="../images/avatar/karya-putra-pertiwi.png" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 03 Des 2024</i>
+                                                    <br>
+                                                    <b>CV. Karya Putra Pertiwi</b>
+                                                    <p>
+                                                        20 Pcs - Putra Pertiwi Media Edukasi (Worksheet Anak Buku Edukasi Lembar Kerja Activity Aktifitas
+                                                        Wipe Clean)
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="../images/avatar/semesta-souvenir-group.png" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 02 Des 2024</i>
+                                                    <br>
+                                                    <b>Semesta Souvenir Group</b>
+                                                    <p>
+                                                        25 Pcs - Tas Goodie Bag
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="../images/avatar/garam-cap-kapal.png" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 02 Des 2024</i>
+                                                    <br>
+                                                    <b>PT. Susanti Megah</b>
+                                                    <p>
+                                                        20 Pack - Garam Cap Kapal, Tas Goodie Bag / Pouch dan Buku Anak
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="author-comment d-flex mt-3 mb-4">
+                                                <img src="../images/avatar/shp-toys.png" class="img-fluid avatar-image" alt="">
+        
+                                                <div class="author-comment-info ms-3">
+                                                    <i class="bi-calendar-event me-2"> 22 Nov 2024</i>
+                                                    <br>
+                                                    <b>SHP Toys</b>
+                                                    <p>
+                                                        1 pcs - SHP708 UMA Unicon SHP Toys Ride On Pre Balance Bike
+                                                        <br> 1 pcs - SHP712 SBS Truck SHP Toys Ride On Truck
+                                                        <br>1 pcs - SHP557 Honda CBR 600RR SHP Toys On Pre Balance Ride
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    <br>
+                                    <hr>
+                                    <a href="javascript:void(0)" onclick="showBeforeResults();" style="color: #e54646;">
+                                        <i class="bi-backspace-fill"></i> Kembali
+                                    </a>
+                                    <hr>
+
+                                    </div>
+                                </div>
+                                
+                                
+                        </div>
                         <div class="col-lg-6 col-12 mx-auto"> 
                             <form class="custom-form donate-form" id="donation-form" action="#" method="get" role="form">
-                                <h3 class="mb-4" id="donation-title">Donasi untuk Komunitas</h3>
+                                <h3 class="mb-4" id="donation-title">Donasi Untuk Acara Ini</h3>
                                 
 
                                 <div class="row" id="donation-section">
@@ -168,7 +441,6 @@
                                                 <input type="text" id="produk1" class="form-control" placeholder="Isi di sini..." aria-label="Username" aria-describedby="basic-addon1" required>
                                             </div>                                        
                                         </div>
-
                                         <div class="col-lg-12 col-12 form-check-group">
                                             <div class="input-group">
                                                 <span class="input-group-text" id="basic-addon2">Jumlah</span>
@@ -188,8 +460,8 @@
                                                     <option value="set">set</option>
                                                 </select>
                                             </div>                                        
-                                        </div>
-
+                                        </div>                                        
+                                        <hr>
                                         <div class="col-lg-12 col-12 form-check-group">
                                             <div class="input-group">
                                                 <button type="button" class="form-control" style="width: 100%; height: 50px; color: white; background-color: rgb(235, 18, 18); 
@@ -306,6 +578,10 @@
                                             <td style="padding: 8px; border: none;"><b><span id="donor-tlp"></span></b></td>
                                         </tr>
                                         <tr>
+                                            <td style="padding: 8px; border: none;">Program</td>
+                                            <td style="padding: 8px; border: none;"><b>Ancol Charity Trip 2024</b></td>
+                                        </tr>
+                                        <tr>
                                             <td style="padding: 8px; border: none;">Jenis</td>
                                             <td style="padding: 8px; border: none;"><b><span id="donation-tipe"></span></b></td>
                                         </tr>
@@ -322,7 +598,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="form-check-group-payment-type">
-                                                        <input class="form-check-input payment-radio" type="radio" name="DonationPayment" id="payment-bca" value="BCA">
+                                                        <input class="form-check-input payment-radio" type="radio" name="DonationPayment" id="payment-bca" value="BCA" checked>
                                                         <label class="form-check-label" for="payment-bca"><i class="bi-credit-card-2-back-fill me-2"></i>BCA</label>
                                                     </div>                                                
                                                 </td>
@@ -396,9 +672,10 @@
                                             <b><span id="donation-detail-display" style="color: #e54646;"></span></b><br><br>
                                             Silahkan kirim ke alamat:
                                             <p style="background-color:#e54646; border-radius: 7px; color: white; padding: 5px;">                                                
-                                                <b>Rumah Singgah House of Heart</b>
+                                                <b>Rumah Singgah House of Heart</b><br>
                                                 Jl. Cempaka Putih Barat II J No. 3C, Cempaka Putih Barat,<br>
-                                                Kota Jakarta Pusat, DKI Jakarta
+                                                Kota Jakarta Pusat, DKI Jakarta<br><br>
+                                                Beri Catatan: Produk Donasi untuk Acara Ancol Charity Trip 2024
                                             </p>
                                         </div>
                                     </div>
@@ -416,59 +693,7 @@
             </section>
         </main>
 
-        <footer> <!--<footer class="site-footer"></footer>-->
-            <!--
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-12 mb-4">
-                        <img src="images/logo.png" class="logo img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <h5 class="site-footer-title mb-3">Quick Links</h5>
-
-                        <ul class="footer-menu">
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Our Story</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Newsroom</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Causes</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Become a volunteer</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Partner with us</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12 mx-auto">
-                        <h5 class="site-footer-title mb-3">Alamat Komunitas</h5>
-
-                        <p class="text-white d-flex mb-2">
-                            <i class="bi-telephone me-2"></i>
-
-                            <a href="tel:6282132936477" class="site-footer-link">
-                                0821-3293-6477
-                            </a>
-                        </p>
-
-                        <p class="text-white d-flex">
-                            <i class="bi-envelope me-2"></i>
-
-                            <a href="https://mailto:pejuangciptocommunity@gmail.com" class="site-footer-link">
-                                pejuangciptocommunity@gmail.com
-                            </a>
-                        </p>
-
-                        <p class="text-white d-flex mt-3">
-                            <i class="bi-geo-alt me-2"></i>
-                            Jl. Cempaka Putih Barat II J, No. 3C, Jakarta
-                        </p>
-
-                        <a href="#" class="custom-btn btn mt-3">Lihat Peta</a>
-                    </div>
-                </div>
-            </div>
-            -->
+        <footer> 
             <div class="site-footer-bottom">
                 <div class="container">
                     <div class="row">
@@ -477,37 +702,18 @@
                             <p class="copyright-text mb-0">Copyright © 2024 | Pejuang Cipto Community</p>
                         </div>
                         
-                        <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
-                            <ul class="social-icon">
-                                <!-- <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-twitter"></a>
-                                </li> -->
-
-                                <!-- <li class="social-icon-item">
-                                    <a href="https://www.facebook.com/groups/1718067871661514" class="social-icon-link bi-facebook" target="_blank"></a>
-                                </li> -->
-
-                                <!-- <li class="social-icon-item">
-                                    <a href="https://www.instagram.com/pejuangciptocommunity" class="social-icon-link bi-instagram" target="_blank"></a>
-                                </li> -->
-
-                                <!-- <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-linkedin"></a>
-                                </li> -->                                
-                            </ul>
-                        </div>
-                        
                     </div>
                 </div>
             </div>
         </footer>
 
         <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/counter.js"></script>
-        <script src="js/custom.js"></script>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/jquery.sticky.js"></script>
+        <script src="../js/counter.js"></script>
+        <script src="../js/donate-ancol-charity-trip-2024.js"></script>
+        <script src="../js/countdown.js"></script>
 
     </body>
 </html>
