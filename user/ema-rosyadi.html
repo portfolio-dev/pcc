@@ -198,90 +198,7 @@
 
                         <div class="col-lg-9 col-12" id="kampanye-member" style="display: none;">
 
-                            <form id="volunteer-form" class="custom-form volunteer-form mb-5 mb-lg-0" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeeTUks5s6Tv8n3Jwgt3zINRVXI4quQCWZ0Z2kv-mbGLxUadg/formResponse" method="post" target="hidden_iframe" onsubmit="return submitForm();">
-                                <h6 class="mb-4">Formulir Kampanye</h6>
-                                <div class="row">
-                                    <div class="col-lg-6 col-12">
-                                        <input type="text" name="entry.461502395" id="kampanye-title" class="form-control" placeholder="Judul Kampanye" required>
-                                    </div>
-                        
-                                    <div class="col-lg-6 col-12">
-                                        <input type="text" name="entry.1361325621" id="patient-born" class="form-control" placeholder="Tanggal Berakhir" required>
-                                    </div>
-                                    
-                                    <div class="col-lg-3 col-6 form-check-group">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input" type="radio" name="entry.1725039189" id="gender-male" value="Laki-laki" checked>
-                                            <label class="form-check-label" for="gender-male">Laki-laki</label>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="col-lg-3 col-6 form-check-group">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input" type="radio" name="entry.1725039189" id="gender-female" value="Perempuan">
-                                            <label class="form-check-label" for="gender-female">Perempuan</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-12">
-                                        <input type="text" name="entry.213275331" id="pjb-name" class="form-control" placeholder="Jenis PJB / Diagnosa" required>
-                                    </div>
-
-                                    <div class="col-lg-6 col-12">
-                                        <input type="text" name="entry.1084520634" id="last-action" class="form-control" placeholder="Menggunakan Alat Bantu" required>
-                                    </div> 
-
-                                    <div class="col-lg-6 col-12">
-                                        <input type="text" name="entry.1769708905" id="last-action" class="form-control" placeholder="Tahap Pengobatan" required>
-                                    </div> 
-
-                                    <div class="col-lg-3 col-6 form-check-group">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input" type="radio" name="entry.1540741749" id="rs-rscm" value="RSCM" checked>
-                                            <label class="form-check-label" for="RSCM">RSCM</label>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="col-lg-3 col-6 form-check-group">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input" type="radio" name="entry.1540741749" id="rs-jhc" value="JHC">
-                                            <label class="form-check-label" for="JHC">JHC</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-6 form-check-group">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input" type="radio" name="entry.1540741749" id="rs-harkit" value="Harkit">
-                                            <label class="form-check-label" for="Harkit">Harkit</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-6 form-check-group">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input" type="radio" name="entry.1540741749" id="rs-lainnya" value="lainnya">
-                                            <label class="form-check-label" for="lainnya">lainnya</label>
-                                        </div>
-                                    </div>                
-                                    
-                                    <hr>
-
-                                    <h6 class="mb-4">Data Orang Tua</h6>
-                                    <div class="col-lg-6 col-12">
-                                        <input type="text" name="entry.366229400" id="parent-name" class="form-control" placeholder="Nama Orang Tua" required>
-                                    </div>                                   
-                        
-                                    <div class="col-lg-6 col-12">
-                                        <input type="text" name="entry.847286747" id="parent-telepon" class="form-control" placeholder="Nomor Whatsapp" inputmode="numeric" required pattern="\d*" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                                    </div>
-                                </div>
-                        
-                                <textarea name="entry.1901137419" rows="3" class="col-lg-6 col-12 form-control" id="volunteer-message" placeholder="Alamat Lengkap (sesuai KTP)" required></textarea>
-
-                                <textarea name="entry.160156057" rows="3" class="col-lg-6 col-12 form-control" id="volunteer-message" placeholder="Alamat Lengkap (domisili di Jakarta / Jabodetabek)" required></textarea>
-                        
-                                <button type="submit" class="form-control">Daftar</button>
-                            </form>
-                            <iframe name="hidden_iframe" style="display:none;" onload="registrasiPesertaAncol();"></iframe>
+                            <iframe src="https://form.jotform.com/243650480190049" width="100%" height="2000px" frameborder="0"></iframe>
 
                         </div>
 
@@ -316,10 +233,21 @@
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script>
             //(0)
-            flatpickr("#patient-born", {
+            flatpickr("#kampanye-enddate", {
                 dateFormat: "m/d/Y",  
                 disableMobile: true   
             });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('kampanye-target').addEventListener('input', function(e) {
+                    const rawValue = e.target.value.replace(/\D/g, ''); 
+                    e.target.value = formatNumber(rawValue);
+                });
+            });
+
+            function formatNumber(num) {
+                return num.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            }
 
             //(1)
             // Cek apakah pengguna sudah login
