@@ -20,6 +20,7 @@
         <link href="../css/bootstrap-icons.css" rel="stylesheet">
         <link href="../css/custom.css" rel="stylesheet">
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     </head>
     
     <body>
@@ -98,16 +99,16 @@
                                 </div>                                
                             </div>    
                             <hr>
-                            <a href="javascript:void(0)" onclick="window.location.href='';" id=""  style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
+                            <a href="javascript:void(0)" id="link-beranda"  style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
                                 <i class="bi-house-fill"></i> Beranda
                             </a> 
                             <hr>
-                            <a href="javascript:void(0)" onclick="" style="color: #e54646;"  onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
+                            <a href="javascript:void(0)" id="link-profil" style="color: #e54646;"  onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
                                 <i class="bi-person-fill"></i> Profil
                             </a>
                             <hr>
-                            <a href="javascript:void(0)" onclick="" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
-                                <i class="bi-layers-fill"></i> Kampaye
+                            <a href="javascript:void(0)" id="link-kampanye" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
+                                <i class="bi-layers-fill"></i> Kampanye
                             </a> 
                             <hr>
                             <a href="javascript:void(0)" onclick="goOut();" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
@@ -195,6 +196,95 @@
                         
                         </div>
 
+                        <div class="col-lg-9 col-12" id="kampanye-member" style="display: none;">
+
+                            <form id="volunteer-form" class="custom-form volunteer-form mb-5 mb-lg-0" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeeTUks5s6Tv8n3Jwgt3zINRVXI4quQCWZ0Z2kv-mbGLxUadg/formResponse" method="post" target="hidden_iframe" onsubmit="return submitForm();">
+                                <h6 class="mb-4">Formulir Kampanye</h6>
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <input type="text" name="entry.461502395" id="kampanye-title" class="form-control" placeholder="Judul Kampanye" required>
+                                    </div>
+                        
+                                    <div class="col-lg-6 col-12">
+                                        <input type="text" name="entry.1361325621" id="patient-born" class="form-control" placeholder="Tanggal Berakhir" required>
+                                    </div>
+                                    
+                                    <div class="col-lg-3 col-6 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="entry.1725039189" id="gender-male" value="Laki-laki" checked>
+                                            <label class="form-check-label" for="gender-male">Laki-laki</label>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-lg-3 col-6 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="entry.1725039189" id="gender-female" value="Perempuan">
+                                            <label class="form-check-label" for="gender-female">Perempuan</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-12">
+                                        <input type="text" name="entry.213275331" id="pjb-name" class="form-control" placeholder="Jenis PJB / Diagnosa" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-12">
+                                        <input type="text" name="entry.1084520634" id="last-action" class="form-control" placeholder="Menggunakan Alat Bantu" required>
+                                    </div> 
+
+                                    <div class="col-lg-6 col-12">
+                                        <input type="text" name="entry.1769708905" id="last-action" class="form-control" placeholder="Tahap Pengobatan" required>
+                                    </div> 
+
+                                    <div class="col-lg-3 col-6 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="entry.1540741749" id="rs-rscm" value="RSCM" checked>
+                                            <label class="form-check-label" for="RSCM">RSCM</label>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-lg-3 col-6 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="entry.1540741749" id="rs-jhc" value="JHC">
+                                            <label class="form-check-label" for="JHC">JHC</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-6 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="entry.1540741749" id="rs-harkit" value="Harkit">
+                                            <label class="form-check-label" for="Harkit">Harkit</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-6 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="entry.1540741749" id="rs-lainnya" value="lainnya">
+                                            <label class="form-check-label" for="lainnya">lainnya</label>
+                                        </div>
+                                    </div>                
+                                    
+                                    <hr>
+
+                                    <h6 class="mb-4">Data Orang Tua</h6>
+                                    <div class="col-lg-6 col-12">
+                                        <input type="text" name="entry.366229400" id="parent-name" class="form-control" placeholder="Nama Orang Tua" required>
+                                    </div>                                   
+                        
+                                    <div class="col-lg-6 col-12">
+                                        <input type="text" name="entry.847286747" id="parent-telepon" class="form-control" placeholder="Nomor Whatsapp" inputmode="numeric" required pattern="\d*" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                    </div>
+                                </div>
+                        
+                                <textarea name="entry.1901137419" rows="3" class="col-lg-6 col-12 form-control" id="volunteer-message" placeholder="Alamat Lengkap (sesuai KTP)" required></textarea>
+
+                                <textarea name="entry.160156057" rows="3" class="col-lg-6 col-12 form-control" id="volunteer-message" placeholder="Alamat Lengkap (domisili di Jakarta / Jabodetabek)" required></textarea>
+                        
+                                <button type="submit" class="form-control">Daftar</button>
+                            </form>
+                            <iframe name="hidden_iframe" style="display:none;" onload="registrasiPesertaAncol();"></iframe>
+
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -223,7 +313,15 @@
         <script src="../js/counter.js"></script>
         <script src="../js/custom.js"></script>
         <script src="../js/member.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script>
+            //(0)
+            flatpickr("#patient-born", {
+                dateFormat: "m/d/Y",  
+                disableMobile: true   
+            });
+
+            //(1)
             // Cek apakah pengguna sudah login
             if (!sessionStorage.getItem('isLoggedIn')) {
                 // Jika belum login, arahkan ke halaman login
@@ -236,34 +334,47 @@
                 history.pushState(null, null, window.location.href);
             };
 
+            // Event ketika pengguna meninggalkan halaman atau berpindah ke halaman lain
+            window.addEventListener('beforeunload', function (event) {
+                // Menghapus status login pada sessionStorage untuk logout
+                sessionStorage.removeItem('isLoggedIn');
+            });
+
             //(2)
-            //tombol navigasi member
             document.addEventListener('DOMContentLoaded', function () {
-            // Menangani klik pada link Beranda
-            document.querySelector('a[href="javascript:void(0)"][onclick="window.location.href=\'\';"]').addEventListener('click', function () {
-                toggleView('beranda-member');
-            });
+                // Pastikan elemen sudah ada di halaman sebelum menambahkan event listener
+                const berandaLink = document.getElementById('link-beranda');
+                const profilLink = document.getElementById('link-profil');
+                const kampanyeLink = document.getElementById('link-kampanye');
 
-            // Menangani klik pada link Profil
-            document.querySelector('a[href="javascript:void(0)"][onclick=""]').addEventListener('click', function () {
-                toggleView('profil-member');
-            });
+                // Pastikan link ditemukan, lalu tambahkan event listener
+                if (berandaLink && profilLink && kampanyeLink) {
+                    berandaLink.addEventListener('click', function () {
+                        toggleView('beranda-member');
+                    });
 
-            // Fungsi untuk menampilkan dan menyembunyikan tampilan
-            function toggleView(viewId) {
-                // Menyembunyikan semua div dengan ID tertentu
-                const allViews = ['beranda-member', 'profil-member'];
-                allViews.forEach(function (view) {
-                    const viewElement = document.getElementById(view);
-                    if (view === viewId) {
-                        viewElement.style.display = 'block'; // Menampilkan tampilan yang dipilih
-                    } else {
-                        viewElement.style.display = 'none'; // Menyembunyikan tampilan lainnya
-                    }
-                });
-            }
-            });
+                    profilLink.addEventListener('click', function () {
+                        toggleView('profil-member');
+                    });
 
+                    kampanyeLink.addEventListener('click', function () {
+                        toggleView('kampanye-member');
+                    });
+                }
+
+                // Fungsi untuk menampilkan dan menyembunyikan tampilan
+                function toggleView(viewId) {
+                    const allViews = ['beranda-member', 'profil-member', 'kampanye-member'];
+                    allViews.forEach(function (view) {
+                        const viewElement = document.getElementById(view);
+                        if (view === viewId) {
+                            viewElement.style.display = 'block'; // Menampilkan tampilan yang dipilih
+                        } else {
+                            viewElement.style.display = 'none'; // Menyembunyikan tampilan lainnya
+                        }
+                    });
+                }
+            });
 
             //(3)
             // Menampilkan pop-up
