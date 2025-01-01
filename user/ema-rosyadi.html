@@ -314,20 +314,7 @@
             function closePopup() {
                 document.getElementById("popup").style.display = "none";
             }
-
-            // Fungsi untuk unggah file (contoh)
-            function uploadFile() {
-                const fileInput = document.getElementById("fileInput");
-                const file = fileInput.files[0];
-
-                if (file) {
-                    alert("File yang dipilih: " + file.name);
-                    // Di sini Anda bisa menambahkan kode untuk mengunggah file, misalnya menggunakan AJAX
-                    closePopup();  // Menutup pop-up setelah file dipilih
-                } else {
-                    alert("Silakan pilih file terlebih dahulu.");
-                }
-            }
+            
         </script>
     </body>
 </html>
