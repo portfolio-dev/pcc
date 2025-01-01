@@ -111,12 +111,48 @@
                                 <i class="bi-layers-fill"></i> Kampanye
                             </a> 
                             <hr>
+                            <a href="javascript:void(0)" onclick="showCode()" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
+                                <i class="bi-key-fill"></i> Kode Akses
+                            </a>  
+                            <hr>
                             <a href="javascript:void(0)" onclick="goOut();" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
                                 <i class="bi-door-open-fill"></i> Keluar
                             </a>  
                             <hr>
                         </div>
-                        
+
+                        <div id="popup-code" class="popup-code">
+                            <div class="popup-content">                                
+                                <form class="custom-form subscribe-form" action="" method="post" target="hidden_iframe" onsubmit="return submitForm();">
+                                    <h5 class="mb-4">Ubah Kode Masuk</h5>
+    
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <input type="text" name="entry.0000" id="parent-telepon" class="form-control" placeholder="Nomor Whatsapp" inputmode="numeric" required pattern="\d*" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>
+
+                                        <div class="col-lg-6 col-12">
+                                            <input type="text" name="entry.0000" id="entery-code" class="form-control" placeholder="Kode Masuk" required maxlength="6">
+                                        </div>
+                                        <hr>
+                                        <div class="col-lg-6 col-12">
+                                            <input type="text" name="entry.0000" id="entery-code" class="form-control" placeholder="Buat Kode Baru" required maxlength="6">
+                                        </div>
+
+                                        <div class="col-lg-6 col-12">
+                                            <input type="text" name="entry.0000" id="entery-code" class="form-control" placeholder="Ulangi Kode Masuk" required maxlength="6">
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-lg-12 col-12">
+                                        <button type="submit" class="form-control">Ubah</button>
+                                    </div>                                
+                                </form>
+                                <iframe name="hidden_iframe" style="display:none;" onload="redirectToSuccessPage();"></iframe>
+                            <span class="custom-btn" onclick="closeCode()">&times;</span>
+                            </div>
+                        </div>
+
                         <div class="col-lg-9 col-12" id="beranda-member" style="display: block;">
                             <div class="news-block">
                                 <h3>Informasi Jenis Penyakit Jantung Bawaan</h3>
@@ -138,8 +174,9 @@
                                     </div>
                                 </section> -->
 
-                            </div>
-                        </div>
+                            </div>                            
+
+                        </div>                        
 
                         <div class="col-lg-9 col-12" id="profil-member" style="display: none;">
                             <table style="width: 100%; border-collapse: collapse; background-color: #f9f9f9;">
@@ -187,10 +224,9 @@
                             <button class="custom-btn" onclick="showPopup()">Verifikasi Sekarang</button>
 
                             <div id="popup" class="popup">
-                                <div class="popup-content">
-                                    <span class="custom-btn" onclick="closePopup()">&times;</span><br><br>
+                                <div class="popup-content">                                    
                                     <iframe src="https://form.jotform.com/243644289507061" width="100%" height="295px" frameborder="0"></iframe>
-
+                                    <span class="custom-btn" onclick="closePopup()">&times;</span>
                                 </div>
                             </div>
                         
@@ -305,7 +341,7 @@
             });
 
             //(3)
-            // Menampilkan pop-up
+            // Menampilkan pop-up verifikasi
             function showPopup() {
                 document.getElementById("popup").style.display = "flex";
             }
@@ -313,6 +349,16 @@
             // Menutup pop-up
             function closePopup() {
                 document.getElementById("popup").style.display = "none";
+            }
+
+            // Menampilkan pop-up kode akses
+            function showCode() {
+                document.getElementById("popup-code").style.display = "flex";
+            }
+
+            // Menutup pop-up
+            function closeCode() {
+                document.getElementById("popup-code").style.display = "none";
             }
             
         </script>
