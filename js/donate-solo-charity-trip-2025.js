@@ -337,7 +337,7 @@ function submitConfirmation() {
   });
 
   setTimeout(() => {
-      window.location.href = 'https://script.google.com/macros/s/AKfycbzfVKPzCSqloFpruske9fFG3vQnxxMsPlxXv1KMz7CKLdXpLSEnky9kyKJ76su-2RbzeQ/exec';
+      window.location.href = '/donate-upload.html';
   }, 500); 
   return true; 
 }
