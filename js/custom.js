@@ -96,7 +96,7 @@ function redirectToSuccessPage() {
 }
 
 function registrasiPeserta() {
-  window.location.href = '/sent.html';
+  window.location.href = '/kirim-registrasi.html';
 }
 
 function comment() {
