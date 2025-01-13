@@ -279,7 +279,7 @@ const fields = {
 }
 
 function goBack() {
-    window.location.href = 'solo-charity-trip-2025.html';
+    window.location.href = 'bandung-charity-trip-2025.html';
 }
 
 //COPY REKENING
