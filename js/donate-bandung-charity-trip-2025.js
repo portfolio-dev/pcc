@@ -1,4 +1,3 @@
-
 (function ($) {
   
   "use strict";
@@ -30,7 +29,51 @@
     
   })(window.jQuery);
 
-// RADIO UANG ATAU PRODUK
+// HASIL UANG ATAU PRODUK
+document.querySelectorAll('.donation-result-radio').forEach(function(radio) {
+  radio.addEventListener('change', function() {
+      // Pastikan hanya satu yang terpilih
+      if (this.checked) {
+          document.querySelectorAll('.donation-result-radio').forEach(function(otherRadio) {
+              if (otherRadio !== radio) {
+                  otherRadio.checked = false;
+              }
+          });
+
+          // Cek apakah radio button Produk yang dipilih
+          if (this.value === 'Hasil Produk') {
+              // Jika Produk dipilih, sembunyikan elemen-elemen yang terkait dengan Uang
+              document.getElementById('donatur-uang').style.display = 'none';
+              document.getElementById('donatur-produk').style.display = 'block';
+
+          } else if (this.value === 'Hasil Uang') {
+              // Jika Uang dipilih, tampilkan kembali elemen-elemen tersebut
+              document.getElementById('donatur-uang').style.display = 'block';
+              document.getElementById('donatur-produk').style.display = 'none';
+              
+          }
+      }
+  });
+});
+
+function showResults() {
+  // Mengubah elemen dengan ID 'hasil-donasi' menjadi block
+  document.getElementById('hasil-donasi').style.display = 'block';
+
+  // Mengubah elemen dengan ID 'deskripsi-donasi' menjadi none
+  document.getElementById('deskripsi-donasi').style.display = 'none';
+}
+
+function showBeforeResults() {
+  // Mengubah elemen dengan ID 'deskripsi-donasi' menjadi none
+  document.getElementById('deskripsi-donasi').style.display = 'block';
+
+  // Mengubah elemen dengan ID 'hasil-donasi' menjadi block
+  document.getElementById('hasil-donasi').style.display = 'none';  
+}
+
+
+// PILIH UANG ATAU PRODUK
 document.querySelectorAll('.donation-radio').forEach(function(radio) {
   radio.addEventListener('change', function() {
       // Pastikan hanya satu yang terpilih
@@ -51,11 +94,12 @@ document.querySelectorAll('.donation-radio').forEach(function(radio) {
               document.getElementById('amount4').style.display = 'none';
               document.getElementById('amount5').style.display = 'none';
               document.getElementById('amount6').style.display = 'none';
+              document.getElementById('produk-donasi').style.display = 'block';
               document.getElementById('uang-transfer-qris').style.display = 'none';
-
-              document.getElementById('produk-donasi').style.display = 'block';              
               document.getElementById('produk-kirim').style.display = 'block';
-              
+
+              document.getElementById('keterangan-produk').style.display = 'block';
+
           } else if (this.value === 'Uang') {
               // Jika Uang dipilih, tampilkan kembali elemen-elemen tersebut
               document.getElementById('amount-pilihan').style.display = 'block';
@@ -65,10 +109,12 @@ document.querySelectorAll('.donation-radio').forEach(function(radio) {
               document.getElementById('amount4').style.display = 'block';
               document.getElementById('amount5').style.display = 'block';
               document.getElementById('amount6').style.display = 'block';
+              document.getElementById('produk-donasi').style.display = 'none';
               document.getElementById('uang-transfer-qris').style.display = 'block';
-
-              document.getElementById('produk-donasi').style.display = 'none';              
               document.getElementById('produk-kirim').style.display = 'none';
+
+              document.getElementById('keterangan-produk').style.display = 'none';
+
           }
       }
   });
@@ -78,42 +124,6 @@ document.querySelectorAll('.donation-radio').forEach(function(radio) {
 // NO COPPY OR DOWNLOAD
 document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
-});
-
-// SUBMIT FORM
-function submitForm(action) {
-  if (action === 'redirectToSuccessPage') {
-      redirectToSuccessPage();
-  } else if (action === 'registrasiPeserta') {
-      registrasiPeserta();
-  } else if (action === 'comment') {
-      comment();
-  }
-  return true;
-}
-
-function redirectToSuccessPage() {
-  window.location.href = 'sent.html';
-}
-
-function registrasiPeserta() {
-  window.location.href = '/kirim-registrasi.html';
-}
-
-function comment() {
-  window.location.href = '/sent.html';
-}
-
-document.getElementById('buttonRedirectToSuccessPage').addEventListener('click', function() {
-  submitForm('redirectToSuccessPage');
-});
-
-document.getElementById('buttonRegistrasiPeserta').addEventListener('click', function() {
-  submitForm('registrasiPeserta');
-});
-
-document.getElementById('buttonComment').addEventListener('click', function() {
-  submitForm('comment');
 });
 
 
@@ -269,7 +279,7 @@ const fields = {
 }
 
 function goBack() {
-    window.location.href = 'donate.html';
+    window.location.href = 'solo-charity-trip-2025.html';
 }
 
 //COPY REKENING
@@ -311,7 +321,7 @@ function submitConfirmation() {
   params.append('entry.1274723429', donorName); // ID ENTRY FOR NAME
   params.append('entry.1711964533', donorEmail); // ID ENTRI FOR EMAIL
   params.append('entry.1479109352', donorTlp); // ID ENTRY FOR NUMBER OR WHATSAPP
-  params.append('entry.1705412345', nominalInput); // ID ENTRY FOR VALUE
+  params.append('entry.1736751137', nominalInput); // ID ENTRY FOR VALUE
   params.append('entry.1526120968', donorDetail); // ID ENTRY FOR PRODUK
   params.append('entry.1082800990', paymentMethod); // ID ENTRY FOR PAYMENT
   params.append('entry.573797881', donationType); // ID ENTRY FOR KIND OF DONATION
@@ -327,7 +337,7 @@ function submitConfirmation() {
   });
 
   setTimeout(() => {
-      window.location.href = 'donate-upload.html';
+      window.location.href = '/donate-upload.html';
   }, 500); 
   return true; 
 }

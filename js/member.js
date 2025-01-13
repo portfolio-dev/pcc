@@ -1,1 +1,83 @@
-const _0x3e32e6=_0x3d17;(function(_0x1fe05f,_0x5d90e2){const _0x183396=_0x3d17,_0x41b561=_0x1fe05f();while(!![]){try{const _0x5dbd83=parseInt(_0x183396(0x12c))/0x1+-parseInt(_0x183396(0x12e))/0x2*(parseInt(_0x183396(0x140))/0x3)+parseInt(_0x183396(0x134))/0x4+-parseInt(_0x183396(0x13b))/0x5+parseInt(_0x183396(0x131))/0x6+parseInt(_0x183396(0x13e))/0x7+-parseInt(_0x183396(0x12b))/0x8;if(_0x5dbd83===_0x5d90e2)break;else _0x41b561['push'](_0x41b561['shift']());}catch(_0x487085){_0x41b561['push'](_0x41b561['shift']());}}}(_0x2cbb,0x6733a));function goOut(){const _0x2c91f9=_0x3d17;sessionStorage[_0x2c91f9(0x146)]('isLoggedIn'),window[_0x2c91f9(0x127)][_0x2c91f9(0x145)]=_0x2c91f9(0x13c);}function _0x2cbb(){const _0x132ca4=['bi-eye-fill','value','toggle','1862505CAibYR','/login-anggota.html','text','3567669AIhbkD','type','6285xqROvr','member-code','user/sumarni.html','085870842284','085879379589','href','removeItem','addEventListener','password','085647577776','082132936477','085757587421','0895409370307','123456','location','Abc123','bi-eye','user/weni-nur-khasanah.html','2333664AsVJzm','799959iOaJHj','isLoggedIn','788otWORX','redirectUrl','user/irma-tri-wulandari.html','2301906nsCtxv','click','getElementById','876304iEqxtu','user/prakoso-pribadi.html','user/amanda-dwi-ayu-saputri.html','true'];_0x2cbb=function(){return _0x132ca4;};return _0x2cbb();}const users=[{'whatsapp':_0x3e32e6(0x14a),'password':_0x3e32e6(0x128),'redirectUrl':'user/ema-rosyadi.html'},{'whatsapp':_0x3e32e6(0x143),'password':_0x3e32e6(0x126),'redirectUrl':_0x3e32e6(0x130)},{'whatsapp':_0x3e32e6(0x125),'password':_0x3e32e6(0x126),'redirectUrl':_0x3e32e6(0x12a)},{'whatsapp':_0x3e32e6(0x144),'password':_0x3e32e6(0x126),'redirectUrl':_0x3e32e6(0x136)},{'whatsapp':'085180960911','password':_0x3e32e6(0x126),'redirectUrl':'user/retno-putriningsih.html'},{'whatsapp':_0x3e32e6(0x149),'password':_0x3e32e6(0x126),'redirectUrl':_0x3e32e6(0x135)},{'whatsapp':_0x3e32e6(0x124),'password':'123456','redirectUrl':_0x3e32e6(0x142)}];function _0x3d17(_0x289bcc,_0x98da02){const _0x2cbb41=_0x2cbb();return _0x3d17=function(_0x3d17b1,_0x4f9a84){_0x3d17b1=_0x3d17b1-0x124;let _0x26b411=_0x2cbb41[_0x3d17b1];return _0x26b411;},_0x3d17(_0x289bcc,_0x98da02);}function validateLogin(_0xa6a1f8){const _0x441220=_0x3e32e6;_0xa6a1f8['preventDefault']();const _0x3e8963=document[_0x441220(0x133)]('parent-telepon')[_0x441220(0x139)],_0x5ad982=document['getElementById'](_0x441220(0x141))[_0x441220(0x139)],_0x40540c=users['find'](_0x5d0f95=>_0x5d0f95['whatsapp']===_0x3e8963&&_0x5d0f95[_0x441220(0x148)]===_0x5ad982);_0x40540c?(sessionStorage['setItem'](_0x441220(0x12d),_0x441220(0x137)),window[_0x441220(0x127)][_0x441220(0x145)]=_0x40540c[_0x441220(0x12f)]):alert('Nomor\x20WhatsApp\x20atau\x20password\x20salah.\x20Silakan\x20coba\x20lagi.');}const togglePassword=document[_0x3e32e6(0x133)]('togglePassword'),passwordField=document[_0x3e32e6(0x133)]('member-code');togglePassword[_0x3e32e6(0x147)](_0x3e32e6(0x132),function(){const _0xc29f28=_0x3e32e6,_0x409499=passwordField[_0xc29f28(0x13f)]===_0xc29f28(0x148)?_0xc29f28(0x13d):'password';passwordField[_0xc29f28(0x13f)]=_0x409499,this['classList'][_0xc29f28(0x13a)](_0xc29f28(0x129)),this['classList'][_0xc29f28(0x13a)](_0xc29f28(0x138));});
+function goOut() {
+    // Menghapus status login dari sessionStorage
+    sessionStorage.removeItem('isLoggedIn');
+    window.location.href = '/login-anggota.html'; // Arahkan ke halaman login setelah log out
+}
+
+// Array data login yang berisi nomor WhatsApp dan password acak
+const users = [
+    {
+        whatsapp: '082132936477', // Nomor WhatsApp anggota 1
+        password: 'Abc123',      // Password acak 8 digit untuk anggota 1
+        redirectUrl: 'user/ema-rosyadi.html' // URL halaman setelah login untuk anggota 1
+    },
+    {
+        whatsapp: '085870842284', // Nomor WhatsApp anggota 2
+        password: '123456',     // Password acak 8 digit untuk anggota 2
+        redirectUrl: 'user/irma-tri-wulandari.html' // URL halaman setelah login untuk anggota 2
+    },
+    {
+        whatsapp: '0895409370307', // Nomor WhatsApp anggota 2
+        password: '123456',     // Password acak 8 digit untuk anggota 2
+        redirectUrl: 'user/weni-nur-khasanah.html' // URL halaman setelah login untuk anggota 2
+    },
+    {
+        whatsapp: '085879379589', // Nomor WhatsApp anggota 2
+        password: '123456',     // Password acak 8 digit untuk anggota 2
+        redirectUrl: 'user/amanda-dwi-ayu-saputri.html' // URL halaman setelah login untuk anggota 2
+    },
+    {
+        whatsapp: '085180960911', // Nomor WhatsApp anggota 2
+        password: '123456',     // Password acak 8 digit untuk anggota 2
+        redirectUrl: 'user/retno-putriningsih.html' // URL halaman setelah login untuk anggota 2
+    },
+    {
+        whatsapp: '085647577776', // Nomor WhatsApp anggota 2
+        password: '123456',     // Password acak 8 digit untuk anggota 2
+        redirectUrl: 'user/prakoso-pribadi.html' // URL halaman setelah login untuk anggota 2
+    },
+    {
+        whatsapp: '085757587421', // Nomor WhatsApp anggota 2
+        password: '123456',     // Password acak 8 digit untuk anggota 2
+        redirectUrl: 'user/sumarni.html' // URL halaman setelah login untuk anggota 2
+    }
+    
+    // Tambahkan lebih banyak data anggota di sini jika perlu
+];
+
+// Fungsi untuk memvalidasi login
+function validateLogin(event) {
+    event.preventDefault(); // Mencegah form dari refresh halaman
+
+    // Ambil nilai input dari form
+    const whatsappInput = document.getElementById('parent-telepon').value;
+    const passwordInput = document.getElementById('member-code').value;
+
+    // Periksa apakah data login valid
+    const user = users.find(u => u.whatsapp === whatsappInput && u.password === passwordInput);
+
+    if (user) {
+        // Simpan status login ke sessionStorage
+        sessionStorage.setItem('isLoggedIn', 'true');
+
+        // Jika login berhasil, arahkan ke halaman yang sesuai dengan anggota
+        window.location.href = user.redirectUrl; // Menggunakan URL yang sudah ditentukan pada anggota
+    } else {
+        // Jika login gagal, beri tahu pengguna
+        alert('Nomor WhatsApp atau password salah. Silakan coba lagi.');
+    }
+}
+
+// Menambahkan event listener untuk tombol show/hide password
+const togglePassword = document.getElementById('togglePassword');
+const passwordField = document.getElementById('member-code');
+
+togglePassword.addEventListener('click', function() {
+    // Men-toggle tipe password antara 'text' dan 'password'
+    const type = passwordField.type === 'password' ? 'text' : 'password';
+    passwordField.type = type;
+    
+    // Menambahkan/menghapus ikon eye-fill (open/close)
+    this.classList.toggle('bi-eye');
+    this.classList.toggle('bi-eye-fill');
+});
