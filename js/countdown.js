@@ -44,8 +44,8 @@ function startCountdown(targetId, targetDate) {
 function initializeCountdowns() {
     var countdownElements = [
         { id: "countdown-ancol-charity-trip-2024", targetDate: "2024-12-10T00:00:00Z" },
-        { id: "countdown-solo-charity-trip-2025", targetDate: "2025-02-07T00:00:00Z" },
-        { id: "countdown-bandung-charity-trip-2025", targetDate: "2025-02-14T00:00:00Z" }
+        { id: "countdown-solo-charity-trip-2025", targetDate: "2025-02-14T00:00:00Z" },
+        { id: "countdown-bandung-charity-trip-2025", targetDate: "2025-02-08T00:00:00Z" }
     ];
 
     countdownElements.forEach(function(element) {
