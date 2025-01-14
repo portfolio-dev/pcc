@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Pejuang Cipto Community">
+
+        <meta property="og:title" content="Portal Anggota - Ema Rosyadi" />
+        <meta property="og:description" content="Portal Anggota Anggota Komunitas Pejuang Cipto Community, berfungsi untuk melihat profil, membuat kampaye, dsb." />
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="https://pejuangcipto.online" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Pejuang Cipto Community" />
+
+        <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/portfolio-dev/pcc/3135e841cd4eee9cc6916de205920100908bfe88/images/favicon.png">
+        <title>Pejuang Cipto Community - Ema Rosyadi</title>
+
+        <!-- CSS FILES -->        
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+        <link href="../css/custom.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    </head>
+    
+    <body>
+
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-lg-8 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <i class="bi-geo-alt me-2"></i>
+
+                            <a href="https://maps.app.goo.gl/DTCR2eGAefy7wvuc8" target="_blank">
+                                Jl. Cempaka Putih Barat II J, No. 3C, Jakarta
+                            </a>                            
+                        </p>
+
+                        <p class="d-flex mb-0">
+                            <i class="bi-envelope me-2"></i>
+
+                            <a href="https://mailto:pejuangciptocommunity@gmail.com" target="_blank">
+                                pejuangciptocommunity@gmail.com
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                        <ul class="social-icon">
+
+                            <li class="social-icon-item">
+                                <a href="https://www.facebook.com/groups/1718067871661514" class="social-icon-link bi-facebook" target="_blank"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="https://instagram.com/pejuangciptocommunity" class="social-icon-link bi-instagram" target="_blank"></a>
+                            </li>                            
+
+                            <li class="social-icon-item">
+                                <a href="https://wa.me/+6282132936477" class="social-icon-link bi-whatsapp" target="_blank"></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+            <div class="container">
+                <a class="navbar-brand" href="javascript:void(0)" onclick="window.location.href='/index.html';">
+                    <img src="../images/logo.png" class="logo img-fluid" alt="Pejuang Cipto Community">
+                    <span>
+                        Pejuang Cipto
+                        <small>Community</small>
+                    </span>
+                </a>                
+            </div>
+        </nav>
+
+        <main>           
+
+            <section class="news-section section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-3 col-12 mx-auto">
+
+                            <div>
+                                <div class="author-comment d-flex mt-3 mb-4">
+                                    <img src="../images/avatar/Mimma2.JPG" class="img-fluid avatar-image" alt="">
+
+                                    <div class="author-comment-info ms-3">
+                                        <h6 class="mb-1">Ema Rosyadi</h6>
+                                        <i class="bi-whatsapp me-2"> 082132936477</i>
+                                    </div>
+                                </div>                                
+                            </div>    
+                            <hr>
+                            <a href="javascript:void(0)" id="link-beranda"  style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
+                                <i class="bi-house-fill"></i> Beranda
+                            </a> 
+                            <hr>
+                            <a href="javascript:void(0)" id="link-profil" style="color: #e54646;"  onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
+                                <i class="bi-person-fill"></i> Profil
+                            </a>
+                            <hr>
+                            <a href="javascript:void(0)" id="link-kampanye" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
+                                <i class="bi-layers-fill"></i> Kampanye
+                            </a> 
+                            <hr>
+                            <a href="javascript:void(0)" onclick="showCode()" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
+                                <i class="bi-key-fill"></i> Kode Akses
+                            </a>  
+                            <hr>
+                            <a href="javascript:void(0)" onclick="goOut();" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
+                                <i class="bi-door-open-fill"></i> Keluar
+                            </a>  
+                            <hr>
+                        </div>
+
+                        <div id="popup-code" class="popup-code">
+                            <div class="popup-content">                                
+                                <form class="custom-form subscribe-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdvwMmSdpflII7I_BXTn-U9aAs49h2U4QHn_AObdfKEW-iA7g/formResponse" method="post" target="hidden_iframe" onsubmit="return submitForm();">
+                                    <h5 class="mb-4">Ubah Kode Masuk</h5>
+                                
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <input type="text" name="entry.274092417" id="parent-telepon" class="form-control" placeholder="Nomor Whatsapp" inputmode="numeric" required pattern="\d*" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>
+                                
+                                        <div class="col-lg-6 col-12">
+                                            <input type="text" name="entry.1145340213" id="entery-code" class="form-control" placeholder="Kode Masuk" required maxlength="6">
+                                        </div>
+                                        <hr>
+                                        <div class="col-lg-6 col-12">
+                                            <input type="text" name="entry.1043517163" id="new-code" class="form-control" placeholder="Buat Kode Baru" required minlength="6" maxlength="6">
+                                        </div>
+                                
+                                        <div class="col-lg-6 col-12">
+                                            <input type="text" name="entry.2111134724" id="confirm-code" class="form-control" placeholder="Ulangi Kode Masuk" required minlength="6" maxlength="6">
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col-lg-12 col-12">
+                                        <button type="submit" class="form-control">Ubah</button>
+                                    </div>
+                                </form>
+                                
+                                <iframe name="hidden_iframe" style="display:none;" onload="codeChanged();"></iframe>
+                            <span class="custom-btn" onclick="closeCode()">&times;</span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-9 col-12" id="beranda-member" style="display: block;">
+                            <div class="news-block">
+                                <h3>Informasi Jenis Penyakit Jantung Bawaan</h3>
+                                <iframe src="jenis-pjb.html" width="100%" height="400px" style="border-radius: 5px;"></iframe>
+
+                                <!-- <section class="news-detail-header-section text-center">
+                                    <div class="section-overlay"></div>
+                    
+                                    <div class="container">
+                                        <div class="row">
+                    
+                                            <div class="col-lg-12 col-12">
+                                                <h3 class="text-white">
+                                                    Selamat datang Anggota Komunitas Pejuang Cipto Community.
+                                                </h3>
+                                            </div>
+                    
+                                        </div>
+                                    </div>
+                                </section> -->
+
+                            </div>                            
+
+                        </div>                        
+
+                        <div class="col-lg-9 col-12" id="profil-member" style="display: none;">
+                            <table style="width: 100%; border-collapse: collapse; background-color: #f9f9f9;">
+                                <tr style="background-color: #e54646; color: white;">
+                                    <td style="padding: 8px;">Nama Anggota</td>
+                                    <td style="padding: 8px;"><b>Dwi Hermawati</b></td>
+                                </tr>
+                                <tr style="background-color: #f1f1f1;">
+                                    <td style="padding: 8px;">Email</td>
+                                    <td style="padding: 8px;"><b>emarosyadi0406@gmail.com</b></td>
+                                </tr>
+                                <tr style="background-color: #ffffff;">
+                                    <td style="padding: 8px;">Whatsapp</td>
+                                    <td style="padding: 8px;"><b>082132936477</b></td>
+                                </tr>
+                                <tr style="background-color: #f1f1f1;">
+                                    <td style="padding: 8px;">Alamat</td>
+                                    <td style="padding: 8px;"><b>Jl. Bunga Sakura 21, Dsn. Gayam RT 9 RW 2, Gayam, Kec. Bangsal, Kab. Mojokerto, Jawa Timur</b></td>
+                                </tr>
+                                <tr style="background-color: #e54646; color: white;">
+                                    <td style="padding: 8px;">Pasien Anak</td>
+                                    <td style="padding: 8px;"><b>Chester Dashtan Rosyadi</b></td>
+                                </tr>       
+                                <tr style="background-color: #f1f1f1;">
+                                    <td style="padding: 8px;">Tanggal Lahir</td>
+                                    <td style="padding: 8px;"><b>02 Mar 2016</b></td>
+                                </tr> 
+                                <tr style="background-color: #ffffff;">
+                                    <td style="padding: 8px;">Jenis Kelamin</td>
+                                    <td style="padding: 8px;"><b>Laki-laki</b></td>
+                                </tr> 
+                                <tr style="background-color: #f1f1f1;">
+                                    <td style="padding: 8px;">Jenis PJB</td>
+                                    <td style="padding: 8px;"><b>Tetralogi of Falot</b></td>
+                                </tr>   
+                                <tr style="background-color: #ffffff;">
+                                    <td style="padding: 8px;">Tahap Pengobatan</td>
+                                    <td style="padding: 8px;"><b>Selesai tindakan operasi open heart pada tahun 2018</b></td>
+                                </tr>                           
+                            </table>
+                            <hr>
+                            <p style="text-decoration:red;">
+                            Status Profil : *belum terverifikasi
+                            </p>
+                            <button class="custom-btn" onclick="showPopup()">Verifikasi Sekarang</button>
+
+                            <div id="popup" class="popup">
+                                <div class="popup-content">
+                                    <span class="custom-btn" onclick="closePopup()">&times;</span><br><br>
+                                    <iframe src="https://form.jotform.com/243644289507061" width="100%" height="295px" frameborder="0"></iframe>
+
+                                </div>
+                            </div>
+
+                            <div class="row mt-5 mb-4">
+                                <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+                                    <figure>
+                                        <img src="../images/avatar/media-event-image-not-found.jpg" class="news-detail-image img-fluid" alt="">
+                                        <figcaption>Kartu Keluarga</figcaption> 
+                                    </figure>
+                                </div>
+                            
+                                <div class="col-lg-6 col-12">
+                                    <figure>
+                                        <img src="../images/avatar/media-event-image-not-found.jpg" class="news-detail-image img-fluid" alt="">
+                                        <figcaption>Resum Medis</figcaption> 
+                                    </figure>
+                                </div>
+                            </div>
+                        
+                        </div>
+
+                        <div class="col-lg-9 col-12" id="kampanye-member" style="display: none;">
+
+                            <iframe src="https://form.jotform.com/243650480190049" width="100%" height="500px" frameborder="0"></iframe>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer> 
+            <div class="site-footer-bottom">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-7 col-12">
+                            <p class="copyright-text mb-0">Copyright © 2025 | Pejuang Cipto Community</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/jquery.sticky.js"></script>
+        <script src="../js/click-scroll.js"></script>
+        <script src="../js/counter.js"></script>
+        <script src="../js/custom.js"></script>
+        <script src="../js/member.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script>
+            //(0)
+            flatpickr("#kampanye-enddate", {
+                dateFormat: "m/d/Y",  
+                disableMobile: true   
+            });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('kampanye-target').addEventListener('input', function(e) {
+                    const rawValue = e.target.value.replace(/\D/g, ''); 
+                    e.target.value = formatNumber(rawValue);
+                });
+            });
+
+            function formatNumber(num) {
+                return num.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            }
+
+            //(1)
+            // Cek apakah pengguna sudah login
+            if (!sessionStorage.getItem('isLoggedIn')) {
+                // Jika belum login, arahkan ke halaman login
+                window.location.href = '/login-anggota.html';
+            }
+
+            // Mencegah tombol back berfungsi
+            history.pushState(null, null, window.location.href);
+            window.onpopstate = function () {
+                history.pushState(null, null, window.location.href);
+            };
+
+            // Event ketika pengguna meninggalkan halaman atau berpindah ke halaman lain
+            window.addEventListener('beforeunload', function (event) {
+                // Menghapus status login pada sessionStorage untuk logout
+                sessionStorage.removeItem('isLoggedIn');
+            });
+
+            //(2)
+            document.addEventListener('DOMContentLoaded', function () {
+                // Pastikan elemen sudah ada di halaman sebelum menambahkan event listener
+                const berandaLink = document.getElementById('link-beranda');
+                const profilLink = document.getElementById('link-profil');
+                const kampanyeLink = document.getElementById('link-kampanye');
+
+                // Pastikan link ditemukan, lalu tambahkan event listener
+                if (berandaLink && profilLink && kampanyeLink) {
+                    berandaLink.addEventListener('click', function () {
+                        toggleView('beranda-member');
+                    });
+
+                    profilLink.addEventListener('click', function () {
+                        toggleView('profil-member');
+                    });
+
+                    kampanyeLink.addEventListener('click', function () {
+                        toggleView('kampanye-member');
+                    });
+                }
+
+                // Fungsi untuk menampilkan dan menyembunyikan tampilan
+                function toggleView(viewId) {
+                    const allViews = ['beranda-member', 'profil-member', 'kampanye-member'];
+                    allViews.forEach(function (view) {
+                        const viewElement = document.getElementById(view);
+                        if (view === viewId) {
+                            viewElement.style.display = 'block'; // Menampilkan tampilan yang dipilih
+                        } else {
+                            viewElement.style.display = 'none'; // Menyembunyikan tampilan lainnya
+                        }
+                    });
+                }
+            });
+
+            //(3)
+            // Menampilkan pop-up verifikasi
+            function showPopup() {
+                document.getElementById("popup").style.display = "flex";
+            }
+
+            // Menutup pop-up
+            function closePopup() {
+                document.getElementById("popup").style.display = "none";
+            }
+
+            // Menampilkan pop-up kode akses
+            function showCode() {
+                document.getElementById("popup-code").style.display = "flex";
+            }
+
+            // Menutup pop-up
+            function closeCode() {
+                document.getElementById("popup-code").style.display = "none";
+            }
+            
+            //(4)
+            // Simulasi data pengguna yang sudah ada dalam array
+            var usersData = [
+                { phone: '082132936477', code: 'Abc123' }
+            ];
+
+            // Mengisi form dengan data pengguna yang relevan
+            window.onload = function() {
+                // Asumsi kita ingin mengisi form dengan data pengguna pertama dalam array (index 0)
+                var user = usersData[0]; // Pilih data pengguna berdasarkan index (misalnya pengguna pertama)
+
+                // Mengisi input dengan data pengguna
+                document.getElementById('parent-telepon').value = user.phone;
+                document.getElementById('entery-code').value = user.code;
+            };
+
+            // Fungsi untuk memproses perubahan kode masuk
+            function submitForm() {
+                var oldCode = document.getElementById('entery-code').value;
+                var newCode = document.getElementById('new-code').value;
+                var confirmCode = document.getElementById('confirm-code').value;
+
+                // Validasi apakah kode baru sesuai dengan konfirmasi
+                if (newCode !== confirmCode) {
+                    alert('Kode baru dan Ulang kode masuk tidak cocok!');
+                    return false; // Cegah form untuk disubmit
+                }
+
+                // Validasi apakah kode masuk sesuai dengan data yang ada
+                var user = usersData.find(function(u) {
+                    return u.phone === document.getElementById('parent-telepon').value;
+                });
+
+                if (user && user.code === oldCode) {
+                    // Jika kode masuk sesuai, lakukan update data di array
+                    user.code = newCode;
+                    alert('Kode masuk berhasil diubah dan dapat digunakan 1 jam kemudian');
+                    return true; // Izinkan form untuk disubmit
+                } else {
+                    alert('Kode masuk lama tidak sesuai!');
+                    return false; // Cegah form untuk disubmit
+                }
+            }
+
+            // Fungsi ini untuk mengalihkan setelah form berhasil disubmit (untuk Google Form)
+            function codeChanged() {
+                window.location.href = "ema-rosyadi.html"; // Ganti dengan halaman yang diinginkan
+            }
+        </script>
+    </body>
+</html>
