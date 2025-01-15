@@ -7,39 +7,39 @@ function goOut() {
 // Array data login yang berisi nomor WhatsApp dan password acak
 const users = [
     {
-        whatsapp: '082132936477', // Nomor WhatsApp anggota 1
-        password: 'Abc123',      // Password acak 8 digit untuk anggota 1
-        redirectUrl: 'user/ema-rosyadi.html' // URL halaman setelah login untuk anggota 1
+        whatsapp: '082132936477', 
+        password: 'Abc123',      
+        redirectUrl: 'user/ema-rosyadi.html' 
     },
     {
-        whatsapp: '085870842284', // Nomor WhatsApp anggota 2
-        password: '123456',     // Password acak 8 digit untuk anggota 2
-        redirectUrl: 'user/irma-tri-wulandari.html' // URL halaman setelah login untuk anggota 2
+        whatsapp: '085870842284', 
+        password: '123456',     
+        redirectUrl: 'user/irma-tri-wulandari.html' 
     },
     {
-        whatsapp: '0895409370307', // Nomor WhatsApp anggota 2
-        password: '123456',     // Password acak 8 digit untuk anggota 2
-        redirectUrl: 'user/weni-nur-khasanah.html' // URL halaman setelah login untuk anggota 2
+        whatsapp: '0895409370307', 
+        password: '123456',     
+        redirectUrl: 'user/weni-nur-khasanah.html' 
     },
     {
-        whatsapp: '085879379589', // Nomor WhatsApp anggota 2
-        password: '123456',     // Password acak 8 digit untuk anggota 2
-        redirectUrl: 'user/amanda-dwi-ayu-saputri.html' // URL halaman setelah login untuk anggota 2
+        whatsapp: '085879379589',
+        password: '123456',     
+        redirectUrl: 'user/amanda-dwi-ayu-saputri.html' 
     },
     {
-        whatsapp: '085180960911', // Nomor WhatsApp anggota 2
-        password: '123456',     // Password acak 8 digit untuk anggota 2
-        redirectUrl: 'user/retno-putriningsih.html' // URL halaman setelah login untuk anggota 2
+        whatsapp: '085180960911', 
+        password: '123456',     
+        redirectUrl: 'user/retno-putriningsih.html' 
     },
     {
-        whatsapp: '085647577776', // Nomor WhatsApp anggota 2
-        password: '123456',     // Password acak 8 digit untuk anggota 2
-        redirectUrl: 'user/prakoso-pribadi.html' // URL halaman setelah login untuk anggota 2
+        whatsapp: '085647577776',
+        password: '123456',     
+        redirectUrl: 'user/prakoso-pribadi.html' 
     },
     {
-        whatsapp: '085757587421', // Nomor WhatsApp anggota 2
-        password: '123456',     // Password acak 8 digit untuk anggota 2
-        redirectUrl: 'user/sumarni.html' // URL halaman setelah login untuk anggota 2
+        whatsapp: '085757587421', 
+        password: '123456',     
+        redirectUrl: 'user/sumarni.html' 
     }
     
     // Tambahkan lebih banyak data anggota di sini jika perlu
