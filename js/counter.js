@@ -88,16 +88,3 @@
 	}
 }(jQuery));
 
-//DELETE .html
-if (window.location.pathname.endsWith('.html')) {
-	var hash = window.location.hash;
-	var newUrl = window.location.pathname.replace('.html', '');
-	newUrl += hash;
-	window.history.replaceState(null, '', newUrl);
-  }
-
-//PRINT NEWS PAGE
-document.getElementById('printButton').addEventListener('click', function(e) {
-    e.preventDefault();  
-    window.print();      
-});
