@@ -124,19 +124,40 @@
                         <div class="col-lg-6 col-12 mx-auto"> 
                             <form id="login-form" class="custom-form volunteer-form mb-5 mb-lg-0" action="javascript:void(0);" method="post" onsubmit="validateLogin(event)">
                                 <h3 class="mb-4"><i class="bi-file-person"></i> Portal Anggota</h3>
-                            
+                                
                                 <div class="row">
                                     <div class="col-lg-6 col-12">
                                         <input type="text" name="whatsapp" id="parent-telepon" class="form-control" placeholder="Nomor Whatsapp" inputmode="numeric" required pattern="\d*" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                     </div>
                                     <div class="col-lg-6 col-12 position-relative">
                                         <input type="password" name="password" id="member-code" class="form-control" placeholder="Kode Masuk (6 Digit)" required maxlength="6">
-                                        <i class="bi-eye-fill position-absolute" id="togglePassword" style="top: 35%; right: 20px; transform: translateY(-50%); cursor: pointer;"></i>
-                                    </div>
+                                        <i class="bi-eye-fill position-absolute" id="togglePassword" style="top: 35%; right: 20px; transform: translateY(-50%); cursor: pointer;"></i>                                        
+                                    </div>                                    
                                 </div>
-                            
+                                <center><a href="javascript:void(0)" onclick="showCodeResend()" class="social-icon-link" title="Lupa Kode Masuk"><i class="bi-question"></i></a></center><br>
                                 <button type="submit" class="form-control">Masuk</button>
                             </form>                            
+                        </div>
+
+                        <div id="popup-code" class="popup-code">
+                            <div class="popup-content">                                
+                                <form class="custom-form subscribe-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfg12YDGDIHe4XFjDJ0XM2iuXdios1NJ1Uqcu5_mcSeV_CrjA/formResponse" method="post" target="hidden_iframe" onsubmit="return submitForm();">
+                                    <h5 class="mb-4">Lupa Kode Masuk <i class="bi-question"></i></h5>
+                                
+                                    <div class="row">
+                                        <div class="col-lg-12 col-12">
+                                            <input type="text" name="entry.679845144" id="parent-telepon" class="form-control" placeholder="Nomor Whatsapp" inputmode="numeric" required pattern="\d*" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>                                        
+                                    </div>
+                                    
+                                    <div class="col-lg-12 col-12">
+                                        <button type="submit" class="form-control">Kirim Ulang</button>
+                                    </div>
+                                </form>
+                                
+                                <iframe name="hidden_iframe" style="display:none;" onload="codeChangedResend();"></iframe>
+                            <span class="custom-btn" onclick="closeCodeResend()">&times;</span>
+                            </div>
                         </div>
 
                     </div>
