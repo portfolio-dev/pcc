@@ -433,34 +433,11 @@
                                             <td style="padding: 8px; border: none;"><b>Rp <span id="donation-amount-display"></span></b></td>
                                         </tr>                                   
                                     </table>
+                                    <hr>
                                     <div id="uang-transfer-qris">
-                                        <table style="width: 100%; border-collapse: collapse;">
-                                            <tr style="border-top: 1px solid rgb(198, 195, 195);">
-                                                <td style="padding: 8px; border: none;"><h6>Metode Donasi</h6></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check-group-payment-type">
-                                                        <input class="form-check-input payment-radio" type="radio" name="DonationPayment" id="payment-bca" value="BCA">
-                                                        <label class="form-check-label" for="payment-bca"><i class="bi-credit-card-2-back-fill me-2"></i>BCA</label>
-                                                    </div>                                                
-                                                </td>
-                                                <td>
-                                                    <div class="form-check-group-payment-type">
-                                                        <input class="form-check-input payment-radio" type="radio"  id="payment-bni" value="BNI">
-                                                        <label class="form-check-label" for="payment-bni"><i class="bi-credit-card-2-back-fill me-2"></i>BNI</label>
-                                                    </div>                                                
-                                                </td>
-                                                <td>
-                                                    <div class="form-check-group-payment-type">
-                                                        <input class="form-check-input payment-radio" type="radio"  id="payment-bri" value="BRI">
-                                                        <label class="form-check-label" for="payment-bri"><i class="bi-credit-card-2-back-fill me-2"></i>BRI</label>
-                                                    </div>                                                
-                                                </td>
-                                            </tr>
-                                        </table>                                    
                                         
                                         <div id="transfer-info">
+                                            <h6>Rekening Donasi:</h6>
                                             <table style="width: 100%; border-collapse: collapse; margin: 20px auto; table-layout: auto; font-size: auto;">
                                                 <tr>
                                                     <td colspan="2" style="padding: 10px; text-align: center; border: 1px solid black; background-color: #e54646; color: white;">
@@ -492,10 +469,61 @@
                                                     </td>
                                                 </tr>
                                             </table>
-                                        </div>                                        
+                                        </div>  
+                                        
+                                        <table style="width: 100%; border-collapse: collapse;">
+                                            <tr style="border-top: 1px solid rgb(198, 195, 195);">
+                                                <td style="padding: 8px; border: none;"><h6>Pilih Metode Donasi</h6></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check-group-payment-type">
+                                                        <input class="form-check-input payment-radio" type="radio" name="DonationPayment" id="payment-bca" value="BCA">
+                                                        <label class="form-check-label" for="payment-bca"><i class="bi-credit-card-2-back-fill me-2"></i>BCA</label>
+                                                    </div>                                                
+                                                </td>
+                                                <td>
+                                                    <div class="form-check-group-payment-type">
+                                                        <input class="form-check-input payment-radio" type="radio"  id="payment-bni" value="BNI">
+                                                        <label class="form-check-label" for="payment-bni"><i class="bi-credit-card-2-back-fill me-2"></i>BNI</label>
+                                                    </div>                                                
+                                                </td>
+                                                <td>
+                                                    <div class="form-check-group-payment-type">
+                                                        <input class="form-check-input payment-radio" type="radio"  id="payment-bri" value="BRI">
+                                                        <label class="form-check-label" for="payment-bri"><i class="bi-credit-card-2-back-fill me-2"></i>BRI</label>
+                                                    </div>                                                
+                                                </td>
+                                            </tr>
+                                        </table>
+
                                     </div>
                                     
                                     <div id="produk-kirim" style="display: none;">
+                                        
+                                        <div id="kirim-produk">
+                                            <h6>Produk Donasi:</h6>
+                                            <b><span id="donation-detail-display" style="color: #e54646;"></span></b><br><br>
+                                            Silahkan kirim ke salah satu alamat berikut:
+                                            <p style="background-color:#e54646; border-radius: 7px; color: white; padding: 5px;">                                                
+                                                <b>(1) Page Down Cloth Maker & Merch</b><br>
+                                                Jl. Letjen Sutoyo No. 120, Mojosongo, Kec. Jebres,<br>
+                                                Kota Surakarta, Jawa Tengah 57127
+                                                
+                                                <br><br>
+                                                Beri Catatan: Produk Donasi untuk Acara Solo Charity Trip 2025                                               
+
+                                            </p>
+                                            
+                                            <p style="background-color:#e54646; border-radius: 7px; color: white; padding: 5px;">                                                
+                                                <b>(2) Bentala Merchandise</b><br>
+                                                Perum Permata Manang, Dusun II, Bakipandeyan, Kec. Grogol, Kab. Sukoharjo, Jawa Tengah 57552
+                                                
+                                                <br><br>
+                                                Beri Catatan: Produk Donasi untuk Acara Solo Charity Trip 2025                                               
+
+                                            </p>
+                                        </div>
                                         <table style="width: 100%; border-collapse: collapse;">
                                             <tr style="border-top: 1px solid rgb(198, 195, 195);">
                                                 <td style="padding: 8px; border: none;"><h6>Metode Donasi</h6></td>
@@ -509,21 +537,8 @@
                                                 </td>
                                             </tr>
                                         </table>
-                                        <br>
-                                        <div id="kirim-produk">
-                                            <h6>Produk Donasi:</h6>
-                                            <b><span id="donation-detail-display" style="color: #e54646;"></span></b><br><br>
-                                            Silahkan kirim ke alamat:
-                                            <p style="background-color:#e54646; border-radius: 7px; color: white; padding: 5px;">                                                
-                                                <b>Page Down Cloth Maker & Merch</b><br>
-                                                Jl. Letjen Sutoyo No. 120, Mojosongo, Kec. Jebres,<br>
-                                                Kota Surakarta, Jawa Tengah 57127<br><br>
-                                                Beri Catatan: Produk Donasi untuk Acara Solo Charity Trip 2025                                               
-
-                                            </p>
-                                        </div>
                                     </div>
-                                    <hr>
+                                    <br>
                                         <h6 class="mt-1">Catatan / Komentar (optional)</h6>
                                         <textarea name="donation-note" rows="5" class="form-control" id="donation-note" placeholder="Tulis di sini" required></textarea>
                                     <button type="button" id="confirm-button" class="btn btn-primary mt-3" onclick="submitConfirmation()">Donasi</button>
