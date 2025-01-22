@@ -22,164 +22,7 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <style>
-            /* body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                margin: 0;
-                padding: 20px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                box-sizing: border-box;
-            } */
-
-            .container-member {
-                background: #fff;
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                width: 100%;
-                max-width: 100%;
-                text-align: center;
-                box-sizing: border-box;
-            }
-
-            h1 {
-                margin-bottom: 20px;
-                font-size: 1.5em;
-            }
-
-            form {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-                margin-bottom: 20px;
-            }
-
-            input {
-                flex: 1;
-                padding: 10px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                box-sizing: border-box;
-            }
-
-            button {
-                padding: 10px;
-                background-color:#c0392b;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                flex: none;
-            }
-
-            button:hover {
-                background-color: #e54646;
-            }
-
-            ul {
-                list-style: none;
-                padding: 0;
-            }
-
-            li {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px;
-                margin: 5px 0;
-                background: #f1f1f1;
-                border-radius: 5px;
-                transition: all 0.3s ease;
-                flex-wrap: wrap;
-            }
-
-            li.completed {
-                text-decoration: line-through;
-                background-color: #dff0d8;
-                color: #3c763d;
-            }
-
-            li span.category {
-                font-weight: bold;
-                color: #555;
-                margin-left: 10px;
-            }
-
-            li .due-date {
-                font-size: 0.9em;
-                color: #ff5722;
-                margin-left: 10px;
-                font-weight: bold;
-            }
-
-            li button {
-                background-color: #e74c3c;
-                border: none;
-                color: white;
-                border-radius: 5px;
-                padding: 5px 10px;
-                cursor: pointer;
-            }
-
-            li button:hover {
-                background-color: #c0392b;
-            }
-
-            #searchInput {
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 20px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                box-sizing: border-box;
-            }
-
-            select {
-                padding: 10px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                flex: none;
-            }
-
-            /* Media Query untuk Responsivitas */
-            @media (max-width: 480px) {
-                .container {
-                    padding: 15px;
-                }
-
-                h1 {
-                    font-size: 1.2em;
-                }
-
-                form {
-                    flex-direction: column;
-                    gap: 10px;
-                }
-
-                button {
-                    width: 100%;
-                }
-
-                input, select, #searchInput {
-                    width: 100%;
-                }
-
-                li {
-                    flex-direction: column;
-                    align-items: flex-start;
-                }
-
-                li .due-date, li span.category {
-                    margin-left: 0;
-                    display: block;
-                    margin-top: 5px;
-                }
-            }
-
-        </style>
+button:hover{background-color:#e54646;}h1,form{margin-bottom:20px;}h1{font-size:1.5em;}[class~=container-member]{background:#fff;}form{display:flex;}form{flex-wrap:wrap;}li[class~=completed]{text-decoration:line-through;}form{gap:10px;}li button{background-color:#e74c3c;}input{flex:1;}button,input,#searchInput{padding-left:.625pc;}[class~=container-member]{padding-left:.208333333in;}input,#searchInput,button{padding-bottom:.625pc;}#searchInput,input,button{padding-right:.625pc;}li[class~=completed]{background-color:#dff0d8;}input,#searchInput,button{padding-top:.625pc;}input{border-left-width:.75pt;}input{border-bottom-width:.75pt;}input{border-right-width:.75pt;}[class~=container-member]{padding-bottom:.208333333in;}input{border-top-width:.75pt;}[class~=container-member]{padding-right:.208333333in;}input{border-left-style:solid;}li button{border-left-width:medium;}li[class~=completed]{color:#3c763d;}li [class~=due-date]{font-size:.9em;}input{border-bottom-style:solid;}input{border-right-style:solid;}input{border-top-style:solid;}li [class~=due-date]{color:#ff5722;}#searchInput,[class~=container-member]{width:100%;}input{border-left-color:#ddd;}input{border-bottom-color:#ddd;}input{border-right-color:#ddd;}input{border-top-color:#ddd;}input{border-image:none;}button,li button{border-bottom-width:medium;}input,button{border-radius:3.75pt;}input,[class~=container-member]{box-sizing:border-box;}li span[class~=category]{font-weight:bold;}[class~=container-member]{padding-top:.208333333in;}[class~=container-member]{border-radius:7.5pt;}button{background-color:#c0392b;}[class~=container-member]{box-shadow:0 2px .104166667in rgba(0,0,0,.1);}li button,button{color:white;}button{border-left-width:medium;}li button,button{border-right-width:medium;}button,li button{border-top-width:medium;}li button,button{border-left-style:none;}li button,button{border-bottom-style:none;}li button,button{border-right-style:none;}button,li button{border-top-style:none;}li button,button{border-left-color:currentColor;}#searchInput{margin-bottom:1.25pc;}li button,button{border-bottom-color:currentColor;}li button,button{border-right-color:currentColor;}[class~=container-member]{max-width:100%;}li button,button{border-top-color:currentColor;}[class~=container-member]{text-align:center;}button,li button{border-image:none;}select,#searchInput{border-left-width:.010416667in;}button,li button{cursor:pointer;}button{flex:none;}ul{list-style:none;}ul{padding-left:0;}ul{padding-bottom:0;}ul{padding-right:0;}ul{padding-top:0;}#searchInput,select{border-bottom-width:.010416667in;}#searchInput,select{border-right-width:.010416667in;}li{display:flex;}li{justify-content:space-between;}li{align-items:center;}li,select,li button{padding-left:7.5pt;}li,select{padding-bottom:7.5pt;}select,#searchInput{border-top-width:.010416667in;}li button,select,li{padding-right:7.5pt;}#searchInput,select,li,li button{border-radius:.3125pc;}li,select{padding-top:7.5pt;}select,#searchInput{border-left-style:solid;}li{margin-left:0;}li button{padding-bottom:3.75pt;}#searchInput,select{border-bottom-style:solid;}li{margin-bottom:.052083333in;}li{margin-right:0;}#searchInput,select{border-right-style:solid;}li{margin-top:.052083333in;}li{background:#f1f1f1;}li button{padding-top:3.75pt;}li{transition:all .3s ease;}li{flex-wrap:wrap;}li span[class~=category]{color:#555;}#searchInput,select{border-top-style:solid;}select,#searchInput{border-left-color:#ddd;}select,#searchInput{border-bottom-color:#ddd;}#searchInput,select{border-right-color:#ddd;}#searchInput,select{border-top-color:#ddd;}#searchInput,select{border-image:none;}li span[class~=category],li [class~=due-date]{margin-left:10px;}select{flex:none;}li [class~=due-date]{font-weight:bold;}#searchInput{box-sizing:border-box;}li button:hover{background-color:#c0392b;}@media (max-width: 480px){li .due-date,li span[class~=category]{margin-left:0;}[class~=container]{padding-left:.9375pc;}input,button,#searchInput,select{width:100%;}[class~=container]{padding-bottom:.9375pc;}[class~=container]{padding-right:.9375pc;}h1{font-size:1.2em;}[class~=container]{padding-top:.9375pc;}li,form{flex-direction:column;}li .due-date,li span[class~=category]{display:block;}form{gap:.104166667in;}li{align-items:flex-start;}li .due-date,li span[class~=category]{margin-top:.052083333in;}}        </style>
     </head>
     
     <body>
@@ -267,7 +110,7 @@
                             </a>
                             <hr>
                             <a href="javascript:void(0)" id="link-tugas" style="color: #e54646;"  onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
-                                <i class="bi-list-task"></i> Daftar Tugas
+                                <i class="bi-list-check"></i> Daftar Tugas
                             </a>
                             <hr>
                             <a href="javascript:void(0)" id="link-kampanye" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
@@ -418,7 +261,8 @@
                             <div class="container-member">
                                 <h1>Daftar Tugas Pengobatan Anak</h1>
                                 <p>
-                                    Aplikasi ini dirancang untuk membantu orang tua atau anggota dalam mengelola tugas-tugas pengobatan anak dengan cara yang mudah dan terorganisir. Anda dapat menambahkan, mengkategorikan, dan menetapkan tenggat waktu untuk setiap tugas, sehingga memudahkan pemantauan dan pengingat terkait perawatan medis anak, seperti kontrol rutin, tindakan medis, atau kebutuhan pribadi lainnya. Dengan aplikasi ini, segala sesuatu yang berhubungan dengan pengobatan anak dapat lebih mudah dikelola dan tidak terlewatkan.
+                                    Aplikasi ini dirancang untuk membantu orang tua atau anggota dalam mengelola tugas-tugas pengobatan anak dengan cara yang mudah dan terorganisir. <br><br>
+                                    Anda dapat menambahkan, mengkategorikan, dan menetapkan tenggat waktu untuk setiap tugas, sehingga memudahkan pemantauan dan pengingat terkait perawatan medis anak, seperti kontrol rutin, tindakan medis, atau kebutuhan pribadi lainnya. Dengan aplikasi ini, segala sesuatu yang berhubungan dengan pengobatan anak dapat lebih mudah dikelola dan tidak terlewatkan.
                                 </p>
                                 <form id="todoForm">
                                     <input type="text" id="todoInput" placeholder="Tambahkan tugas baru..." required>
@@ -432,7 +276,7 @@
                                         <option value="Monitoring">Monitoring Kesehatan</option>
                                     </select>
                                     
-                                    <input type="date" id="dueDateInput" required>
+                                    <input type="text" id="patient-born" placeholder="Tanggal" required>
                                     <button type="submit">Tambah</button>
                                 </form>
                                 <hr>
@@ -480,152 +324,7 @@
         <script src="../js/member-user.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script>
-            //(0)
-            flatpickr("#kampanye-enddate", {
-                dateFormat: "m/d/Y",  
-                disableMobile: true   
-            });
-
-            document.addEventListener('DOMContentLoaded', function() {
-                document.getElementById('kampanye-target').addEventListener('input', function(e) {
-                    const rawValue = e.target.value.replace(/\D/g, ''); 
-                    e.target.value = formatNumber(rawValue);
-                });
-            });
-
-            function formatNumber(num) {
-                return num.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-            }
-
-            //(1)
-            // Cek apakah pengguna sudah login
-            if (!sessionStorage.getItem('isLoggedIn')) {
-                // Jika belum login, arahkan ke halaman login
-                window.location.href = '/login-anggota.html';
-            }
-
-            // Mencegah tombol back berfungsi
-            history.pushState(null, null, window.location.href);
-            window.onpopstate = function () {
-                history.pushState(null, null, window.location.href);
-            };
-
-            // Event ketika pengguna meninggalkan halaman atau berpindah ke halaman lain
-            window.addEventListener('beforeunload', function (event) {
-                // Menghapus status login pada sessionStorage untuk logout
-                sessionStorage.removeItem('isLoggedIn');
-            });
-
-            //(2)
-            document.addEventListener('DOMContentLoaded', function () {
-                // Pastikan elemen sudah ada di halaman sebelum menambahkan event listener
-                const berandaLink = document.getElementById('link-beranda');
-                const profilLink = document.getElementById('link-profil');
-                const tugasLink = document.getElementById('link-tugas');
-                const kampanyeLink = document.getElementById('link-kampanye');
-
-                // Pastikan link ditemukan, lalu tambahkan event listener
-                if (berandaLink && profilLink && kampanyeLink) {
-                    berandaLink.addEventListener('click', function () {
-                        toggleView('beranda-member');
-                    });
-
-                    profilLink.addEventListener('click', function () {
-                        toggleView('profil-member');
-                    });
-
-                    tugasLink.addEventListener('click', function () {
-                        toggleView('tugas-member');
-                    });
-
-                    kampanyeLink.addEventListener('click', function () {
-                        toggleView('kampanye-member');
-                    });
-                }
-
-                // Fungsi untuk menampilkan dan menyembunyikan tampilan
-                function toggleView(viewId) {
-                    const allViews = ['beranda-member', 'profil-member', 'tugas-member', 'kampanye-member'];
-                    allViews.forEach(function (view) {
-                        const viewElement = document.getElementById(view);
-                        if (view === viewId) {
-                            viewElement.style.display = 'block'; // Menampilkan tampilan yang dipilih
-                        } else {
-                            viewElement.style.display = 'none'; // Menyembunyikan tampilan lainnya
-                        }
-                    });
-                }
-            });
-
-            //(3)
-            // Menampilkan pop-up verifikasi
-            function showPopup() {
-                document.getElementById("popup").style.display = "flex";
-            }
-
-            // Menutup pop-up
-            function closePopup() {
-                document.getElementById("popup").style.display = "none";
-            }
-
-            // Menampilkan pop-up kode akses
-            function showCode() {
-                document.getElementById("popup-code").style.display = "flex";
-            }
-
-            // Menutup pop-up
-            function closeCode() {
-                document.getElementById("popup-code").style.display = "none";
-            }
-            
-            //(4)
-            // Simulasi data pengguna yang sudah ada dalam array
-            var usersData = [
-                { phone: '082132936477', code: 'Abc123' }
-            ];
-
-            // Mengisi form dengan data pengguna yang relevan
-            window.onload = function() {
-                // Asumsi kita ingin mengisi form dengan data pengguna pertama dalam array (index 0)
-                var user = usersData[0]; // Pilih data pengguna berdasarkan index (misalnya pengguna pertama)
-
-                // Mengisi input dengan data pengguna
-                document.getElementById('parent-telepon').value = user.phone;
-                document.getElementById('entery-code').value = user.code;
-            };
-
-            // Fungsi untuk memproses perubahan kode masuk
-            function submitForm() {
-                var oldCode = document.getElementById('entery-code').value;
-                var newCode = document.getElementById('new-code').value;
-                var confirmCode = document.getElementById('confirm-code').value;
-
-                // Validasi apakah kode baru sesuai dengan konfirmasi
-                if (newCode !== confirmCode) {
-                    alert('Kode baru dan Ulang kode masuk tidak cocok!');
-                    return false; // Cegah form untuk disubmit
-                }
-
-                // Validasi apakah kode masuk sesuai dengan data yang ada
-                var user = usersData.find(function(u) {
-                    return u.phone === document.getElementById('parent-telepon').value;
-                });
-
-                if (user && user.code === oldCode) {
-                    // Jika kode masuk sesuai, lakukan update data di array
-                    user.code = newCode;
-                    alert('Kode masuk berhasil diubah dan dapat digunakan 1 jam kemudian');
-                    return true; // Izinkan form untuk disubmit
-                } else {
-                    alert('Kode masuk lama tidak sesuai!');
-                    return false; // Cegah form untuk disubmit
-                }
-            }
-
-            // Fungsi ini untuk mengalihkan setelah form berhasil disubmit (untuk Google Form)
-            function codeChanged() {
-                window.location.href = "ema-rosyadi.html"; // Ganti dengan halaman yang diinginkan
-            }
+            var _0x189e5a=_0x1b35;(function(_0x4e3fce,_0x4beae9){var _0x3b8247=_0x1b35,_0x53b7e2=_0x4e3fce();while(!![]){try{var _0x2baa06=-parseInt(_0x3b8247(0xe9))/0x1+-parseInt(_0x3b8247(0xfe))/0x2*(-parseInt(_0x3b8247(0x103))/0x3)+-parseInt(_0x3b8247(0x109))/0x4*(parseInt(_0x3b8247(0x105))/0x5)+-parseInt(_0x3b8247(0xf2))/0x6+-parseInt(_0x3b8247(0xfd))/0x7+-parseInt(_0x3b8247(0xfc))/0x8+parseInt(_0x3b8247(0x104))/0x9;if(_0x2baa06===_0x4beae9)break;else _0x53b7e2['push'](_0x53b7e2['shift']());}catch(_0x1cf8be){_0x53b7e2['push'](_0x53b7e2['shift']());}}}(_0x1f6f,0xd5974),flatpickr(_0x189e5a(0xea),{'dateFormat':_0x189e5a(0x108),'disableMobile':!![]}),flatpickr(_0x189e5a(0xef),{'dateFormat':_0x189e5a(0x108),'disableMobile':!![]}));function _0x1b35(_0x269082,_0x361366){var _0x1f6f84=_0x1f6f();return _0x1b35=function(_0x1b353a,_0x17aead){_0x1b353a=_0x1b353a-0xe8;var _0x28f44d=_0x1f6f84[_0x1b353a];return _0x28f44d;},_0x1b35(_0x269082,_0x361366);}!sessionStorage[_0x189e5a(0xf4)](_0x189e5a(0xfb))&&(window['location'][_0x189e5a(0x10a)]=_0x189e5a(0xee));function _0x1f6f(){var _0x38a5d6=['onpopstate','Abc123','isLoggedIn','13813080cCWcHK','7773220feFFyu','16vCpRhS','code','removeItem','ema-rosyadi.html','082132936477','565437BXnNlh','48074220vvtHXM','7035ZORpEp','Kode\x20masuk\x20berhasil\x20diubah\x20dan\x20dapat\x20digunakan\x201\x20jam\x20kemudian','parent-telepon','m/d/Y','780LXEXSM','href','new-code','1326149XDDXdg','#kampanye-enddate','value','entery-code','beforeunload','/login-anggota.html','#patient-born','getElementById','find','9221610GoziRk','Kode\x20baru\x20dan\x20Ulang\x20kode\x20masuk\x20tidak\x20cocok!','getItem','onload','confirm-code','location','addEventListener'];_0x1f6f=function(){return _0x38a5d6;};return _0x1f6f();}history['pushState'](null,null,window[_0x189e5a(0xf7)][_0x189e5a(0x10a)]),window[_0x189e5a(0xf9)]=function(){var _0x1bf8c2=_0x189e5a;history['pushState'](null,null,window[_0x1bf8c2(0xf7)][_0x1bf8c2(0x10a)]);},window[_0x189e5a(0xf8)](_0x189e5a(0xed),function(_0x321a91){var _0x265c90=_0x189e5a;sessionStorage[_0x265c90(0x100)](_0x265c90(0xfb));});var usersData=[{'phone':_0x189e5a(0x102),'code':_0x189e5a(0xfa)}];window[_0x189e5a(0xf5)]=function(){var _0x3fb450=_0x189e5a,_0x24b493=usersData[0x0];document[_0x3fb450(0xf0)](_0x3fb450(0x107))['value']=_0x24b493['phone'],document[_0x3fb450(0xf0)]('entery-code')[_0x3fb450(0xeb)]=_0x24b493[_0x3fb450(0xff)];};function submitForm(){var _0x2fdfac=_0x189e5a,_0xf0ca73=document[_0x2fdfac(0xf0)](_0x2fdfac(0xec))[_0x2fdfac(0xeb)],_0x4c3774=document[_0x2fdfac(0xf0)](_0x2fdfac(0xe8))['value'],_0x4e24f6=document[_0x2fdfac(0xf0)](_0x2fdfac(0xf6))[_0x2fdfac(0xeb)];if(_0x4c3774!==_0x4e24f6)return alert(_0x2fdfac(0xf3)),![];var _0x5abeb7=usersData[_0x2fdfac(0xf1)](function(_0x1b6903){var _0x49f9c3=_0x2fdfac;return _0x1b6903['phone']===document[_0x49f9c3(0xf0)](_0x49f9c3(0x107))['value'];});return _0x5abeb7&&_0x5abeb7[_0x2fdfac(0xff)]===_0xf0ca73?(_0x5abeb7[_0x2fdfac(0xff)]=_0x4c3774,alert(_0x2fdfac(0x106)),!![]):(alert('Kode\x20masuk\x20lama\x20tidak\x20sesuai!'),![]);}function codeChanged(){var _0xb5cb6f=_0x189e5a;window[_0xb5cb6f(0xf7)][_0xb5cb6f(0x10a)]=_0xb5cb6f(0x101);}
         </script>
     </body>
 </html>
