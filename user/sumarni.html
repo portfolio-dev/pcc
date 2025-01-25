@@ -19,6 +19,7 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/bootstrap-icons.css" rel="stylesheet">
         <link href="../css/custom.css" rel="stylesheet">
+        <link href="../css/member-user.css" rel="stylesheet">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     </head>
@@ -107,17 +108,21 @@
                                 <i class="bi-person-fill"></i> Profil
                             </a>
                             <hr>
+                            <a href="javascript:void(0)" id="link-tugas" style="color: #e54646;"  onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
+                                <i class="bi-list-check"></i> Daftar Tugas
+                            </a>
+                            <hr>
                             <a href="javascript:void(0)" id="link-kampanye" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
                                 <i class="bi-layers-fill"></i> Penggalangan
                             </a> 
                             <hr>
                             <a href="javascript:void(0)" onclick="showCode()" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
-                                <i class="bi-key-fill"></i> Kode Akses
+                                <i class="bi-key-fill"></i> Kode Masuk
                             </a>  
                             <hr>
                             <a href="javascript:void(0)" onclick="goOut();" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
                                 <i class="bi-door-open-fill"></i> Keluar
-                            </a>  
+                            </a> 
                             <hr>
                         </div>
 
@@ -180,80 +185,120 @@
                         </div>                        
 
                         <div class="col-lg-9 col-12" id="profil-member" style="display: none;">
-                            <table style="width: 100%; border-collapse: collapse; background-color: #f9f9f9;">
-                                <tr style="background-color: #e54646; color: white;">
-                                    <td style="padding: 8px;">Nama Anggota</td>
-                                    <td style="padding: 8px;"><b>Sumarni</b></td>
-                                </tr>
-                                <tr style="background-color: #f1f1f1;">
-                                    <td style="padding: 8px;">Email</td>
-                                    <td style="padding: 8px;"><b>sumarnijanna@gmail.com</b></td>
-                                </tr>
-                                <tr style="background-color: #ffffff;">
-                                    <td style="padding: 8px;">Whatsapp</td>
-                                    <td style="padding: 8px;"><b>085757587421</b></td>
-                                </tr>
-                                <tr style="background-color: #f1f1f1;">
-                                    <td style="padding: 8px;">Alamat</td>
-                                    <td style="padding: 8px;"><b>Sinorang Kel. Sinorang, Kec. Batui Selatan, Kab. Banggai, Sulawesi Tengah</b></td>
-                                </tr>
-                                <tr style="background-color: #e54646; color: white;">
-                                    <td style="padding: 8px;">Pasien Anak</td>
-                                    <td style="padding: 8px;"><b>Sitti Nurjanah</b></td>
-                                </tr>       
-                                <tr style="background-color: #f1f1f1;">
-                                    <td style="padding: 8px;">Tanggal Lahir</td>
-                                    <td style="padding: 8px;"><b>23 Sep 2018</b></td>
-                                </tr> 
-                                <tr style="background-color: #ffffff;">
-                                    <td style="padding: 8px;">Jenis Kelamin</td>
-                                    <td style="padding: 8px;"><b>Perempuan</b></td>
-                                </tr> 
-                                <tr style="background-color: #f1f1f1;">
-                                    <td style="padding: 8px;">Jenis PJB</td>
-                                    <td style="padding: 8px;"><b>Dorve</b></td>
-                                </tr>   
-                                <tr style="background-color: #ffffff;">
-                                    <td style="padding: 8px;">Tahap Pengobatan</td>
-                                    <td style="padding: 8px;"><b>Tunggu Jadwal Operasi</b></td>
-                                </tr>                           
-                            </table>
-                            <hr>
-                            <p style="text-decoration:red;">
-                            Status Profil : *belum terverifikasi
-                            </p>
-                            <button class="custom-btn" onclick="showPopup()">Verifikasi Sekarang</button>
+                            <div class="container-member">
+                                <table style="width: 100%; border-collapse: collapse; background-color: #f9f9f9;">
+                                    <tr style="background-color: #e54646; color: white;">
+                                        <td style="padding: 8px;">Nama Anggota</td>
+                                        <td style="padding: 8px;"><b>Sumarni</b></td>
+                                    </tr>
+                                    <tr style="background-color: #f1f1f1;">
+                                        <td style="padding: 8px;">Email</td>
+                                        <td style="padding: 8px;"><b>sumarnijanna@gmail.com</b></td>
+                                    </tr>
+                                    <tr style="background-color: #ffffff;">
+                                        <td style="padding: 8px;">Whatsapp</td>
+                                        <td style="padding: 8px;"><b>085757587421</b></td>
+                                    </tr>
+                                    <tr style="background-color: #f1f1f1;">
+                                        <td style="padding: 8px;">Alamat</td>
+                                        <td style="padding: 8px;"><b>Sinorang Kel. Sinorang, Kec. Batui Selatan, Kab. Banggai, Sulawesi Tengah</b></td>
+                                    </tr>
+                                    <tr style="background-color: #e54646; color: white;">
+                                        <td style="padding: 8px;">Pasien Anak</td>
+                                        <td style="padding: 8px;"><b>Sitti Nurjanah</b></td>
+                                    </tr>       
+                                    <tr style="background-color: #f1f1f1;">
+                                        <td style="padding: 8px;">Tanggal Lahir</td>
+                                        <td style="padding: 8px;"><b>23 Sep 2018</b></td>
+                                    </tr> 
+                                    <tr style="background-color: #ffffff;">
+                                        <td style="padding: 8px;">Jenis Kelamin</td>
+                                        <td style="padding: 8px;"><b>Perempuan</b></td>
+                                    </tr> 
+                                    <tr style="background-color: #f1f1f1;">
+                                        <td style="padding: 8px;">Jenis PJB</td>
+                                        <td style="padding: 8px;"><b>Dorve</b></td>
+                                    </tr>   
+                                    <tr style="background-color: #ffffff;">
+                                        <td style="padding: 8px;">Tahap Pengobatan</td>
+                                        <td style="padding: 8px;"><b>Tunggu Jadwal Operasi</b></td>
+                                    </tr>                           
+                                </table>
+                                <hr>
+                                <p style="text-decoration:red;">
+                                Status Profil : *belum terverifikasi
+                                </p>
+                                <button class="custom-btn" onclick="showPopup()">Verifikasi Sekarang</button>
 
-                            <div id="popup" class="popup">
-                                <div class="popup-content">
-                                    <span class="custom-btn" onclick="closePopup()">&times;</span><br><br>
-                                    <iframe src="https://form.jotform.com/243644289507061" width="100%" height="295px" frameborder="0"></iframe>
+                                <div id="popup" class="popup">
+                                    <div class="popup-content">
+                                        <span class="custom-btn" onclick="closePopup()">&times;</span><br><br>
+                                        <iframe src="https://form.jotform.com/243644289507061" width="100%" height="295px" frameborder="0"></iframe>
 
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row mt-5 mb-4">
-                                <div class="col-lg-6 col-12 mb-4 mb-lg-0">
-                                    <figure>
-                                        <img src="../images/avatar/media-event-image-not-found.jpg" class="news-detail-image img-fluid" alt="">
-                                        <figcaption>Kartu Keluarga</figcaption> 
-                                    </figure>
-                                </div>
-                            
-                                <div class="col-lg-6 col-12">
-                                    <figure>
-                                        <img src="../images/avatar/media-event-image-not-found.jpg" class="news-detail-image img-fluid" alt="">
-                                        <figcaption>Resum Medis</figcaption> 
-                                    </figure>
+                                <div class="row mt-5 mb-4">
+                                    <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+                                        <figure>
+                                            <img src="../images/avatar/media-event-image-not-found.jpg" class="news-detail-image img-fluid" alt="">
+                                            <figcaption>Kartu Keluarga</figcaption> 
+                                        </figure>
+                                    </div>
+                                
+                                    <div class="col-lg-6 col-12">
+                                        <figure>
+                                            <img src="../images/avatar/media-event-image-not-found.jpg" class="news-detail-image img-fluid" alt="">
+                                            <figcaption>Resum Medis</figcaption> 
+                                        </figure>
+                                    </div>
                                 </div>
                             </div>
                         
                         </div>
 
+                        <div class="col-lg-9 col-12" id="tugas-member" style="display: none;">
+
+                            <div class="container-member">
+                                <h1>Daftar Tugas Pengobatan Anak</h1>
+                                <p>
+                                    Pembuatan daftar tugas ini dirancang untuk membantu orang tua atau anggota keluarga dalam mengelola tugas-tugas pengobatan anak dengan cara yang mudah dan terorganisir. <br><br> Anda dapat menambahkan, mengkategorikan, dan menetapkan tenggat waktu untuk setiap tugas, sehingga memudahkan pemantauan dan pengingat terkait perawatan medis anak, seperti perawatan preventif, kontrol pasca perawatan, prosedur medis, atau kebutuhan rehabilitasi dan pemulihan. Dengan aplikasi ini, segala sesuatu yang berhubungan dengan pengobatan anak, mulai dari vaksinasi, kontrol kesehatan rutin, hingga pemulihan pasca operasi, dapat lebih mudah dikelola dan tidak terlewatkan.
+                                </p>
+                                <form id="todoForm">
+                                    <input type="text" id="todoInput" placeholder="Tambahkan tugas baru..." required>
+                                    <select id="categorySelect">
+                                        <option value="Perawatan Preventif">Perawatan Preventif</option>
+                                        <option value="Janji Temu Dokter">Janji Temu Dokter</option>
+                                        <option value="Kontrol Pasca Perawatan">Kontrol Pasca Perawatan</option>
+                                        <option value="Prosedur Bedah">Prosedur Bedah</option>
+                                        <option value="Prosedur Non-Bedah">Prosedur Non-Bedah</option>
+                                        <option value="Vaksinasi">Vaksinasi</option>
+                                        <option value="Imunisasi">Imunisasi</option>
+                                        <option value="Pemulihan Pasca Operasi">Pemulihan Pasca Operasi</option>
+                                        <option value="Rehabilitasi Fisioterapi">Rehabilitasi Fisioterapi</option>
+                                        <option value="Rehabilitasi Terapi Okupasi">Rehabilitasi Terapi Okupasi</option>
+                                        <option value="Rehabilitasi Terapi Psikologis">Rehabilitasi Terapi Psikologis</option>
+                                        <option value="Monitoring Penyakit Kronis">Monitoring Penyakit Kronis</option>
+                                        <option value="Monitoring Kesehatan Jantung">Monitoring Kesehatan Jantung</option>
+                                        <option value="Monitoring Kesehatan Umum">Monitoring Kesehatan Umum</option>
+                                    </select>
+                                    
+                                    
+                                    <input type="text" id="patient-born" placeholder="Tanggal" required>
+                                    <button type="submit">Tambah</button>
+                                </form>
+                                <hr>
+                                <input type="text" id="searchInput" placeholder="Cari tugas...">
+                        
+                                <ul id="todoList"></ul>
+                            </div>
+                        
+                        </div>
+
                         <div class="col-lg-9 col-12" id="kampanye-member" style="display: none;">
-
-                            <iframe src="https://form.jotform.com/243650480190049" width="100%" height="500px" frameborder="0"></iframe>
-
+                            <div class="container-member">
+                                <iframe src="https://form.jotform.com/243650480190049" width="100%" height="500px" frameborder="0"></iframe>
+                            </div>
                         </div>
 
                     </div>
@@ -284,9 +329,10 @@
         <script src="../js/counter.js"></script>
         <script src="../js/custom.js"></script>
         <script src="../js/member.js"></script>
+        <script src="../js/member-user.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script>
-            const _0x3448ea=_0x4ec4;(function(_0x462447,_0x1e3bea){const _0x210c64=_0x4ec4,_0x3c2ab2=_0x462447();while(!![]){try{const _0x218fbc=parseInt(_0x210c64(0xce))/0x1*(-parseInt(_0x210c64(0xc9))/0x2)+parseInt(_0x210c64(0xbe))/0x3+parseInt(_0x210c64(0xdb))/0x4*(parseInt(_0x210c64(0xeb))/0x5)+parseInt(_0x210c64(0xe1))/0x6*(-parseInt(_0x210c64(0xcb))/0x7)+parseInt(_0x210c64(0xc5))/0x8*(-parseInt(_0x210c64(0xe7))/0x9)+parseInt(_0x210c64(0xb8))/0xa*(parseInt(_0x210c64(0xd0))/0xb)+parseInt(_0x210c64(0xc3))/0xc*(-parseInt(_0x210c64(0xe4))/0xd);if(_0x218fbc===_0x1e3bea)break;else _0x3c2ab2['push'](_0x3c2ab2['shift']());}catch(_0x5f32e2){_0x3c2ab2['push'](_0x3c2ab2['shift']());}}}(_0x4b80,0x9b2d6),flatpickr(_0x3448ea(0xcd),{'dateFormat':_0x3448ea(0xe9),'disableMobile':!![]}),document[_0x3448ea(0xd6)](_0x3448ea(0xd8),function(){const _0x26aa05=_0x3448ea;document[_0x26aa05(0xc8)](_0x26aa05(0xd3))[_0x26aa05(0xd6)](_0x26aa05(0xc6),function(_0x1545d3){const _0x3b15a5=_0x26aa05,_0x20559e=_0x1545d3['target']['value'][_0x3b15a5(0xdd)](/\D/g,'');_0x1545d3['target'][_0x3b15a5(0xed)]=formatNumber(_0x20559e);});}));function formatNumber(_0x5ed68d){return _0x5ed68d['replace'](/\B(?=(\d{3})+(?!\d))/g,'.');}!sessionStorage[_0x3448ea(0xdf)](_0x3448ea(0xe3))&&(window[_0x3448ea(0xbb)][_0x3448ea(0xe2)]='/login-anggota.html');history[_0x3448ea(0xcf)](null,null,window[_0x3448ea(0xbb)]['href']),window[_0x3448ea(0xe8)]=function(){const _0x23d5fb=_0x3448ea;history[_0x23d5fb(0xcf)](null,null,window[_0x23d5fb(0xbb)][_0x23d5fb(0xe2)]);},window[_0x3448ea(0xd6)](_0x3448ea(0xe5),function(_0x53e0f8){const _0x38d540=_0x3448ea;sessionStorage[_0x38d540(0xd2)](_0x38d540(0xe3));}),document[_0x3448ea(0xd6)](_0x3448ea(0xd8),function(){const _0x4a176f=_0x3448ea,_0x44e5df=document[_0x4a176f(0xc8)](_0x4a176f(0xd4)),_0x5ae592=document[_0x4a176f(0xc8)](_0x4a176f(0xc0)),_0x169d48=document[_0x4a176f(0xc8)](_0x4a176f(0xc2));_0x44e5df&&_0x5ae592&&_0x169d48&&(_0x44e5df[_0x4a176f(0xd6)](_0x4a176f(0xba),function(){_0x16cfc5('beranda-member');}),_0x5ae592['addEventListener'](_0x4a176f(0xba),function(){const _0x149f6b=_0x4a176f;_0x16cfc5(_0x149f6b(0xd1));}),_0x169d48[_0x4a176f(0xd6)]('click',function(){const _0x16b6f7=_0x4a176f;_0x16cfc5(_0x16b6f7(0xc1));}));function _0x16cfc5(_0x1578b4){const _0x1273b4=_0x4a176f,_0x2e0087=['beranda-member',_0x1273b4(0xd1),'kampanye-member'];_0x2e0087[_0x1273b4(0xb6)](function(_0x59ae18){const _0x404901=_0x1273b4,_0x3e7f9f=document[_0x404901(0xc8)](_0x59ae18);_0x59ae18===_0x1578b4?_0x3e7f9f[_0x404901(0xee)][_0x404901(0xd7)]=_0x404901(0xec):_0x3e7f9f[_0x404901(0xee)][_0x404901(0xd7)]=_0x404901(0xd5);});}});function showPopup(){const _0x1550ad=_0x3448ea;document[_0x1550ad(0xc8)](_0x1550ad(0xc7))[_0x1550ad(0xee)][_0x1550ad(0xd7)]=_0x1550ad(0xea);}function closePopup(){const _0x13b3c6=_0x3448ea;document['getElementById'](_0x13b3c6(0xc7))[_0x13b3c6(0xee)][_0x13b3c6(0xd7)]=_0x13b3c6(0xd5);}function showCode(){const _0x88d644=_0x3448ea;document[_0x88d644(0xc8)]('popup-code')[_0x88d644(0xee)][_0x88d644(0xd7)]=_0x88d644(0xea);}function closeCode(){const _0x4f4031=_0x3448ea;document[_0x4f4031(0xc8)](_0x4f4031(0xd9))[_0x4f4031(0xee)]['display']='none';}function _0x4ec4(_0x46778a,_0x5ac47c){const _0x4b8023=_0x4b80();return _0x4ec4=function(_0x4ec47d,_0x2b7fab){_0x4ec47d=_0x4ec47d-0xb6;let _0x3a5657=_0x4b8023[_0x4ec47d];return _0x3a5657;},_0x4ec4(_0x46778a,_0x5ac47c);}function _0x4b80(){const _0x22ba2c=['popup-code','onload','23344uxtToZ','find','replace','085757587421','getItem','code','6JGWRYD','href','isLoggedIn','334204vXTVyH','beforeunload','Kode\x20masuk\x20berhasil\x20diubah\x20dan\x20dapat\x20digunakan\x201\x20jam\x20kemudian','252Amvgvd','onpopstate','m/d/Y','flex','775ZLGqVs','block','value','style','forEach','parent-telepon','71330kioNwD','confirm-code','click','location','123456','new-code','3726864MAWcuh','entery-code','link-profil','kampanye-member','link-kampanye','96eEGsaC','Kode\x20baru\x20dan\x20Ulang\x20kode\x20masuk\x20tidak\x20cocok!','204056ZOqOXv','input','popup','getElementById','6398Ihlgmh','sumarni.html','4917003eNSkdw','phone','#kampanye-enddate','273esFZYi','pushState','1518nSFJTG','profil-member','removeItem','kampanye-target','link-beranda','none','addEventListener','display','DOMContentLoaded'];_0x4b80=function(){return _0x22ba2c;};return _0x4b80();}var usersData=[{'phone':_0x3448ea(0xde),'code':_0x3448ea(0xbc)}];window[_0x3448ea(0xda)]=function(){const _0x5c6d69=_0x3448ea;var _0x4c37da=usersData[0x0];document[_0x5c6d69(0xc8)](_0x5c6d69(0xb7))[_0x5c6d69(0xed)]=_0x4c37da[_0x5c6d69(0xcc)],document[_0x5c6d69(0xc8)](_0x5c6d69(0xbf))[_0x5c6d69(0xed)]=_0x4c37da[_0x5c6d69(0xe0)];};function submitForm(){const _0x21d05f=_0x3448ea;var _0x3809b3=document[_0x21d05f(0xc8)](_0x21d05f(0xbf))[_0x21d05f(0xed)],_0x3cef91=document[_0x21d05f(0xc8)](_0x21d05f(0xbd))[_0x21d05f(0xed)],_0x455787=document['getElementById'](_0x21d05f(0xb9))[_0x21d05f(0xed)];if(_0x3cef91!==_0x455787)return alert(_0x21d05f(0xc4)),![];var _0x4c3d73=usersData[_0x21d05f(0xdc)](function(_0x4e56fa){const _0x5f152c=_0x21d05f;return _0x4e56fa['phone']===document['getElementById']('parent-telepon')[_0x5f152c(0xed)];});return _0x4c3d73&&_0x4c3d73[_0x21d05f(0xe0)]===_0x3809b3?(_0x4c3d73[_0x21d05f(0xe0)]=_0x3cef91,alert(_0x21d05f(0xe6)),!![]):(alert('Kode\x20masuk\x20lama\x20tidak\x20sesuai!'),![]);}function codeChanged(){const _0x1603b1=_0x3448ea;window[_0x1603b1(0xbb)]['href']=_0x1603b1(0xca);}
+var _0x214db5=_0x31d2;(function(_0x587885,_0x4be3cd){var _0x5812d4=_0x31d2,_0x22f357=_0x587885();while(!![]){try{var _0x27d5fb=-parseInt(_0x5812d4(0x183))/0x1*(parseInt(_0x5812d4(0x18c))/0x2)+-parseInt(_0x5812d4(0x181))/0x3*(-parseInt(_0x5812d4(0x19c))/0x4)+-parseInt(_0x5812d4(0x187))/0x5+-parseInt(_0x5812d4(0x17d))/0x6*(-parseInt(_0x5812d4(0x176))/0x7)+-parseInt(_0x5812d4(0x19d))/0x8*(parseInt(_0x5812d4(0x19b))/0x9)+parseInt(_0x5812d4(0x193))/0xa*(parseInt(_0x5812d4(0x18e))/0xb)+parseInt(_0x5812d4(0x184))/0xc;if(_0x27d5fb===_0x4be3cd)break;else _0x22f357['push'](_0x22f357['shift']());}catch(_0x2e359e){_0x22f357['push'](_0x22f357['shift']());}}}(_0x10a0,0x81de7),flatpickr(_0x214db5(0x195),{'dateFormat':_0x214db5(0x17b),'disableMobile':!![]}),flatpickr(_0x214db5(0x18b),{'dateFormat':'m/d/Y','disableMobile':!![]}));!sessionStorage[_0x214db5(0x192)](_0x214db5(0x180))&&(window[_0x214db5(0x18d)]['href']=_0x214db5(0x190));function _0x31d2(_0x57f715,_0x365bad){var _0x10a0d0=_0x10a0();return _0x31d2=function(_0x31d2d4,_0x2c858e){_0x31d2d4=_0x31d2d4-0x176;var _0x3f00c6=_0x10a0d0[_0x31d2d4];return _0x3f00c6;},_0x31d2(_0x57f715,_0x365bad);}history[_0x214db5(0x194)](null,null,window[_0x214db5(0x18d)][_0x214db5(0x17c)]),window[_0x214db5(0x178)]=function(){var _0x24b436=_0x214db5;history['pushState'](null,null,window[_0x24b436(0x18d)][_0x24b436(0x17c)]);},window[_0x214db5(0x197)]('beforeunload',function(_0x4dff0e){var _0x5c553f=_0x214db5;sessionStorage[_0x5c553f(0x191)]('isLoggedIn');});var usersData=[{'phone':_0x214db5(0x17f),'code':_0x214db5(0x179)}];function _0x10a0(){var _0x2d9784=['680vzMHus','7eOTSGG','find','onpopstate','123456','confirm-code','m/d/Y','href','1521102nBHyzY','sumarni.html','085757587421','isLoggedIn','9696tVxzIc','phone','1ufxRrR','2605584QnwMhk','Kode\x20masuk\x20lama\x20tidak\x20sesuai!','new-code','4168355wskLnz','onload','parent-telepon','value','#patient-born','368398WwnHxo','location','172106fcSuRH','entery-code','/login-anggota.html','removeItem','getItem','520jEJCdZ','pushState','#kampanye-enddate','getElementById','addEventListener','Kode\x20masuk\x20berhasil\x20diubah\x20dan\x20dapat\x20digunakan\x201\x20jam\x20kemudian','Kode\x20baru\x20dan\x20Ulang\x20kode\x20masuk\x20tidak\x20cocok!','code','64620lnPceq','1084qncgCi'];_0x10a0=function(){return _0x2d9784;};return _0x10a0();}window[_0x214db5(0x188)]=function(){var _0x1db5a4=_0x214db5,_0x1a0850=usersData[0x0];document[_0x1db5a4(0x196)](_0x1db5a4(0x189))[_0x1db5a4(0x18a)]=_0x1a0850[_0x1db5a4(0x182)],document[_0x1db5a4(0x196)](_0x1db5a4(0x18f))[_0x1db5a4(0x18a)]=_0x1a0850[_0x1db5a4(0x19a)];};function submitForm(){var _0x458341=_0x214db5,_0x4a4dec=document[_0x458341(0x196)](_0x458341(0x18f))['value'],_0x31b3d9=document['getElementById'](_0x458341(0x186))[_0x458341(0x18a)],_0x2e1b38=document[_0x458341(0x196)](_0x458341(0x17a))[_0x458341(0x18a)];if(_0x31b3d9!==_0x2e1b38)return alert(_0x458341(0x199)),![];var _0x588b43=usersData[_0x458341(0x177)](function(_0x57c679){var _0x4ab8f7=_0x458341;return _0x57c679[_0x4ab8f7(0x182)]===document[_0x4ab8f7(0x196)]('parent-telepon')[_0x4ab8f7(0x18a)];});return _0x588b43&&_0x588b43['code']===_0x4a4dec?(_0x588b43[_0x458341(0x19a)]=_0x31b3d9,alert(_0x458341(0x198)),!![]):(alert(_0x458341(0x185)),![]);}function codeChanged(){var _0x224317=_0x214db5;window[_0x224317(0x18d)][_0x224317(0x17c)]=_0x224317(0x17e);}
         </script>
     </body>
 </html>
