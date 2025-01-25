@@ -19,6 +19,7 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/bootstrap-icons.css" rel="stylesheet">
         <link href="../css/custom.css" rel="stylesheet">
+        <link href="../css/member-user.css" rel="stylesheet">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     </head>
@@ -107,12 +108,16 @@
                                 <i class="bi-person-fill"></i> Profil
                             </a>
                             <hr>
+                            <a href="javascript:void(0)" id="link-tugas" style="color: #e54646;"  onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
+                                <i class="bi-list-check"></i> Daftar Tugas
+                            </a>
+                            <hr>
                             <a href="javascript:void(0)" id="link-kampanye" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
                                 <i class="bi-layers-fill"></i> Penggalangan
                             </a> 
                             <hr>
                             <a href="javascript:void(0)" onclick="showCode()" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
-                                <i class="bi-key-fill"></i> Kode Akses
+                                <i class="bi-key-fill"></i> Kode Masuk
                             </a>  
                             <hr>
                             <a href="javascript:void(0)" onclick="goOut();" style="color: #e54646;" onmouseover="this.style.color='#17143f'" onMouseOut="this.style.color='#e54646'">
@@ -164,80 +169,120 @@
                         </div>                        
 
                         <div class="col-lg-9 col-12" id="profil-member" style="display: none;">
-                            <table style="width: 100%; border-collapse: collapse; background-color: #f9f9f9;">
-                                <tr style="background-color: #e54646; color: white;">
-                                    <td style="padding: 8px;">Nama Anggota</td>
-                                    <td style="padding: 8px;"><b>Irma Tri Wulandari</b></td>
-                                </tr>
-                                <tr style="background-color: #f1f1f1;">
-                                    <td style="padding: 8px;">Email</td>
-                                    <td style="padding: 8px;"><b>email@email.com</b></td>
-                                </tr>
-                                <tr style="background-color: #ffffff;">
-                                    <td style="padding: 8px;">Whatsapp</td>
-                                    <td style="padding: 8px;"><b>085870842284</b></td>
-                                </tr>
-                                <tr style="background-color: #f1f1f1;">
-                                    <td style="padding: 8px;">Alamat</td>
-                                    <td style="padding: 8px;"><b>DK Talun RT2 RW6, Desa Bulu, Kec. Polokarto, Kab. Sukoharjo, Jawa Tengah</b></td>
-                                </tr>
-                                <tr style="background-color: #e54646; color: white;">
-                                    <td style="padding: 8px;">Pasien Anak</td>
-                                    <td style="padding: 8px;"><b>Nagiska Shaqueena</b></td>
-                                </tr>       
-                                <tr style="background-color: #f1f1f1;">
-                                    <td style="padding: 8px;">Tanggal Lahir</td>
-                                    <td style="padding: 8px;"><b>03 Maret 2023</b></td>
-                                </tr> 
-                                <tr style="background-color: #ffffff;">
-                                    <td style="padding: 8px;">Jenis Kelamin</td>
-                                    <td style="padding: 8px;"><b>Perempuan</b></td>
-                                </tr> 
-                                <tr style="background-color: #f1f1f1;">
-                                    <td style="padding: 8px;">Jenis PJB</td>
-                                    <td style="padding: 8px;"><b>VSD PMO</b></td>
-                                </tr>   
-                                <tr style="background-color: #ffffff;">
-                                    <td style="padding: 8px;">Tahap Pengobatan</td>
-                                    <td style="padding: 8px;"><b>Echo</b></td>
-                                </tr>                           
-                            </table>
-                            <hr>
-                            <p style="text-decoration:red;">
-                            Status Profil : *belum terverifikasi
-                            </p>
+                            <div class="container-member">
+                                <table style="width: 100%; border-collapse: collapse; background-color: #f9f9f9;">
+                                    <tr style="background-color: #e54646; color: white;">
+                                        <td style="padding: 8px;">Nama Anggota</td>
+                                        <td style="padding: 8px;"><b>Irma Tri Wulandari</b></td>
+                                    </tr>
+                                    <tr style="background-color: #f1f1f1;">
+                                        <td style="padding: 8px;">Email</td>
+                                        <td style="padding: 8px;"><b>email@email.com</b></td>
+                                    </tr>
+                                    <tr style="background-color: #ffffff;">
+                                        <td style="padding: 8px;">Whatsapp</td>
+                                        <td style="padding: 8px;"><b>085870842284</b></td>
+                                    </tr>
+                                    <tr style="background-color: #f1f1f1;">
+                                        <td style="padding: 8px;">Alamat</td>
+                                        <td style="padding: 8px;"><b>DK Talun RT2 RW6, Desa Bulu, Kec. Polokarto, Kab. Sukoharjo, Jawa Tengah</b></td>
+                                    </tr>
+                                    <tr style="background-color: #e54646; color: white;">
+                                        <td style="padding: 8px;">Pasien Anak</td>
+                                        <td style="padding: 8px;"><b>Nagiska Shaqueena</b></td>
+                                    </tr>       
+                                    <tr style="background-color: #f1f1f1;">
+                                        <td style="padding: 8px;">Tanggal Lahir</td>
+                                        <td style="padding: 8px;"><b>03 Maret 2023</b></td>
+                                    </tr> 
+                                    <tr style="background-color: #ffffff;">
+                                        <td style="padding: 8px;">Jenis Kelamin</td>
+                                        <td style="padding: 8px;"><b>Perempuan</b></td>
+                                    </tr> 
+                                    <tr style="background-color: #f1f1f1;">
+                                        <td style="padding: 8px;">Jenis PJB</td>
+                                        <td style="padding: 8px;"><b>VSD PMO</b></td>
+                                    </tr>   
+                                    <tr style="background-color: #ffffff;">
+                                        <td style="padding: 8px;">Tahap Pengobatan</td>
+                                        <td style="padding: 8px;"><b>Echo</b></td>
+                                    </tr>                           
+                                </table>
+                                <hr>
+                                <p style="text-decoration:red;">
+                                Status Profil : *belum terverifikasi
+                                </p>
 
-                            <button class="custom-btn" onclick="showPopup()">Verifikasi Sekarang</button>
-                            <div id="popup" class="popup">
-                                <div class="popup-content">
-                                    <span class="custom-btn" onclick="closePopup()">&times;</span><br><br>
-                                    <iframe src="https://form.jotform.com/243644289507061" width="100%" height="295px" frameborder="0"></iframe>
+                                <button class="custom-btn" onclick="showPopup()">Verifikasi Sekarang</button>
+                                <div id="popup" class="popup">
+                                    <div class="popup-content">
+                                        <span class="custom-btn" onclick="closePopup()">&times;</span><br><br>
+                                        <iframe src="https://form.jotform.com/243644289507061" width="100%" height="295px" frameborder="0"></iframe>
 
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <div class="row mt-5 mb-4">
-                                <div class="col-lg-6 col-12 mb-4 mb-lg-0">
-                                    <figure>
-                                        <img src="../images/avatar/media-event-image-not-found.jpg" class="news-detail-image img-fluid" alt="">
-                                        <figcaption>Kartu Keluarga</figcaption> 
-                                    </figure>
-                                </div>
-                            
-                                <div class="col-lg-6 col-12">
-                                    <figure>
-                                        <img src="../images/avatar/media-event-image-not-found.jpg" class="news-detail-image img-fluid" alt="">
-                                        <figcaption>Resum Medis</figcaption> 
-                                    </figure>
+                                
+                                <div class="row mt-5 mb-4">
+                                    <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+                                        <figure>
+                                            <img src="../images/avatar/media-event-image-not-found.jpg" class="news-detail-image img-fluid" alt="">
+                                            <figcaption>Kartu Keluarga</figcaption> 
+                                        </figure>
+                                    </div>
+                                
+                                    <div class="col-lg-6 col-12">
+                                        <figure>
+                                            <img src="../images/avatar/media-event-image-not-found.jpg" class="news-detail-image img-fluid" alt="">
+                                            <figcaption>Resum Medis</figcaption> 
+                                        </figure>
+                                    </div>
                                 </div>
                             </div>
                             
                         </div>
 
+                        <div class="col-lg-9 col-12" id="tugas-member" style="display: none;">
+
+                            <div class="container-member">
+                                <h1>Daftar Tugas Pengobatan Anak</h1>
+                                <p>
+                                    Pembuatan daftar tugas ini dirancang untuk membantu orang tua atau anggota keluarga dalam mengelola tugas-tugas pengobatan anak dengan cara yang mudah dan terorganisir. <br><br> Anda dapat menambahkan, mengkategorikan, dan menetapkan tenggat waktu untuk setiap tugas, sehingga memudahkan pemantauan dan pengingat terkait perawatan medis anak, seperti perawatan preventif, kontrol pasca perawatan, prosedur medis, atau kebutuhan rehabilitasi dan pemulihan. Dengan aplikasi ini, segala sesuatu yang berhubungan dengan pengobatan anak, mulai dari vaksinasi, kontrol kesehatan rutin, hingga pemulihan pasca operasi, dapat lebih mudah dikelola dan tidak terlewatkan.
+                                </p>
+                                <form id="todoForm">
+                                    <input type="text" id="todoInput" placeholder="Tambahkan tugas baru..." required>
+                                    <select id="categorySelect">
+                                        <option value="Perawatan Preventif">Perawatan Preventif</option>
+                                        <option value="Janji Temu Dokter">Janji Temu Dokter</option>
+                                        <option value="Kontrol Pasca Perawatan">Kontrol Pasca Perawatan</option>
+                                        <option value="Prosedur Bedah">Prosedur Bedah</option>
+                                        <option value="Prosedur Non-Bedah">Prosedur Non-Bedah</option>
+                                        <option value="Vaksinasi">Vaksinasi</option>
+                                        <option value="Imunisasi">Imunisasi</option>
+                                        <option value="Pemulihan Pasca Operasi">Pemulihan Pasca Operasi</option>
+                                        <option value="Rehabilitasi Fisioterapi">Rehabilitasi Fisioterapi</option>
+                                        <option value="Rehabilitasi Terapi Okupasi">Rehabilitasi Terapi Okupasi</option>
+                                        <option value="Rehabilitasi Terapi Psikologis">Rehabilitasi Terapi Psikologis</option>
+                                        <option value="Monitoring Penyakit Kronis">Monitoring Penyakit Kronis</option>
+                                        <option value="Monitoring Kesehatan Jantung">Monitoring Kesehatan Jantung</option>
+                                        <option value="Monitoring Kesehatan Umum">Monitoring Kesehatan Umum</option>
+                                    </select>
+                                    
+                                    
+                                    <input type="text" id="patient-born" placeholder="Tanggal" required>
+                                    <button type="submit">Tambah</button>
+                                </form>
+                                <hr>
+                                <input type="text" id="searchInput" placeholder="Cari tugas...">
+                        
+                                <ul id="todoList"></ul>
+                            </div>
+                        
+                        </div>
+
                         <div class="col-lg-9 col-12" id="kampanye-member" style="display: none;">
-
-                            <iframe src="https://form.jotform.com/243650480190049" width="100%" height="500px" frameborder="0"></iframe>
-
+                            <div class="container-member">
+                                <iframe src="https://form.jotform.com/243650480190049" width="100%" height="500px" frameborder="0"></iframe>
+                            </div>
                         </div>
 
                     </div>
@@ -268,9 +313,10 @@
         <script src="../js/counter.js"></script>
         <script src="../js/custom.js"></script>
         <script src="../js/member.js"></script>
+        <script src="../js/member-user.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script>
-           const _0x4eff2d=_0x442e;function _0x442e(_0x496adb,_0xa0774a){const _0x4d2e40=_0x4d2e();return _0x442e=function(_0x442e9a,_0x1d8342){_0x442e9a=_0x442e9a-0x8c;let _0x53b331=_0x4d2e40[_0x442e9a];return _0x53b331;},_0x442e(_0x496adb,_0xa0774a);}(function(_0x433965,_0x4d2b06){const _0x28e326=_0x442e,_0x4bb953=_0x433965();while(!![]){try{const _0xcf7174=parseInt(_0x28e326(0x9c))/0x1*(parseInt(_0x28e326(0xa8))/0x2)+-parseInt(_0x28e326(0xb9))/0x3*(parseInt(_0x28e326(0xb4))/0x4)+-parseInt(_0x28e326(0xb2))/0x5*(parseInt(_0x28e326(0x9a))/0x6)+parseInt(_0x28e326(0xa3))/0x7+parseInt(_0x28e326(0xbf))/0x8*(parseInt(_0x28e326(0x90))/0x9)+parseInt(_0x28e326(0xc0))/0xa*(parseInt(_0x28e326(0x8e))/0xb)+-parseInt(_0x28e326(0xa4))/0xc*(parseInt(_0x28e326(0xa9))/0xd);if(_0xcf7174===_0x4d2b06)break;else _0x4bb953['push'](_0x4bb953['shift']());}catch(_0x4922d4){_0x4bb953['push'](_0x4bb953['shift']());}}}(_0x4d2e,0xd0c42),flatpickr(_0x4eff2d(0x92),{'dateFormat':_0x4eff2d(0x9d),'disableMobile':!![]}),document[_0x4eff2d(0x91)](_0x4eff2d(0xbe),function(){const _0x297d25=_0x4eff2d;document[_0x297d25(0x9f)](_0x297d25(0xaf))['addEventListener'](_0x297d25(0xa2),function(_0x154800){const _0x170b0a=_0x297d25,_0x14e4d0=_0x154800[_0x170b0a(0x8f)][_0x170b0a(0xbc)][_0x170b0a(0xb5)](/\D/g,'');_0x154800[_0x170b0a(0x8f)][_0x170b0a(0xbc)]=formatNumber(_0x14e4d0);});}));function formatNumber(_0x584af4){const _0x85c11=_0x4eff2d;return _0x584af4[_0x85c11(0xb5)](/\B(?=(\d{3})+(?!\d))/g,'.');}!sessionStorage[_0x4eff2d(0x99)](_0x4eff2d(0xb1))&&(window[_0x4eff2d(0xa6)]['href']=_0x4eff2d(0x8c));history[_0x4eff2d(0xae)](null,null,window[_0x4eff2d(0xa6)]['href']),window['onpopstate']=function(){const _0x5df633=_0x4eff2d;history[_0x5df633(0xae)](null,null,window[_0x5df633(0xa6)][_0x5df633(0x93)]);},window[_0x4eff2d(0x91)](_0x4eff2d(0xb6),function(_0x25f423){const _0x167d2c=_0x4eff2d;sessionStorage[_0x167d2c(0xb3)]('isLoggedIn');}),document[_0x4eff2d(0x91)](_0x4eff2d(0xbe),function(){const _0x1fef2d=_0x4eff2d,_0xe72c31=document[_0x1fef2d(0x9f)](_0x1fef2d(0xa0)),_0x4c58c9=document[_0x1fef2d(0x9f)](_0x1fef2d(0xba)),_0x51c966=document[_0x1fef2d(0x9f)]('link-kampanye');_0xe72c31&&_0x4c58c9&&_0x51c966&&(_0xe72c31[_0x1fef2d(0x91)]('click',function(){const _0x136f08=_0x1fef2d;_0x2d4aeb(_0x136f08(0x98));}),_0x4c58c9['addEventListener']('click',function(){const _0x2f2019=_0x1fef2d;_0x2d4aeb(_0x2f2019(0x95));}),_0x51c966[_0x1fef2d(0x91)](_0x1fef2d(0xa1),function(){const _0x58bd3f=_0x1fef2d;_0x2d4aeb(_0x58bd3f(0xbb));}));function _0x2d4aeb(_0x38b97b){const _0x3e2643=_0x1fef2d,_0x3789bf=[_0x3e2643(0x98),_0x3e2643(0x95),_0x3e2643(0xbb)];_0x3789bf['forEach'](function(_0x5a70c4){const _0x1dae58=_0x3e2643,_0x4f8104=document[_0x1dae58(0x9f)](_0x5a70c4);_0x5a70c4===_0x38b97b?_0x4f8104[_0x1dae58(0xa5)][_0x1dae58(0x9e)]=_0x1dae58(0xad):_0x4f8104[_0x1dae58(0xa5)]['display']=_0x1dae58(0xc2);});}});function showPopup(){const _0x2c5f1f=_0x4eff2d;document['getElementById']('popup')[_0x2c5f1f(0xa5)][_0x2c5f1f(0x9e)]=_0x2c5f1f(0xa7);}function closePopup(){const _0x1fe561=_0x4eff2d;document[_0x1fe561(0x9f)]('popup')[_0x1fe561(0xa5)][_0x1fe561(0x9e)]='none';}function showCode(){const _0x4c4c65=_0x4eff2d;document['getElementById'](_0x4c4c65(0xb8))[_0x4c4c65(0xa5)][_0x4c4c65(0x9e)]=_0x4c4c65(0xa7);}function closeCode(){const _0x5f5299=_0x4eff2d;document[_0x5f5299(0x9f)](_0x5f5299(0xb8))[_0x5f5299(0xa5)][_0x5f5299(0x9e)]=_0x5f5299(0xc2);}var usersData=[{'phone':_0x4eff2d(0xc1),'code':_0x4eff2d(0xb7)}];function _0x4d2e(){const _0x19e6bc=['getElementById','link-beranda','click','input','4023656KXzdKI','4459320TeljCS','style','location','flex','2rjYpAk','26diagjX','irma-tri-wulandari.html','Kode\x20masuk\x20berhasil\x20diubah\x20dan\x20dapat\x20digunakan\x201\x20jam\x20kemudian','Kode\x20masuk\x20lama\x20tidak\x20sesuai!','block','pushState','kampanye-target','phone','isLoggedIn','3127095nNROWt','removeItem','1895416BjizAy','replace','beforeunload','123456','popup-code','3YHzYDf','link-profil','kampanye-member','value','entery-code','DOMContentLoaded','6480wuDzVu','390WjeYKR','085870842284','none','confirm-code','/login-anggota.html','code','190289jLCmee','target','9063mHXvAe','addEventListener','#kampanye-enddate','href','Kode\x20baru\x20dan\x20Ulang\x20kode\x20masuk\x20tidak\x20cocok!','profil-member','find','new-code','beranda-member','getItem','12qXnXsh','parent-telepon','1257879mdQooY','m/d/Y','display'];_0x4d2e=function(){return _0x19e6bc;};return _0x4d2e();}window['onload']=function(){const _0x25185e=_0x4eff2d;var _0x49342a=usersData[0x0];document['getElementById']('parent-telepon')[_0x25185e(0xbc)]=_0x49342a[_0x25185e(0xb0)],document[_0x25185e(0x9f)]('entery-code')[_0x25185e(0xbc)]=_0x49342a[_0x25185e(0x8d)];};function submitForm(){const _0x3dab5f=_0x4eff2d;var _0x35afd7=document[_0x3dab5f(0x9f)](_0x3dab5f(0xbd))[_0x3dab5f(0xbc)],_0x449155=document['getElementById'](_0x3dab5f(0x97))[_0x3dab5f(0xbc)],_0x111d64=document[_0x3dab5f(0x9f)](_0x3dab5f(0xc3))[_0x3dab5f(0xbc)];if(_0x449155!==_0x111d64)return alert(_0x3dab5f(0x94)),![];var _0x32235d=usersData[_0x3dab5f(0x96)](function(_0x2a9579){const _0x7913ec=_0x3dab5f;return _0x2a9579[_0x7913ec(0xb0)]===document[_0x7913ec(0x9f)](_0x7913ec(0x9b))['value'];});return _0x32235d&&_0x32235d[_0x3dab5f(0x8d)]===_0x35afd7?(_0x32235d[_0x3dab5f(0x8d)]=_0x449155,alert(_0x3dab5f(0xab)),!![]):(alert(_0x3dab5f(0xac)),![]);}function codeChanged(){const _0x19e484=_0x4eff2d;window[_0x19e484(0xa6)]['href']=_0x19e484(0xaa);}
+var _0x1e43d4=_0x466a;(function(_0x33fc6d,_0x2fcebf){var _0x5e5b13=_0x466a,_0x5b67c7=_0x33fc6d();while(!![]){try{var _0x11088e=parseInt(_0x5e5b13(0x158))/0x1+-parseInt(_0x5e5b13(0x151))/0x2+parseInt(_0x5e5b13(0x15a))/0x3*(-parseInt(_0x5e5b13(0x15d))/0x4)+parseInt(_0x5e5b13(0x150))/0x5+-parseInt(_0x5e5b13(0x15e))/0x6+parseInt(_0x5e5b13(0x157))/0x7*(-parseInt(_0x5e5b13(0x166))/0x8)+parseInt(_0x5e5b13(0x15f))/0x9;if(_0x11088e===_0x2fcebf)break;else _0x5b67c7['push'](_0x5b67c7['shift']());}catch(_0x4f4e08){_0x5b67c7['push'](_0x5b67c7['shift']());}}}(_0x9895,0x8b34e),flatpickr('#kampanye-enddate',{'dateFormat':_0x1e43d4(0x14e),'disableMobile':!![]}),flatpickr(_0x1e43d4(0x169),{'dateFormat':_0x1e43d4(0x14e),'disableMobile':!![]}));!sessionStorage['getItem'](_0x1e43d4(0x164))&&(window[_0x1e43d4(0x153)][_0x1e43d4(0x14f)]=_0x1e43d4(0x168));history[_0x1e43d4(0x159)](null,null,window[_0x1e43d4(0x153)][_0x1e43d4(0x14f)]),window[_0x1e43d4(0x162)]=function(){var _0xa5a6cb=_0x1e43d4;history[_0xa5a6cb(0x159)](null,null,window[_0xa5a6cb(0x153)]['href']);},window[_0x1e43d4(0x160)](_0x1e43d4(0x161),function(_0x3230a6){var _0x3f4312=_0x1e43d4;sessionStorage['removeItem'](_0x3f4312(0x164));});var usersData=[{'phone':_0x1e43d4(0x14d),'code':_0x1e43d4(0x14c)}];function _0x466a(_0x332bf0,_0x2c373e){var _0x98956f=_0x9895();return _0x466a=function(_0x466a2c,_0x3c16a2){_0x466a2c=_0x466a2c-0x14b;var _0x362ac5=_0x98956f[_0x466a2c];return _0x362ac5;},_0x466a(_0x332bf0,_0x2c373e);}window[_0x1e43d4(0x154)]=function(){var _0x160efc=_0x1e43d4,_0x2cd5dc=usersData[0x0];document['getElementById'](_0x160efc(0x152))['value']=_0x2cd5dc['phone'],document[_0x160efc(0x15c)](_0x160efc(0x167))[_0x160efc(0x155)]=_0x2cd5dc[_0x160efc(0x163)];};function submitForm(){var _0x35baba=_0x1e43d4,_0x2ca3c8=document[_0x35baba(0x15c)](_0x35baba(0x167))[_0x35baba(0x155)],_0x1d6657=document[_0x35baba(0x15c)](_0x35baba(0x14b))[_0x35baba(0x155)],_0x52ae5b=document['getElementById'](_0x35baba(0x156))[_0x35baba(0x155)];if(_0x1d6657!==_0x52ae5b)return alert('Kode\x20baru\x20dan\x20Ulang\x20kode\x20masuk\x20tidak\x20cocok!'),![];var _0x53c513=usersData['find'](function(_0x5c14dd){var _0x42f3a6=_0x35baba;return _0x5c14dd[_0x42f3a6(0x165)]===document[_0x42f3a6(0x15c)](_0x42f3a6(0x152))[_0x42f3a6(0x155)];});return _0x53c513&&_0x53c513[_0x35baba(0x163)]===_0x2ca3c8?(_0x53c513[_0x35baba(0x163)]=_0x1d6657,alert(_0x35baba(0x15b)),!![]):(alert('Kode\x20masuk\x20lama\x20tidak\x20sesuai!'),![]);}function codeChanged(){var _0x50b9c8=_0x1e43d4;window[_0x50b9c8(0x153)][_0x50b9c8(0x14f)]=_0x50b9c8(0x16a);}function _0x9895(){var _0x4f38a8=['new-code','123456','085870842284','m/d/Y','href','2624915ERbQdd','95326qjQPsj','parent-telepon','location','onload','value','confirm-code','266giNdul','796511DpsRkv','pushState','12ufetLt','Kode\x20masuk\x20berhasil\x20diubah\x20dan\x20dapat\x20digunakan\x201\x20jam\x20kemudian','getElementById','579796acLOcS','6149658jtThXB','8969670zHMaRD','addEventListener','beforeunload','onpopstate','code','isLoggedIn','phone','20112gUcGZJ','entery-code','/login-anggota.html','#patient-born','irma-tri-wulandari.html'];_0x9895=function(){return _0x4f38a8;};return _0x9895();}
         </script>
     </body>
 </html>
