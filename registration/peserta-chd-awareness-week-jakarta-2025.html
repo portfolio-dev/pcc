@@ -21,7 +21,7 @@
         <link href="../css/custom.css" rel="stylesheet">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-
+        
     </head>
     
     <body>
@@ -247,7 +247,10 @@
                                 <textarea name="entry.516190025" rows="3" class="col-lg-6 col-12 form-control" id="volunteer-message" placeholder="Alamat Lengkap (sesuai KTP)" required></textarea>
 
                                 <textarea name="entry.253300046" rows="3" class="col-lg-6 col-12 form-control" id="volunteer-message" placeholder="Alamat Domisili di Jabodetabek" required></textarea>
-
+                                <center>
+                                    <div class="g-recaptcha" data-sitekey="6LfSc8oqAAAAADCs6DtKjcltNG3ZkO7on1s8vUFh"></div>
+                                </center>
+                                <br>
                                 <button type="submit" class="form-control">Daftar</button>
                             </form>
                             <iframe name="hidden_iframe" style="display:none;" onload="chdJakarta();"></iframe>
@@ -280,6 +283,8 @@
         <script src="../js/click-scroll.js"></script>
         <script src="../js/counter.js"></script>
         <script src="../js/custom.js"></script>
+
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script>
