@@ -161,7 +161,7 @@
                             <span class="badge">Bingkisan Charity</span>
                             <hr>
                         
-                            <form id="volunteer-form" class="custom-form volunteer-form mb-5 mb-lg-0" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeOxsC8-Rj9CLXe9avEooworjQPjZcs_LF4LeoUfRaxP-ttvg/formResponse" method="post" target="hidden_iframe" onsubmit="return submitForm();">
+                            <form id="volunteer-form" class="custom-form volunteer-form mb-5 mb-lg-0" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeOxsC8-Rj9CLXe9avEooworjQPjZcs_LF4LeoUfRaxP-ttvg/formResponse" method="post">
                                 <h6 class="mb-4">Data Pasien Anak</h6>
                                 <div class="row">
                                     <div class="col-lg-3 col-6 form-check-group">
@@ -183,7 +183,12 @@
                                     </div>
                         
                                     <div class="col-lg-6 col-12">
-                                        <input type="text" name="entry.1361325621" id="patient-born" class="form-control" placeholder="Tanggal Lahir" required>
+                                        <!-- Input yang dilihat pengguna -->
+                                        <input type="text" id="patient-born-display" class="form-control" placeholder="Tanggal Lahir" required>
+                                        <!-- Input tersembunyi untuk dikirim ke Google Form -->
+                                        <input type="hidden" name="entry.1361325621_year" id="patient-born-year">
+                                        <input type="hidden" name="entry.1361325621_month" id="patient-born-month">
+                                        <input type="hidden" name="entry.1361325621_day" id="patient-born-day">
                                     </div>
 
                                     <div class="col-lg-6 col-12">
@@ -256,7 +261,6 @@
 
                                 <button type="submit" class="form-control">Daftar</button>
                             </form>
-                            <iframe name="hidden_iframe" style="display:none;" onload="registrasiPeserta();"></iframe>
                         </div>
 
                     </div>
@@ -290,15 +294,24 @@
         
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script>
-            flatpickr("#patient-born", {
-            dateFormat: "m/d/Y",  
-            disableMobile: true   
+            flatpickr("#patient-born-display", {
+                dateFormat: "d-m-Y", // Format yang ditampilkan ke pengguna
+                disableMobile: true,
+                onChange: function(selectedDates, dateStr, instance) {
+                    if (selectedDates.length > 0) {
+                        const date = selectedDates[0];
+                        document.getElementById('patient-born-month').value = date.getMonth() + 1;
+                        document.getElementById('patient-born-day').value = date.getDate();
+                        document.getElementById('patient-born-year').value = date.getFullYear();
+                    }
+                }
             });
         </script>
 
         <script>
-            document.getElementById('volunteer-form').addEventListener('submit', function(e) {
-                e.preventDefault(); // Mencegah form dikirim secara normal
+            const form = document.getElementById('volunteer-form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Mencegah pengiriman form standar
 
                 // Validasi reCAPTCHA
                 var recaptchaResponse = grecaptcha.getResponse();
@@ -307,7 +320,6 @@
                     return false;
                 }
 
-                const form = e.target;
                 const formData = new FormData(form);
 
                 // Kirim data di latar belakang
