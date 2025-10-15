@@ -1,1 +1,211 @@
-function _0x34a0(_0x16d2c4,_0x1a0640){var _0x41b058=_0x41b0();return _0x34a0=function(_0x34a088,_0x3c8150){_0x34a088=_0x34a088-0x1c1;var _0x551dcf=_0x41b058[_0x34a088];return _0x551dcf;},_0x34a0(_0x16d2c4,_0x1a0640);}function _0x41b0(){var _0x13f29c=['topSpacing','stickyElement','center','getWidthFrom','stickyWrapper','parent','offset','slice','scroll','sticky-bottom-unreached','unwrap','top','bottomSpacing','call','Method\x20','wrapperClassName','none','error','sticky','sticky-start','prototype','height','currentTop','is-sticky','removeClass','init','splice','outerWidth','right','trigger','object','2703915IxUykk','float','<div></div>','attr','sticky-bottom-reached','1811268IyGiaE','position','responsiveWidth','unstick','wrapAll','widthFromWrapper','extend','outerHeight','length','40OslYXI','scrollTop','width','each','10vcfbGb','addEventListener','sticky-wrapper','className','auto','apply','attachEvent','onscroll','1473843jHBGCV','css','resize','addClass','3649260lawzkL','18NiKoXh','1227276aTvqIj','7060784jDvBzH','fixed','\x20does\x20not\x20exist\x20on\x20jQuery.sticky','sticky-update','onresize','sticky-end','1191532yqyXPB'];_0x41b0=function(){return _0x13f29c;};return _0x41b0();}(function(_0x3a75cb,_0x294cbb){var _0x55a21c=_0x34a0,_0x4d7e97=_0x3a75cb();while(!![]){try{var _0xb0b3fb=parseInt(_0x55a21c(0x1c9))/0x1+parseInt(_0x55a21c(0x1f5))/0x2+-parseInt(_0x55a21c(0x1c7))/0x3+parseInt(_0x55a21c(0x1d0))/0x4*(-parseInt(_0x55a21c(0x202))/0x5)+parseInt(_0x55a21c(0x1c8))/0x6*(parseInt(_0x55a21c(0x1c3))/0x7)+parseInt(_0x55a21c(0x1ca))/0x8+parseInt(_0x55a21c(0x1f0))/0x9*(-parseInt(_0x55a21c(0x1fe))/0xa);if(_0xb0b3fb===_0x294cbb)break;else _0x4d7e97['push'](_0x4d7e97['shift']());}catch(_0x3fb359){_0x4d7e97['push'](_0x4d7e97['shift']());}}}(_0x41b0,0x9a98d),function(_0x4657dc){var _0x2ccfcb=_0x34a0,_0x212f2e=Array[_0x2ccfcb(0x1e5)][_0x2ccfcb(0x1d8)],_0xdf95fd=Array[_0x2ccfcb(0x1e5)][_0x2ccfcb(0x1eb)],_0xfe9423={'topSpacing':0x0,'bottomSpacing':0x0,'className':_0x2ccfcb(0x1e8),'wrapperClassName':_0x2ccfcb(0x204),'center':![],'getWidthFrom':'','widthFromWrapper':!![],'responsiveWidth':![]},_0x2b2553=_0x4657dc(window),_0x145522=_0x4657dc(document),_0x5c14b0=[],_0x272f3e=_0x2b2553['height'](),_0x2481dc=function(){var _0x53ca56=_0x2ccfcb,_0x54400e=_0x2b2553[_0x53ca56(0x1ff)](),_0x572930=_0x145522[_0x53ca56(0x1e6)](),_0x2196f8=_0x572930-_0x272f3e,_0x2fd647=_0x54400e>_0x2196f8?_0x2196f8-_0x54400e:0x0;for(var _0x5ad527=0x0;_0x5ad527<_0x5c14b0['length'];_0x5ad527++){var _0x3be53e=_0x5c14b0[_0x5ad527],_0x4fc6fa=_0x3be53e[_0x53ca56(0x1d5)][_0x53ca56(0x1d7)]()[_0x53ca56(0x1dc)],_0x1b93cb=_0x4fc6fa-_0x3be53e['topSpacing']-_0x2fd647;_0x3be53e[_0x53ca56(0x1d5)]['css'](_0x53ca56(0x1e6),_0x3be53e[_0x53ca56(0x1d2)][_0x53ca56(0x1fc)]());if(_0x54400e<=_0x1b93cb)_0x3be53e[_0x53ca56(0x1e7)]!==null&&(_0x3be53e[_0x53ca56(0x1d2)]['css']({'width':'','position':'','top':''}),_0x3be53e['stickyElement'][_0x53ca56(0x1d6)]()[_0x53ca56(0x1e9)](_0x3be53e[_0x53ca56(0x205)]),_0x3be53e[_0x53ca56(0x1d2)][_0x53ca56(0x1ee)](_0x53ca56(0x1cf),[_0x3be53e]),_0x3be53e[_0x53ca56(0x1e7)]=null);else{var _0x3f93de=_0x572930-_0x3be53e[_0x53ca56(0x1d2)][_0x53ca56(0x1fc)]()-_0x3be53e['topSpacing']-_0x3be53e[_0x53ca56(0x1dd)]-_0x54400e-_0x2fd647;_0x3f93de<0x0?_0x3f93de=_0x3f93de+_0x3be53e[_0x53ca56(0x1d1)]:_0x3f93de=_0x3be53e[_0x53ca56(0x1d1)];if(_0x3be53e[_0x53ca56(0x1e7)]!=_0x3f93de){var _0x1395c3;if(_0x3be53e[_0x53ca56(0x1d4)])_0x1395c3=_0x4657dc(_0x3be53e[_0x53ca56(0x1d4)])[_0x53ca56(0x200)]()||null;else _0x3be53e[_0x53ca56(0x1fa)]&&(_0x1395c3=_0x3be53e[_0x53ca56(0x1d5)][_0x53ca56(0x200)]());_0x1395c3==null&&(_0x1395c3=_0x3be53e[_0x53ca56(0x1d2)][_0x53ca56(0x200)]());_0x3be53e[_0x53ca56(0x1d2)][_0x53ca56(0x1c4)](_0x53ca56(0x200),_0x1395c3)['css'](_0x53ca56(0x1f6),_0x53ca56(0x1cb))[_0x53ca56(0x1c4)](_0x53ca56(0x1dc),_0x3f93de),_0x3be53e[_0x53ca56(0x1d2)][_0x53ca56(0x1d6)]()[_0x53ca56(0x1c6)](_0x3be53e['className']);_0x3be53e[_0x53ca56(0x1e7)]===null?_0x3be53e[_0x53ca56(0x1d2)][_0x53ca56(0x1ee)](_0x53ca56(0x1e4),[_0x3be53e]):_0x3be53e['stickyElement'][_0x53ca56(0x1ee)](_0x53ca56(0x1cd),[_0x3be53e]);if(_0x3be53e[_0x53ca56(0x1e7)]===_0x3be53e['topSpacing']&&_0x3be53e[_0x53ca56(0x1e7)]>_0x3f93de||_0x3be53e['currentTop']===null&&_0x3f93de<_0x3be53e[_0x53ca56(0x1d1)])_0x3be53e[_0x53ca56(0x1d2)][_0x53ca56(0x1ee)](_0x53ca56(0x1f4),[_0x3be53e]);else _0x3be53e[_0x53ca56(0x1e7)]!==null&&_0x3f93de===_0x3be53e['topSpacing']&&_0x3be53e[_0x53ca56(0x1e7)]<_0x3f93de&&_0x3be53e[_0x53ca56(0x1d2)]['trigger'](_0x53ca56(0x1da),[_0x3be53e]);_0x3be53e['currentTop']=_0x3f93de;}}}},_0x2de887=function(){var _0x1e2ffa=_0x2ccfcb;_0x272f3e=_0x2b2553['height']();for(var _0x5e9fff=0x0;_0x5e9fff<_0x5c14b0[_0x1e2ffa(0x1fd)];_0x5e9fff++){var _0x1352e8=_0x5c14b0[_0x5e9fff],_0xe071ae=null;if(_0x1352e8[_0x1e2ffa(0x1d4)])_0x1352e8[_0x1e2ffa(0x1f7)]===!![]&&(_0xe071ae=_0x4657dc(_0x1352e8[_0x1e2ffa(0x1d4)])[_0x1e2ffa(0x200)]());else _0x1352e8[_0x1e2ffa(0x1fa)]&&(_0xe071ae=_0x1352e8['stickyWrapper'][_0x1e2ffa(0x200)]());_0xe071ae!=null&&_0x1352e8[_0x1e2ffa(0x1d2)][_0x1e2ffa(0x1c4)]('width',_0xe071ae);}},_0x3c1791={'init':function(_0x39ecfa){var _0x33eb0c=_0x2ccfcb,_0x295d8e=_0x4657dc[_0x33eb0c(0x1fb)]({},_0xfe9423,_0x39ecfa);return this[_0x33eb0c(0x201)](function(){var _0x2eb70c=_0x33eb0c,_0x1f06bf=_0x4657dc(this),_0x14f986=_0x1f06bf[_0x2eb70c(0x1f3)]('id'),_0x49e06a=_0x1f06bf[_0x2eb70c(0x1fc)](),_0x5cf391=_0x14f986?_0x14f986+'-'+_0xfe9423[_0x2eb70c(0x1e0)]:_0xfe9423[_0x2eb70c(0x1e0)],_0x4600c2=_0x4657dc(_0x2eb70c(0x1f2))['attr']('id',_0x5cf391)[_0x2eb70c(0x1c6)](_0x295d8e[_0x2eb70c(0x1e0)]);_0x1f06bf[_0x2eb70c(0x1f9)](_0x4600c2);var _0x624254=_0x1f06bf[_0x2eb70c(0x1d6)]();_0x295d8e[_0x2eb70c(0x1d3)]&&_0x624254[_0x2eb70c(0x1c4)]({'width':_0x1f06bf[_0x2eb70c(0x1ec)](),'marginLeft':_0x2eb70c(0x206),'marginRight':_0x2eb70c(0x206)}),_0x1f06bf[_0x2eb70c(0x1c4)](_0x2eb70c(0x1f1))==_0x2eb70c(0x1ed)&&_0x1f06bf['css']({'float':_0x2eb70c(0x1e1)})['parent']()[_0x2eb70c(0x1c4)]({'float':'right'}),_0x624254['css'](_0x2eb70c(0x1e6),_0x49e06a),_0x295d8e[_0x2eb70c(0x1d2)]=_0x1f06bf,_0x295d8e[_0x2eb70c(0x1d5)]=_0x624254,_0x295d8e[_0x2eb70c(0x1e7)]=null,_0x5c14b0['push'](_0x295d8e);});},'update':_0x2481dc,'unstick':function(_0x2cdac6){return this['each'](function(){var _0x3e5005=_0x34a0,_0x389ee5=this,_0x2a0ba4=_0x4657dc(_0x389ee5),_0x2141af=-0x1,_0x92f998=_0x5c14b0[_0x3e5005(0x1fd)];while(_0x92f998-->0x0){_0x5c14b0[_0x92f998][_0x3e5005(0x1d2)]['get'](0x0)===_0x389ee5&&(_0xdf95fd[_0x3e5005(0x1de)](_0x5c14b0,_0x92f998,0x1),_0x2141af=_0x92f998);}_0x2141af!=-0x1&&(_0x2a0ba4[_0x3e5005(0x1db)](),_0x2a0ba4[_0x3e5005(0x1c4)]({'width':'','position':'','top':'','float':''}));});}};if(window[_0x2ccfcb(0x203)])window[_0x2ccfcb(0x203)](_0x2ccfcb(0x1d9),_0x2481dc,![]),window[_0x2ccfcb(0x203)](_0x2ccfcb(0x1c5),_0x2de887,![]);else window[_0x2ccfcb(0x1c1)]&&(window[_0x2ccfcb(0x1c1)](_0x2ccfcb(0x1c2),_0x2481dc),window[_0x2ccfcb(0x1c1)](_0x2ccfcb(0x1ce),_0x2de887));_0x4657dc['fn'][_0x2ccfcb(0x1e3)]=function(_0x4d4cc6){var _0x455c92=_0x2ccfcb;if(_0x3c1791[_0x4d4cc6])return _0x3c1791[_0x4d4cc6]['apply'](this,_0x212f2e['call'](arguments,0x1));else{if(typeof _0x4d4cc6===_0x455c92(0x1ef)||!_0x4d4cc6)return _0x3c1791[_0x455c92(0x1ea)][_0x455c92(0x207)](this,arguments);else _0x4657dc['error'](_0x455c92(0x1df)+_0x4d4cc6+_0x455c92(0x1cc));}},_0x4657dc['fn'][_0x2ccfcb(0x1f8)]=function(_0x3841c0){var _0xf36cf9=_0x2ccfcb;if(_0x3c1791[_0x3841c0])return _0x3c1791[_0x3841c0][_0xf36cf9(0x207)](this,_0x212f2e['call'](arguments,0x1));else{if(typeof _0x3841c0===_0xf36cf9(0x1ef)||!_0x3841c0)return _0x3c1791[_0xf36cf9(0x1f8)][_0xf36cf9(0x207)](this,arguments);else _0x4657dc[_0xf36cf9(0x1e2)](_0xf36cf9(0x1df)+_0x3841c0+_0xf36cf9(0x1cc));}},_0x4657dc(function(){setTimeout(_0x2481dc,0x0);});}(jQuery),$(document)['ready'](function(){var _0x1f7988=_0x34a0;$('.navbar')[_0x1f7988(0x1e3)]({'topSpacing':0x0});}));
+// Description: Makes an element on the page stick on the screen as you scroll
+//              It will only set the 'top' and 'position' of your element, you
+//              might need to adjust the width in some cases.
+
+(function($) {
+    var slice = Array.prototype.slice; // save ref to original slice()
+    var splice = Array.prototype.splice; // save ref to original slice()
+
+  var defaults = {
+      topSpacing: 0,
+      bottomSpacing: 0,
+      className: 'is-sticky',
+      wrapperClassName: 'sticky-wrapper',
+      center: false,
+      getWidthFrom: '',
+      widthFromWrapper: true, // works only when .getWidthFrom is empty
+      responsiveWidth: false
+    },
+    $window = $(window),
+    $document = $(document),
+    sticked = [],
+    windowHeight = $window.height(),
+    scroller = function() {
+      var scrollTop = $window.scrollTop(),
+        documentHeight = $document.height(),
+        dwh = documentHeight - windowHeight,
+        extra = (scrollTop > dwh) ? dwh - scrollTop : 0;
+
+      for (var i = 0; i < sticked.length; i++) {
+        var s = sticked[i],
+          elementTop = s.stickyWrapper.offset().top,
+          etse = elementTop - s.topSpacing - extra;
+
+	//update height in case of dynamic content
+	s.stickyWrapper.css('height', s.stickyElement.outerHeight());
+
+        if (scrollTop <= etse) {
+          if (s.currentTop !== null) {
+            s.stickyElement
+              .css({
+                'width': '',
+                'position': '',
+                'top': ''
+              });
+            s.stickyElement.parent().removeClass(s.className);
+            s.stickyElement.trigger('sticky-end', [s]);
+            s.currentTop = null;
+          }
+        }
+        else {
+          var newTop = documentHeight - s.stickyElement.outerHeight()
+            - s.topSpacing - s.bottomSpacing - scrollTop - extra;
+          if (newTop < 0) {
+            newTop = newTop + s.topSpacing;
+          } else {
+            newTop = s.topSpacing;
+          }
+          if (s.currentTop != newTop) {
+            var newWidth;
+            if (s.getWidthFrom) {
+                newWidth = $(s.getWidthFrom).width() || null;
+            } else if (s.widthFromWrapper) {
+                newWidth = s.stickyWrapper.width();
+            }
+            if (newWidth == null) {
+                newWidth = s.stickyElement.width();
+            }
+            s.stickyElement
+              .css('width', newWidth)
+              .css('position', 'fixed')
+              .css('top', newTop);
+
+            s.stickyElement.parent().addClass(s.className);
+
+            if (s.currentTop === null) {
+              s.stickyElement.trigger('sticky-start', [s]);
+            } else {
+              // sticky is started but it have to be repositioned
+              s.stickyElement.trigger('sticky-update', [s]);
+            }
+
+            if (s.currentTop === s.topSpacing && s.currentTop > newTop || s.currentTop === null && newTop < s.topSpacing) {
+              // just reached bottom || just started to stick but bottom is already reached
+              s.stickyElement.trigger('sticky-bottom-reached', [s]);
+            } else if(s.currentTop !== null && newTop === s.topSpacing && s.currentTop < newTop) {
+              // sticky is started && sticked at topSpacing && overflowing from top just finished
+              s.stickyElement.trigger('sticky-bottom-unreached', [s]);
+            }
+
+            s.currentTop = newTop;
+          }
+        }
+      }
+    },
+    resizer = function() {
+      windowHeight = $window.height();
+
+      for (var i = 0; i < sticked.length; i++) {
+        var s = sticked[i];
+        var newWidth = null;
+        if (s.getWidthFrom) {
+            if (s.responsiveWidth === true) {
+                newWidth = $(s.getWidthFrom).width();
+            }
+        } else if(s.widthFromWrapper) {
+            newWidth = s.stickyWrapper.width();
+        }
+        if (newWidth != null) {
+            s.stickyElement.css('width', newWidth);
+        }
+      }
+    },
+    methods = {
+      init: function(options) {
+        var o = $.extend({}, defaults, options);
+        return this.each(function() {
+          var stickyElement = $(this);
+
+          var stickyId = stickyElement.attr('id');
+          var stickyHeight = stickyElement.outerHeight();
+          var wrapperId = stickyId ? stickyId + '-' + defaults.wrapperClassName : defaults.wrapperClassName
+          var wrapper = $('<div></div>')
+            .attr('id', wrapperId)
+            .addClass(o.wrapperClassName);
+
+          stickyElement.wrapAll(wrapper);
+
+          var stickyWrapper = stickyElement.parent();
+
+          if (o.center) {
+            stickyWrapper.css({width:stickyElement.outerWidth(),marginLeft:"auto",marginRight:"auto"});
+          }
+
+          if (stickyElement.css("float") == "right") {
+            stickyElement.css({"float":"none"}).parent().css({"float":"right"});
+          }
+
+          stickyWrapper.css('height', stickyHeight);
+
+          o.stickyElement = stickyElement;
+          o.stickyWrapper = stickyWrapper;
+          o.currentTop    = null;
+
+          sticked.push(o);
+        });
+      },
+      update: scroller,
+      unstick: function(options) {
+        return this.each(function() {
+          var that = this;
+          var unstickyElement = $(that);
+
+          var removeIdx = -1;
+          var i = sticked.length;
+          while (i-- > 0) {
+            if (sticked[i].stickyElement.get(0) === that) {
+                splice.call(sticked,i,1);
+                removeIdx = i;
+            }
+          }
+          if(removeIdx != -1) {
+            unstickyElement.unwrap();
+            unstickyElement
+              .css({
+                'width': '',
+                'position': '',
+                'top': '',
+                'float': ''
+              })
+            ;
+          }
+        });
+      }
+    };
+
+  // should be more efficient than using $window.scroll(scroller) and $window.resize(resizer):
+  if (window.addEventListener) {
+    window.addEventListener('scroll', scroller, false);
+    window.addEventListener('resize', resizer, false);
+  } else if (window.attachEvent) {
+    window.attachEvent('onscroll', scroller);
+    window.attachEvent('onresize', resizer);
+  }
+
+  $.fn.sticky = function(method) {
+    if (methods[method]) {
+      return methods[method].apply(this, slice.call(arguments, 1));
+    } else if (typeof method === 'object' || !method ) {
+      return methods.init.apply( this, arguments );
+    } else {
+      $.error('Method ' + method + ' does not exist on jQuery.sticky');
+    }
+  };
+
+  $.fn.unstick = function(method) {
+    if (methods[method]) {
+      return methods[method].apply(this, slice.call(arguments, 1));
+    } else if (typeof method === 'object' || !method ) {
+      return methods.unstick.apply( this, arguments );
+    } else {
+      $.error('Method ' + method + ' does not exist on jQuery.sticky');
+    }
+  };
+  $(function() {
+    setTimeout(scroller, 0);
+  });
+})(jQuery);
+
+$(document).ready(function(){
+      $(".navbar").sticky({topSpacing:0});
+    });

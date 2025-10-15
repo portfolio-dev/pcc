@@ -1,1 +1,116 @@
-var _0x452bc7=_0x1562;function _0x3e68(){var _0x3e1c77=['replaceState','9sEhmvx','contextmenu','href','animate','registrasiPeserta','location','getElementById','3288024qweOvt','sent.html','click','/kirim-registrasi.html','countTo','buttonRedirectToSuccessPage','body,html','chdJakarta','redirectToSuccessPage','.navbar','/sent.html','pathname','preventDefault','attr','buttonComment','offset','1660725mGwogk','comment','.html','buttonChdJakarta','jQuery','top','buttonRegistrasiPeserta','49064bvLdRh','5836446xUKxCZ','1142157adDmsw','.counter-thumb','/sent-chd.html','.counter-number','354dDpBfD','addEventListener','history','3099420rAadLk','height','replace','21ECGJYq'];_0x3e68=function(){return _0x3e1c77;};return _0x3e68();}(function(_0x31ad7b,_0x1a114f){var _0x2d34a8=_0x1562,_0x36b5b3=_0x31ad7b();while(!![]){try{var _0x178672=-parseInt(_0x2d34a8(0xc4))/0x1*(parseInt(_0x2d34a8(0xbe))/0x2)+-parseInt(_0x2d34a8(0xba))/0x3+parseInt(_0x2d34a8(0xa1))/0x4+parseInt(_0x2d34a8(0xb1))/0x5+parseInt(_0x2d34a8(0xc1))/0x6+-parseInt(_0x2d34a8(0xb9))/0x7+-parseInt(_0x2d34a8(0xb8))/0x8*(parseInt(_0x2d34a8(0x9a))/0x9);if(_0x178672===_0x1a114f)break;else _0x36b5b3['push'](_0x36b5b3['shift']());}catch(_0x23b382){_0x36b5b3['push'](_0x36b5b3['shift']());}}}(_0x3e68,0x6cfa6),function(_0x32ceeb){'use strict';var _0x4874c8=_0x1562;jQuery(_0x4874c8(0xbb))['appear'](function(){var _0x190d58=_0x4874c8;jQuery(_0x190d58(0xbd))[_0x190d58(0xa5)]();}),_0x32ceeb('.smoothscroll')[_0x4874c8(0xa3)](function(){var _0x595ffe=_0x4874c8,_0x274e11=_0x32ceeb(this)[_0x595ffe(0xae)]('href'),_0x54a4b7=_0x32ceeb(_0x274e11),_0x276363=_0x32ceeb(_0x595ffe(0xaa))[_0x595ffe(0xc2)]();_0x218fb8(_0x54a4b7,_0x276363);return![];function _0x218fb8(_0x21de2d,_0x33effc){var _0x544ed6=_0x595ffe,_0x351780=_0x21de2d[_0x544ed6(0xb0)](),_0x5af965=_0x351780[_0x544ed6(0xb6)],_0x14c018=_0x5af965-_0x33effc;_0x32ceeb(_0x544ed6(0xa7))[_0x544ed6(0x9d)]({'scrollTop':_0x14c018},0x12c);}});}(window[_0x452bc7(0xb5)]),document['addEventListener'](_0x452bc7(0x9b),function(_0x5174f1){var _0x2f4b6f=_0x452bc7;_0x5174f1[_0x2f4b6f(0xad)]();}));if(window[_0x452bc7(0x9f)]['pathname']['endsWith']('.html')){var hash=window[_0x452bc7(0x9f)]['hash'],newUrl=window[_0x452bc7(0x9f)][_0x452bc7(0xac)][_0x452bc7(0xc3)](_0x452bc7(0xb3),'');newUrl+=hash,window[_0x452bc7(0xc0)][_0x452bc7(0x99)](null,'',newUrl);}document['getElementById']('printButton')[_0x452bc7(0xbf)](_0x452bc7(0xa3),function(_0x4da74f){_0x4da74f['preventDefault'](),window['print']();});function submitForm(_0x4262ef){var _0xc631eb=_0x452bc7;if(_0x4262ef===_0xc631eb(0xa9))redirectToSuccessPage();else{if(_0x4262ef===_0xc631eb(0x9e))registrasiPeserta();else{if(_0x4262ef===_0xc631eb(0xb2))comment();else _0x4262ef===_0xc631eb(0xa8)&&chdJakarta();}}return!![];}function redirectToSuccessPage(){var _0x2f61f1=_0x452bc7;window['location'][_0x2f61f1(0x9c)]=_0x2f61f1(0xa2);}function registrasiPeserta(){var _0x590d72=_0x452bc7;window[_0x590d72(0x9f)][_0x590d72(0x9c)]=_0x590d72(0xa4);}function comment(){var _0x3fc540=_0x452bc7;window['location']['href']=_0x3fc540(0xab);}function _0x1562(_0x57d97f,_0x4bc221){var _0x3e686c=_0x3e68();return _0x1562=function(_0x1562d9,_0x5decdd){_0x1562d9=_0x1562d9-0x99;var _0x3685fe=_0x3e686c[_0x1562d9];return _0x3685fe;},_0x1562(_0x57d97f,_0x4bc221);}function chdJakarta(){var _0x3d5028=_0x452bc7;window[_0x3d5028(0x9f)][_0x3d5028(0x9c)]=_0x3d5028(0xbc);}function handleIframeLoad(){var _0x22011b=_0x452bc7;window[_0x22011b(0x9f)]['href']=_0x22011b(0xa2);}document[_0x452bc7(0xa0)](_0x452bc7(0xa6))['addEventListener']('click',function(){var _0x501f0b=_0x452bc7;submitForm(_0x501f0b(0xa9));}),document[_0x452bc7(0xa0)](_0x452bc7(0xb7))[_0x452bc7(0xbf)](_0x452bc7(0xa3),function(){var _0x497ce0=_0x452bc7;submitForm(_0x497ce0(0x9e));}),document[_0x452bc7(0xa0)](_0x452bc7(0xaf))[_0x452bc7(0xbf)](_0x452bc7(0xa3),function(){var _0x41623b=_0x452bc7;submitForm(_0x41623b(0xb2));}),document[_0x452bc7(0xa0)](_0x452bc7(0xb4))[_0x452bc7(0xbf)]('click',function(){var _0x398011=_0x452bc7;submitForm(_0x398011(0xa8));});
+
+(function ($) {
+  
+  "use strict";
+
+    // COUNTER NUMBERS
+    jQuery('.counter-thumb').appear(function() {
+      jQuery('.counter-number').countTo();
+    });
+    
+    // CUSTOM LINK
+    $('.smoothscroll').click(function(){
+    var el = $(this).attr('href');
+    var elWrapped = $(el);
+    var header_height = $('.navbar').height();
+
+    scrollToDiv(elWrapped,header_height);
+    return false;
+
+    function scrollToDiv(element,navheight){
+      var offset = element.offset();
+      var offsetTop = offset.top;
+      var totalScroll = offsetTop-navheight;
+
+      $('body,html').animate({
+      scrollTop: totalScroll
+      }, 300);
+    }
+});
+    
+  })(window.jQuery);
+
+
+// NO COPPY OR DOWNLOAD
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+//DELETE .html
+if (window.location.pathname.endsWith('.html')) {
+	var hash = window.location.hash;
+	var newUrl = window.location.pathname.replace('.html', '');
+	newUrl += hash;
+	window.history.replaceState(null, '', newUrl);
+  }
+
+//PRINT NEWS PAGE
+document.getElementById('printButton').addEventListener('click', function(e) {
+    e.preventDefault();  
+    window.print();      
+});
+
+ 
+     
+// SUBMIT FORM
+function submitForm(action) {
+
+  // var response = grecaptcha.getResponse();
+  // if (response.length === 0) {
+  //     alert("Harap verifikasi bahwa Anda bukan robot.");
+  //     return false;
+  // }
+
+
+  // Menentukan halaman pengalihan berdasarkan aksi
+  if (action === 'redirectToSuccessPage') {
+    redirectToSuccessPage();
+  } else if (action === 'registrasiPeserta') {
+    registrasiPeserta();
+  } else if (action === 'comment') {
+    comment();
+  } else if (action === 'chdJakarta') {
+    chdJakarta();
+  }
+  
+  // Lanjutkan pengiriman formulir
+  return true; 
+}
+
+function redirectToSuccessPage() {
+  window.location.href = 'sent.html';
+}
+
+function registrasiPeserta() {
+  window.location.href = '/kirim-registrasi.html';
+}
+
+function comment() {
+  window.location.href = '/sent.html';
+}
+
+function chdJakarta() {
+  window.location.href = '/sent-chd.html';
+}
+
+// Fungsi untuk menangani pengalihan setelah iframe selesai memuat
+function handleIframeLoad() {
+  // Menentukan halaman pengalihan di sini, jika dibutuhkan
+  window.location.href = 'sent.html';  // Halaman tujuan default
+}
+
+document.getElementById('buttonRedirectToSuccessPage').addEventListener('click', function() {
+  submitForm('redirectToSuccessPage');
+});
+
+document.getElementById('buttonRegistrasiPeserta').addEventListener('click', function() {
+  submitForm('registrasiPeserta');
+});
+
+document.getElementById('buttonComment').addEventListener('click', function() {
+  submitForm('comment');
+});
+
+document.getElementById('buttonChdJakarta').addEventListener('click', function() {
+  submitForm('chdJakarta');
+});

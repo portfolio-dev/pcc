@@ -1,1 +1,299 @@
-const _0x2a140e=_0x40bc;(function(_0x1ff0c4,_0x52ff03){const _0x3b9acb=_0x40bc,_0x5d62ec=_0x1ff0c4();while(!![]){try{const _0x15cffb=parseInt(_0x3b9acb(0xff))/0x1+-parseInt(_0x3b9acb(0x105))/0x2*(parseInt(_0x3b9acb(0xe4))/0x3)+parseInt(_0x3b9acb(0x103))/0x4*(parseInt(_0x3b9acb(0x12d))/0x5)+parseInt(_0x3b9acb(0x110))/0x6+-parseInt(_0x3b9acb(0x102))/0x7*(-parseInt(_0x3b9acb(0x113))/0x8)+-parseInt(_0x3b9acb(0xfd))/0x9+parseInt(_0x3b9acb(0x11b))/0xa*(parseInt(_0x3b9acb(0xec))/0xb);if(_0x15cffb===_0x52ff03)break;else _0x5d62ec['push'](_0x5d62ec['shift']());}catch(_0x1e62cc){_0x5d62ec['push'](_0x5d62ec['shift']());}}}(_0xd4a3,0x44029),document[_0x2a140e(0x128)](_0x2a140e(0xf3))[_0x2a140e(0xee)](function(_0x4ac925){const _0x544759=_0x2a140e;_0x4ac925[_0x544759(0xfa)]('change',function(){const _0x57d050=_0x544759;if(this[_0x57d050(0x11e)]){document[_0x57d050(0x128)](_0x57d050(0xf3))[_0x57d050(0xee)](function(_0x8169b7){const _0x2d03f6=_0x57d050;_0x8169b7!==_0x4ac925&&(_0x8169b7[_0x2d03f6(0x11e)]=![]);});if(this['value']===_0x57d050(0x12e))document['getElementById'](_0x57d050(0x139))[_0x57d050(0x10d)][_0x57d050(0x10c)]='none',document[_0x57d050(0x109)](_0x57d050(0x133))[_0x57d050(0x10d)][_0x57d050(0x10c)]=_0x57d050(0x129),document[_0x57d050(0x109)]('amount2')[_0x57d050(0x10d)][_0x57d050(0x10c)]='none',document[_0x57d050(0x109)]('amount3')[_0x57d050(0x10d)][_0x57d050(0x10c)]='none',document[_0x57d050(0x109)](_0x57d050(0xf0))['style'][_0x57d050(0x10c)]='none',document['getElementById']('amount5')['style'][_0x57d050(0x10c)]=_0x57d050(0x129),document[_0x57d050(0x109)](_0x57d050(0x112))[_0x57d050(0x10d)][_0x57d050(0x10c)]=_0x57d050(0x129),document[_0x57d050(0x109)](_0x57d050(0xf7))[_0x57d050(0x10d)]['display']=_0x57d050(0x129),document[_0x57d050(0x109)](_0x57d050(0x108))[_0x57d050(0x10d)]['display']=_0x57d050(0x129),document[_0x57d050(0x109)](_0x57d050(0x127))['style'][_0x57d050(0x10c)]='none',document[_0x57d050(0x109)]('produk-donasi')[_0x57d050(0x10d)]['display']=_0x57d050(0x100),document[_0x57d050(0x109)](_0x57d050(0x117))[_0x57d050(0x10d)]['display']='block';else this[_0x57d050(0x125)]===_0x57d050(0x120)&&(document['getElementById'](_0x57d050(0x139))['style']['display']=_0x57d050(0x100),document[_0x57d050(0x109)](_0x57d050(0x133))[_0x57d050(0x10d)][_0x57d050(0x10c)]='block',document[_0x57d050(0x109)]('amount2')[_0x57d050(0x10d)][_0x57d050(0x10c)]=_0x57d050(0x100),document[_0x57d050(0x109)](_0x57d050(0xf1))[_0x57d050(0x10d)]['display']=_0x57d050(0x100),document[_0x57d050(0x109)](_0x57d050(0xf0))['style'][_0x57d050(0x10c)]='block',document[_0x57d050(0x109)](_0x57d050(0x124))[_0x57d050(0x10d)][_0x57d050(0x10c)]=_0x57d050(0x100),document['getElementById']('amount6')[_0x57d050(0x10d)][_0x57d050(0x10c)]=_0x57d050(0x100),document[_0x57d050(0x109)](_0x57d050(0xf7))['style'][_0x57d050(0x10c)]=_0x57d050(0x100),document[_0x57d050(0x109)](_0x57d050(0x108))[_0x57d050(0x10d)][_0x57d050(0x10c)]='block',document[_0x57d050(0x109)](_0x57d050(0x127))[_0x57d050(0x10d)]['display']='block',document[_0x57d050(0x109)](_0x57d050(0xed))[_0x57d050(0x10d)][_0x57d050(0x10c)]=_0x57d050(0x129),document['getElementById']('produk-kirim')[_0x57d050(0x10d)]['display']=_0x57d050(0x129));}});}));let lastSelected=null;function updateNominal(_0x258b3e){const _0x1efddc=_0x2a140e,_0x10da26=document['getElementById'](_0x1efddc(0xf5));lastSelected===_0x258b3e?(_0x258b3e[_0x1efddc(0x11e)]=![],_0x10da26['value']='0',lastSelected=null):(lastSelected&&(lastSelected[_0x1efddc(0x11e)]=![]),_0x10da26[_0x1efddc(0x125)]=formatNumber(_0x258b3e[_0x1efddc(0x125)]),lastSelected=_0x258b3e);}function _0x40bc(_0x408acf,_0x1397ba){const _0x40bc4a=_0xd4a3();return _0x40bc=function(_0x3627a4,_0x9a677e){_0x3627a4=_0x3627a4-0xe3;let _0x551d48=_0x40bc4a[_0x3627a4];return _0x551d48;},_0x40bc(_0x408acf,_0x1397ba);}function formatNumber(_0x50fb22){const _0x54248d=_0x2a140e;return _0x50fb22[_0x54248d(0xe5)](/\B(?=(\d{3})+(?!\d))/g,'.');}document[_0x2a140e(0x128)](_0x2a140e(0xf4))[_0x2a140e(0xee)](function(_0x5b135a){const _0x70dc37=_0x2a140e;_0x5b135a[_0x70dc37(0xfa)](_0x70dc37(0x11f),function(){const _0x494508=_0x70dc37;this['checked']&&document[_0x494508(0x128)](_0x494508(0xf4))['forEach'](function(_0x517b20){_0x517b20!==_0x5b135a&&(_0x517b20['checked']=![]);});});});function tambahItem(){const _0x4ecda7=_0x2a140e;var _0x5cce97=document['getElementById'](_0x4ecda7(0x10e))[_0x4ecda7(0x125)],_0x92dd50=document[_0x4ecda7(0x109)](_0x4ecda7(0x134))[_0x4ecda7(0x125)],_0x5e7ff3=document[_0x4ecda7(0x109)](_0x4ecda7(0xe3))[_0x4ecda7(0x125)];if(_0x5cce97&&_0x92dd50&&_0x5e7ff3){var _0x19cef2=document[_0x4ecda7(0x109)](_0x4ecda7(0x132)),_0x501047=_0x92dd50+'\x20'+_0x5e7ff3+_0x4ecda7(0x115)+_0x5cce97+_0x4ecda7(0x130);_0x19cef2[_0x4ecda7(0x125)]+=_0x501047,document[_0x4ecda7(0x109)](_0x4ecda7(0x10e))['value']='',document[_0x4ecda7(0x109)](_0x4ecda7(0x134))[_0x4ecda7(0x125)]='',document['getElementById'](_0x4ecda7(0xe3))[_0x4ecda7(0x125)]='pcs',document[_0x4ecda7(0x109)](_0x4ecda7(0x10e))[_0x4ecda7(0x12f)]();}else alert('Silakan\x20isi\x20nama\x20produk,\x20jumlah,\x20dan\x20pilih\x20satuan.');}function resetForm(){const _0xcb3d20=_0x2a140e;document[_0xcb3d20(0x109)]('produk1')[_0xcb3d20(0x125)]='',document[_0xcb3d20(0x109)](_0xcb3d20(0x134))['value']='',document['getElementById'](_0xcb3d20(0xe3))[_0xcb3d20(0x125)]='pcs',document['getElementById'](_0xcb3d20(0x132))[_0xcb3d20(0x125)]='',alert(_0xcb3d20(0x11a));}var textarea=document[_0x2a140e(0x109)](_0x2a140e(0x132));textarea[_0x2a140e(0xfa)](_0x2a140e(0x12b),function(){const _0x20e055=_0x2a140e;this[_0x20e055(0x10d)]['height']=_0x20e055(0x122),this[_0x20e055(0x10d)][_0x20e055(0xe9)]=this[_0x20e055(0x119)]+'px';});function showConfirmation(){const _0x55d933=_0x2a140e,_0x4cb769=document[_0x55d933(0x109)](_0x55d933(0x123));_0x4cb769[_0x55d933(0xf6)]='';const _0x442d66=document[_0x55d933(0x109)](_0x55d933(0x13a))[_0x55d933(0x125)],_0x1eb301=document['getElementById'](_0x55d933(0x126))[_0x55d933(0x125)],_0x53f0e1=document['getElementById'](_0x55d933(0xf5))['value'][_0x55d933(0xe5)](/\./g,''),_0x1ab887=document['getElementById'](_0x55d933(0x132))[_0x55d933(0x125)],_0x558f04=document[_0x55d933(0x10f)](_0x55d933(0xfc))?.[_0x55d933(0x125)];_0x558f04===_0x55d933(0x12e)&&_0x1ab887===''?_0x4cb769[_0x55d933(0xf6)]+='<hr>Produk\x20Donasi\x20harus\x20diisi\x20!<br>':_0x4cb769[_0x55d933(0xf6)]+='';if(_0x558f04===_0x55d933(0x12e)&&(_0x53f0e1===''||_0x53f0e1==='0'))_0x4cb769[_0x55d933(0xf6)]+='';else{if(_0x53f0e1==='')_0x4cb769[_0x55d933(0xf6)]+=_0x55d933(0xe7);else(isNaN(_0x53f0e1)||parseInt(_0x53f0e1)<=0x0)&&(_0x4cb769[_0x55d933(0xf6)]+='<hr>Nominal\x20tidak\x20boleh\x20bernilai\x200\x20!<br>');}let _0x5ebef8='';if(!_0x442d66)_0x5ebef8+='<hr>Nama\x20harus\x20diisi\x20!<br>';if(!_0x1eb301)_0x5ebef8+='<hr>Telepon\x20harus\x20diisi\x20!<br>';if(_0x4cb769[_0x55d933(0xf6)]||_0x5ebef8){_0x4cb769[_0x55d933(0xf6)]+=_0x5ebef8;return;}const _0x128419=document[_0x55d933(0x109)]('donation-section'),_0x2aef9a=document[_0x55d933(0x109)](_0x55d933(0x11c)),_0x15cf20=document['getElementById'](_0x55d933(0x135));_0x128419[_0x55d933(0x10d)]['display']=_0x55d933(0x129),_0x2aef9a[_0x55d933(0x10d)][_0x55d933(0x10c)]=_0x55d933(0x100),_0x15cf20[_0x55d933(0x10d)][_0x55d933(0x10c)]=_0x55d933(0x129);const _0x41db26={'donationTipe':document[_0x55d933(0x10f)](_0x55d933(0xfc))?.[_0x55d933(0x125)],'donationAmount':_0x53f0e1,'donorDetail':_0x1ab887,'donorName':_0x442d66};document[_0x55d933(0x109)]('donation-tipe')[_0x55d933(0xf8)]=_0x41db26['donationTipe'],document[_0x55d933(0x109)](_0x55d933(0x106))['innerText']=formatNumber(_0x41db26[_0x55d933(0x10b)]),document[_0x55d933(0x109)](_0x55d933(0xf9))['innerText']=_0x41db26[_0x55d933(0xea)],document[_0x55d933(0x109)]('donor-name')[_0x55d933(0xf8)]=_0x41db26['donorName'],document['getElementById']('donor-tlp')['innerText']=_0x1eb301,togglePaymentMethod(document[_0x55d933(0x10f)](_0x55d933(0xe8))[_0x55d933(0x125)]);}function goBack(){const _0xeadb45=_0x2a140e;window[_0xeadb45(0xfe)][_0xeadb45(0x12a)]=_0xeadb45(0x137);}function copyToClipboard(_0x3b6217){const _0x25b65d=_0x2a140e;navigator['clipboard'][_0x25b65d(0x116)](_0x3b6217)[_0x25b65d(0x136)](_0x3b5918=>{const _0x29e814=_0x25b65d;console['error'](_0x29e814(0x104),_0x3b5918);}),alert(_0x25b65d(0x118));}function copyToClipboard2(_0x548983){const _0x4956b9=_0x2a140e;navigator[_0x4956b9(0xfb)][_0x4956b9(0x116)](_0x548983)[_0x4956b9(0x136)](_0x361e19=>{const _0xaefe87=_0x4956b9;console['error'](_0xaefe87(0x104),_0x361e19);}),alert('Alamat\x20sudah\x20disalin.');}function _0xd4a3(){const _0x574862=['href','input','DOMContentLoaded','40izpaqa','Produk','focus',',\x20\x0a','entry.1082800990','donation-detail','amount1','jumlah1','donation-title','catch','donate.html','application/x-www-form-urlencoded','amount-pilihan','donation-name','satuan1','3uSVBWT','replace','target','<hr>Nominal\x20harus\x20diisi\x20!<br>','input[name=\x22DonationPayment\x22]:checked','height','donorDetail','loading','1535215YyFhdK','produk-donasi','forEach','append','amount4','amount3','POST','.donation-radio','.payment-radio','custom-nominal','innerHTML','nominal-uang','innerText','donation-detail-display','addEventListener','clipboard','input.donation-radio:checked','5007042miuYBL','location','168593eWHRdi','block','https://docs.google.com/forms/u/0/d/e/1FAIpQLSetZq-Q-6W6oAn4yGgYios1RpLhKoigYtV7_Jbv7Zz-tUXijw/formResponse','91Yikexp','224620IJdPeI','Gagal\x20menyalin:\x20','616030vGQUbq','donation-amount-display','Terjadi\x20kesalahan\x20saat\x20mengunggah\x20file!\x20Anda\x20akan\x20dialihkan\x20ke\x20halaman\x20GoogleForms\x20untuk\x20mengunggah\x20Bukti\x20Transfer\x20Anda.\x20Mohon\x20maaf\x20atas\x20ketidaknyamanan\x20ini\x20&\x20terima\x20kasih.','uang-transfer-qris','getElementById','entry.1274723429','donationAmount','display','style','produk1','querySelector','1722216KrMHiL','entry.573797881','amount6','60608cJqzpw','donate-upload.html','\x20:\x20','writeText','produk-kirim','Nomor\x20rekening\x20sudah\x20disalin.','scrollHeight','Produk\x20Donasi\x20berhasil\x20dihapus!.','10yBcbGe','confirmation-section','entry.1526120968','checked','change','Uang','inline-block','auto','error-messages','amount5','value','donation-tlp','tampil-nominal','querySelectorAll','none'];_0xd4a3=function(){return _0x574862;};return _0xd4a3();}document[_0x2a140e(0xfa)](_0x2a140e(0x12c),function(){const _0x396ff4=_0x2a140e;document[_0x396ff4(0x109)](_0x396ff4(0xf5))[_0x396ff4(0xfa)](_0x396ff4(0x12b),function(_0x1dc6e8){const _0x2e50e6=_0x396ff4,_0x16c450=_0x1dc6e8[_0x2e50e6(0xe6)][_0x2e50e6(0x125)]['replace'](/\D/g,'');_0x1dc6e8[_0x2e50e6(0xe6)][_0x2e50e6(0x125)]=formatNumber(_0x16c450);});});function formatNumber(_0xcd2d0f){const _0x482279=_0x2a140e;return _0xcd2d0f[_0x482279(0xe5)](/\B(?=(\d{3})+(?!\d))/g,'.');}function submitConfirmation(){const _0x5e23a7=_0x2a140e,_0x22f26c=document[_0x5e23a7(0x10f)](_0x5e23a7(0xfc))?.['value'],_0x3e0807=document['getElementById'](_0x5e23a7(0xf5))['value'][_0x5e23a7(0xe5)](/\./g,'')||lastSelected?.['value']||'0',_0x15fd8a=document['getElementById'](_0x5e23a7(0x132))[_0x5e23a7(0x125)],_0x58556d=document[_0x5e23a7(0x109)](_0x5e23a7(0x13a))[_0x5e23a7(0x125)],_0x1121d1=document[_0x5e23a7(0x109)](_0x5e23a7(0x126))[_0x5e23a7(0x125)],_0x5ad666=document['querySelector']('input.payment-radio:checked')?.[_0x5e23a7(0x125)],_0x149dea=document['getElementById']('donation-note')[_0x5e23a7(0x125)];_0x3e0807[_0x5e23a7(0x125)]===''&&(_0x3e0807[_0x5e23a7(0x125)]='0');const _0x3d3633=_0x5e23a7(0x101),_0x5b2e20=new URLSearchParams();return _0x5b2e20['append'](_0x5e23a7(0x10a),_0x58556d),_0x5b2e20[_0x5e23a7(0xef)]('entry.1479109352',_0x1121d1),_0x5b2e20['append']('entry.1705412345',_0x3e0807),_0x5b2e20[_0x5e23a7(0xef)](_0x5e23a7(0x11d),_0x15fd8a),_0x5b2e20[_0x5e23a7(0xef)](_0x5e23a7(0x131),_0x5ad666),_0x5b2e20['append'](_0x5e23a7(0x111),_0x22f26c),_0x5b2e20[_0x5e23a7(0xef)]('entry.1469710524',_0x149dea),fetch(_0x3d3633,{'method':_0x5e23a7(0xf2),'body':_0x5b2e20,'headers':{'Content-Type':_0x5e23a7(0x138)}}),setTimeout(()=>{const _0x5c782a=_0x5e23a7;window['location'][_0x5c782a(0x12a)]=_0x5c782a(0x114);},0x1f4),!![];}function upload(){const _0x2a9471=_0x2a140e;document[_0x2a9471(0x109)](_0x2a9471(0xeb))[_0x2a9471(0x10d)]['display']=_0x2a9471(0x121),setTimeout(()=>{const _0x2aca29=_0x2a9471;document[_0x2aca29(0x109)]('loading')[_0x2aca29(0x10d)][_0x2aca29(0x10c)]=_0x2aca29(0x129),alert(_0x2aca29(0x107));},0x7d0),setTimeout(()=>{const _0x38f667=_0x2a9471;window['location'][_0x38f667(0x12a)]='https://docs.google.com/forms/d/e/1FAIpQLSdyxLaJ9MUj3tRiBGPDcS5hR7ldlmXPC-Bnt7TEnTfTsHZD_Q/viewform';},0x1388);}
+
+// RADIO UANG ATAU PRODUK
+  document.querySelectorAll('.donation-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        // Pastikan hanya satu yang terpilih
+        if (this.checked) {
+            document.querySelectorAll('.donation-radio').forEach(function(otherRadio) {
+                if (otherRadio !== radio) {
+                    otherRadio.checked = false;
+                }
+            });
+  
+            // Cek apakah radio button Produk yang dipilih
+            if (this.value === 'Produk') {
+                // Jika Produk dipilih, sembunyikan elemen-elemen yang terkait dengan Uang
+                document.getElementById('amount-pilihan').style.display = 'none';
+                document.getElementById('amount1').style.display = 'none';
+                document.getElementById('amount2').style.display = 'none';
+                document.getElementById('amount3').style.display = 'none';
+                document.getElementById('amount4').style.display = 'none';
+                document.getElementById('amount5').style.display = 'none';
+                document.getElementById('amount6').style.display = 'none';
+                document.getElementById('nominal-uang').style.display = 'none';
+                document.getElementById('uang-transfer-qris').style.display = 'none';
+                document.getElementById('tampil-nominal').style.display = 'none';
+  
+                document.getElementById('produk-donasi').style.display = 'block';              
+                document.getElementById('produk-kirim').style.display = 'block';
+                
+            } else if (this.value === 'Uang') {
+                // Jika Uang dipilih, tampilkan kembali elemen-elemen tersebut
+                document.getElementById('amount-pilihan').style.display = 'block';
+                document.getElementById('amount1').style.display = 'block';
+                document.getElementById('amount2').style.display = 'block';
+                document.getElementById('amount3').style.display = 'block';
+                document.getElementById('amount4').style.display = 'block';
+                document.getElementById('amount5').style.display = 'block';
+                document.getElementById('amount6').style.display = 'block';
+                document.getElementById('nominal-uang').style.display = 'block';
+                document.getElementById('uang-transfer-qris').style.display = 'block';
+                document.getElementById('tampil-nominal').style.display = 'block';
+  
+                document.getElementById('produk-donasi').style.display = 'none';              
+                document.getElementById('produk-kirim').style.display = 'none';
+            }
+        }
+    });
+  });
+  
+  // DONATION PAGE
+  let lastSelected = null;
+  
+  function updateNominal(selectedRadio) {
+    const nominalInput = document.getElementById('custom-nominal');
+    
+    if (lastSelected === selectedRadio) {
+        selectedRadio.checked = false;
+        nominalInput.value = '0';
+        lastSelected = null;
+    } else {
+        if (lastSelected) {
+            lastSelected.checked = false;
+        }
+        nominalInput.value = formatNumber(selectedRadio.value);
+        lastSelected = selectedRadio;
+    }
+  }
+  
+  // TENTUKAN NOMINAL
+  function formatNumber(num) {
+    return num.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
+  
+  // PAYMENT METHOD
+  document.querySelectorAll('.payment-radio').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        // Pastikan hanya satu yang terpilih
+        if (this.checked) {
+            document.querySelectorAll('.payment-radio').forEach(function(otherRadio) {
+                if (otherRadio !== radio) {
+                    otherRadio.checked = false;
+                }
+            });         
+        }
+    });
+  });
+  
+  // TEXTAREA PRODUK
+  function tambahItem() {
+    // Ambil nilai produk, jumlah, dan satuan dari inputan
+    var produk = document.getElementById("produk1").value;
+    var jumlah = document.getElementById("jumlah1").value;
+    var satuan = document.getElementById("satuan1").value;
+  
+    // Periksa apakah produk, jumlah, dan satuan diisi
+    if (produk && jumlah && satuan) {
+        // Ambil textarea
+        var textarea = document.getElementById("donation-detail");
+  
+        // Format data yang ingin ditambahkan ke textarea
+        var newEntry = jumlah + " " + satuan + " : " + produk +  ", \n";
+        
+        // Tambahkan data ke dalam textarea
+        textarea.value += newEntry;
+  
+        // Kosongkan inputan produk, jumlah, dan satuan setelah menambah
+        document.getElementById("produk1").value = '';
+        document.getElementById("jumlah1").value = '';
+        document.getElementById("satuan1").value = 'pcs'; // Reset dropdown ke default
+  
+        // Set fokus kembali ke input produk
+        document.getElementById("produk1").focus();
+    } else {
+        alert("Silakan isi nama produk, jumlah, dan pilih satuan.");
+    }
+  }
+  
+  // RESET PRODUK
+  function resetForm() {
+    // Reset inputan produk, jumlah, satuan, dan textarea
+    document.getElementById("produk1").value = '';
+    document.getElementById("jumlah1").value = '';
+    document.getElementById("satuan1").value = 'pcs'; // Reset dropdown ke default
+    document.getElementById("donation-detail").value = ''; // Kosongkan textarea
+
+    alert("Produk Donasi berhasil dihapus!.");
+  }
+  
+  // Agar textarea bisa menyesuaikan ukurannya sesuai input
+  var textarea = document.getElementById("donation-detail");
+  textarea.addEventListener("input", function () {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  });
+  
+  // CONFIRMATION
+  function showConfirmation() {
+    const errorMessageContainer = document.getElementById('error-messages');
+    errorMessageContainer.innerHTML = '';
+  
+    const donorName = document.getElementById('donation-name').value;
+    // const donorEmail = document.getElementById('donation-email').value;
+    const donorTlp = document.getElementById('donation-tlp').value;
+    const nominalInput = document.getElementById('custom-nominal').value.replace(/\./g, ''); 
+    const donorDetail = document.getElementById('donation-detail').value;
+    const donorType = document.querySelector('input.donation-radio:checked')?.value;
+  
+    // VALUE VALIDATION
+    if (donorType === 'Produk' && donorDetail === '') {
+      errorMessageContainer.innerHTML += "<hr>Produk Donasi harus diisi !<br>";
+    } else {
+      errorMessageContainer.innerHTML += "";
+    }
+
+    if (donorType === 'Produk' && (nominalInput === '' || nominalInput === '0')) {
+      errorMessageContainer.innerHTML += "";
+    } else {
+      if (nominalInput === '') {
+        errorMessageContainer.innerHTML += "<hr>Nominal harus diisi !<br>";
+      } else if (isNaN(nominalInput) || parseInt(nominalInput) <= 0) {
+          errorMessageContainer.innerHTML += "<hr>Nominal tidak boleh bernilai 0 !<br>";
+      } 
+    }
+    
+  
+    // DONATION FORM VALIDATION
+    let message = '';
+  
+    if (!donorName) message += "<hr>Nama harus diisi !<br>";
+    // if (!donorEmail) message += "<hr>Email harus diisi !<br>";
+    if (!donorTlp) message += "<hr>Telepon harus diisi !<br>";
+    
+  
+    // EMAIL VALIDATION
+    // const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    
+    // if (donorEmail && !emailPattern.test(donorEmail)) {
+    //     message += "<hr>Penulisan Email salah! Contoh : email@email.com<br>";
+    // }
+  
+    if (errorMessageContainer.innerHTML || message) {
+        errorMessageContainer.innerHTML += message;
+        return; 
+    }
+  
+    const donationSection = document.getElementById('donation-section');
+    const confirmationSection = document.getElementById('confirmation-section');
+    const donationTitle = document.getElementById('donation-title');
+  
+    donationSection.style.display = 'none';
+    confirmationSection.style.display = 'block';
+    donationTitle.style.display = 'none';
+  
+  const fields = {
+      donationTipe : document.querySelector('input.donation-radio:checked')?.value,
+      donationAmount: nominalInput,
+      donorDetail: donorDetail,
+      donorName: donorName,
+      // donorEmail: donorEmail,
+  };
+
+ 
+    document.getElementById('donation-tipe').innerText = fields.donationTipe;
+    document.getElementById('donation-amount-display').innerText = formatNumber(fields.donationAmount);
+    document.getElementById('donation-detail-display').innerText = fields.donorDetail;
+    document.getElementById('donor-name').innerText = fields.donorName;
+    // document.getElementById('donor-email').innerText = fields.donorEmail;
+    document.getElementById('donor-tlp').innerText = donorTlp;
+  
+    togglePaymentMethod(document.querySelector('input[name="DonationPayment"]:checked').value);
+  }
+  
+  function goBack() {
+      window.location.href = 'donate.html';
+  }
+  
+  //COPY REKENING
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).catch(err => {
+        console.error("Gagal menyalin: ", err);
+    });
+    alert("Nomor rekening sudah disalin.");
+  }
+
+   //COPY ALAMAT
+   function copyToClipboard2(text) {
+    navigator.clipboard.writeText(text).catch(err => {
+        console.error("Gagal menyalin: ", err);
+    });
+    alert("Alamat sudah disalin.");
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('custom-nominal').addEventListener('input', function(e) {
+        const rawValue = e.target.value.replace(/\D/g, ''); 
+        e.target.value = formatNumber(rawValue);
+    });
+  });
+  
+  // FORMAT NUMBER
+  function formatNumber(num) {
+    return num.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
+  
+  function submitConfirmation() {
+      
+    const donationType = document.querySelector('input.donation-radio:checked')?.value;
+    const nominalInput = document.getElementById('custom-nominal').value.replace(/\./g, '') || lastSelected?.value || '0';
+    const donorDetail = document.getElementById('donation-detail').value;
+    const donorName = document.getElementById('donation-name').value;
+    // const donorEmail = document.getElementById('donation-email').value;
+    const donorTlp = document.getElementById('donation-tlp').value;
+    const paymentMethod = document.querySelector('input.payment-radio:checked')?.value;
+    const donorNote = document.getElementById('donation-note').value;
+
+    if (nominalInput.value === '') {
+      nominalInput.value = '0';
+    }
+    
+    // URL GOOGLE FORM
+    const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSetZq-Q-6W6oAn4yGgYios1RpLhKoigYtV7_Jbv7Zz-tUXijw/formResponse';
+  
+    // PARAMETER
+    const params = new URLSearchParams();
+    params.append('entry.1274723429', donorName); // ID ENTRY FOR NAME
+    // params.append('entry.1711964533', donorEmail); // ID ENTRI FOR EMAIL
+    params.append('entry.1479109352', donorTlp); // ID ENTRY FOR NUMBER OR WHATSAPP
+    params.append('entry.1705412345', nominalInput); // ID ENTRY FOR VALUE
+    params.append('entry.1526120968', donorDetail); // ID ENTRY FOR PRODUK
+    params.append('entry.1082800990', paymentMethod); // ID ENTRY FOR PAYMENT
+    params.append('entry.573797881', donationType); // ID ENTRY FOR KIND OF DONATION
+    params.append('entry.1469710524', donorNote); // ID ENTRY FOR NOTE
+   
+    // FETCH SEND
+    fetch(googleFormURL, {
+        method: 'POST',
+        body: params,
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    });
+  
+    setTimeout(() => {
+        window.location.href = 'donate-upload.html';
+    }, 500); 
+    return true; 
+  }
+  
+  function upload() {
+    document.getElementById('loading').style.display = 'inline-block'; 
+    setTimeout(() => {
+        document.getElementById('loading').style.display = 'none'; 
+        alert('Terjadi kesalahan saat mengunggah file! Anda akan dialihkan ke halaman GoogleForms untuk mengunggah Bukti Transfer Anda. Mohon maaf atas ketidaknyamanan ini & terima kasih.'); 
+    }, 2000);
+  
+    setTimeout(() => {
+      window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdyxLaJ9MUj3tRiBGPDcS5hR7ldlmXPC-Bnt7TEnTfTsHZD_Q/viewform'; 
+    }, 5000);  
+  }  

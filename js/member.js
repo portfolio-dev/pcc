@@ -1,1 +1,120 @@
-const _0x19b557=_0x54bc;(function(_0x1ece6e,_0x2c4a73){const _0x3e316b=_0x54bc,_0x38c546=_0x1ece6e();while(!![]){try{const _0x2579cf=parseInt(_0x3e316b(0xb2))/0x1+parseInt(_0x3e316b(0xc1))/0x2+parseInt(_0x3e316b(0xa8))/0x3+-parseInt(_0x3e316b(0xc0))/0x4*(parseInt(_0x3e316b(0x99))/0x5)+parseInt(_0x3e316b(0x93))/0x6+parseInt(_0x3e316b(0xbd))/0x7*(parseInt(_0x3e316b(0xb4))/0x8)+parseInt(_0x3e316b(0xb3))/0x9*(-parseInt(_0x3e316b(0xaa))/0xa);if(_0x2579cf===_0x2c4a73)break;else _0x38c546['push'](_0x38c546['shift']());}catch(_0x155284){_0x38c546['push'](_0x38c546['shift']());}}}(_0x5269,0x60662));function goOut(){const _0x15b3b8=_0x54bc;sessionStorage[_0x15b3b8(0xa7)](_0x15b3b8(0xc2)),window[_0x15b3b8(0xbb)][_0x15b3b8(0xa2)]=_0x15b3b8(0xb6);}const users=[{'whatsapp':_0x19b557(0xa5),'password':_0x19b557(0x9a),'redirectUrl':_0x19b557(0x95)},{'whatsapp':'085870842284','password':_0x19b557(0xa3),'redirectUrl':_0x19b557(0xa4)},{'whatsapp':'0895409370307','password':_0x19b557(0xa3),'redirectUrl':_0x19b557(0x91)},{'whatsapp':_0x19b557(0xb1),'password':'123456','redirectUrl':'user/amanda-dwi-ayu-saputri.html'},{'whatsapp':_0x19b557(0xba),'password':_0x19b557(0xa3),'redirectUrl':_0x19b557(0xb5)},{'whatsapp':_0x19b557(0xac),'password':_0x19b557(0xa3),'redirectUrl':_0x19b557(0xab)},{'whatsapp':_0x19b557(0xaf),'password':_0x19b557(0xa3),'redirectUrl':_0x19b557(0xc6)},{'whatsapp':_0x19b557(0xae),'password':_0x19b557(0xc3),'redirectUrl':_0x19b557(0x9d)}];function validateLogin(_0x167ea7){const _0x3c8849=_0x19b557;_0x167ea7[_0x3c8849(0x92)]();const _0x12fd41=document[_0x3c8849(0x9e)](_0x3c8849(0xb0))[_0x3c8849(0xb8)],_0x257d0a=document[_0x3c8849(0x9e)]('member-code')[_0x3c8849(0xb8)],_0x580e7b=users[_0x3c8849(0x90)](_0x54748a=>_0x54748a[_0x3c8849(0x94)]===_0x12fd41&&_0x54748a[_0x3c8849(0xc4)]===_0x257d0a);_0x580e7b?(sessionStorage[_0x3c8849(0xb9)](_0x3c8849(0xc2),_0x3c8849(0xbc)),window[_0x3c8849(0xbb)][_0x3c8849(0xa2)]=_0x580e7b[_0x3c8849(0xad)]):alert(_0x3c8849(0x96));}const togglePassword=document[_0x19b557(0x9e)](_0x19b557(0x8f)),passwordField=document[_0x19b557(0x9e)](_0x19b557(0xbf));togglePassword[_0x19b557(0x8d)]('click',function(){const _0x215159=_0x19b557,_0x50fa9e=passwordField[_0x215159(0x9b)]==='password'?_0x215159(0x9f):'password';passwordField[_0x215159(0x9b)]=_0x50fa9e,this['classList'][_0x215159(0xa0)]('bi-eye'),this[_0x215159(0x8e)]['toggle'](_0x215159(0x97));});function showPopupResend(){const _0x34ecf0=_0x19b557;document[_0x34ecf0(0x9e)](_0x34ecf0(0xa6))[_0x34ecf0(0x9c)][_0x34ecf0(0xa1)]=_0x34ecf0(0x98);}function _0x5269(){const _0x349d85=['preventDefault','3222666FQsEjW','whatsapp','user/ema-rosyadi.html','Nomor\x20WhatsApp\x20atau\x20password\x20salah.\x20Silakan\x20coba\x20lagi.','bi-eye-fill','flex','55mhEcdq','Abc123','type','style','user/ummu-hanifa.html','getElementById','text','toggle','display','href','123456','user/irma-tri-wulandari.html','082132936477','popup','removeItem','183168BTUDgk','popup-code','340070DGBCTv','user/prakoso-pribadi.html','085647577776','redirectUrl','08985339857','085757587421','parent-telepon','085879379589','386070hsosmY','261WSyidE','64ZIbZjE','user/retno-putriningsih.html','/login-anggota.html','Kode\x20masuk\x20akan\x20dikirimkan\x20ke\x20Nomor\x20Whatsapp\x20Anda!','value','setItem','085180960911','location','true','378112fCXBCq','none','member-code','172868vbeiGI','880150rbmoSU','isLoggedIn','123124','password','login-anggota.html','user/sumarni.html','addEventListener','classList','togglePassword','find','user/weni-nur-khasanah.html'];_0x5269=function(){return _0x349d85;};return _0x5269();}function closePopupResend(){const _0x4f640d=_0x19b557;document[_0x4f640d(0x9e)](_0x4f640d(0xa6))['style'][_0x4f640d(0xa1)]=_0x4f640d(0xbe);}function showCodeResend(){const _0x2ca761=_0x19b557;document['getElementById']('popup-code')[_0x2ca761(0x9c)]['display']=_0x2ca761(0x98);}function closeCodeResend(){const _0x21fefe=_0x19b557;document[_0x21fefe(0x9e)](_0x21fefe(0xa9))[_0x21fefe(0x9c)][_0x21fefe(0xa1)]=_0x21fefe(0xbe);}function codeChangedResend(){const _0x29051a=_0x19b557;window[_0x29051a(0xbb)][_0x29051a(0xa2)]=_0x29051a(0xc5);}function _0x54bc(_0x3c90f9,_0x4c7f69){const _0x526984=_0x5269();return _0x54bc=function(_0x54bcbd,_0x4c764a){_0x54bcbd=_0x54bcbd-0x8d;let _0x5910fb=_0x526984[_0x54bcbd];return _0x5910fb;},_0x54bc(_0x3c90f9,_0x4c7f69);}function submitForm(){const _0x3a928d=_0x19b557;return alert(_0x3a928d(0xb7)),!![];}
+function goOut() {
+    // Menghapus status login dari sessionStorage
+    sessionStorage.removeItem('isLoggedIn');
+    window.location.href = '/login-anggota.html'; // Arahkan ke halaman login setelah log out
+}
+
+// Array data login yang berisi nomor WhatsApp dan password acak
+const users = [
+    {
+        whatsapp: '082132936477', 
+        password: 'Abc123',      
+        redirectUrl: 'user/ema-rosyadi.html' 
+    },
+    {
+        whatsapp: '085870842284', 
+        password: '123456',     
+        redirectUrl: 'user/irma-tri-wulandari.html' 
+    },
+    {
+        whatsapp: '0895409370307', 
+        password: '123456',     
+        redirectUrl: 'user/weni-nur-khasanah.html' 
+    },
+    {
+        whatsapp: '085879379589',
+        password: '123456',     
+        redirectUrl: 'user/amanda-dwi-ayu-saputri.html' 
+    },
+    {
+        whatsapp: '085180960911', 
+        password: '123456',     
+        redirectUrl: 'user/retno-putriningsih.html' 
+    },
+    {
+        whatsapp: '085647577776',
+        password: '123456',     
+        redirectUrl: 'user/prakoso-pribadi.html' 
+    },
+    {
+        whatsapp: '085757587421', 
+        password: '123456',     
+        redirectUrl: 'user/sumarni.html' 
+    },
+    {
+        whatsapp: '08985339857', 
+        password: '123124',     
+        redirectUrl: 'user/ummu-hanifa.html' 
+    }
+    
+    // Tambahkan lebih banyak data anggota di sini jika perlu
+];
+
+// Fungsi untuk memvalidasi login
+function validateLogin(event) {
+    event.preventDefault(); // Mencegah form dari refresh halaman
+
+    // Ambil nilai input dari form
+    const whatsappInput = document.getElementById('parent-telepon').value;
+    const passwordInput = document.getElementById('member-code').value;
+
+    // Periksa apakah data login valid
+    const user = users.find(u => u.whatsapp === whatsappInput && u.password === passwordInput);
+
+    if (user) {
+        // Simpan status login ke sessionStorage
+        sessionStorage.setItem('isLoggedIn', 'true');
+
+        // Jika login berhasil, arahkan ke halaman yang sesuai dengan anggota
+        window.location.href = user.redirectUrl; // Menggunakan URL yang sudah ditentukan pada anggota
+    } else {
+        // Jika login gagal, beri tahu pengguna
+        alert('Nomor WhatsApp atau password salah. Silakan coba lagi.');
+    }
+}
+
+// Menambahkan event listener untuk tombol show/hide password
+const togglePassword = document.getElementById('togglePassword');
+const passwordField = document.getElementById('member-code');
+
+togglePassword.addEventListener('click', function() {
+    // Men-toggle tipe password antara 'text' dan 'password'
+    const type = passwordField.type === 'password' ? 'text' : 'password';
+    passwordField.type = type;
+    
+    // Menambahkan/menghapus ikon eye-fill (open/close)
+    this.classList.toggle('bi-eye');
+    this.classList.toggle('bi-eye-fill');
+});
+
+//MINTA ULANG KODE MASUK
+// Menampilkan pop-up verifikasi
+function showPopupResend() {
+    document.getElementById("popup").style.display = "flex";
+}
+
+// Menutup pop-up
+function closePopupResend() {
+    document.getElementById("popup").style.display = "none";
+}
+
+// Menampilkan pop-up kode akses
+function showCodeResend() {
+    document.getElementById("popup-code").style.display = "flex";
+}
+
+// Menutup pop-up
+function closeCodeResend() {
+    document.getElementById("popup-code").style.display = "none";
+}           
+            
+
+// Fungsi ini untuk mengalihkan setelah form berhasil disubmit (untuk Google Form)
+function codeChangedResend() {
+    window.location.href = "login-anggota.html"; // Ganti dengan halaman yang diinginkan
+}
+
+function submitForm() {
+    alert('Kode masuk akan dikirimkan ke Nomor Whatsapp Anda!');
+    return true; // Izinkan form untuk disubmit
+}

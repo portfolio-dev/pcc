@@ -1,1 +1,64 @@
-function _0x1a30(_0x2d095b,_0x499a72){var _0x12c133=_0x12c1();return _0x1a30=function(_0x1a30cf,_0x590247){_0x1a30cf=_0x1a30cf-0x8f;var _0x122304=_0x12c133[_0x1a30cf];return _0x122304;},_0x1a30(_0x2d095b,_0x499a72);}(function(_0x1233d2,_0x41049e){var _0xe9150c=_0x1a30,_0x3d3687=_0x1233d2();while(!![]){try{var _0x1db2ff=parseInt(_0xe9150c(0x9a))/0x1*(parseInt(_0xe9150c(0xa7))/0x2)+-parseInt(_0xe9150c(0xac))/0x3+-parseInt(_0xe9150c(0xa5))/0x4*(-parseInt(_0xe9150c(0xaf))/0x5)+parseInt(_0xe9150c(0xa3))/0x6*(parseInt(_0xe9150c(0xa1))/0x7)+parseInt(_0xe9150c(0x97))/0x8+-parseInt(_0xe9150c(0x93))/0x9+parseInt(_0xe9150c(0xa0))/0xa*(parseInt(_0xe9150c(0xa6))/0xb);if(_0x1db2ff===_0x41049e)break;else _0x3d3687['push'](_0x3d3687['shift']());}catch(_0x384bc6){_0x3d3687['push'](_0x3d3687['shift']());}}}(_0x12c1,0x87623));function _0x12c1(){var _0x4850f9=['1891415ZiAPvT','\x20jam\x20','getElementById','getTime','getItem','5601402LQDgSi','Error\x20fetching\x20server\x20time:','\x20detik','<b>Sisa\x20Waktu</b><br>','7485640VdWsbA','targetDate','error','377IMXttE','floor','then','countdown-ancol-charity-trip-2024','<b>Agenda\x20telah\x20selesai</b><br>0\x20hari\x200\x20jam\x200\x20menit\x200\x20detik','\x20hari\x20','752670HMMKyl','8869Kafcjj','2024-12-10T00:00:00Z','186xiFiMX','https://worldtimeapi.org/api/timezone/Asia/Jakarta','4VPnHBu','66uEmnxx','2306eqNreH','2025-02-15T00:00:00Z','catch','setItem','forEach','3187917nxXVwz','json','datetime'];_0x12c1=function(){return _0x4850f9;};return _0x12c1();}function setTargetDateFromAPI(_0x173f03,_0x59b701){var _0x2c44c6=_0x1a30;fetch(_0x2c44c6(0xa4))[_0x2c44c6(0x9c)](_0x18f171=>_0x18f171[_0x2c44c6(0xad)]())[_0x2c44c6(0x9c)](_0x14e2d5=>{var _0x1cf05e=_0x2c44c6;const _0x4bc61d=new Date(_0x14e2d5[_0x1cf05e(0xae)]),_0x2159be=new Date(_0x59b701);localStorage[_0x1cf05e(0xaa)](_0x173f03,_0x2159be[_0x1cf05e(0x91)]()),startCountdown(_0x173f03,_0x2159be);})[_0x2c44c6(0xa9)](_0xfaea7a=>{var _0xbbedf3=_0x2c44c6;console[_0xbbedf3(0x99)](_0xbbedf3(0x94),_0xfaea7a);});}function startCountdown(_0x124927,_0x30b9ad){function _0x3686c1(){var _0x1ce304=_0x1a30,_0x16037d=new Date(),_0x8e0aa6=_0x30b9ad-_0x16037d;if(_0x8e0aa6<0x0)document[_0x1ce304(0x90)](_0x124927)['innerHTML']=_0x1ce304(0x9e),clearInterval(_0x474f2e);else{var _0x29b05b=Math[_0x1ce304(0x9b)](_0x8e0aa6/(0x3e8*0x3c*0x3c*0x18)),_0x85151c=Math[_0x1ce304(0x9b)](_0x8e0aa6%(0x3e8*0x3c*0x3c*0x18)/(0x3e8*0x3c*0x3c)),_0x1332f7=Math['floor'](_0x8e0aa6%(0x3e8*0x3c*0x3c)/(0x3e8*0x3c)),_0x4fc78c=Math['floor'](_0x8e0aa6%(0x3e8*0x3c)/0x3e8);document[_0x1ce304(0x90)](_0x124927)['innerHTML']=_0x1ce304(0x96)+_0x29b05b+_0x1ce304(0x9f)+_0x85151c+_0x1ce304(0x8f)+_0x1332f7+'\x20menit\x20'+_0x4fc78c+_0x1ce304(0x95);}}var _0x474f2e=setInterval(_0x3686c1,0x3e8);_0x3686c1();}function initializeCountdowns(){var _0x428b36=_0x1a30,_0x50d20c=[{'id':_0x428b36(0x9d),'targetDate':_0x428b36(0xa2)},{'id':'countdown-bandung-charity-trip-2025','targetDate':_0x428b36(0xa8)},{'id':'countdown-solo-charity-trip-2025','targetDate':'2025-02-14T00:00:00Z'}];_0x50d20c[_0x428b36(0xab)](function(_0xbd4840){var _0x54edc0=_0x428b36,_0x43c78c=localStorage[_0x54edc0(0x92)](_0xbd4840['id']);!_0x43c78c?setTargetDateFromAPI(_0xbd4840['id'],_0xbd4840[_0x54edc0(0x98)]):(_0x43c78c=new Date(parseInt(_0x43c78c)),startCountdown(_0xbd4840['id'],_0x43c78c));});}initializeCountdowns();
+// Fungsi untuk mengatur dan memulai countdown berdasarkan target tanggal yang diinginkan
+function setTargetDateFromAPI(targetId, targetDateString) {
+    fetch('https://worldtimeapi.org/api/timezone/Asia/Jakarta')
+        .then(response => response.json())
+        .then(data => {
+            const serverTime = new Date(data.datetime);
+
+            // Mengatur target tanggal sesuai dengan yang diinginkan, misalnya 25 Desember 2024
+            const targetDate = new Date(targetDateString);
+
+            localStorage.setItem(targetId, targetDate.getTime());
+            startCountdown(targetId, targetDate);
+        })
+        .catch(error => {
+            console.error("Error fetching server time:", error);
+        });
+}
+
+// Fungsi untuk memulai countdown dan memperbarui elemen HTML
+function startCountdown(targetId, targetDate) {
+    function updateCountdown() {
+        var now = new Date();
+        var distance = targetDate - now;
+
+        if (distance < 0) {
+            document.getElementById(targetId).innerHTML = "<b>Agenda telah selesai</b><br>0 hari 0 jam 0 menit 0 detik";
+            clearInterval(interval);
+        } else {
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById(targetId).innerHTML =
+                "<b>Sisa Waktu</b><br>" + days + " hari " + hours + " jam " + minutes + " menit " + seconds + " detik";
+        }
+    }
+
+    var interval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+}
+
+// Fungsi untuk memulai countdown untuk masing-masing target
+function initializeCountdowns() {
+    var countdownElements = [
+        { id: "countdown-ancol-charity-trip-2024", targetDate: "2024-12-10T00:00:00Z" },
+        { id: "countdown-bandung-charity-trip-2025", targetDate: "2025-02-15T00:00:00Z" },
+        { id: "countdown-solo-charity-trip-2025", targetDate: "2025-02-14T00:00:00Z" }        
+    ];
+
+    countdownElements.forEach(function(element) {
+        var targetDate = localStorage.getItem(element.id);
+
+        if (!targetDate) {
+            setTargetDateFromAPI(element.id, element.targetDate);
+        } else {
+            targetDate = new Date(parseInt(targetDate));
+            startCountdown(element.id, targetDate);
+        }
+    });
+}
+
+// Panggil fungsi untuk memulai countdown untuk semua elemen
+initializeCountdowns();

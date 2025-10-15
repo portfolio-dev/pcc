@@ -1,1 +1,183 @@
-const _0x465f68=_0x16fb;(function(_0xe1ba67,_0x338775){const _0x16bb1a=_0x16fb,_0x70254e=_0xe1ba67();while(!![]){try{const _0x3bc10b=-parseInt(_0x16bb1a(0xe5))/0x1*(-parseInt(_0x16bb1a(0xaf))/0x2)+-parseInt(_0x16bb1a(0xc3))/0x3*(-parseInt(_0x16bb1a(0xd8))/0x4)+-parseInt(_0x16bb1a(0xd5))/0x5+-parseInt(_0x16bb1a(0xc6))/0x6*(-parseInt(_0x16bb1a(0xa8))/0x7)+parseInt(_0x16bb1a(0xeb))/0x8+parseInt(_0x16bb1a(0xc0))/0x9*(-parseInt(_0x16bb1a(0xe1))/0xa)+-parseInt(_0x16bb1a(0xcf))/0xb;if(_0x3bc10b===_0x338775)break;else _0x70254e['push'](_0x70254e['shift']());}catch(_0xd04f06){_0x70254e['push'](_0x70254e['shift']());}}}(_0x326a,0xd9994),document[_0x465f68(0xa1)](_0x465f68(0xe3),function(){const _0x3ee6ad=_0x465f68,_0x32be1d=document['getElementById'](_0x3ee6ad(0xb5)),_0x3cccc6=document[_0x3ee6ad(0xa6)]('link-profil'),_0x1997ca=document[_0x3ee6ad(0xa6)](_0x3ee6ad(0x9f)),_0x10c2dd=document[_0x3ee6ad(0xa6)](_0x3ee6ad(0xbb));_0x32be1d&&_0x3cccc6&&_0x10c2dd&&(_0x32be1d[_0x3ee6ad(0xa1)](_0x3ee6ad(0xd2),function(){const _0x3475de=_0x3ee6ad;_0x79b624(_0x3475de(0x98));}),_0x3cccc6['addEventListener']('click',function(){const _0x1531c6=_0x3ee6ad;_0x79b624(_0x1531c6(0xe4));}),_0x1997ca[_0x3ee6ad(0xa1)](_0x3ee6ad(0xd2),function(){const _0x11b7f1=_0x3ee6ad;_0x79b624(_0x11b7f1(0xd1));}),_0x10c2dd[_0x3ee6ad(0xa1)](_0x3ee6ad(0xd2),function(){const _0x50a40c=_0x3ee6ad;_0x79b624(_0x50a40c(0xa0));}));function _0x79b624(_0x2adf72){const _0x13381e=_0x3ee6ad,_0x28a155=[_0x13381e(0x98),_0x13381e(0xe4),_0x13381e(0xd1),'kampanye-member'];_0x28a155[_0x13381e(0xad)](function(_0x4bc878){const _0x74962e=_0x13381e,_0x245c82=document[_0x74962e(0xa6)](_0x4bc878);_0x4bc878===_0x2adf72?_0x245c82[_0x74962e(0xe8)][_0x74962e(0xa7)]=_0x74962e(0xd7):_0x245c82['style'][_0x74962e(0xa7)]=_0x74962e(0xdb);});}}));function showPopup(){const _0x461bca=_0x465f68;document[_0x461bca(0xa6)]('popup')[_0x461bca(0xe8)][_0x461bca(0xa7)]=_0x461bca(0xea);}function closePopup(){const _0x2e9e8f=_0x465f68;document['getElementById'](_0x2e9e8f(0xd9))[_0x2e9e8f(0xe8)][_0x2e9e8f(0xa7)]=_0x2e9e8f(0xdb);}function showCode(){const _0x33938e=_0x465f68;document[_0x33938e(0xa6)](_0x33938e(0x9d))[_0x33938e(0xe8)][_0x33938e(0xa7)]=_0x33938e(0xea);}function _0x16fb(_0x150cca,_0x5ea36e){const _0x326ac9=_0x326a();return _0x16fb=function(_0x16fb0d,_0x1bf8b6){_0x16fb0d=_0x16fb0d-0x98;let _0x9819cf=_0x326ac9[_0x16fb0d];return _0x9819cf;},_0x16fb(_0x150cca,_0x5ea36e);}function closeCode(){const _0x416a6a=_0x465f68;document[_0x416a6a(0xa6)]('popup-code')[_0x416a6a(0xe8)][_0x416a6a(0xa7)]=_0x416a6a(0xdb);}const todoForm=document['getElementById'](_0x465f68(0xa2)),todoInput=document[_0x465f68(0xa6)](_0x465f68(0xe9)),todoList=document['getElementById'](_0x465f68(0xb6));function addTodoToDOM(_0x5c2ffd,_0x374d6e='Pribadi',_0x45a3e2='',_0xd80a5f=![]){const _0x1d9243=_0x465f68,_0x48a4a5=document[_0x1d9243(0xe6)]('li');_0x48a4a5[_0x1d9243(0xd3)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20<span><hr><br>'+_0x5c2ffd+_0x1d9243(0xb0)+_0x374d6e+_0x1d9243(0xc4)+(_0x45a3e2?'⏰\x20'+_0x45a3e2:'')+_0x1d9243(0x9a);_0xd80a5f&&_0x48a4a5[_0x1d9243(0xdc)][_0x1d9243(0xc2)](_0x1d9243(0xd0));const _0x1e33c3=document[_0x1d9243(0xe6)](_0x1d9243(0xb8));_0x1e33c3['textContent']=_0x1d9243(0xac),_0x1e33c3[_0x1d9243(0xa1)](_0x1d9243(0xd2),function(){_0x48a4a5['classList']['toggle']('completed'),saveTodos();}),_0x1e33c3[_0x1d9243(0xe8)]['marginRight']=_0x1d9243(0xaa),_0x1e33c3[_0x1d9243(0xe8)]['marginTop']=_0x1d9243(0xde),_0x1e33c3[_0x1d9243(0xe8)][_0x1d9243(0xca)]='blue',_0x1e33c3[_0x1d9243(0xe8)][_0x1d9243(0xa5)]='white',_0x1e33c3[_0x1d9243(0xe8)][_0x1d9243(0xab)]=_0x1d9243(0xdb),_0x1e33c3[_0x1d9243(0xe8)][_0x1d9243(0xd4)]='5px\x2010px',_0x1e33c3[_0x1d9243(0xe8)][_0x1d9243(0xa4)]=_0x1d9243(0xc8);const _0x15ee44=document['createElement'](_0x1d9243(0xb8));_0x15ee44[_0x1d9243(0xcb)]=_0x1d9243(0xce),_0x15ee44[_0x1d9243(0xa1)](_0x1d9243(0xd2),function(){const _0x3d8677=_0x1d9243;_0x48a4a5[_0x3d8677(0xb4)](),saveTodos();}),_0x15ee44[_0x1d9243(0xe8)][_0x1d9243(0xc7)]=_0x1d9243(0xde),_0x15ee44[_0x1d9243(0xe8)][_0x1d9243(0xb3)]=_0x1d9243(0xaa),_0x48a4a5[_0x1d9243(0xc5)](_0x1e33c3),_0x48a4a5[_0x1d9243(0xc5)](_0x15ee44),todoList[_0x1d9243(0xc5)](_0x48a4a5);}function saveTodos(){const _0x971dbf=_0x465f68,_0x352461=[];document[_0x971dbf(0xcc)](_0x971dbf(0xe2))[_0x971dbf(0xad)](_0x3571aa=>{const _0x29a886=_0x971dbf,_0xbdc3c9=_0x3571aa[_0x29a886(0xdf)](_0x29a886(0xd6))[_0x29a886(0xcb)]['trim'](),_0xb04b78=_0x3571aa['querySelector'](_0x29a886(0x9c))['textContent'][_0x29a886(0xa9)](/[()]/g,'')[_0x29a886(0xa3)](),_0x42435a=_0x3571aa[_0x29a886(0xdf)](_0x29a886(0xb7))?.[_0x29a886(0xcb)][_0x29a886(0xa9)]('⏰','')[_0x29a886(0xa3)]()||'';_0x352461[_0x29a886(0xe0)]({'text':_0xbdc3c9,'category':_0xb04b78,'dueDate':_0x42435a,'completed':_0x3571aa[_0x29a886(0xdc)][_0x29a886(0xbf)]('completed')});}),localStorage[_0x971dbf(0xcd)](_0x971dbf(0xba),JSON['stringify'](_0x352461));}function loadTodos(){const _0x32405d=_0x465f68,_0x43070f=JSON[_0x32405d(0xc9)](localStorage['getItem'](_0x32405d(0xba)))||[];_0x43070f[_0x32405d(0xad)](_0xa28d30=>addTodoToDOM(_0xa28d30[_0x32405d(0xdd)],_0xa28d30[_0x32405d(0xda)],_0xa28d30[_0x32405d(0xbd)],_0xa28d30[_0x32405d(0xd0)]));}todoForm[_0x465f68(0xa1)](_0x465f68(0x9b),function(_0x51dd75){const _0x25245d=_0x465f68;_0x51dd75[_0x25245d(0xbc)]();const _0x401f88=todoInput[_0x25245d(0xbe)][_0x25245d(0xa3)](),_0x538011=document['getElementById'](_0x25245d(0xb1))['value'],_0x2b38ed=document[_0x25245d(0xa6)](_0x25245d(0xb2))[_0x25245d(0xbe)];_0x401f88&&(addTodoToDOM(_0x401f88,_0x538011,_0x2b38ed),saveTodos(),todoInput[_0x25245d(0xbe)]='',document[_0x25245d(0xa6)]('patient-born')[_0x25245d(0xbe)]='');});const searchInput=document[_0x465f68(0xa6)](_0x465f68(0xb9));searchInput['addEventListener'](_0x465f68(0xae),function(){const _0xf070e8=_0x465f68,_0x9f7cba=searchInput[_0xf070e8(0xbe)][_0xf070e8(0xc1)]();document[_0xf070e8(0xcc)](_0xf070e8(0xe2))[_0xf070e8(0xad)](_0x524e00=>{const _0x2a3fea=_0xf070e8,_0x188c6f=_0x524e00[_0x2a3fea(0xcb)][_0x2a3fea(0xa9)](_0x2a3fea(0xce),'')[_0x2a3fea(0xa3)]()[_0x2a3fea(0xc1)]();_0x524e00['style']['display']=_0x188c6f[_0x2a3fea(0x9e)](_0x9f7cba)?'flex':'none';});});function sortTodosByDate(){const _0x1897d3=_0x465f68,_0x494af7=Array[_0x1897d3(0xe7)](document[_0x1897d3(0xcc)](_0x1897d3(0xe2)));_0x494af7[_0x1897d3(0x99)]((_0x443cf7,_0x1ace6a)=>{const _0x350a89=_0x1897d3,_0x2f454e=new Date(_0x443cf7[_0x350a89(0xdf)](_0x350a89(0xb7))?.[_0x350a89(0xcb)]['replace']('⏰','')[_0x350a89(0xa3)]()||''),_0xffd33f=new Date(_0x1ace6a['querySelector']('.due-date')?.['textContent'][_0x350a89(0xa9)]('⏰','')['trim']()||'');return _0x2f454e-_0xffd33f;}),_0x494af7[_0x1897d3(0xad)](_0x1b3f00=>todoList[_0x1897d3(0xc5)](_0x1b3f00));}loadTodos(),sortTodosByDate();function _0x326a(){const _0x4fef7f=['querySelectorAll','setItem','Hapus','12962048IXJrxd','completed','tugas-member','click','innerHTML','padding','2836870TwAYXg','span','block','220aJKhvv','popup','category','none','classList','text','5px','querySelector','push','6706120kaaEEn','#todoList\x20li','DOMContentLoaded','profil-member','34pXgRVv','createElement','from','style','todoInput','flex','7580872LOfJLS','beranda-member','sort','<br><br></span>\x0a\x20\x20\x20\x20','submit','.category','popup-code','includes','link-tugas','kampanye-member','addEventListener','todoForm','trim','cursor','color','getElementById','display','49sdNhlw','replace','10px','border','Tugas\x20Selesai','forEach','input','24292bAPFye','</span><br><br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22category\x22>(','categorySelect','patient-born','marginLeft','remove','link-beranda','todoList','.due-date','button','searchInput','todos','link-kampanye','preventDefault','dueDate','value','contains','18kaZAgD','toLowerCase','add','52251Yjjmli',')</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22due-date\x22>','appendChild','1422636DELQbM','marginTop','pointer','parse','backgroundColor','textContent'];_0x326a=function(){return _0x4fef7f;};return _0x326a();}
+// MENU
+document.addEventListener('DOMContentLoaded', function () {
+    // Pastikan elemen sudah ada di halaman sebelum menambahkan event listener
+    const berandaLink = document.getElementById('link-beranda');
+    const profilLink = document.getElementById('link-profil');
+    const tugasLink = document.getElementById('link-tugas');
+    const kampanyeLink = document.getElementById('link-kampanye');
+
+    // Pastikan link ditemukan, lalu tambahkan event listener
+    if (berandaLink && profilLink && kampanyeLink) {
+        berandaLink.addEventListener('click', function () {
+            toggleView('beranda-member');
+        });
+
+        profilLink.addEventListener('click', function () {
+            toggleView('profil-member');
+        });
+
+        tugasLink.addEventListener('click', function () {
+            toggleView('tugas-member');
+        });
+
+        kampanyeLink.addEventListener('click', function () {
+            toggleView('kampanye-member');
+        });
+    }
+
+    // Fungsi untuk menampilkan dan menyembunyikan tampilan
+    function toggleView(viewId) {
+        const allViews = ['beranda-member', 'profil-member', 'tugas-member', 'kampanye-member'];
+        allViews.forEach(function (view) {
+            const viewElement = document.getElementById(view);
+            if (view === viewId) {
+                viewElement.style.display = 'block'; // Menampilkan tampilan yang dipilih
+            } else {
+                viewElement.style.display = 'none'; // Menyembunyikan tampilan lainnya
+            }
+        });
+    }
+});
+
+// VERIFIKASI PROFIL
+// Menampilkan pop-up verifikasi
+function showPopup() {
+    document.getElementById("popup").style.display = "flex";
+}
+
+// Menutup pop-up
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+// Menampilkan pop-up kode akses
+function showCode() {
+    document.getElementById("popup-code").style.display = "flex";
+}
+
+// Menutup pop-up
+function closeCode() {
+    document.getElementById("popup-code").style.display = "none";
+}
+
+// DAFTAR TUGAS
+// Mengambil elemen penting
+const todoForm = document.getElementById("todoForm");
+const todoInput = document.getElementById("todoInput");
+const todoList = document.getElementById("todoList");
+
+// Fungsi untuk menambahkan tugas ke DOM
+function addTodoToDOM(todoText, category = "Pribadi", dueDate = "", isCompleted = false) {
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+        <span><hr><br>${todoText}</span><br><br>
+        <span class="category">(${category})</span>
+        <span class="due-date">${dueDate ? `⏰ ${dueDate}` : ""}<br><br></span>
+    `;
+
+    if (isCompleted) {
+        li.classList.add("completed");
+    }
+
+    // Membuat tombol "Selesaikan"
+    const completeBtn = document.createElement("button");
+    completeBtn.textContent = "Tugas Selesai";
+    completeBtn.addEventListener("click", function () {
+        li.classList.toggle("completed");
+        saveTodos();
+    });
+
+    // Memberikan jarak dan warna biru pada tombol "Selesaikan"
+    completeBtn.style.marginRight = "10px";  // Jarak antar tombol
+    completeBtn.style.marginTop = "5px";     // Jarak vertikal
+    completeBtn.style.backgroundColor = "blue";  // Warna biru
+    completeBtn.style.color = "white";           // Warna teks putih
+    completeBtn.style.border = "none";           // Menghilangkan border default
+    completeBtn.style.padding = "5px 10px";      // Memberikan padding pada tombol
+    completeBtn.style.cursor = "pointer";        // Mengubah cursor saat hover
+
+    // Membuat tombol "Hapus"
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Hapus";
+    deleteBtn.addEventListener("click", function () {
+        li.remove();
+        saveTodos();
+    });
+
+    // Memberikan jarak pada tombol "Hapus"
+    deleteBtn.style.marginTop = "5px";       // Jarak vertikal
+    deleteBtn.style.marginLeft = "10px";     // Jarak ke kiri dari tombol "Selesaikan"
+
+    // Menambahkan tombol "Selesaikan" dan "Hapus" ke dalam li
+    li.appendChild(completeBtn);
+    li.appendChild(deleteBtn);
+
+    // Menambahkan li ke dalam todoList
+    todoList.appendChild(li);
+}
+
+
+
+
+// Fungsi untuk menyimpan tugas ke localStorage
+function saveTodos() {
+    const todos = [];
+    document.querySelectorAll("#todoList li").forEach(li => {
+        const text = li.querySelector("span").textContent.trim();
+        const category = li.querySelector(".category").textContent.replace(/[()]/g, "").trim();
+        const dueDate = li.querySelector(".due-date")?.textContent.replace("⏰", "").trim() || "";
+        todos.push({
+            text,
+            category,
+            dueDate,
+            completed: li.classList.contains("completed"),
+        });
+    });
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+// Fungsi untuk memuat tugas dari localStorage
+function loadTodos() {
+    const todos = JSON.parse(localStorage.getItem("todos")) || [];
+    todos.forEach(todo => addTodoToDOM(todo.text, todo.category, todo.dueDate, todo.completed));
+}
+
+// Event untuk menambahkan tugas baru
+todoForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const todoText = todoInput.value.trim();
+    const category = document.getElementById("categorySelect").value;
+    const dueDate = document.getElementById("patient-born").value;
+    if (todoText) {
+        addTodoToDOM(todoText, category, dueDate);
+        saveTodos();
+        todoInput.value = ""; // Reset input
+        document.getElementById("patient-born").value = ""; // Reset tanggal
+    }
+});
+
+// Untuk melakukan searching tugas
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", function() {
+    const searchValue = searchInput.value.toLowerCase();
+    document.querySelectorAll("#todoList li").forEach(li => {
+        const taskText = li.textContent.replace("Hapus", "").trim().toLowerCase();
+        li.style.display = taskText.includes(searchValue) ? "flex" : "none";
+    });
+});
+
+function sortTodosByDate() {
+    const todos = Array.from(document.querySelectorAll("#todoList li"));
+    todos.sort((a, b) => {
+        const dateA = new Date(a.querySelector(".due-date")?.textContent.replace("⏰", "").trim() || "");
+        const dateB = new Date(b.querySelector(".due-date")?.textContent.replace("⏰", "").trim() || "");
+        return dateA - dateB;
+    });
+    todos.forEach(todo => todoList.appendChild(todo)); // Atur ulang di DOM
+}
+
+// Memuat tugas saat halaman pertama kali dimuat
+loadTodos();
+sortTodosByDate();
