@@ -296,5 +296,31 @@
             });
         </script>
 
+        <script>
+            document.getElementById('volunteer-form').addEventListener('submit', function(e) {
+                e.preventDefault(); // Mencegah form dikirim secara normal
+
+                // Validasi reCAPTCHA
+                var recaptchaResponse = grecaptcha.getResponse();
+                if (recaptchaResponse.length === 0) {
+                    alert("Harap verifikasi bahwa Anda bukan robot.");
+                    return false;
+                }
+
+                const form = e.target;
+                const formData = new FormData(form);
+
+                // Kirim data di latar belakang
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors' // Mode ini penting untuk mengirim ke domain lain
+                });
+
+                // Langsung arahkan ke halaman sukses tanpa menunggu respons
+                window.location.href = '/kirim-registrasi.html';
+            });
+        </script>
+
     </body>
 </html>
