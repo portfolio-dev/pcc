@@ -120,13 +120,32 @@
         <main>         
 
             <section class="news-section section-padding">
-                <div class="container">
+                <div class="container" style="max-width: 500px;">
                     <div class="row">
-                        <div class="tags-block me-auto">
-                            <center>
-                            <img src="../images/news/solo-whd-2025/flyer-solo-raya-whd-2025.png" class="news-detail-image img-fluid" alt="" style="width: 450px; height: 500px;">
-                            </center>
-                            <br>
+                        <div id="flyerCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#flyerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#flyerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            </div>
+                            <div class="carousel-inner" style="border-radius: 15px;">
+                                <div class="carousel-item active">
+                                    <img src="../images/news/solo-whd-2025/flyer-solo-raya-whd-2025.png" class="d-block w-100" alt="Flyer Solo WHD 2025">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../images/news/solo-whd-2025/flyer2-solo-raya-whd-2025.png" class="d-block w-100" alt="Flyer Solo WHD 2025 Tambahan">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../images/news/solo-whd-2025/flyer3-solo-raya-whd-2025.png" class="d-block w-100" alt="Flyer Solo WHD 2025 Tambahan">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#flyerCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#flyerCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
 
 
