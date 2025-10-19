@@ -166,7 +166,7 @@
                             </p>
                             <hr>
                         
-                            <form id="volunteer-form" class="custom-form volunteer-form mb-5 mb-lg-0" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeOxsC8-Rj9CLXe9avEooworjQPjZcs_LF4LeoUfRaxP-ttvg/formResponse" method="post">
+                            <form id="volunteer-form" class="custom-form volunteer-form mb-5 mb-lg-0" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeOxsC8-Rj9CLXe9avEooworjQPjZcs_LF4LeoUfRaxP-ttvg/formResponse" method="post" target="hidden_iframe" onsubmit="return handleFormSubmit();">
                                 <h6 class="mb-4">Data Pasien Anak</h6>
                                 <div class="row">
                                     <div class="col-lg-3 col-6 form-check-group">
@@ -266,6 +266,7 @@
 
                                 <button type="submit" class="form-control">Daftar</button>
                             </form>
+                            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
                         </div>
 
                     </div>
@@ -314,29 +315,30 @@
         </script>
 
         <script>
-            const form = document.getElementById('volunteer-form');
-            form.addEventListener('submit', function(e) {
-                e.preventDefault(); // Mencegah pengiriman form standar
+            let formSubmitted = false;
 
-                // Validasi reCAPTCHA
-                var recaptchaResponse = grecaptcha.getResponse();
+            function handleFormSubmit() {
+                // 1. Validasi reCAPTCHA
+                const recaptchaResponse = grecaptcha.getResponse();
                 if (recaptchaResponse.length === 0) {
                     alert("Harap verifikasi bahwa Anda bukan robot.");
-                    return false;
+                    return false; // Menghentikan pengiriman formulir
                 }
 
-                const formData = new FormData(form);
+                // 2. Tandai bahwa formulir akan dikirim
+                formSubmitted = true;
 
-                // Kirim data di latar belakang
-                fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    mode: 'no-cors' // Mode ini penting untuk mengirim ke domain lain
-                });
+                // 3. Atur listener pada iframe untuk redirect setelah Google Form merespons
+                const hiddenIframe = document.getElementById('hidden_iframe');
+                hiddenIframe.onload = function() {
+                    if (formSubmitted) {
+                        window.location.href = '/kirim-registrasi.html';
+                    }
+                };
 
-                // Langsung arahkan ke halaman sukses tanpa menunggu respons
-                window.location.href = '/kirim-registrasi.html';
-            });
+                // 4. Izinkan pengiriman formulir secara normal ke target iframe
+                return true;
+            }
         </script>
 
     </body>
