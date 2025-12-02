@@ -1,57 +1,66 @@
 
 (function ($) {
-  
+
   "use strict";
 
-    // COUNTER NUMBERS
-    jQuery('.counter-thumb').appear(function() {
-      jQuery('.counter-number').countTo();
-    });
-    
-    // CUSTOM LINK
-    $('.smoothscroll').click(function(){
+  // COUNTER NUMBERS
+  jQuery('.counter-thumb').appear(function () {
+    jQuery('.counter-number').countTo();
+  });
+
+  // CUSTOM LINK
+  $('.smoothscroll').click(function () {
     var el = $(this).attr('href');
     var elWrapped = $(el);
     var header_height = $('.navbar').height();
 
-    scrollToDiv(elWrapped,header_height);
+    scrollToDiv(elWrapped, header_height);
     return false;
 
-    function scrollToDiv(element,navheight){
+    function scrollToDiv(element, navheight) {
       var offset = element.offset();
       var offsetTop = offset.top;
-      var totalScroll = offsetTop-navheight;
+      var totalScroll = offsetTop - navheight;
 
       $('body,html').animate({
-      scrollTop: totalScroll
+        scrollTop: totalScroll
       }, 300);
     }
-});
-    
-  })(window.jQuery);
+  });
+
+})(window.jQuery);
 
 
 // NO COPPY OR DOWNLOAD
-document.addEventListener('contextmenu', function(e) {
+document.addEventListener('contextmenu', function (e) {
   e.preventDefault();
+});
+
+// BLOCK CTRL+U (View Source)
+document.addEventListener('keydown', function (e) {
+  // Block Ctrl+U and Ctrl+Shift+U
+  if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U')) {
+    e.preventDefault();
+    return false;
+  }
 });
 
 //DELETE .html
 if (window.location.pathname.endsWith('.html')) {
-	var hash = window.location.hash;
-	var newUrl = window.location.pathname.replace('.html', '');
-	newUrl += hash;
-	window.history.replaceState(null, '', newUrl);
-  }
+  var hash = window.location.hash;
+  var newUrl = window.location.pathname.replace('.html', '');
+  newUrl += hash;
+  window.history.replaceState(null, '', newUrl);
+}
 
 //PRINT NEWS PAGE
-document.getElementById('printButton').addEventListener('click', function(e) {
-    e.preventDefault();  
-    window.print();      
+document.getElementById('printButton').addEventListener('click', function (e) {
+  e.preventDefault();
+  window.print();
 });
 
- 
-     
+
+
 // SUBMIT FORM
 function submitForm(action) {
 
@@ -72,9 +81,9 @@ function submitForm(action) {
   } else if (action === 'chdJakarta') {
     chdJakarta();
   }
-  
+
   // Lanjutkan pengiriman formulir
-  return true; 
+  return true;
 }
 
 function redirectToSuccessPage() {
@@ -99,18 +108,18 @@ function handleIframeLoad() {
   window.location.href = 'sent.html';  // Halaman tujuan default
 }
 
-document.getElementById('buttonRedirectToSuccessPage').addEventListener('click', function() {
+document.getElementById('buttonRedirectToSuccessPage').addEventListener('click', function () {
   submitForm('redirectToSuccessPage');
 });
 
-document.getElementById('buttonRegistrasiPeserta').addEventListener('click', function() {
+document.getElementById('buttonRegistrasiPeserta').addEventListener('click', function () {
   submitForm('registrasiPeserta');
 });
 
-document.getElementById('buttonComment').addEventListener('click', function() {
+document.getElementById('buttonComment').addEventListener('click', function () {
   submitForm('comment');
 });
 
-document.getElementById('buttonChdJakarta').addEventListener('click', function() {
+document.getElementById('buttonChdJakarta').addEventListener('click', function () {
   submitForm('chdJakarta');
 });
