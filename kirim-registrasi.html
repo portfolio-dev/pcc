@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="30;url=index.html">
 
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/portfolio-dev/pcc/3135e841cd4eee9cc6916de205920100908bfe88/images/favicon.png">
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/portfolio-dev/pcc/3135e841cd4eee9cc6916de205920100908bfe88/images/favicon.png">
     <title>Pesan Terkirim</title>
     <style>
         body {
@@ -15,43 +17,79 @@
             text-align: center;
             padding: 50px;
         }
+
         img {
-            max-width: 150px; /* Ukuran standar untuk logo */
+            max-width: 150px;
+            /* Ukuran standar untuk logo */
             height: auto;
-            margin: 0 auto 20px auto; /* Memusatkan gambar */
-            display: block; /* Mengubah gambar menjadi blok untuk pemusatan */
+            margin: 0 auto 20px auto;
+            /* Memusatkan gambar */
+            display: block;
+            /* Mengubah gambar menjadi blok untuk pemusatan */
         }
+
         #countdown {
             font-size: 20px;
             margin-top: 20px;
         }
+
         .loading {
             animation: blink 1s infinite;
         }
 
         @keyframes blink {
-            0% { content: "sedang mengirim"; }
-            20% { content: "sedang mengirim."; }
-            40% { content: "sedang mengirim.."; }
-            60% { content: "sedang mengirim..."; }
-            80% { content: "sedang mengirim.."; }
-            100% { content: "sedang mengirim."; }
+            0% {
+                content: "sedang mengirim";
+            }
+
+            20% {
+                content: "sedang mengirim.";
+            }
+
+            40% {
+                content: "sedang mengirim..";
+            }
+
+            60% {
+                content: "sedang mengirim...";
+            }
+
+            80% {
+                content: "sedang mengirim..";
+            }
+
+            100% {
+                content: "sedang mengirim.";
+            }
         }
     </style>
 </head>
+
 <body>
     <img src="images/logo.png" alt="Logo">
-    <img id="loading" src="https://github.com/portfolio-dev/pcc/blob/main/images/loading.gif?raw=true" style="height: 50px; width: 50px;">
+    <img id="loading" src="https://github.com/portfolio-dev/pcc/blob/main/images/loading.gif?raw=true"
+        style="height: 50px; width: 50px;">
     <div class="loading">sedang mengirim formulir</div>
     <div id="countdown">30 detik lagi akan kembali ke <span style="color: red; font-weight: bold;">Beranda</span>!</div>
     <hr>
-    <p style="background-color: #ffc107; color: #212529; padding: 15px; border-radius: 10px; text-align: left;">
-        <b>Terima Kasih! Pendaftaran Anda Berhasil Masuk Daftar Tunggu.</b><br><br>
-        Formulir pendaftaran Anda telah berhasil kami terima. Saat ini, kuota utama untuk peserta telah terpenuhi.
+    <p
+        style="background-color: #28a745; color: #ffffff; padding: 20px; border-radius: 10px; text-align: left; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <b>✅ Terima Kasih! Pendaftaran Anda Telah Berhasil Diterima.</b><br><br>
+        Formulir pendaftaran Anda telah berhasil terkirim dan saat ini sedang dalam proses <b>peninjauan</b> oleh tim
+        kami. Kami sangat menghargai keikutsertaan dan antusiasme Anda untuk bergabung dalam kegiatan ini.
         <br><br>
-        Namun, jangan khawatir! Nama Anda telah kami masukkan ke dalam <b>daftar tunggu (waiting list)</b>. Jika ada peserta yang terdaftar sebelumnya membatalkan keikutsertaannya, kami akan segera menghubungi Anda sesuai dengan urutan antrian untuk mengisi slot yang tersedia.
+        Tim kami akan segera memverifikasi data yang Anda kirimkan. Informasi lebih lanjut mengenai <b>konfirmasi
+            keikutsertaan</b> dan detail teknis acara akan kami sampaikan melalui <b>WhatsApp</b> dalam waktu 1-3 hari
+        kerja.
         <br><br>
-        Kami sangat menghargai antusiasme Anda untuk bergabung. Konfirmasi lebih lanjut akan kami sampaikan melalui WhatsApp. Jika ada pertanyaan, jangan ragu untuk <a href="javascript:void(0)" onclick="window.location.href='index.html#section_hubungi';" style="color: #0056b3; display: inline; padding: 0; text-decoration: underline;">menghubungi kami</a>.
+        Mohon pastikan nomor WhatsApp yang Anda daftarkan aktif dan dapat dihubungi. Jika ada pertanyaan atau informasi
+        yang perlu disampaikan, silakan <a href="javascript:void(0)"
+            onclick="window.location.href='index.html#section_hubungi';"
+            style="color: #ffc107; display: inline; padding: 0; text-decoration: underline; font-weight: bold;">menghubungi
+            kami</a>.
+        <br><br>
+        <small><i>Catatan: Harap tunggu konfirmasi resmi dari tim kami sebelum melakukan perjalanan ke lokasi
+                acara.</i></small>
     </p>
     <hr>
     <script>
@@ -86,4 +124,5 @@
         }, 500);
     </script>
 </body>
+
 </html>
