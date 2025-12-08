@@ -373,17 +373,10 @@
                 return false; // Menghentikan pengiriman formulir
             }
 
-            // 2. Validasi reCAPTCHA
-            const recaptchaResponse = grecaptcha.getResponse();
-            if (recaptchaResponse.length === 0) {
-                alert("Harap verifikasi bahwa Anda bukan robot.");
-                return false; // Menghentikan pengiriman formulir
-            }
-
-            // 3. Tandai bahwa formulir akan dikirim
+            // 2. Tandai bahwa formulir akan dikirim
             formSubmitted = true;
 
-            // 4. Atur listener pada iframe untuk redirect setelah Google Form merespons
+            // 3. Atur listener pada iframe untuk redirect setelah Google Form merespons
             const hiddenIframe = document.getElementById('hidden_iframe');
             hiddenIframe.onload = function () {
                 if (formSubmitted) {
@@ -391,7 +384,7 @@
                 }
             };
 
-            // 5. Izinkan pengiriman formulir secara normal ke target iframe
+            // 4. Izinkan pengiriman formulir secara normal ke target iframe
             return true;
         }
     </script>
