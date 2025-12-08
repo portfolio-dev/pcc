@@ -304,9 +304,9 @@
                             <textarea name="entry.1901137419" rows="3" class="col-lg-6 col-12 form-control"
                                 id="volunteer-message" placeholder="Alamat Lengkap (sesuai KTP)" required></textarea>
 
-                            <center>
-                                <div class="g-recaptcha" data-sitekey="6LfSc8oqAAAAADCs6DtKjcltNG3ZkO7on1s8vUFh"></div>
-                            </center>
+                            <!-- <center>
+                                <div class="g-recaptcha" data-sitekey="6LfA1yQsAAAAAEqwXWvYetbUZi1fpi07C96VU4_p"></div>
+                            </center> -->
                             <br>
 
                             <button type="submit" class="form-control">Daftar</button>
@@ -344,6 +344,57 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        flatpickr("#patient-born-display", {
+            dateFormat: "d-m-Y", // Format yang ditampilkan ke pengguna
+            disableMobile: true,
+            onChange: function (selectedDates, dateStr, instance) {
+                if (selectedDates.length > 0) {
+                    const date = selectedDates[0];
+                    document.getElementById('patient-born-month').value = date.getMonth() + 1;
+                    document.getElementById('patient-born-day').value = date.getDate();
+                    document.getElementById('patient-born-year').value = date.getFullYear();
+                }
+            }
+        });
+    </script>
+
+    <script>
+        let formSubmitted = false;
+
+        function handleFormSubmit() {
+            // 1. Validasi Tanggal Lahir
+            const dobYear = document.getElementById('patient-born-year').value;
+            if (!dobYear) {
+                alert("Harap isi Tanggal Lahir pasien.");
+                // Fokuskan kembali ke input tanggal agar mudah diperbaiki oleh pengguna
+                document.getElementById('patient-born-display').focus();
+                return false; // Menghentikan pengiriman formulir
+            }
+
+            // 2. Validasi reCAPTCHA
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (recaptchaResponse.length === 0) {
+                alert("Harap verifikasi bahwa Anda bukan robot.");
+                return false; // Menghentikan pengiriman formulir
+            }
+
+            // 3. Tandai bahwa formulir akan dikirim
+            formSubmitted = true;
+
+            // 4. Atur listener pada iframe untuk redirect setelah Google Form merespons
+            const hiddenIframe = document.getElementById('hidden_iframe');
+            hiddenIframe.onload = function () {
+                if (formSubmitted) {
+                    window.location.href = '/kirim-registrasi.html';
+                }
+            };
+
+            // 5. Izinkan pengiriman formulir secara normal ke target iframe
+            return true;
+        }
+    </script>
 
 
 </body>
