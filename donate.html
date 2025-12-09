@@ -559,16 +559,15 @@
                                 <textarea name="donation-note" rows="5" class="form-control" id="donation-note"
                                     placeholder="Tulis di sini" required></textarea>
 
-                                <!-- Math CAPTCHA -->
+                                <!-- Math CAPTCHA - Simplified -->
                                 <div class="captcha-container">
-                                    <div class="captcha-question" id="captcha-question"></div>
                                     <div class="captcha-input-group">
                                         <input type="number" id="captcha-answer" class="form-control"
-                                            placeholder="Jawaban" autocomplete="off">
+                                            placeholder="Jawab: Berapa ... ?" autocomplete="off">
                                         <span class="captcha-feedback" id="captcha-feedback"></span>
                                     </div>
-                                    <small class="text-muted d-block text-center mt-2">Silakan jawab pertanyaan di atas
-                                        untuk melanjutkan</small>
+                                    <small class="text-muted d-block text-center mt-2">Jawab pertanyaan matematika untuk
+                                        melanjutkan</small>
                                 </div>
 
                                 <button type="button" id="confirm-button" class="btn btn-primary mt-3"
@@ -679,13 +678,13 @@
 
             correctAnswer = num1 + num2;
 
-            // Tampilkan pertanyaan
-            const questionEl = document.getElementById('captcha-question');
-            if (questionEl) {
-                questionEl.textContent = `Berapa ${num1} + ${num2} ?`;
+            // Tampilkan pertanyaan di placeholder input
+            const answerInput = document.getElementById('captcha-answer');
+            if (answerInput) {
+                answerInput.placeholder = `Jawab: Berapa ${num1} + ${num2} ?`;
                 console.log('CAPTCHA generated:', num1, '+', num2, '=', correctAnswer);
             } else {
-                console.error('Element captcha-question not found!');
+                console.error('Element captcha-answer not found!');
             }
         }
 
