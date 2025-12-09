@@ -35,6 +35,59 @@
         gtag('config', 'G-42FM1CSXVJ');
     </script>
 
+    <style>
+        /* CAPTCHA Styles */
+        .captcha-container {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #dee2e6;
+        }
+
+        .captcha-question {
+            font-size: 24px;
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .captcha-input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        #captcha-answer {
+            width: 150px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: white;
+        }
+
+        .captcha-feedback {
+            display: inline-block;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        .captcha-feedback.correct {
+            color: #28a745;
+        }
+
+        .captcha-feedback.incorrect {
+            color: #dc3545;
+        }
+
+        #confirm-button:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -501,7 +554,32 @@
                                     </table>
 
                                 </div>
+                                <br>
+                                <h6 class="mt-1">Catatan / Komentar (opsional)</h6>
+                                <textarea name="donation-note" rows="5" class="form-control" id="donation-note"
+                                    placeholder="Tulis di sini" required></textarea>
+
+                                <!-- Math CAPTCHA -->
+                                <div class="captcha-container">
+                                    <div class="captcha-question" id="captcha-question"></div>
+                                    <div class="captcha-input-group">
+                                        <input type="number" id="captcha-answer" class="form-control"
+                                            placeholder="Jawaban" autocomplete="off">
+                                        <span class="captcha-feedback" id="captcha-feedback"></span>
+                                    </div>
+                                    <small class="text-muted d-block text-center mt-2">Silakan jawab pertanyaan di atas
+                                        untuk melanjutkan</small>
+                                </div>
+
+                                <button type="button" id="confirm-button" class="btn btn-primary mt-3"
+                                    onclick="submitConfirmation()" disabled>Donasi</button>
+                                <button type="button" class="btn btn-secondary mt-3" onclick="goBack()">Batal</button>
                             </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
         </section>
     </main>
 
@@ -587,6 +665,72 @@
 
     <!-- JAVASCRIPT FILES -->
     <script src="js/donate.js"></script>
+
+    <!-- CAPTCHA JavaScript - Must load AFTER donate.js -->
+    <script>
+        // Math CAPTCHA Logic
+        let correctAnswer = 0;
+        let captchaVerified = false;
+
+        function generateCaptcha() {
+            // Generate angka random antara 1-20
+            const num1 = Math.floor(Math.random() * 20) + 1;
+            const num2 = Math.floor(Math.random() * 20) + 1;
+
+            correctAnswer = num1 + num2;
+
+            // Tampilkan pertanyaan
+            const questionEl = document.getElementById('captcha-question');
+            if (questionEl) {
+                questionEl.textContent = `Berapa ${num1} + ${num2} ?`;
+                console.log('CAPTCHA generated:', num1, '+', num2, '=', correctAnswer);
+            } else {
+                console.error('Element captcha-question not found!');
+            }
+        }
+
+        // Validasi jawaban CAPTCHA
+        function checkCaptcha() {
+            const userAnswer = parseInt(document.getElementById('captcha-answer').value);
+            const feedback = document.getElementById('captcha-feedback');
+            const submitBtn = document.getElementById('confirm-button');
+
+            if (userAnswer === correctAnswer) {
+                feedback.textContent = '✓';
+                feedback.className = 'captcha-feedback correct';
+                submitBtn.disabled = false;
+                captchaVerified = true;
+            } else if (document.getElementById('captcha-answer').value !== '') {
+                feedback.textContent = '✗';
+                feedback.className = 'captcha-feedback incorrect';
+                submitBtn.disabled = true;
+                captchaVerified = false;
+            } else {
+                feedback.textContent = '';
+                feedback.className = 'captcha-feedback';
+                submitBtn.disabled = true;
+                captchaVerified = false;
+            }
+        }
+
+        // Event listener untuk input CAPTCHA - akan dipanggil setelah DOM ready
+        document.addEventListener('DOMContentLoaded', function () {
+            const captchaInput = document.getElementById('captcha-answer');
+            if (captchaInput) {
+                captchaInput.addEventListener('input', checkCaptcha);
+                captchaInput.addEventListener('keyup', checkCaptcha);
+            }
+        });
+
+        // Function untuk reset CAPTCHA saat goBack
+        function resetCaptcha() {
+            generateCaptcha();
+            document.getElementById('captcha-answer').value = '';
+            document.getElementById('captcha-feedback').textContent = '';
+            captchaVerified = false;
+            document.getElementById('confirm-button').disabled = true;
+        }
+    </script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
