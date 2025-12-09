@@ -37,6 +37,68 @@
         gtag('config', 'G-42FM1CSXVJ');
     </script>
 
+    <style>
+        /* Compact CAPTCHA Styles */
+        .captcha-compact {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #dee2e6;
+        }
+
+        .captcha-compact .captcha-question {
+            font-size: 16px;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .captcha-compact .captcha-input-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .captcha-compact .captcha-answer {
+            width: 80px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            background-color: white;
+            padding: 6px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        .captcha-compact .captcha-feedback {
+            display: inline-block;
+            font-size: 20px;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .captcha-compact .captcha-feedback.correct {
+            color: #28a745;
+        }
+
+        .captcha-compact .captcha-feedback.incorrect {
+            color: #dc3545;
+        }
+
+        .captcha-compact small {
+            font-size: 12px;
+            color: #6c757d;
+        }
+
+        .form-control:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+    </style>
+
 </head>
 
 <body id="section_slide">
@@ -769,7 +831,18 @@
                                 </center>
                                 <br> -->
 
-                            <button type="submit" class="form-control">Daftar</button>
+                            <!-- Compact Math CAPTCHA for Member Form -->
+                            <div class="captcha-compact">
+                                <div class="captcha-question" id="captcha-question-member"></div>
+                                <div class="captcha-input-row">
+                                    <input type="number" id="captcha-answer-member" class="captcha-answer form-control"
+                                        placeholder="Jawab" autocomplete="off">
+                                    <span class="captcha-feedback" id="captcha-feedback-member"></span>
+                                </div>
+                                <small class="d-block text-center mt-1">Jawab pertanyaan di atas</small>
+                            </div>
+
+                            <button type="submit" id="submit-btn-member" class="form-control" disabled>Daftar</button>
                         </form>
                         <iframe name="hidden_iframe" style="display:none;" onload="redirectToSuccessPage();"></iframe>
                     </div>
@@ -1173,7 +1246,9 @@
                         <div class="tags-block">
                             <h5 class="mb-3">Kegiatan Berikutnya</h5>
 
-                            <a href="javascript:void(0)" onclick="window.location.href='/registration/hvc-jabar-2025.html';" class="tags-block-link" style="background-color: #e32a2a; color: #ffffff;">
+                            <a href="javascript:void(0)"
+                                onclick="window.location.href='/registration/hvc-jabar-2025.html';"
+                                class="tags-block-link" style="background-color: #e32a2a; color: #ffffff;">
                                 Registrasi Peserta HVC Pejuang Jantung Kecil Jabar 2025
                             </a>
                             <hr>
@@ -1373,7 +1448,19 @@
                             <textarea name="entry.1036482388" rows="5" class="form-control" id="message"
                                 placeholder="Tulis di sini..." required></textarea>
 
-                            <button type="submit" class="form-control">Kirim Pesan</button>
+                            <!-- Compact Math CAPTCHA for Contact Form -->
+                            <div class="captcha-compact">
+                                <div class="captcha-question" id="captcha-question-contact"></div>
+                                <div class="captcha-input-row">
+                                    <input type="number" id="captcha-answer-contact" class="captcha-answer form-control"
+                                        placeholder="Jawab" autocomplete="off">
+                                    <span class="captcha-feedback" id="captcha-feedback-contact"></span>
+                                </div>
+                                <small class="d-block text-center mt-1">Jawab pertanyaan di atas</small>
+                            </div>
+
+                            <button type="submit" id="submit-btn-contact" class="form-control" disabled>Kirim
+                                Pesan</button>
                         </form>
                         <iframe name="hidden_iframe" style="display:none;" onload="redirectToSuccessPage();"></iframe>
                     </div>
@@ -1410,6 +1497,119 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- CAPTCHA JavaScript -->
+    <script>
+        // CAPTCHA State Management
+        const captchaState = {
+            member: {
+                correctAnswer: 0,
+                verified: false
+            },
+            contact: {
+                correctAnswer: 0,
+                verified: false
+            }
+        };
+
+        // Reusable function to generate CAPTCHA
+        function generateCaptcha(prefix) {
+            const num1 = Math.floor(Math.random() * 20) + 1;
+            const num2 = Math.floor(Math.random() * 20) + 1;
+            const answer = num1 + num2;
+
+            // Store correct answer
+            captchaState[prefix].correctAnswer = answer;
+            captchaState[prefix].verified = false;
+
+            // Display question
+            const questionEl = document.getElementById(`captcha-question-${prefix}`);
+            if (questionEl) {
+                questionEl.textContent = `Berapa ${num1} + ${num2} ?`;
+            }
+        }
+
+        // Reusable function to check CAPTCHA answer
+        function checkCaptcha(prefix) {
+            const answerInput = document.getElementById(`captcha-answer-${prefix}`);
+            const feedback = document.getElementById(`captcha-feedback-${prefix}`);
+            const submitBtn = document.getElementById(`submit-btn-${prefix}`);
+
+            if (!answerInput || !feedback || !submitBtn) return;
+
+            const userAnswer = parseInt(answerInput.value);
+            const correctAnswer = captchaState[prefix].correctAnswer;
+
+            if (userAnswer === correctAnswer) {
+                feedback.textContent = '✓';
+                feedback.className = 'captcha-feedback correct';
+                submitBtn.disabled = false;
+                captchaState[prefix].verified = true;
+            } else if (answerInput.value !== '') {
+                feedback.textContent = '✗';
+                feedback.className = 'captcha-feedback incorrect';
+                submitBtn.disabled = true;
+                captchaState[prefix].verified = false;
+            } else {
+                feedback.textContent = '';
+                feedback.className = 'captcha-feedback';
+                submitBtn.disabled = true;
+                captchaState[prefix].verified = false;
+            }
+        }
+
+        // Initialize CAPTCHA on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            // Generate CAPTCHA for both forms
+            generateCaptcha('member');
+            generateCaptcha('contact');
+
+            // Add event listeners for member form
+            const memberInput = document.getElementById('captcha-answer-member');
+            if (memberInput) {
+                memberInput.addEventListener('input', () => checkCaptcha('member'));
+                memberInput.addEventListener('keyup', () => checkCaptcha('member'));
+            }
+
+            // Add event listeners for contact form
+            const contactInput = document.getElementById('captcha-answer-contact');
+            if (contactInput) {
+                contactInput.addEventListener('input', () => checkCaptcha('contact'));
+                contactInput.addEventListener('keyup', () => checkCaptcha('contact'));
+            }
+        });
+
+        // Override submitForm to include CAPTCHA validation
+        const originalSubmitForm = window.submitForm;
+        window.submitForm = function (callback) {
+            // Determine which form is being submitted
+            const activeElement = document.activeElement;
+            let formPrefix = '';
+
+            if (activeElement && activeElement.id) {
+                if (activeElement.id.includes('member')) {
+                    formPrefix = 'member';
+                } else if (activeElement.id.includes('contact')) {
+                    formPrefix = 'contact';
+                }
+            }
+
+            // Validate CAPTCHA
+            if (formPrefix && !captchaState[formPrefix].verified) {
+                alert('Harap jawab pertanyaan matematika dengan benar terlebih dahulu.');
+                document.getElementById(`captcha-answer-${formPrefix}`).focus();
+                return false;
+            }
+
+            // Call original function if it exists
+            if (typeof originalSubmitForm === 'function') {
+                return originalSubmitForm(callback);
+            }
+
+            return true;
+        };
+    </script>
+
     <script>
         flatpickr("#patient-born", {
             dateFormat: "m/d/Y",
