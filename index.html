@@ -38,59 +38,142 @@
     </script>
 
     <style>
-        /* Compact CAPTCHA Styles */
-        .captcha-compact {
-            background: #f8f9fa;
-            padding: 12px 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border: 1px solid #dee2e6;
+        /* CAPTCHA Modal Styles */
+        .captcha-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s;
         }
 
-        .captcha-compact .captcha-question {
-            font-size: 16px;
-            font-weight: 600;
-            color: #495057;
-            margin-bottom: 8px;
+        .captcha-modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .captcha-modal h4 {
+            margin-top: 0;
+            color: #333;
             text-align: center;
         }
 
-        .captcha-compact .captcha-input-row {
+        .captcha-question {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e54646;
+            margin: 20px 0;
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .captcha-input-group {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             justify-content: center;
+            margin: 20px 0;
         }
 
-        .captcha-compact .captcha-answer {
-            width: 80px;
+        #captcha-answer-modal {
+            width: 120px;
             text-align: center;
-            font-size: 16px;
-            font-weight: 600;
-            background-color: white;
-            padding: 6px;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-        }
-
-        .captcha-compact .captcha-feedback {
-            display: inline-block;
             font-size: 20px;
-            min-width: 24px;
-            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
         }
 
-        .captcha-compact .captcha-feedback.correct {
+        #captcha-answer-modal:focus {
+            outline: none;
+            border-color: #e54646;
+        }
+
+        .captcha-feedback {
+            font-size: 28px;
+            min-width: 30px;
+        }
+
+        .captcha-feedback.correct {
             color: #28a745;
         }
 
-        .captcha-compact .captcha-feedback.incorrect {
+        .captcha-feedback.incorrect {
             color: #dc3545;
         }
 
-        .captcha-compact small {
-            font-size: 12px;
-            color: #6c757d;
+        .captcha-modal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .captcha-modal-buttons button {
+            padding: 10px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-submit-captcha {
+            background-color: #e54646;
+            color: white;
+        }
+
+        .btn-submit-captcha:hover:not(:disabled) {
+            background-color: #c93a3a;
+        }
+
+        .btn-submit-captcha:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .btn-cancel-captcha {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-cancel-captcha:hover {
+            background-color: #5a6268;
         }
 
         .form-control:disabled {
@@ -700,7 +783,8 @@
 
                         <form id="volunteer-form" class="custom-form volunteer-form mb-5 mb-lg-0"
                             action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSemCxd-efFi0eaFIt9cC__JCkP4GpyQmc9TKTeSqKCKvZe2pg/formResponse"
-                            method="post" target="hidden_iframe" onsubmit="return submitForm('redirectToSuccessPage');">
+                            method="post" target="hidden_iframe"
+                            onsubmit="return showCaptchaModal(event, 'volunteer-form');">
                             <h4 class="mb-4">Data Pasien Anak</h4>
 
                             <div class="row">
@@ -831,16 +915,7 @@
                                 </center>
                                 <br> -->
 
-                            <!-- Compact Math CAPTCHA for Member Form -->
-                            <div class="captcha-compact">
-                                <div class="captcha-question" id="captcha-question-member"></div>
-                                <div class="captcha-input-row">
-                                    <input type="number" id="captcha-answer-member" class="captcha-answer form-control"
-                                        placeholder="Jawab" autocomplete="off">
-                                    <span class="captcha-feedback" id="captcha-feedback-member"></span>
-                                </div>
-                                <small class="d-block text-center mt-1">Jawab pertanyaan di atas</small>
-                            </div>
+
 
                             <button type="submit" id="submit-btn-member" class="form-control" disabled>Daftar</button>
                         </form>
@@ -1005,9 +1080,10 @@
                                 </button>
                             </form> -->
 
-                        <form class="custom-form subscribe-form"
+                        <form id="subscribe-form" class="custom-form subscribe-form"
                             action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd8qqDRgHXYcajUbgdTvWItbufTi90oTWSDL-Krk4TMgG9A-Q/formResponse"
-                            method="post" target="hidden_iframe" onsubmit="return submitForm('redirectToSuccessPage');">
+                            method="post" target="hidden_iframe"
+                            onsubmit="return showCaptchaModal(event, 'subscribe-form');">
                             <h5 class="mb-4">Menerima Berita Terbaru</h5>
 
                             <input type="email" name="entry.1041055360" id="email"
@@ -1424,9 +1500,10 @@
                     </div>
 
                     <div class="col-lg-5 col-12 mx-auto">
-                        <form class="custom-form contact-form"
+                        <form id="contact-form" class="custom-form contact-form"
                             action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdNOe96bPHrX8uN_lvvybH734DTbOt5uL_8emSyohobE7knsw/formResponse"
-                            method="post" target="hidden_iframe" onsubmit="return submitForm('redirectToSuccessPage');">
+                            method="post" target="hidden_iframe"
+                            onsubmit="return showCaptchaModal(event, 'contact-form');">
                             <h2>Tinggalkan Pesan</h2>
                             <p class="mb-4">
                                 Silahkan isi formulir ini untuk menghubungi kami!
@@ -1448,16 +1525,7 @@
                             <textarea name="entry.1036482388" rows="5" class="form-control" id="message"
                                 placeholder="Tulis di sini..." required></textarea>
 
-                            <!-- Compact Math CAPTCHA for Contact Form -->
-                            <div class="captcha-compact">
-                                <div class="captcha-question" id="captcha-question-contact"></div>
-                                <div class="captcha-input-row">
-                                    <input type="number" id="captcha-answer-contact" class="captcha-answer form-control"
-                                        placeholder="Jawab" autocomplete="off">
-                                    <span class="captcha-feedback" id="captcha-feedback-contact"></span>
-                                </div>
-                                <small class="d-block text-center mt-1">Jawab pertanyaan di atas</small>
-                            </div>
+
 
                             <button type="submit" id="submit-btn-contact" class="form-control" disabled>Kirim
                                 Pesan</button>
@@ -1485,6 +1553,27 @@
         </div>
     </footer>
 
+    <!-- CAPTCHA Modal -->
+    <div id="captcha-modal" class="captcha-modal">
+        <div class="captcha-modal-content">
+            <h4>Verifikasi Keamanan</h4>
+            <p style="text-align: center; color: #666;">Silakan jawab pertanyaan berikut:</p>
+
+            <div class="captcha-question" id="captcha-question-modal"></div>
+
+            <div class="captcha-input-group">
+                <input type="number" id="captcha-answer-modal" placeholder="Jawaban" autocomplete="off" autofocus>
+                <span class="captcha-feedback" id="captcha-feedback-modal"></span>
+            </div>
+
+            <div class="captcha-modal-buttons">
+                <button class="btn-submit-captcha" id="btn-submit-captcha" disabled
+                    onclick="verifyCaptchaAndSubmit()">Kirim</button>
+                <button class="btn-cancel-captcha" onclick="closeCaptchaModal()">Batal</button>
+            </div>
+        </div>
+    </div>
+
     <!-- JAVASCRIPT FILES -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -1500,116 +1589,125 @@
 
     <!-- CAPTCHA JavaScript -->
     <script>
-        // CAPTCHA State Management
-        const captchaState = {
-            member: {
-                correctAnswer: 0,
-                verified: false
-            },
-            contact: {
-                correctAnswer: 0,
-                verified: false
-            }
-        };
+        // Modal CAPTCHA Logic
+        let correctAnswer = 0;
+        let captchaVerified = false;
+        let pendingForm = null;
 
-        // Reusable function to generate CAPTCHA
-        function generateCaptcha(prefix) {
+        function generateCaptcha() {
             const num1 = Math.floor(Math.random() * 20) + 1;
             const num2 = Math.floor(Math.random() * 20) + 1;
-            const answer = num1 + num2;
+            correctAnswer = num1 + num2;
 
-            // Store correct answer
-            captchaState[prefix].correctAnswer = answer;
-            captchaState[prefix].verified = false;
-
-            // Display question
-            const questionEl = document.getElementById(`captcha-question-${prefix}`);
+            const questionEl = document.getElementById('captcha-question-modal');
             if (questionEl) {
                 questionEl.textContent = `Berapa ${num1} + ${num2} ?`;
             }
+
+            // Reset UI
+            document.getElementById('captcha-answer-modal').value = '';
+            document.getElementById('captcha-feedback-modal').textContent = '';
+            document.getElementById('btn-submit-captcha').disabled = true;
+            captchaVerified = false;
         }
 
-        // Reusable function to check CAPTCHA answer
-        function checkCaptcha(prefix) {
-            const answerInput = document.getElementById(`captcha-answer-${prefix}`);
-            const feedback = document.getElementById(`captcha-feedback-${prefix}`);
-            const submitBtn = document.getElementById(`submit-btn-${prefix}`);
+        function showCaptchaModal(event, formId) {
+            // Prevent default form submission
+            if (event) event.preventDefault();
 
-            if (!answerInput || !feedback || !submitBtn) return;
+            // Store reference to the form that triggered this
+            pendingForm = document.getElementById(formId) || event.target;
 
-            const userAnswer = parseInt(answerInput.value);
-            const correctAnswer = captchaState[prefix].correctAnswer;
+            // Show modal
+            document.getElementById('captcha-modal').style.display = 'block';
+            generateCaptcha();
+
+            // Focus input
+            setTimeout(() => {
+                document.getElementById('captcha-answer-modal').focus();
+            }, 300);
+
+            return false;
+        }
+
+        function closeCaptchaModal() {
+            document.getElementById('captcha-modal').style.display = 'none';
+            pendingForm = null;
+        }
+
+        function checkCaptchaModal() {
+            const userAnswer = parseInt(document.getElementById('captcha-answer-modal').value);
+            const feedback = document.getElementById('captcha-feedback-modal');
+            const submitBtn = document.getElementById('btn-submit-captcha');
 
             if (userAnswer === correctAnswer) {
                 feedback.textContent = '✓';
                 feedback.className = 'captcha-feedback correct';
                 submitBtn.disabled = false;
-                captchaState[prefix].verified = true;
-            } else if (answerInput.value !== '') {
+                captchaVerified = true;
+            } else if (document.getElementById('captcha-answer-modal').value !== '') {
                 feedback.textContent = '✗';
                 feedback.className = 'captcha-feedback incorrect';
                 submitBtn.disabled = true;
-                captchaState[prefix].verified = false;
+                captchaVerified = false;
             } else {
                 feedback.textContent = '';
                 feedback.className = 'captcha-feedback';
                 submitBtn.disabled = true;
-                captchaState[prefix].verified = false;
+                captchaVerified = false;
             }
         }
 
-        // Initialize CAPTCHA on page load
+        function verifyCaptchaAndSubmit() {
+            if (!captchaVerified) return;
+
+            // Close modal
+            document.getElementById('captcha-modal').style.display = 'none';
+
+            // Submit the pending form
+            if (pendingForm) {
+                // If it's a form element, submit it
+                // We need to bypass the onsubmit handler to avoid loop
+                // One way is to remove onsubmit attribute temporarily or call .submit() directly 
+                // but .submit() usually bypasses onsubmit anyway on standard HTML forms.
+                // However, some forms here use 'return submitForm(...)' which might be tricky if we don't handle it.
+                // The submitForm function in custom.js returns true/false.
+
+                // For the forms using `onsubmit="return submitForm(...)"`, calling .submit() *programmatically* 
+                // DOES NOT trigger the onsubmit handler, so it should be fine.
+                pendingForm.submit();
+            }
+        }
+
+        // Event Listeners for Modal Input
         document.addEventListener('DOMContentLoaded', function () {
-            // Generate CAPTCHA for both forms
-            generateCaptcha('member');
-            generateCaptcha('contact');
-
-            // Add event listeners for member form
-            const memberInput = document.getElementById('captcha-answer-member');
-            if (memberInput) {
-                memberInput.addEventListener('input', () => checkCaptcha('member'));
-                memberInput.addEventListener('keyup', () => checkCaptcha('member'));
+            const captchaInput = document.getElementById('captcha-answer-modal');
+            if (captchaInput) {
+                captchaInput.addEventListener('input', checkCaptchaModal);
+                captchaInput.addEventListener('keyup', function (e) {
+                    checkCaptchaModal();
+                    if (e.key === 'Enter' && captchaVerified) {
+                        verifyCaptchaAndSubmit();
+                    }
+                });
             }
 
-            // Add event listeners for contact form
-            const contactInput = document.getElementById('captcha-answer-contact');
-            if (contactInput) {
-                contactInput.addEventListener('input', () => checkCaptcha('contact'));
-                contactInput.addEventListener('keyup', () => checkCaptcha('contact'));
-            }
-        });
-
-        // Override submitForm to include CAPTCHA validation
-        const originalSubmitForm = window.submitForm;
-        window.submitForm = function (callback) {
-            // Determine which form is being submitted
-            const activeElement = document.activeElement;
-            let formPrefix = '';
-
-            if (activeElement && activeElement.id) {
-                if (activeElement.id.includes('member')) {
-                    formPrefix = 'member';
-                } else if (activeElement.id.includes('contact')) {
-                    formPrefix = 'contact';
+            // Close modal when clicking outside
+            window.onclick = function (event) {
+                const modal = document.getElementById('captcha-modal');
+                if (event.target == modal) {
+                    closeCaptchaModal();
                 }
             }
 
-            // Validate CAPTCHA
-            if (formPrefix && !captchaState[formPrefix].verified) {
-                alert('Harap jawab pertanyaan matematika dengan benar terlebih dahulu.');
-                document.getElementById(`captcha-answer-${formPrefix}`).focus();
-                return false;
-            }
+            // Enable submit buttons on forms (they were disabled in previous implementation)
+            const btnMember = document.getElementById('submit-btn-member');
+            if (btnMember) btnMember.disabled = false;
 
-            // Call original function if it exists
-            if (typeof originalSubmitForm === 'function') {
-                return originalSubmitForm(callback);
-            }
-
-            return true;
-        };
+            const btnContact = document.getElementById('submit-btn-contact');
+            if (btnContact) btnContact.disabled = false;
+        });
     </script>
-
     <script>
         flatpickr("#patient-born", {
             dateFormat: "m/d/Y",
