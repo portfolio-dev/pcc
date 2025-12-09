@@ -837,12 +837,15 @@
                 return;
             }
 
+            // Capture data BEFORE closing modal (which clears the global variable)
+            const dataToSubmit = window.formDataToSubmit;
+
             // Close modal
             closeCaptchaModal();
 
-            // Submit form logic - Access global variable
-            if (window.formDataToSubmit) {
-                actuallySubmitForm(window.formDataToSubmit);
+            // Submit form logic
+            if (dataToSubmit) {
+                actuallySubmitForm(dataToSubmit);
             }
         }
 
