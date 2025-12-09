@@ -769,7 +769,7 @@
         // Math CAPTCHA Logic for Modal
         let correctAnswer = 0;
         let captchaVerified = false;
-        let formDataToSubmit = null;
+        // Global formDataToSubmit is used (set in donate.js)
 
         function generateCaptcha() {
             // Generate angka random antara 1-20
@@ -803,7 +803,7 @@
         function closeCaptchaModal() {
             document.getElementById('captcha-modal').style.display = 'none';
             captchaVerified = false;
-            formDataToSubmit = null;
+            window.formDataToSubmit = null;
         }
 
         // Validasi jawaban CAPTCHA di modal
@@ -840,9 +840,9 @@
             // Close modal
             closeCaptchaModal();
 
-            // Submit form
-            if (formDataToSubmit) {
-                actuallySubmitForm(formDataToSubmit);
+            // Submit form logic - Access global variable
+            if (window.formDataToSubmit) {
+                actuallySubmitForm(window.formDataToSubmit);
             }
         }
 
@@ -861,15 +861,11 @@
 
             fetch(googleFormURL, {
                 method: 'POST',
-                body: params,
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            });
-
-            setTimeout(() => {
+                mode: 'no-cors',
+                body: params
+            }).finally(() => {
                 window.location.href = 'donate-upload.html';
-            }, 500);
+            });
         }
 
         // Event listener untuk input CAPTCHA di modal
