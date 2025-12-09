@@ -48,6 +48,51 @@
             opacity: 0.65;
             cursor: not-allowed;
         }
+
+        /* CAPTCHA Styles */
+        .captcha-container {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #dee2e6;
+        }
+
+        .captcha-question {
+            font-size: 24px;
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .captcha-input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        #captcha-answer {
+            width: 100px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .captcha-feedback {
+            display: inline-block;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        .captcha-feedback.correct {
+            color: #28a745;
+        }
+
+        .captcha-feedback.incorrect {
+            color: #dc3545;
+        }
     </style>
 
 </head>
@@ -328,12 +373,19 @@
                             <textarea name="entry.1901137419" rows="3" class="col-lg-6 col-12 form-control"
                                 id="volunteer-message" placeholder="Alamat Lengkap (sesuai KTP)" required></textarea>
 
-                            <!-- <center>
-                                <div class="g-recaptcha" data-sitekey="6LfA1yQsAAAAAEqwXWvYetbUZi1fpi07C96VU4_p"></div>
-                            </center> -->
-                            <br>
+                            <!-- Math CAPTCHA -->
+                            <div class="captcha-container">
+                                <div class="captcha-question" id="captcha-question"></div>
+                                <div class="captcha-input-group">
+                                    <input type="number" id="captcha-answer" class="form-control" placeholder="Jawaban"
+                                        autocomplete="off">
+                                    <span class="captcha-feedback" id="captcha-feedback"></span>
+                                </div>
+                                <small class="text-muted d-block text-center mt-2">Silakan jawab pertanyaan di atas
+                                    untuk melanjutkan</small>
+                            </div>
 
-                            <button type="submit" id="submit-btn" class="form-control">
+                            <button type="submit" id="submit-btn" class="form-control" disabled>
                                 <span id="btn-text">Daftar</span>
                                 <span id="btn-spinner" class="spinner-border" role="status" style="display: none;"
                                     aria-hidden="true"></span>
@@ -375,6 +427,56 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
     <script>
+        // Math CAPTCHA Logic
+        let correctAnswer = 0;
+        let captchaVerified = false;
+
+        function generateCaptcha() {
+            // Generate angka random antara 1-20
+            const num1 = Math.floor(Math.random() * 20) + 1;
+            const num2 = Math.floor(Math.random() * 20) + 1;
+
+            correctAnswer = num1 + num2;
+
+            // Tampilkan pertanyaan
+            document.getElementById('captcha-question').textContent = `Berapa ${num1} + ${num2} ?`;
+        }
+
+        // Validasi jawaban CAPTCHA
+        function checkCaptcha() {
+            const userAnswer = parseInt(document.getElementById('captcha-answer').value);
+            const feedback = document.getElementById('captcha-feedback');
+            const submitBtn = document.getElementById('submit-btn');
+
+            if (userAnswer === correctAnswer) {
+                feedback.textContent = '✓';
+                feedback.className = 'captcha-feedback correct';
+                submitBtn.disabled = false;
+                captchaVerified = true;
+            } else if (document.getElementById('captcha-answer').value !== '') {
+                feedback.textContent = '✗';
+                feedback.className = 'captcha-feedback incorrect';
+                submitBtn.disabled = true;
+                captchaVerified = false;
+            } else {
+                feedback.textContent = '';
+                feedback.className = 'captcha-feedback';
+                submitBtn.disabled = true;
+                captchaVerified = false;
+            }
+        }
+
+        // Event listener untuk input CAPTCHA
+        document.addEventListener('DOMContentLoaded', function () {
+            generateCaptcha();
+
+            const captchaInput = document.getElementById('captcha-answer');
+            captchaInput.addEventListener('input', checkCaptcha);
+            captchaInput.addEventListener('keyup', checkCaptcha);
+        });
+    </script>
+
+    <script>
         flatpickr("#patient-born-display", {
             dateFormat: "d-m-Y", // Format yang ditampilkan ke pengguna
             disableMobile: true,
@@ -393,7 +495,14 @@
         let formSubmitted = false;
 
         function handleFormSubmit() {
-            // 1. Validasi Tanggal Lahir
+            // 1. Validasi CAPTCHA
+            if (!captchaVerified) {
+                alert("Harap jawab pertanyaan matematika dengan benar terlebih dahulu.");
+                document.getElementById('captcha-answer').focus();
+                return false; // Menghentikan pengiriman formulir
+            }
+
+            // 2. Validasi Tanggal Lahir
             const dobYear = document.getElementById('patient-born-year').value;
             if (!dobYear) {
                 alert("Harap isi Tanggal Lahir pasien.");
@@ -402,7 +511,7 @@
                 return false; // Menghentikan pengiriman formulir
             }
 
-            // 2. Tampilkan spinner dan disable button
+            // 3. Tampilkan spinner dan disable button
             const submitBtn = document.getElementById('submit-btn');
             const btnText = document.getElementById('btn-text');
             const btnSpinner = document.getElementById('btn-spinner');
@@ -413,10 +522,10 @@
             btnSpinner.style.display = 'inline-block';
             btnLoadingText.style.display = 'inline';
 
-            // 3. Tandai bahwa formulir akan dikirim
+            // 4. Tandai bahwa formulir akan dikirim
             formSubmitted = true;
 
-            // 4. Atur listener pada iframe untuk redirect setelah Google Form merespons
+            // 5. Atur listener pada iframe untuk redirect setelah Google Form merespons
             const hiddenIframe = document.getElementById('hidden_iframe');
             hiddenIframe.onload = function () {
                 if (formSubmitted) {
@@ -425,6 +534,12 @@
                     const form = document.getElementById('volunteer-form');
                     form.reset();
 
+                    // Reset CAPTCHA juga
+                    generateCaptcha();
+                    document.getElementById('captcha-answer').value = '';
+                    document.getElementById('captcha-feedback').textContent = '';
+                    captchaVerified = false;
+
                     // Tunggu sebentar untuk memastikan form direset sebelum redirect
                     setTimeout(function () {
                         window.location.href = '/kirim-registrasi.html';
@@ -432,7 +547,7 @@
                 }
             };
 
-            // 5. Izinkan pengiriman formulir secara normal ke target iframe
+            // 6. Izinkan pengiriman formulir secara normal ke target iframe
             return true;
         }
     </script>
