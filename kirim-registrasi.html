@@ -62,6 +62,102 @@
                 content: "sedang mengirim.";
             }
         }
+
+        /* Modal Styles */
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-backdrop.show {
+            display: block;
+        }
+
+        .modal-dialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            max-width: 90%;
+            width: 400px;
+            animation: slideIn 0.3s;
+        }
+
+        .modal-dialog.show {
+            display: block;
+        }
+
+        .modal-header {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            color: #dc3545;
+            margin: 10px 0;
+        }
+
+        .modal-body {
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .modal-footer {
+            text-align: center;
+        }
+
+        .btn-modal {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-modal:hover {
+            background-color: #218838;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translate(-50%, -60%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
@@ -91,6 +187,26 @@
         <small><i>Catatan: Harap tunggu konfirmasi resmi dari tim kami sebelum melakukan perjalanan ke lokasi
                 acara.</i></small>
     </p>
+
+    <!-- Modal Peringatan -->
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-dialog" id="modalDialog">
+        <div class="modal-header">
+            <div style="font-size: 48px;">⚠️</div>
+            <h3 class="modal-title">Perhatian!</h3>
+        </div>
+        <div class="modal-body">
+            <p><strong>Mohon tunggu sebentar.</strong></p>
+            <p>Halaman akan otomatis kembali ke Beranda dalam <span id="modal-countdown"
+                    style="color: red; font-weight: bold;"></span> detik.</p>
+            <p>Atau Anda bisa <a href="javascript:void(0)" onclick="window.location.href='index.html#section_hubungi';"
+                    style="color: #28a745; font-weight: bold; text-decoration: underline;">menghubungi kami</a> jika ada
+                pertanyaan.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-modal" onclick="closeModal()">Mengerti</button>
+        </div>
+    </div>
     <hr>
     <script>
         let countdown = 30;
@@ -99,9 +215,44 @@
         const loadingImage = document.getElementById('loading');
         let dots = 0;
 
+        // Prevent back navigation dengan history manipulation
+        history.pushState(null, null, location.href);
+        window.addEventListener('popstate', function (event) {
+            // Push state lagi agar tetap di halaman ini
+            history.pushState(null, null, location.href);
+            // Tampilkan modal peringatan
+            showModal();
+        });
+
+        // Fungsi untuk menampilkan modal
+        function showModal() {
+            const modalBackdrop = document.getElementById('modalBackdrop');
+            const modalDialog = document.getElementById('modalDialog');
+            const modalCountdown = document.getElementById('modal-countdown');
+
+            modalBackdrop.classList.add('show');
+            modalDialog.classList.add('show');
+            modalCountdown.textContent = countdown;
+        }
+
+        // Fungsi untuk menutup modal
+        function closeModal() {
+            const modalBackdrop = document.getElementById('modalBackdrop');
+            const modalDialog = document.getElementById('modalDialog');
+
+            modalBackdrop.classList.remove('show');
+            modalDialog.classList.remove('show');
+        }
+
         const interval = setInterval(() => {
             countdown--;
             countdownElement.innerHTML = `${countdown} detik lagi akan kembali ke <span style="color: red; font-weight: bold;">Beranda</span>!`;
+
+            // Update modal countdown juga jika modal terbuka
+            const modalCountdown = document.getElementById('modal-countdown');
+            if (modalCountdown.parentElement.parentElement.parentElement.classList.contains('show')) {
+                modalCountdown.textContent = countdown;
+            }
 
             // Mengubah teks dan gambar saat countdown mencapai 10 detik
             if (countdown === 10) {
