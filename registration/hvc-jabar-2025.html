@@ -420,7 +420,15 @@
             const hiddenIframe = document.getElementById('hidden_iframe');
             hiddenIframe.onload = function () {
                 if (formSubmitted) {
-                    window.location.href = '/kirim-registrasi.html';
+                    // Reset form sebelum redirect untuk mencegah double submission
+                    // jika user kembali ke halaman ini dengan tombol back
+                    const form = document.getElementById('volunteer-form');
+                    form.reset();
+
+                    // Tunggu sebentar untuk memastikan form direset sebelum redirect
+                    setTimeout(function () {
+                        window.location.href = '/kirim-registrasi.html';
+                    }, 100);
                 }
             };
 
