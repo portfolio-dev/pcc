@@ -208,14 +208,9 @@ function showConfirmation() {
   document.getElementById('donor-tlp').innerText = donorTlp;
 
   togglePaymentMethod(document.querySelector('input[name="DonationPayment"]:checked').value);
-
-  // Generate CAPTCHA when entering confirmation section
-  generateCaptcha();
 }
 
 function goBack() {
-  // Reset CAPTCHA saat kembali
-  resetCaptcha();
   window.location.href = 'donate.html';
 }
 
@@ -248,54 +243,32 @@ function formatNumber(num) {
 }
 
 function submitConfirmation() {
-
-  // Validasi CAPTCHA terlebih dahulu
-  if (!captchaVerified) {
-    alert("Harap jawab pertanyaan matematika dengan benar terlebih dahulu.");
-    document.getElementById('captcha-answer').focus();
-    return false;
-  }
-
+  // Store form data
   const donationType = document.querySelector('input.donation-radio:checked')?.value;
   const nominalInput = document.getElementById('custom-nominal').value.replace(/\./g, '') || lastSelected?.value || '0';
   const donorDetail = document.getElementById('donation-detail').value;
   const donorName = document.getElementById('donation-name').value;
-  // const donorEmail = document.getElementById('donation-email').value;
   const donorTlp = document.getElementById('donation-tlp').value;
   const paymentMethod = document.querySelector('input.payment-radio:checked')?.value;
   const donorNote = document.getElementById('donation-note').value;
 
-  if (nominalInput.value === '') {
-    nominalInput.value = '0';
+  if (nominalInput === '') {
+    nominalInput = '0';
   }
 
-  // URL GOOGLE FORM
-  const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSetZq-Q-6W6oAn4yGgYios1RpLhKoigYtV7_Jbv7Zz-tUXijw/formResponse';
+  // Store data globally for submission after CAPTCHA
+  formDataToSubmit = {
+    donationType: donationType,
+    nominalInput: nominalInput,
+    donorDetail: donorDetail,
+    donorName: donorName,
+    donorTlp: donorTlp,
+    paymentMethod: paymentMethod,
+    donorNote: donorNote
+  };
 
-  // PARAMETER
-  const params = new URLSearchParams();
-  params.append('entry.1274723429', donorName); // ID ENTRY FOR NAME
-  // params.append('entry.1711964533', donorEmail); // ID ENTRI FOR EMAIL
-  params.append('entry.1479109352', donorTlp); // ID ENTRY FOR NUMBER OR WHATSAPP
-  params.append('entry.1705412345', nominalInput); // ID ENTRY FOR VALUE
-  params.append('entry.1526120968', donorDetail); // ID ENTRY FOR PRODUK
-  params.append('entry.1082800990', paymentMethod); // ID ENTRY FOR PAYMENT
-  params.append('entry.573797881', donationType); // ID ENTRY FOR KIND OF DONATION
-  params.append('entry.1469710524', donorNote); // ID ENTRY FOR NOTE
-
-  // FETCH SEND
-  fetch(googleFormURL, {
-    method: 'POST',
-    body: params,
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }
-  });
-
-  setTimeout(() => {
-    window.location.href = 'donate-upload.html';
-  }, 500);
-  return true;
+  // Show CAPTCHA modal instead of direct submit
+  showCaptchaModal();
 }
 
 function upload() {

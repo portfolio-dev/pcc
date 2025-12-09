@@ -36,21 +36,67 @@
     </script>
 
     <style>
-        /* CAPTCHA Styles */
-        .captcha-container {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border: 2px solid #dee2e6;
+        /* CAPTCHA Modal Styles */
+        .captcha-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        .captcha-modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .captcha-modal h4 {
+            margin-top: 0;
+            color: #333;
+            text-align: center;
         }
 
         .captcha-question {
             font-size: 24px;
             font-weight: bold;
-            color: #495057;
-            margin-bottom: 10px;
+            color: #e54646;
+            margin: 20px 0;
             text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
         }
 
         .captcha-input-group {
@@ -58,20 +104,27 @@
             align-items: center;
             gap: 10px;
             justify-content: center;
+            margin: 20px 0;
         }
 
-        #captcha-answer {
-            width: 150px;
+        #captcha-answer-modal {
+            width: 120px;
             text-align: center;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
-            background-color: white;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        #captcha-answer-modal:focus {
+            outline: none;
+            border-color: #e54646;
         }
 
         .captcha-feedback {
-            display: inline-block;
-            font-size: 24px;
-            margin-left: 10px;
+            font-size: 28px;
+            min-width: 30px;
         }
 
         .captcha-feedback.correct {
@@ -82,9 +135,43 @@
             color: #dc3545;
         }
 
-        #confirm-button:disabled {
-            opacity: 0.65;
+        .captcha-modal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .captcha-modal-buttons button {
+            padding: 10px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-submit-captcha {
+            background-color: #e54646;
+            color: white;
+        }
+
+        .btn-submit-captcha:hover:not(:disabled) {
+            background-color: #c93a3a;
+        }
+
+        .btn-submit-captcha:disabled {
+            background-color: #ccc;
             cursor: not-allowed;
+        }
+
+        .btn-cancel-captcha {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-cancel-captcha:hover {
+            background-color: #5a6268;
         }
     </style>
 
@@ -559,23 +646,34 @@
                                 <textarea name="donation-note" rows="5" class="form-control" id="donation-note"
                                     placeholder="Tulis di sini" required></textarea>
 
-                                <!-- Math CAPTCHA -->
-                                <div class="captcha-container">
-                                    <div class="captcha-question" id="captcha-question"></div>
-                                    <div class="captcha-input-group">
-                                        <input type="number" id="captcha-answer" class="form-control"
-                                            placeholder="Jawaban" autocomplete="off">
-                                        <span class="captcha-feedback" id="captcha-feedback"></span>
-                                    </div>
-                                    <small class="text-muted d-block text-center mt-2">Silakan jawab pertanyaan di atas
-                                        untuk melanjutkan</small>
-                                </div>
-
                                 <button type="button" id="confirm-button" class="btn btn-primary mt-3"
-                                    onclick="submitConfirmation()" disabled>Donasi</button>
+                                    onclick="submitConfirmation()">Donasi</button>
                                 <button type="button" class="btn btn-secondary mt-3" onclick="goBack()">Batal</button>
                             </div>
                         </form>
+
+                        <!-- CAPTCHA Modal -->
+                        <div id="captcha-modal" class="captcha-modal">
+                            <div class="captcha-modal-content">
+                                <h4>Verifikasi Keamanan</h4>
+                                <p style="text-align: center; color: #666;">Silakan jawab pertanyaan berikut:</p>
+
+                                <div class="captcha-question" id="captcha-question-modal"></div>
+
+                                <div class="captcha-input-group">
+                                    <input type="number" id="captcha-answer-modal" placeholder="Jawaban"
+                                        autocomplete="off" autofocus>
+                                    <span class="captcha-feedback" id="captcha-feedback-modal"></span>
+                                </div>
+
+                                <div class="captcha-modal-buttons">
+                                    <button class="btn-submit-captcha" id="btn-submit-captcha" disabled
+                                        onclick="verifyCaptchaAndSubmit()">Kirim Donasi</button>
+                                    <button class="btn-cancel-captcha" onclick="closeCaptchaModal()">Batal</button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -666,11 +764,12 @@
     <!-- JAVASCRIPT FILES -->
     <script src="js/donate.js"></script>
 
-    <!-- CAPTCHA JavaScript - Must load AFTER donate.js -->
+    <!-- CAPTCHA Modal JavaScript -->
     <script>
-        // Math CAPTCHA Logic
+        // Math CAPTCHA Logic for Modal
         let correctAnswer = 0;
         let captchaVerified = false;
+        let formDataToSubmit = null;
 
         function generateCaptcha() {
             // Generate angka random antara 1-20
@@ -679,28 +778,46 @@
 
             correctAnswer = num1 + num2;
 
-            // Tampilkan pertanyaan
-            const questionEl = document.getElementById('captcha-question');
+            // Tampilkan pertanyaan di modal
+            const questionEl = document.getElementById('captcha-question-modal');
             if (questionEl) {
                 questionEl.textContent = `Berapa ${num1} + ${num2} ?`;
-                console.log('CAPTCHA generated:', num1, '+', num2, '=', correctAnswer);
-            } else {
-                console.error('Element captcha-question not found!');
             }
+
+            // Reset input and feedback
+            document.getElementById('captcha-answer-modal').value = '';
+            document.getElementById('captcha-feedback-modal').textContent = '';
+            document.getElementById('btn-submit-captcha').disabled = true;
+            captchaVerified = false;
         }
 
-        // Validasi jawaban CAPTCHA
-        function checkCaptcha() {
-            const userAnswer = parseInt(document.getElementById('captcha-answer').value);
-            const feedback = document.getElementById('captcha-feedback');
-            const submitBtn = document.getElementById('confirm-button');
+        function showCaptchaModal() {
+            document.getElementById('captcha-modal').style.display = 'block';
+            generateCaptcha();
+            // Focus on input
+            setTimeout(() => {
+                document.getElementById('captcha-answer-modal').focus();
+            }, 300);
+        }
+
+        function closeCaptchaModal() {
+            document.getElementById('captcha-modal').style.display = 'none';
+            captchaVerified = false;
+            formDataToSubmit = null;
+        }
+
+        // Validasi jawaban CAPTCHA di modal
+        function checkCaptchaModal() {
+            const userAnswer = parseInt(document.getElementById('captcha-answer-modal').value);
+            const feedback = document.getElementById('captcha-feedback-modal');
+            const submitBtn = document.getElementById('btn-submit-captcha');
 
             if (userAnswer === correctAnswer) {
                 feedback.textContent = '✓';
                 feedback.className = 'captcha-feedback correct';
                 submitBtn.disabled = false;
                 captchaVerified = true;
-            } else if (document.getElementById('captcha-answer').value !== '') {
+            } else if (document.getElementById('captcha-answer-modal').value !== '') {
                 feedback.textContent = '✗';
                 feedback.className = 'captcha-feedback incorrect';
                 submitBtn.disabled = true;
@@ -713,22 +830,74 @@
             }
         }
 
-        // Event listener untuk input CAPTCHA - akan dipanggil setelah DOM ready
+        // Function untuk submit setelah CAPTCHA benar
+        function verifyCaptchaAndSubmit() {
+            if (!captchaVerified) {
+                alert('Harap jawab pertanyaan dengan benar terlebih dahulu.');
+                return;
+            }
+
+            // Close modal
+            closeCaptchaModal();
+
+            // Submit form
+            if (formDataToSubmit) {
+                actuallySubmitForm(formDataToSubmit);
+            }
+        }
+
+        // Actual form submission
+        function actuallySubmitForm(data) {
+            const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSetZq-Q-6W6oAn4yGgYios1RpLhKoigYtV7_Jbv7Zz-tUXijw/formResponse';
+
+            const params = new URLSearchParams();
+            params.append('entry.1274723429', data.donorName);
+            params.append('entry.1479109352', data.donorTlp);
+            params.append('entry.1705412345', data.nominalInput);
+            params.append('entry.1526120968', data.donorDetail);
+            params.append('entry.1082800990', data.paymentMethod);
+            params.append('entry.573797881', data.donationType);
+            params.append('entry.1469710524', data.donorNote);
+
+            fetch(googleFormURL, {
+                method: 'POST',
+                body: params,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            });
+
+            setTimeout(() => {
+                window.location.href = 'donate-upload.html';
+            }, 500);
+        }
+
+        // Event listener untuk input CAPTCHA di modal
         document.addEventListener('DOMContentLoaded', function () {
-            const captchaInput = document.getElementById('captcha-answer');
+            const captchaInput = document.getElementById('captcha-answer-modal');
             if (captchaInput) {
-                captchaInput.addEventListener('input', checkCaptcha);
-                captchaInput.addEventListener('keyup', checkCaptcha);
+                captchaInput.addEventListener('input', checkCaptchaModal);
+                captchaInput.addEventListener('keyup', function (e) {
+                    checkCaptchaModal();
+                    // Submit on Enter if verified
+                    if (e.key === 'Enter' && captchaVerified) {
+                        verifyCaptchaAndSubmit();
+                    }
+                });
+            }
+
+            // Close modal when clicking outside
+            window.onclick = function (event) {
+                const modal = document.getElementById('captcha-modal');
+                if (event.target == modal) {
+                    closeCaptchaModal();
+                }
             }
         });
 
-        // Function untuk reset CAPTCHA saat goBack
+        // Dummy functions for compatibility
         function resetCaptcha() {
-            generateCaptcha();
-            document.getElementById('captcha-answer').value = '';
-            document.getElementById('captcha-feedback').textContent = '';
-            captchaVerified = false;
-            document.getElementById('confirm-button').disabled = true;
+            // Not needed anymore but kept for compatibility
         }
     </script>
 
