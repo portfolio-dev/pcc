@@ -26,6 +26,30 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
+    <style>
+        .spinner-border {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            vertical-align: text-bottom;
+            border: 0.15em solid currentColor;
+            border-right-color: transparent;
+            border-radius: 50%;
+            animation: spinner-border 0.75s linear infinite;
+        }
+
+        @keyframes spinner-border {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #submit-btn:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -309,7 +333,12 @@
                             </center> -->
                             <br>
 
-                            <button type="submit" class="form-control">Daftar</button>
+                            <button type="submit" id="submit-btn" class="form-control">
+                                <span id="btn-text">Daftar</span>
+                                <span id="btn-spinner" class="spinner-border" role="status" style="display: none;"
+                                    aria-hidden="true"></span>
+                                <span id="btn-loading-text" style="display: none;">Mengirim...</span>
+                            </button>
                         </form>
                         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
                     </div>
@@ -373,10 +402,21 @@
                 return false; // Menghentikan pengiriman formulir
             }
 
-            // 2. Tandai bahwa formulir akan dikirim
+            // 2. Tampilkan spinner dan disable button
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = document.getElementById('btn-text');
+            const btnSpinner = document.getElementById('btn-spinner');
+            const btnLoadingText = document.getElementById('btn-loading-text');
+
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnSpinner.style.display = 'inline-block';
+            btnLoadingText.style.display = 'inline';
+
+            // 3. Tandai bahwa formulir akan dikirim
             formSubmitted = true;
 
-            // 3. Atur listener pada iframe untuk redirect setelah Google Form merespons
+            // 4. Atur listener pada iframe untuk redirect setelah Google Form merespons
             const hiddenIframe = document.getElementById('hidden_iframe');
             hiddenIframe.onload = function () {
                 if (formSubmitted) {
@@ -384,7 +424,7 @@
                 }
             };
 
-            // 4. Izinkan pengiriman formulir secara normal ke target iframe
+            // 5. Izinkan pengiriman formulir secara normal ke target iframe
             return true;
         }
     </script>
