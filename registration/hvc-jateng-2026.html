@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Pejuang Cipto Community">
+
+    <meta property="og:title" content="Pendaftaran Peserta Hospital Visit & Charity (HVC) Jateng 2026" />
+    <meta property="og:description"
+        content="Pejuang Cipto Community menggelar Hospital Visit & Charity (HVC) Jateng 2026, sebuah agenda kepedulian sosial yang mengajak adik-adik pejuang jantung dari chapter Jawa Tengah untuk berkumpul bersama." />
+    <meta property="og:image"
+        content="https://pejuangciptocommunity.org/images/news/hvc-pejuang-jantung-kecil-jawa-barat-2025/flayer-hvc-pejuang-kecil-jawa-barat.png" />
+    <meta property="og:url" content="https://pejuangciptocommunity.org/registration/hvc-jateng-2026" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pejuang Cipto Community" />
+
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/portfolio-dev/pcc/3135e841cd4eee9cc6916de205920100908bfe88/images/favicon.png">
+    <title>Pejuang Cipto Community</title>
+
+    <!-- CSS FILES -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/custom.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <style>
+        .spinner-border {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            vertical-align: text-bottom;
+            border: 0.15em solid currentColor;
+            border-right-color: transparent;
+            border-radius: 50%;
+            animation: spinner-border 0.75s linear infinite;
+        }
+
+        @keyframes spinner-border {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #submit-btn:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+
+        /* CAPTCHA Styles */
+        .captcha-container {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #dee2e6;
+        }
+
+        .captcha-question {
+            font-size: 24px;
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .captcha-input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        #captcha-answer {
+            width: 150px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: white;
+        }
+
+        .captcha-feedback {
+            display: inline-block;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        .captcha-feedback.correct {
+            color: #28a745;
+        }
+
+        .captcha-feedback.incorrect {
+            color: #dc3545;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-12 d-flex flex-wrap">
+                    <p class="d-flex me-4 mb-0">
+                        <i class="bi-geo-alt me-2"></i>
+
+                        <a href="https://maps.app.goo.gl/DTCR2eGAefy7wvuc8" target="_blank">
+                            Jl. Cempaka Putih Barat II J, No. 3C, Jakarta
+                        </a>
+                    </p>
+
+                    <p class="d-flex mb-0">
+                        <i class="bi-envelope me-2"></i>
+
+                        <a href="https://mailto:pejuangciptocommunity@gmail.com" target="_blank">
+                            pejuangciptocommunity@gmail.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                    <ul class="social-icon">
+
+                        <li class="social-icon-item">
+                            <a href="https://www.facebook.com/groups/1718067871661514"
+                                class="social-icon-link bi-facebook" target="_blank"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="https://instagram.com/pejuangciptocommunity" class="social-icon-link bi-instagram"
+                                target="_blank"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="https://wa.me/+6282132936477" class="social-icon-link bi-whatsapp"
+                                target="_blank"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="javascript:void(0)" onclick="window.location.href='/index.html';">
+                <img src="../images/logo.png" class="logo img-fluid" alt="Pejuang Cipto Community">
+                <span>
+                    Pejuang Cipto
+                    <small>Community</small>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="javascript:void(0)"
+                            onclick="window.location.href='/index.html';">Beranda</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="javascript:void(0)"
+                            onclick="window.location.href='/index.html#section_profil';">Profil</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="javascript:void(0)"
+                            onclick="window.location.href='/index.html#section_program';">Program</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="javascript:void(0)"
+                            onclick="window.location.href='/index.html#section_anggota';">Anggota</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="javascript:void(0)"
+                            onclick="window.location.href='/index.html#section_berita';">Berita</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="javascript:void(0)"
+                            onclick="window.location.href='/index.html#section_hubungi';">Hubungi</a>
+                    </li>
+
+                    <li class="nav-item ms-3">
+                        <a class="nav-link custom-btn custom-border-btn btn" href="javascript:void(0)"
+                            onclick="window.location.href='/donate.html';">Donasi</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="news-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div id="flyerCarousel" class="carousel slide mx-auto mb-4" data-bs-ride="carousel"
+                        style="max-width: 500px;">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#flyerCarousel" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                        </div>
+                        <div class="carousel-inner" style="border-radius: 15px;">
+                            <div class="carousel-item active">
+                                <img src="../images/news/hvc-pejuang-jantung-kecil-jawa-tengah-2026/flyer-hvs-kariadi-semarang.jpg"
+                                    class="d-block w-100" alt="Flyer HVC Jateng 2026">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#flyerCarousel"
+                            data-bs-slide="prev" style="width: 10%;">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"
+                                style="width: 1.5rem; height: 1.5rem;"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#flyerCarousel"
+                            data-bs-slide="next" style="width: 10%;">
+                            <span class="carousel-control-next-icon" aria-hidden="true"
+                                style="width: 1.5rem; height: 1.5rem;"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <div class="col-lg-12 col-12">
+                        <h3 class="mb-4">Pendaftaran Peserta Kegiatan HVC Jateng 2026</h3>
+                        <p>
+                            Pejuang Cipto Community dengan bangga menggelar <b>Hospital Visit & Charity (HVC) Jateng
+                                2026</b>, sebuah agenda kepedulian sosial yang didedikasikan untuk para pejuang jantung
+                            kecil. Kami mengundang adik-adik dari chapter Jawa Tengah dan sekitarnya untuk berkumpul
+                            bersama.
+                        </p>
+                        <p>
+                            Acara ini akan diisi dengan berbagai kegiatan yang menginspirasi dan menghibur untuk
+                            menyebarkan semangat dan kebahagiaan, seperti:
+                        </p>
+                        <span class="badge">Talkshow Edukatif</span>
+                        <span class="badge">Community Gathering</span>
+                        <span class="badge">Fun Games</span>
+                        <span class="badge">Bingkisan Charity</span>
+                        <p class="mt-4">
+                            Jangan lewatkan kesempatan berharga ini untuk berbagi kebahagiaan dan semangat. Segera
+                            daftar melalui formulir di bawah ini!
+                        </p>
+                        <hr>
+
+                        <form id="volunteer-form" class="custom-form volunteer-form mb-5 mb-lg-0"
+                            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdrN90onBY01U2stRUtEG7RQG1xcO8EfM2XWfD5FdL4W5I91g/formResponse"
+                            method="post" target="hidden_iframe" onsubmit="return handleFormSubmit();">
+                            <h6 class="mb-4">Data Pasien Anak</h6>
+                            <div class="row">
+                                <div class="col-lg-3 col-6 form-check-group">
+                                    <div class="form-check form-check-radio">
+                                        <input class="form-check-input" type="radio" name="entry.1725039189"
+                                            id="gender-male" value="Laki-laki" checked>
+                                        <label class="form-check-label" for="gender-male">Laki-laki</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-6 form-check-group">
+                                    <div class="form-check form-check-radio">
+                                        <input class="form-check-input" type="radio" name="entry.1725039189"
+                                            id="gender-female" value="Perempuan">
+                                        <label class="form-check-label" for="gender-female">Perempuan</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <input type="text" name="entry.461502395" id="patient-name" class="form-control"
+                                        placeholder="Nama Pasien Anak" required>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <!-- Input yang dilihat pengguna -->
+                                    <input type="text" id="patient-born-display" class="form-control"
+                                        placeholder="Tanggal Lahir" required>
+                                    <!-- Input tersembunyi untuk dikirim ke Google Form -->
+                                    <input type="hidden" name="entry.1361325621_year" id="patient-born-year">
+                                    <input type="hidden" name="entry.1361325621_month" id="patient-born-month">
+                                    <input type="hidden" name="entry.1361325621_day" id="patient-born-day">
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <select name="entry.213275331" id="pjb-name" class="form-control" required>
+                                        <option value="" selected disabled>Jenis PJB / Diagnosa</option>
+                                        <option value="Defek Septum Atrium (ASD)">Defek Septum Atrium (ASD)</option>
+                                        <option value="Defek Septum Ventrikel (VSD)">Defek Septum Ventrikel (VSD)
+                                        </option>
+                                        <option value="Defek Septum Atrium dan Ventrikel (AVSD)">Defek Septum Atrium dan
+                                            Ventrikel (AVSD)</option>
+                                        <option value="Paten Duktus Arteriosus (PDA)">Paten Duktus Arteriosus (PDA)
+                                        </option>
+                                        <option value="Stenosis Pulmonalis">Stenosis Pulmonalis</option>
+                                        <option value="Stenosis Aorta">Stenosis Aorta</option>
+                                        <option value="Coarctation of the Aorta (CoA)">Coarctation of the Aorta (CoA)
+                                        </option>
+                                        <option value="Tetralogi Fallot">Tetralogi Fallot</option>
+                                        <option value="Transposisi Arteri Besar (TGA)">Transposisi Arteri Besar (TGA)
+                                        </option>
+                                        <option value="Trikuspid Atresia">Trikuspid Atresia</option>
+                                        <option value="Truncus Arteriosus">Truncus Arteriosus</option>
+                                        <option value="Total Anomalous Pulmonary Venous Return (TAPVR)">Total Anomalous
+                                            Pulmonary Venous Return (TAPVR)</option>
+                                        <option value="Aorta Bicuspid">Aorta Bicuspid</option>
+                                        <option value="Anomali Busur Aorta">Anomali Busur Aorta</option>
+                                        <option value="Hipoplasia Jantung Kiri (HLHS)">Hipoplasia Jantung Kiri (HLHS)
+                                        </option>
+                                        <option value="Hipoplasia Jantung Kanan (HRHS)">Hipoplasia Jantung Kanan (HRHS)
+                                        </option>
+                                        <option value="Penyakit Ebstein's Anomaly">Penyakit Ebstein's Anomaly</option>
+                                        <option value="Stenosis atau Regurgitasi Katup Mitral">Stenosis atau Regurgitasi
+                                            Katup Mitral</option>
+                                        <option value="Kardiomiopati Dilatasi">Kardiomiopati Dilatasi</option>
+                                        <option value="Kardiomiopati Hipertrofik">Kardiomiopati Hipertrofik</option>
+                                        <option value="Penyakit Jantung Cacat Kompleks">Penyakit Jantung Cacat Kompleks
+                                        </option>
+                                        <option value="Single Ventricle Defects">Single Ventricle Defects</option>
+                                        <option value="Cor Triatriatum">Cor Triatriatum</option>
+                                        <option value="Pulmonary Atresia">Pulmonary Atresia</option>
+                                        <option value="Arteri Pulmonalis Hipoplastik">Arteri Pulmonalis Hipoplastik
+                                        </option>
+                                        <option value="Sindrom Down (AVSD, VSD)">Sindrom Down (AVSD, VSD)</option>
+                                        <option value="Sindrom Turner (Koarktasio Aorta, Stenosis Aorta)">Sindrom Turner
+                                            (Koarktasio Aorta, Stenosis Aorta)</option>
+                                        <option value="Anomali Katup Trikuspid">Anomali Katup Trikuspid</option>
+                                        <option value="Ventrikel Ganda dengan Atrium Tunggal">Ventrikel Ganda dengan
+                                            Atrium Tunggal</option>
+                                        <option value="lainnya">Lainnya</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <input type="text" name="entry.1540741749" id="last-action" class="form-control"
+                                        placeholder="Rumah Sakit Berobat" required>
+                                </div>
+
+
+                                <div class="col-lg-6 col-12">
+                                    <input type="text" name="entry.1084520634" id="last-action" class="form-control"
+                                        placeholder="Menggunakan Alat Bantu" required>
+                                </div>
+
+                                <div class="col-lg-12 col-12">
+                                    <input type="text" name="entry.1769708905" id="last-action" class="form-control"
+                                        placeholder="Tahap Pengobatan" required>
+                                </div>
+
+                                <hr>
+
+                                <h6 class="mb-4">Data Orang Tua</h6>
+                                <div class="col-lg-6 col-12">
+                                    <input type="text" name="entry.366229400" id="parent-name" class="form-control"
+                                        placeholder="Nama Orang Tua" required>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <input type="text" name="entry.847286747" id="parent-telepon" class="form-control"
+                                        placeholder="Nomor Whatsapp" inputmode="numeric" required pattern="\d*"
+                                        onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                </div>
+                            </div>
+
+                            <textarea name="entry.1901137419" rows="3" class="col-lg-6 col-12 form-control"
+                                id="volunteer-message" placeholder="Alamat Lengkap (sesuai KTP)" required></textarea>
+
+                            <!-- Math CAPTCHA -->
+                            <div class="captcha-container">
+                                <div class="captcha-question" id="captcha-question"></div>
+                                <div class="captcha-input-group">
+                                    <input type="number" id="captcha-answer" class="form-control" placeholder="Jawaban"
+                                        autocomplete="off">
+                                    <span class="captcha-feedback" id="captcha-feedback"></span>
+                                </div>
+                                <small class="text-muted d-block text-center mt-2">Silakan jawab pertanyaan di atas
+                                    untuk melanjutkan</small>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="form-control" disabled>
+                                <span id="btn-text">Daftar</span>
+                                <span id="btn-spinner" class="spinner-border" role="status" style="display: none;"
+                                    aria-hidden="true"></span>
+                                <span id="btn-loading-text" style="display: none;">Mengirim...</span>
+                            </button>
+                        </form>
+                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-7 col-12">
+                        <p class="copyright-text mb-0">Copyright © 2025 | Pejuang Cipto Community</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/click-scroll.js"></script>
+    <script src="../js/counter.js"></script>
+    <script src="../js/custom.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        // Math CAPTCHA Logic
+        let correctAnswer = 0;
+        let captchaVerified = false;
+
+        function generateCaptcha() {
+            // Generate angka random antara 1-20
+            const num1 = Math.floor(Math.random() * 20) + 1;
+            const num2 = Math.floor(Math.random() * 20) + 1;
+
+            correctAnswer = num1 + num2;
+
+            // Tampilkan pertanyaan
+            document.getElementById('captcha-question').textContent = `Berapa ${num1} + ${num2} ?`;
+        }
+
+        // Validasi jawaban CAPTCHA
+        function checkCaptcha() {
+            const userAnswer = parseInt(document.getElementById('captcha-answer').value);
+            const feedback = document.getElementById('captcha-feedback');
+            const submitBtn = document.getElementById('submit-btn');
+
+            if (userAnswer === correctAnswer) {
+                feedback.textContent = '✓';
+                feedback.className = 'captcha-feedback correct';
+                submitBtn.disabled = false;
+                captchaVerified = true;
+            } else if (document.getElementById('captcha-answer').value !== '') {
+                feedback.textContent = '✗';
+                feedback.className = 'captcha-feedback incorrect';
+                submitBtn.disabled = true;
+                captchaVerified = false;
+            } else {
+                feedback.textContent = '';
+                feedback.className = 'captcha-feedback';
+                submitBtn.disabled = true;
+                captchaVerified = false;
+            }
+        }
+
+        // Event listener untuk input CAPTCHA
+        document.addEventListener('DOMContentLoaded', function () {
+            generateCaptcha();
+
+            const captchaInput = document.getElementById('captcha-answer');
+            captchaInput.addEventListener('input', checkCaptcha);
+            captchaInput.addEventListener('keyup', checkCaptcha);
+        });
+    </script>
+
+    <script>
+        flatpickr("#patient-born-display", {
+            dateFormat: "d-m-Y", // Format yang ditampilkan ke pengguna
+            disableMobile: true,
+            onChange: function (selectedDates, dateStr, instance) {
+                if (selectedDates.length > 0) {
+                    const date = selectedDates[0];
+                    document.getElementById('patient-born-month').value = date.getMonth() + 1;
+                    document.getElementById('patient-born-day').value = date.getDate();
+                    document.getElementById('patient-born-year').value = date.getFullYear();
+                }
+            }
+        });
+    </script>
+
+    <script>
+        let formSubmitted = false;
+
+        function handleFormSubmit() {
+            // 1. Validasi CAPTCHA
+            if (!captchaVerified) {
+                alert("Harap jawab pertanyaan matematika dengan benar terlebih dahulu.");
+                document.getElementById('captcha-answer').focus();
+                return false; // Menghentikan pengiriman formulir
+            }
+
+            // 2. Validasi Tanggal Lahir
+            const dobYear = document.getElementById('patient-born-year').value;
+            if (!dobYear) {
+                alert("Harap isi Tanggal Lahir pasien.");
+                // Fokuskan kembali ke input tanggal agar mudah diperbaiki oleh pengguna
+                document.getElementById('patient-born-display').focus();
+                return false; // Menghentikan pengiriman formulir
+            }
+
+            // 3. Tampilkan spinner dan disable button
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = document.getElementById('btn-text');
+            const btnSpinner = document.getElementById('btn-spinner');
+            const btnLoadingText = document.getElementById('btn-loading-text');
+
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnSpinner.style.display = 'inline-block';
+            btnLoadingText.style.display = 'inline';
+
+            // 4. Tandai bahwa formulir akan dikirim
+            formSubmitted = true;
+
+            // 5. Atur listener pada iframe untuk redirect setelah Google Form merespons
+            const hiddenIframe = document.getElementById('hidden_iframe');
+            hiddenIframe.onload = function () {
+                if (formSubmitted) {
+                    // Reset form sebelum redirect untuk mencegah double submission
+                    // jika user kembali ke halaman ini dengan tombol back
+                    const form = document.getElementById('volunteer-form');
+                    form.reset();
+
+                    // Reset CAPTCHA juga
+                    generateCaptcha();
+                    document.getElementById('captcha-answer').value = '';
+                    document.getElementById('captcha-feedback').textContent = '';
+                    captchaVerified = false;
+
+                    // Tunggu sebentar untuk memastikan form direset sebelum redirect
+                    setTimeout(function () {
+                        window.location.href = '/kirim-registrasi.html';
+                    }, 100);
+                }
+            };
+
+            // 6. Izinkan pengiriman formulir secara normal ke target iframe
+            return true;
+        }
+    </script>
+
+
+</body>
+
+</html>
